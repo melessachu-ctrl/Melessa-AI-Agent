@@ -2,6 +2,8 @@
 
 第一位個人 AI 助理的工作空間。
 
+**根目錄：** `~/Melessa AI Agent/Personal_AI_Assistant/`
+
 ## 一句話目的
 
 協助整理筆記、起草文字草稿，以及 AI Agent 入門培訓的學習練習。
@@ -29,12 +31,16 @@
 
 ## 負責人
 
-（請填入你的名字或識別）
+Melessa
 
 ## 相關資料夾
 
 | 資料夾 | 用途 |
 |--------|------|
 | `sessions/` | 每次對話／練習紀錄 |
-| `templates/` | （第二階段）重複使用的 prompt 與 checklist |
-| `knowledge/` | （第二階段）非機密參考資料 |
+| `templates/` | 重複使用的 prompt 與 checklist |
+| `knowledge/` | 非機密參考資料（培訓教材） |
+| `.cursor/rules/` | Cursor 持久化安全規則 |
+| `AGENTS.md` | Agent 行為手冊 |
+
+
