@@ -1,3 +1,32 @@
 .DS_Store
 .tools/
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Local-only notes and drafts
+drafts/
+local_notes/
+private_notes/
+_private/
+_archive/
+
+# Credentials and environment files
+.env
+.env.*
+*.key
+*.pem
+*credential*
+*credentials*
+*secret*
+*token*
+
+# Raw or real company data must never be committed
+raw_data/
+real_data/
+employee_data/
+candidate_data/
+salary_data/
+client_exports/
 
