@@ -9,7 +9,8 @@
 - （暫時未有個人紅線；通用安全規則見 `TOOLS.md`）
 
 ## 重要決策
-- （暫時未有）
+- **2026-07-08**：採用 Step 5 的 Workflow 判斷原則（template → prompt → skill → agent 階梯、重複 3 次規則、DRIP、升 agent 三條件）；詳見 `BRAIN.md`
+- **2026-07-08**：開始 2 週 Workflow 觀察期；日誌位置 `01_Action_Center/outputs/test_logs/Workflow_Observation_Log.md`（臨時觀察用，非正式長期記憶）
 
 ## 踩過的坑
 （暫時未有）

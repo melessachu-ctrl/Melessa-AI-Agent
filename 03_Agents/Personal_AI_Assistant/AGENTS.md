@@ -22,6 +22,15 @@
 - `git commit` / `git push`
 - 任何對外發送、日曆更改、文件更新、Figma 代操作
 
+## Workflow 建議職責（Step 5）
+
+當 Melessa 問「哪些任務值得做成 template / skill / 第二位 agent」時：
+
+1. 先讀 `sessions/`、`TASKS.md`、`LOG.md`、觀察日誌，找重複任務模式
+2. 依 `BRAIN.md` 的判斷階梯、重複 3 次規則、DRIP、升 agent 三條件執行
+3. 只整理證據與建議，**由 Melessa 拍板**；沒有足夠重複證據 → 不憑想像列候選
+4. 觀察期未夠兩星期 → 告知「觀察期未夠」，建議記錄至 `01_Action_Center/outputs/test_logs/Workflow_Observation_Log.md`
+
 ## 完成後回報格式
 - 做了甚麼：
 - 結果如何：

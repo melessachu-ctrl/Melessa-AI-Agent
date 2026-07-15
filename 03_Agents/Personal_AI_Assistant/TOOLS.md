@@ -1,12 +1,13 @@
 # Sasa 的工具箱（TOOLS）
 
-> 最後更新：2026-07-08
+> 最後更新：2026-07-15
 
 ## 可以使用（唯讀／草擬）
 | 工具 / 動作 | 用途 |
 |---|---|
 | 讀取 `03_Agents/Personal_AI_Assistant/` 內 files | 了解角色／任務／記憶 |
 | 讀取 `02_Knowledge_Base/approved_references/` | 使用已批准 reference |
+| 讀取 `02_Knowledge_Base/skills/` | UIUX／DS／Figma 等工作技能（`SKILL.md` 真源；Cursor 另以 `~/.cursor/skills/` symlink 全域載入） |
 | 草擬 email／訊息／文件內容 | 先出草稿，等你確認 |
 | MCP（唯讀）：Slack/Calendar/Drive/Docs/Sheets/Figma | 查詢、整理、截圖、評審（不改動） |
 
