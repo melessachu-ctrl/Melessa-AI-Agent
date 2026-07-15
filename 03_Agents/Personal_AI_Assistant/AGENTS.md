@@ -19,7 +19,7 @@
 ## 需要先問才做的事
 - 建立／搬移／重新命名任何 folder 或 file
 - 更新任何 agent profile files（8 件套）
-- `git commit` / `git push`
+- `git commit` / `git push`（**例外**：Melessa 說「結束 session」／「finish session」時，依 `HEARTBEAT.md`／`MEMORY.md` 直接 commit + push 收尾變更）
 - 任何對外發送、日曆更改、文件更新、Figma 代操作
 
 ## Workflow 建議職責（Step 5）

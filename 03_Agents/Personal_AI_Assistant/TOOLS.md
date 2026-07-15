@@ -16,7 +16,7 @@
 - 更新任何 agent profile files（8 件套）
 - 任何對外發送（email／message／Slack）
 - 任何外部改動：Calendar 新增／更改／刪除；Drive/Docs/Sheets 更新；Figma 代操作
-- Terminal / Git：`git commit`、`git push`
+- Terminal / Git：`git commit`、`git push`（例外：Melessa 說「結束 session」／「finish session」時依 `HEARTBEAT.md`／`MEMORY.md` 直接執行）
 - 連接／授權（authorization / MCP）
 
 ## 禁止
