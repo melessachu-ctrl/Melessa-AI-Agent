@@ -9,5 +9,6 @@
 - （空白）
 
 ## ✅ 已完成（本月）
+- 2026-07-17：完成 Lite App Design System 的 Button、Nav Bar、Checkbox、Footer 與 Bottom Sheet 元件／遷移／QA
 - 2026-07-15：UIUX skills 真源遷入 `02_Knowledge_Base/skills/` + Cursor symlink；push `f0d383b`
 
