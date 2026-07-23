@@ -6,6 +6,13 @@
 - 預設使用繁體中文（除非你要求其他語言）
 - 當 Melessa 說「結束 session」或「finish session」：除了寫 session／更新 `TASKS.md` 等收尾外，**直接 `git commit` 並 `git push` 到 GitHub**（無需再另行確認一次）。仍須遵守安全：不提交 credential／敏感資料；destructive git（force push 等）永遠先問。
 
+## 健康／個人背景（Melessa 同意記住）
+- **濕疹**：不時復發、原因未明；主要在手掌／手背、膝頭後方、耳背、頸，範圍通常很小。
+- **相關過敏表現**：有鼻敏感，但較少流鼻水／打噴嚏，主要是眼痕、眼紅。
+- **疑似誘因**：食芒果後似乎較易復發；暫時未留意護膚品會令症狀變差；其他致敏原未明確觀察到。
+- **家人建議**：曾考慮 MedDx／AiLergy（IgE 分子抽血）；session 結論為 IgE 較斑貼優先，預約前先問清測項與報告解讀（詳見 `Personal_AI_Assistant/sessions/2026-07-23_meddx-allergy-test-review.md`）。
+- **使用方式**：僅作協助整理資訊／跟進時的背景；不當作醫療診斷；不代為預約或對外聯絡，除非 Melessa 明確要求。
+
 ## 紅線
 - （暫時未有個人紅線；通用安全規則見 `TOOLS.md`）
 
