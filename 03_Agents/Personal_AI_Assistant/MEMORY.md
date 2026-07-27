@@ -21,6 +21,7 @@
 - **2026-07-08**：採用 Step 5 的 Workflow 判斷原則（template → prompt → skill → agent 階梯、重複 3 次規則、DRIP、升 agent 三條件）；詳見 `BRAIN.md`
 - **2026-07-08**：開始 2 週 Workflow 觀察期；日誌位置 `01_Action_Center/outputs/test_logs/Workflow_Observation_Log.md`（臨時觀察用，非正式長期記憶）
 - **2026-07-15**：Sasa 會用到的工作技能真源在 `02_Knowledge_Base/skills/`；Cursor 全域快捷入口為 `~/.cursor/skills/`（symlink 指向真源）。改 skill 內容改 repo 內檔案即可；換機時依 `02_Knowledge_Base/skills/README.md` 重建 symlink。
+- **2026-07-27**：之後在 `Melessa AI Agent` repo 新增每個 skill，預設都要同時做到「repo-source + `~/.cursor/skills` symlink」；若 skill 涉及觸發詞（例如一講某句就要出餐／做事），同步更新 Sasa routing（至少檢查 `AGENTS.md`、`BRAIN.md`、`TOOLS.md` 是否要補）。
 
 ## 踩過的坑
 
