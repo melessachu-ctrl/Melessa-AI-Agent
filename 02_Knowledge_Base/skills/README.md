@@ -28,6 +28,7 @@ for name in \
   frontend-design \
   hktvmall-target-customers \
   ricky-design-guideline \
+  tonight-dinner \
   ui-ux-pro-max \
   uiux-design-studio \
   uiux-review
@@ -42,7 +43,7 @@ done
 
 1. 在本目錄建立 `<skill-name>/SKILL.md`
 2. 在本機執行：`ln -sfn "<本目錄絕對路徑>/<skill-name>" "$HOME/.cursor/skills/<skill-name>"`
-3. 更新上方重建清單與 Sasa 的 `TOOLS.md`／`BRAIN.md`（若需要）
+3. 更新上方重建清單與 Sasa 的 `TOOLS.md`／`BRAIN.md`／`AGENTS.md`（若需要）
 
 ## 不放在這裡
 
