@@ -10,6 +10,7 @@
 - （可選）芒果去皮觀察；必要時先問皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-07-28：建立 `email-writer` skill，接上 `Sasa` 電郵觸發路由，並建立 `~/.cursor/skills/email-writer` symlink
 - 2026-07-27：建立 `tonight-dinner` skill，改為 repo-source + `~/.cursor/skills` symlink，並接上 Sasa 觸發路由；已 push
 - 2026-07-23：已預約 MedDx AiLergy（1/8 11:30 旺角）；Google Calendar 已建立
 - 2026-07-23：評估 MedDx／AiLergy 是否適合細範圍濕疹＋眼敏感＋疑芒果；產出預約前問題清單
