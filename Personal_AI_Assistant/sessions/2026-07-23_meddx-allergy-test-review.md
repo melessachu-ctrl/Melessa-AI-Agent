@@ -28,9 +28,9 @@
 ## 待辦
 
 - [x] 寫入 `MEMORY.md`（Melessa 同意記住濕疹／眼敏感／疑芒果背景）
-- [ ] （Melessa）若決定預約：用 5 條問題向 MedDx 確認後再付款
+- [x] 已預約並完成 MedDx AiLergy（2026-08-01）；報告已於 2026-08-06 session 摘要（見 `03_Agents/Personal_AI_Assistant/sessions/2026-08-06-meddx-ailergy-report-summary.md`）
 - [ ] （可選）芒果「只食去皮果肉」觀察一次，記錄會否同樣復發
-- [ ] （可選）預約前先問皮膚科／過敏科是否值得先做全面 IgE
+- [ ] （可選）若症狀持續：帶報告見皮膚科／過敏科
 
 ## 反思
 

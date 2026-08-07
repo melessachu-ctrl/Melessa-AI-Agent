@@ -6,10 +6,12 @@
 - （空白）
 
 ## 🟡 待辦
-- 2026-08-01 11:30：MedDx AiLergy（旺角）— 彌敦道750號始創中心12樓1205｜日曆已加
-- （可選）芒果去皮觀察；必要時先問皮膚科／過敏科
+- （可選）芒果去皮觀察；記錄會否同樣誘發濕疹
+- （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-08-06：分析 MedDx AiLergy 報告（295 項；總 IgE 正常；無 ≥0.3 明確陽性）；寫 session
+- 2026-08-01：完成 MedDx AiLergy（旺角）抽血檢測
 - 2026-07-28：建立 `email-writer` skill，接上 `Sasa` 電郵觸發路由，並建立 `~/.cursor/skills/email-writer` symlink
 - 2026-07-27：建立 `tonight-dinner` skill，改為 repo-source + `~/.cursor/skills` symlink，並接上 Sasa 觸發路由；已 push
 - 2026-07-23：已預約 MedDx AiLergy（1/8 11:30 旺角）；Google Calendar 已建立
