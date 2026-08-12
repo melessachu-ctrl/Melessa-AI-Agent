@@ -4,6 +4,7 @@
 
 | 日期 | 任務 | 成果 | 備註 |
 |---|---|---|---|
+| 2026-08-12 | 建立 `google-maps-bookmark` skill；東京景點存 Maps + note | Skill 真源 + symlink；Sasa 路由／README／MEMORY 踩坑；13 景點繁中 note | 只用 cursor-ide-browser；note 必須在 list 視圖 |
 | 2026-08-06 | MedDx AiLergy 報告分析與摘要 | Session 紀錄；TASKS 更新（預約／檢測完成）；無明確 IgE 陽性 | 非醫療診斷；不保存報告個資 |
 
 ## 2026-07

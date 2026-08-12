@@ -27,6 +27,7 @@ for name in \
   figma-mcp-server-guide \
   fix-design-system-finding \
   frontend-design \
+  google-maps-bookmark \
   hktvmall-target-customers \
   ricky-design-guideline \
   tonight-dinner \

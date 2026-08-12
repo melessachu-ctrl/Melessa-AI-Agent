@@ -10,6 +10,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-08-12：東京景點存入 Google Maps「東京」list + 繁中 note；建立 `google-maps-bookmark` skill 並接上 Sasa 路由
 - 2026-08-06：分析 MedDx AiLergy 報告（295 項；總 IgE 正常；無 ≥0.3 明確陽性）；寫 session
 - 2026-08-01：完成 MedDx AiLergy（旺角）抽血檢測
 - 2026-07-28：建立 `email-writer` skill，接上 `Sasa` 電郵觸發路由，並建立 `~/.cursor/skills/email-writer` symlink
