@@ -5,6 +5,7 @@
 ## 最近完成
 
 - **2026-08-13**：Cloud Agent 完成 Wanderlog 東京行程「東京景点」13 景點同步（含繁中 note）；workflow 寫入 session／MEMORY／TOOLS
+- **2026-08-12**：建立 `google-maps-bookmark` skill；東京 13 景點存入 Google Maps「東京」list + 繁中 note
 - **2026-08-06**：MedDx AiLergy 報告摘要 session
 
 ## 旅行規劃（Wanderlog）
