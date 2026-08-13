@@ -23,10 +23,12 @@
 - **2026-07-08**：開始 2 週 Workflow 觀察期；日誌位置 `01_Action_Center/outputs/test_logs/Workflow_Observation_Log.md`（臨時觀察用，非正式長期記憶）
 - **2026-07-15**：Sasa 會用到的工作技能真源在 `02_Knowledge_Base/skills/`；Cursor 全域快捷入口為 `~/.cursor/skills/`（symlink 指向真源）。改 skill 內容改 repo 內檔案即可；換機時依 `02_Knowledge_Base/skills/README.md` 重建 symlink。
 - **2026-07-27**：之後在 `Melessa AI Agent` repo 新增每個 skill，預設都要同時做到「repo-source + `~/.cursor/skills` symlink」；若 skill 涉及觸發詞（例如一講某句就要出餐／做事），同步更新 Sasa routing（至少檢查 `AGENTS.md`、`BRAIN.md`、`TOOLS.md` 是否要補）。
+- **2026-08-13**：**Wanderlog（Cloud Agent）**：可在對話貼 `connect.sid`（從已登入 wanderlog.com 的瀏覽器 DevTools 複製），Agent 用 API 改行程；**勿寫入 repo／MEMORY**。**Google Maps 網頁**：Cloud VM 難登入 Google；可改貼景點清單，或電腦 **Local Agent** 用本機 Chrome。**Cursor Agent 環境**：Local↔Cloud 主要在電腦 **Agents 視窗** Move to；手機 Remote 看不到 VM 瀏覽器。
 
 ## 踩過的坑
 
 - **2026-08-12｜Google Maps note**：在 place 詳情頁用 JS／偶發 fill 加 note **常不持久**。穩定做法：開 Saved **list 本體視圖** → 點該列 `Add note` → `browser_fill` → 點下一列 blur 存檔。詳見 `02_Knowledge_Base/skills/google-maps-bookmark/`。
+- **Cloud Agent 瀏覽器 ≠ 本機／手機 Chrome**：在 phone／本機登入 Google／Wanderlog，不代表 VM 已登入；Wanderlog 可改貼 `connect.sid` 繞過。
 
 ## 不應記錄
 

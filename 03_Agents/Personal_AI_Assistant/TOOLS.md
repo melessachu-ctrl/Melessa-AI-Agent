@@ -1,6 +1,6 @@
 # Sasa 的工具箱（TOOLS）
 
-> 最後更新：2026-08-12
+> 最後更新：2026-08-13
 
 ## 可以使用（唯讀／草擬）
 | 工具 / 動作 | 用途 |
@@ -36,8 +36,19 @@
 
 已驗證：2026-07-08 成功讀取 Google Calendar 今日行程。
 
+## Wanderlog（非 MCP，Cloud Agent 可用）
+
+| 方式 | 用途 | 備註 |
+|---|---|---|
+| 貼 `connect.sid` | Cloud Agent 以 API 讀寫行程、加景點、改 note | 從已登入 [wanderlog.com](https://wanderlog.com) 的瀏覽器 DevTools → Cookies 複製；**勿 commit** |
+| Local Agent + 本機 Chrome | 可配合已登入的 Google Maps／Wanderlog 網頁操作 | 電腦 Cursor 新開 Local chat |
+
+- 無官方 Google Maps「寫入 saved list」API；讀 Maps 清單可貼文字，或 Local 瀏覽器
+- Gmail／Drive MCP **不能**代替 Google Maps 瀏覽器登入
+
 ## 尚未連接
 | 工具 | 狀態 | 備註 |
 |---|---|---|
 | Notion | 未連接 | 需要時可再加 MCP |
+| Wanderlog MCP | 未固定配置 | 可選：Cursor MCP 設 `WANDERLOG_COOKIE`（仍勿 commit） |
 
