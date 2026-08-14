@@ -1,19 +1,19 @@
 ---
-name: wanderlog-places
+name: update-wanderlog
 description: >-
-  用 Wanderlog 非官方 API（connect.sid + wanderlog-mcp）在指定行程加入景點、撰寫 place note（含粗體中文名與交通資訊）、
+  用 Wanderlog 非官方 API（connect.sid + wanderlog-mcp）在指定行程加入景點、撰寫 place note（粗體中文名、交通、景點特色概要）、
   更新或補齊既有清單。Use when the user asks to add places to Wanderlog, sync Maps list to Wanderlog,
   edit Wanderlog itinerary notes, or modify a Wanderlog trip list/section.
 ---
 
-# Wanderlog 景點與 Note
+# Update Wanderlog（景點與 Note）
 
 ## 載入時機（必遵守）
 
 命中下列**任一**情況時，必須載入並依本 skill 執行：
 
 - 使用者要求在 **Wanderlog** 加入／刪除／更新 **景點（place）**
-- 使用者要求為 Wanderlog 景點 **加 note／備註／中文名稱／交通資訊**
+- 使用者要求為 Wanderlog 景點 **加 note／備註／中文名稱／交通／特色概要**
 - 使用者要把 **Google Maps 清單** 或文章／表格裡的地點 **同步到 Wanderlog 某個 list／section**
 - 使用者提到 **Wanderlog 行程**、**connect.sid**、或指定 trip 名稱（例如「前往Tokyo的旅行」）
 
@@ -76,8 +76,8 @@ Progress:
 - [ ] connect.sid 已取得
 - [ ] 目標行程名稱或 trip key（例：前往Tokyo的旅行 / afnmohflkhpeqqpp）
 - [ ] 目標 section／list 名稱（例：東京景点、富士山河口湖景點）
-- [ ] 景點清單：Maps 搜尋名 | 中文名 | 交通／note（表格或截圖）
-- [ ] note 格式確認（預設：**粗體中文名** | 交通資訊）
+- [ ] 景點清單：Maps 搜尋名 | 中文名 | 交通 | 特色概要（bullet）
+- [ ] note 格式確認（預設：粗體中文名 + 交通：… + • 特色）
 - [ ] 已存在景點：跳過新增 or 只補 note？
 - [ ] 執行 API 同步
 - [ ] 驗證數量與 note，回報結果表
@@ -89,30 +89,50 @@ Progress:
 | --- | --- |
 | 行程 | 名稱關鍵字即可；腳本用 `listTrips()` 找 |
 | Section | `trip.itinerary.sections` 裡 `heading` 完全匹配（區分大小寫／簡繁） |
-| 每個 place | 至少：**搜尋關鍵字** + **note 中文名**；有交通資訊一併寫入 |
+| 每個 place | **搜尋關鍵字** + **中文名** + **交通** + **特色概要**（2–4 個 bullet） |
 
-若使用者只給 Maps 截圖／表格：先整理成上表再執行。
+若使用者只給 Maps 截圖／表格且缺特色概要：依景點常識簡短補 2–4 點（繁體、每點一行）；不確定時先問。
 
 ---
 
 ## 2. Note 格式（預設）
 
-Place 的 inline note 用 **rich-text**，不是純字串：
+Place 的 inline note 用 **rich-text**，結構為三段落：
+
+1. **粗體中文名**（獨立一行）
+2. `交通：` + 交通資訊（獨立一行）
+3. 景點特色概要（**point form**，每行以 `• ` 開頭）
+
+### 顯示範例
+
+```
+河口湖遊覽船          ← 粗體
+交通：搭紅線至遊覽船・纜車入口
+• 湖上遠眺富士山
+• 約 20 分環湖
+• 可配纜車同遊
+```
+
+### rich-text ops
 
 ```javascript
-function boldNoteOps(zh, transport) {
-  const ops = [{ insert: zh, attributes: { bold: true } }];
-  if (transport) ops.push({ insert: ` | ${transport}\n` });
-  else ops.push({ insert: '\n' });
+function defaultNoteOps(zh, transport, highlights = []) {
+  const ops = [
+    { insert: zh, attributes: { bold: true } },
+    { insert: '\n' },
+  ];
+  if (transport) ops.push({ insert: `交通：${transport}\n` });
+  for (const point of highlights) {
+    ops.push({ insert: `• ${point}\n` });
+  }
   return ops;
 }
 ```
 
-顯示效果：**河口湖遊覽船** | 搭紅線至遊覽船・纜車入口
-
 - 中文名用 **繁體**（使用者指定則從）
-- 只有中文名、無交通：`transport` 留空即可
-- 若使用者要純文字 note（不要粗體）：`[{ insert: `${text}\n` }]`
+- `highlights`：字串陣列，每項一個 bullet（**不要**在字串內再加 `•`）
+- 無交通或無特色時可省略該段；但預設應盡量齊全
+- 若使用者指定其他格式（例如不要 bullet）：依指定調整
 
 ---
 
@@ -179,7 +199,11 @@ const blockPath = ['itinerary', 'sections', sectionIndex, 'blocks', insertIndex]
 const block = buildPlaceBlock(placeDetail, userId);
 await client.submit([
   { p: blockPath, li: block },
-  { p: [...blockPath, 'text'], t: 'rich-text', o: boldNoteOps(zh, transport) },
+  {
+    p: [...blockPath, 'text'],
+    t: 'rich-text',
+    o: defaultNoteOps(zh, transport, highlights),
+  },
 ]);
 ```
 
@@ -191,7 +215,7 @@ await client.submit([
 再次 `getTripWithResources`，確認：
 
 - section 內 place **數量**符合預期
-- 每個 note 的 `ops` 含 `attributes.bold: true`（若採預設格式）
+- 每個 note：第一行粗體中文名、`交通：` 行、至少一個 `•` bullet（若有提供特色）
 - 回報表格給使用者
 
 ---
@@ -204,7 +228,11 @@ await client.submit([
 2. ShareDB submit：
 
 ```javascript
-{ p: [...blockPath, 'text'], t: 'rich-text', o: boldNoteOps(zh, transport) }
+{
+  p: [...blockPath, 'text'],
+  t: 'rich-text',
+  o: defaultNoteOps(zh, transport, highlights),
+}
 ```
 
 若需保留其他欄位，先讀現有 `block.text.ops` 再合併。**不要**覆寫與本次無關的 place note。
@@ -238,11 +266,10 @@ await client.submit([
 ```markdown
 已更新 Wanderlog「{行程名}」→「{section名}」：共 N 個景點
 
-| Place 名稱 | Note | 狀態 |
+| Place 名稱 | Note 摘要 | 狀態 |
 | --- | --- | --- |
-| Shibuya Sky | **澀谷天空** \| 搭 JR 至澀谷 | 新增 |
+| Ensoleille Excursion Ship | **河口湖遊覽船**／交通：搭紅線…／3 點特色 | 新增 |
 | 浅草寺 | **浅草寺** | 略過（已存在） |
-| Oishi Park | **大石公園** \| 搭紅線至… | 新增 |
 ```
 
 失敗項寫明原因與已嘗試的搜尋詞。
