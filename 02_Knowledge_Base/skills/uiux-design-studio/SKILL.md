@@ -1,6 +1,6 @@
 ---
 name: uiux-design-studio
-description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬角色」方式擔任 Design Director / 設計總監，將 UI/UX 工作拆成 intake → routing → 各角色輸出 → 最終統稿。適用於：新頁面/新功能設計、改版/視覺升級、UX 流程/使用者旅程/IA、可用性與無障礙（a11y/WCAG）、設計評審（design/code/prototype）、Figma 交付（screens/components/prototype）、Design System / token / component library 補洞或更新、Figma 檔案治理／cleanup（圖層／命名／舊檔 SOP）。HKTVmall 相關 Figma 設計預設套用 HKTVmall Design System（fileKey F0tjdruLjJTfWgmTeZKBnw）。會引導載入 `hktvmall-target-customers`（HKTVmall 目標客群／零售 UX 心智模型）、`ricky-design-guideline`（HKTVmall 設計原則）、`ui-ux-pro-max`（規範與品質）、`frontend-design`（視覺與實作導向）、以及 Figma 相關技能（figma-file-cleanup / figma-implement-design / figma-mcp-server-guide / apply-design-system）。"
+description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬角色」方式擔任 Design Director / 設計總監，將 UI/UX 工作拆成 intake → routing → 各角色輸出 → 最終統稿。適用於：新頁面/新功能設計、改版/視覺升級、UX 流程/使用者旅程/IA、可用性與無障礙（a11y/WCAG）、設計評審（design/code/prototype）、Figma 交付（screens/components/prototype）、Design System / token / component library 補洞或更新、Figma 檔案治理／cleanup（圖層／命名／舊檔 SOP）。HKTVmall 相關 Figma 設計預設套用 HKTVmall Design System（fileKey F0tjdruLjJTfWgmTeZKBnw）。Lite App／Lite App DS 相關設計時字體必須連結 Design Tokens（fileKey I5A9GqmJdvoskfDeCBtNsL，Typography node 120:1278）。會引導載入 `hktvmall-target-customers`（HKTVmall 目標客群／零售 UX 心智模型）、`ricky-design-guideline`（HKTVmall 設計原則）、`ui-ux-pro-max`（規範與品質）、`frontend-design`（視覺與實作導向）、以及 Figma 相關技能（figma-file-cleanup / figma-implement-design / figma-mcp-server-guide / apply-design-system）。"
 ---
 
 ## 平台現實（必讀）
@@ -26,7 +26,7 @@ description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬�
 1. **目標與成功標準**：這次要提升什麼（轉換、留存、效率、信任、理解、可用性）？如何判定成功？
 2. **平台與範圍**：Web / iOS / Android / 桌面？要做哪些頁/元件/流程（列 1–5 個）？
 3. **受眾與情境**：主要使用者是誰？最常見的 1–2 個任務情境？
-4. **品牌與約束**：是否有既有品牌/Design System/元件庫/字體/色票？是否需要深色模式？（**HKTVmall 相關且未指定 DS 時，預設採用 HKTVmall Design System**，見下方「HKTVmall Design System 預設」）
+4. **品牌與約束**：是否有既有品牌/Design System/元件庫/字體/色票？是否需要深色模式？（**HKTVmall 相關且未指定 DS 時，預設採用 HKTVmall Design System**，見下方「HKTVmall Design System 預設」；**Lite App／Lite App DS 相關且未指定字體來源時，字體必須連結 Design Tokens Typography**，見下方「Lite App Design Tokens 預設」）
 5. **技術與交付格式**：只要 Figma、還是要同時輸出工程可落地規格（token、元件 API、狀態、a11y）？
 6. **時程與風險**：截止時間？有哪些不可改的限制（法務、內容、資料來源、後端能力）？
 
@@ -69,6 +69,7 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 - **涉及介面質感/可用性/a11y/互動規範**：必須讀 `~/.cursor/skills/ui-ux-pro-max/SKILL.md`
 - **涉及前端介面實作、元件/頁面 UI code、視覺呈現落地**：必須讀 `~/.cursor/skills/frontend-design/SKILL.md`
 - **涉及 HKTVmall Figma 設計出稿／Prototype／DS 對齊**：遵守「HKTVmall Design System 預設」；`search_design_system` 優先於從零繪製；必要時讀 `apply-design-system`
+- **涉及 Lite App／Lite App DS 設計出稿、元件建立／更新、Prototype、或 DS 補洞**：遵守「Lite App Design Tokens 預設」與使用者規則 `lite-app-figma-design-tokens`；**所有 font／文字樣式必須 link Design Tokens**（未特別指明時用 `I5A9GqmJdvoskfDeCBtNsL` Typography）；禁止硬編碼字級頂替 text style
 - **涉及 Figma 讀設計稿/從 Figma 實作**：使用 `figma-implement-design` 的流程（必要時搭配 `figma-mcp-server-guide`）
 - **涉及 Figma 連線/授權/抓圖/節點**：必須讀 `~/.cursor/skills/figma-mcp-server-guide/SKILL.md`
 - **涉及 Figma 檔案治理／cleanup（與 `figma-file-cleanup` 對齊之觸發）**：**必須先讀** `~/.cursor/skills/figma-file-cleanup/SKILL.md`，再依其中 Phase A→D 與 Skills 聯動表鏈式載入 `figma-mcp-server-guide`、`figma-use`、`figma-generate-design` 等；虛擬角色固定為 **Director + DS Owner + Review（必要時 + Designer）**，產出須覆蓋該 skill 規定之交付物（變更清單、遷移映射、驗證、阻塞）。
@@ -97,6 +98,30 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 4. **Director Final Pack**：附錄須含 **DS 採用聲明**（名稱、fileKey、主要引用元件／token 或盤點阻塞）。
 
 > 跨專案規則詳見 `~/.cursor/rules/hktvmall-figma-design-system.mdc`。
+
+#### Lite App 觸發詞
+
+當任務符合下列**任一**條件時，視為 Lite App 相關工作：
+
+- 使用者明確提及：**Lite App**、**Lite App DS**、**Lite-App**、**Lite App Design System**
+- 任務目標為 Lite App Design System Figma 檔（常見 `fileKey`：`IiOaK3Cf62CeWkAReR1Pqi`，或檔名含上述關鍵詞）
+- 呼叫 `uiux-design-studio` 且任務屬 Lite App UI/UX、元件、Prototype、或 DS 補洞／更新
+
+#### Lite App Design Tokens 預設（字體必遵守）
+
+當任務符合上方「Lite App 觸發詞」且涉及 **Figma 設計出稿、元件建立／更新、Prototype、或 DS 對齊** 時：
+
+1. **Font 必須 link DS tokens**：所有文字節點須綁定 Design Tokens 的 **Text Style**（`setTextStyleIdAsync`／library text style）；禁止只設裸 `fontSize`／字重而未連結 style。
+2. **未特別指明時的預設 Typography**：
+   - 名稱：Design Tokens（Typography）
+   - URL：https://www.figma.com/design/I5A9GqmJdvoskfDeCBtNsL/Design-Tokens?node-id=120-1278
+   - `fileKey`：`I5A9GqmJdvoskfDeCBtNsL`
+   - 預設入口 `nodeId`：`120:1278`（𝐓 Typography）
+3. **Routing 後、角色產出前／Figma 寫入前**：遵守使用者規則 `lite-app-figma-design-tokens`；先 `search_design_system` 或於 Design Tokens 檔盤點 `NS {size}/…` styles，再套用。
+4. **UIUX Designer / DS Owner 產出**：字級／字重須引用上述 Typography tokens（例如 `NS 24/App NS 24|28 Regular`）；缺口列「待新增／待盤點」，不得默默自創字體樣式。換 text style 時若需保留顏色，先 snapshot fills 再還原。
+5. **Director Final Pack**：附錄須含 **Typography／DS 採用聲明**（Design Tokens、`fileKey`、主要 text style 名稱或盤點阻塞）。
+
+> 跨專案規則詳見 `~/.cursor/rules/lite-app-figma-design-tokens.mdc`。
 
 #### `figma-file-cleanup` 觸發詞（與該 skill 之 `description` 對齊）
 
@@ -134,7 +159,7 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 - **狀態設計**：Empty / Loading / Error / Success（最少涵蓋關鍵流程）
 - **互動規格**：輸入、驗證、回饋、可撤銷、鍵盤操作
 - **內容規格（Microcopy）**：關鍵標題/按鈕/錯誤訊息語氣與範例
-- **交付給工程**：token/間距/字級/顏色採用策略（盡量引用 DS）
+- **交付給工程**：token/間距/字級/顏色採用策略（盡量引用 DS）；**Lite App／Lite App DS 時字級必須引用 Design Tokens Text Style**（預設 `I5A9GqmJdvoskfDeCBtNsL`）
 - **客群與 KPI 對齊**（HKTVmall 相關時必填）：本方案服務哪個 segment、優化哪個 KPI、資訊密度／促銷層級如何保持可掃描
 
 ### 4) Prototype Creator
@@ -187,6 +212,7 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 - Ricky Pass 檢查清單（Figma 設計 / Prototype / 評審時必有；格式見 `ricky-design-guideline`）
 - Target Customer 對齊（HKTVmall 相關時必有）：segment 對應、KPI 取捨、推薦可解釋性（格式見 `hktvmall-target-customers`）
 - **DS 採用聲明**（HKTVmall Figma 相關時必有）：HKTVmall Design System、`fileKey`、主要引用元件／token 或盤點阻塞
+- **Typography／DS 採用聲明**（Lite App／Lite App DS 相關時必有）：Design Tokens（Typography）、`fileKey` `I5A9GqmJdvoskfDeCBtNsL`、主要 text style 名稱或盤點阻塞
 
 ## 跨專案試跑（Pilot）與迭代方式
 

@@ -1,6 +1,6 @@
 ---
 name: apply-design-system
-description: Reconnects multi-section Figma screens to published design system components via inventory, swap, or composition from primitives. Use when the user wants a broad pass to connect detached layers to the design system, when multiple sections need coordinated remediation, or when defining scope before writes—not for a single narrow audited finding. HKTVmall tasks default to HKTVmall Design System (fileKey F0tjdruLjJTfWgmTeZKBnw).
+description: Reconnects multi-section Figma screens to published design system components via inventory, swap, or composition from primitives. Use when the user wants a broad pass to connect detached layers to the design system, when multiple sections need coordinated remediation, or when defining scope before writes—not for a single narrow audited finding. HKTVmall tasks default to HKTVmall Design System (fileKey F0tjdruLjJTfWgmTeZKBnw). Lite App / Lite App DS tasks must link fonts to Design Tokens Typography (fileKey I5A9GqmJdvoskfDeCBtNsL, node 120:1278) unless the user specifies otherwise.
 ---
 
 ## HKTVmall default library
@@ -15,6 +15,19 @@ When the task is HKTVmall-related and no other design system is specified:
 | Default entry `nodeId` | `11445:16121` |
 
 Use this file as the authoritative source in step 5 (Build a Component Map From the Design System).
+
+## Lite App default typography tokens
+
+When the task is **Lite App** / **Lite App DS** related (design, component create/update, prototype, or DS gap-fill) and the user has **not** specified another font source:
+
+| Field | Value |
+| --- | --- |
+| Name | Design Tokens（Typography） |
+| URL | https://www.figma.com/design/I5A9GqmJdvoskfDeCBtNsL/Design-Tokens?node-id=120-1278 |
+| `fileKey` | `I5A9GqmJdvoskfDeCBtNsL` |
+| Default entry `nodeId` | `120:1278` |
+
+**Hard rule:** every text node must be linked to a Design Tokens **Text Style** (e.g. via `importStyleByKeyAsync` + `setTextStyleIdAsync`). Do not leave fonts as unbound hardcoded `fontSize` / weight. Prefer `NS {size}/App NS …` styles from this library. See also user rule `lite-app-figma-design-tokens`.
 
 # Connect A Design To A Design System
 
