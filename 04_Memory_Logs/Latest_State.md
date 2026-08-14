@@ -1,42 +1,42 @@
 # Latest State
 
-> 最後更新：2026-07-07
+> 最後更新：2026-08-13
 
-## 培訓進度
+## 最近完成
 
-| Step | 狀態 | 摘要 |
-|---|---|---|
-| Step 1 — Terminal 設定與安全起步 | ✅ 完成 | `Personal_AI_Assistant/`、安全三件套、第一次 session |
-| Step 2 — 建立 AI Agent Training Home | ✅ 完成 | `00_`～`04_` 資料夾結構、routing 使用約定已確認 |
-| Step 3 | ⏳ 待開始 | 等待培訓教材 |
+- **2026-08-13**：Cloud Agent 完成 Wanderlog 東京行程「東京景点」13 景點同步（含繁中 note）；workflow 寫入 session／MEMORY／TOOLS
+- **2026-08-12**：建立 `google-maps-bookmark` skill；東京 13 景點存入 Google Maps「東京」list + 繁中 note
+- **2026-08-06**：MedDx AiLergy 報告摘要 session
 
-## 目前進行到哪一步
+## 旅行規劃（Wanderlog）
 
-- AI Agent Training Home 骨架已建立（`00_Inbox/` ～ `04_Memory_Logs/`）
-- 已與 Agent 逐題確認 folder routing 偏好（Inbox、Action Center、Outputs、Knowledge Base、Agents、Memory Logs、命名）
-- 「Melessa AI Agent 使用約定」已在對話中產出，尚未寫入 `MEMORY.md`
+- 行程：**前往Tokyo的旅行**
+- 清單 **「東京景点」**：13 個景點，note 為繁體中文名（2026-08-13 同步完成）
+- 日后更新：貼 `connect.sid` 給 Agent，或電腦 Local Agent + 本機瀏覽器
 
-## 下一步
+## Agent 環境備忘
 
-1. 等待 Step 3 培訓教材
-2. （可選）將使用約定寫入 `04_Memory_Logs/MEMORY.md`
-3. （可選）新增今日 Daily Summary：`20260707_step2-home.md`
-4. （長期）慢慢將根目錄 `Personal_AI_Assistant/` 搬至 `03_Agents/Personal_AI_Assistant/`
+| 需求 | 建議 |
+|---|---|
+| 改 Wanderlog | Cloud Agent + `connect.sid` |
+| 讀 Google Maps saved list（自動） | 電腦 Local Agent，或手動貼清單 |
+| 切換 Local ↔ Cloud | 電腦 **Agents 視窗** Move to（非 Editor chat；Cloud→Local 有限制） |
+| 手機 Cursor Remote | 聊天＋貼 cookie／清單；看不到 VM 瀏覽器 |
 
-## 目前結構速覽
+## 下一步（可選）
+
+- [ ] 若 Google Maps「東京」還有其他景點，貼清單再同步
+- [ ] （可選）設定 Wanderlog MCP 於 Cursor（不 commit cookie）
+- [ ] 培訓 Step 3 待開始（見 2026-07-07 狀態）
+
+## 結構速覽
 
 ```
 Melessa AI Agent/
 ├── 00_Inbox/
-├── 01_Action_Center/          ← Now / Next / Waiting / Someday + outputs/
-├── 02_Knowledge_Base/         ← approved_references / examples / templates
-├── 03_Agents/                 ← 新 agent 放這裡（目前 sessions/ 為空）
-├── 04_Memory_Logs/            ← 本檔案 + MEMORY.md + Daily_Summaries/
-└── Personal_AI_Assistant/     ← Step 1 內容（根目錄，待慢慢搬移）
+├── 01_Action_Center/
+├── 02_Knowledge_Base/
+├── 03_Agents/Personal_AI_Assistant/   ← Sasa session／MEMORY／TOOLS
+├── 04_Memory_Logs/                      ← 本檔案
+└── Personal_AI_Assistant/               ← Step 1（根目錄，待搬移）
 ```
-
-## 待決定／進行中
-
-- [ ] 根目錄 `Personal_AI_Assistant/` → `03_Agents/Personal_AI_Assistant/` 搬移（由 Melessa 決定節奏）
-- [ ] 使用約定寫入 `MEMORY.md`
-- [ ] Step 2 Daily Summary 建檔

@@ -6,10 +6,11 @@
 - `02_Knowledge_Base/approved_references/`：（暫時未有；待搬入既有 `Personal_AI_Assistant/knowledge/` 內容）
 - `02_Knowledge_Base/examples/`：（暫時未有）
 - `02_Knowledge_Base/templates/`：（暫時未有）
-- `02_Knowledge_Base/skills/`：工作技能真源（UIUX／Design System／Figma／HKTVmall／`tonight-dinner`／`email-writer`／`google-maps-bookmark` 等）。做相關任務時優先讀對應 `<skill-name>/SKILL.md`；Cursor 全域快捷入口為 `~/.cursor/skills/`（symlink 指向此目錄）
+- `02_Knowledge_Base/skills/`：工作技能真源（UIUX／Design System／Figma／HKTVmall／`tonight-dinner`／`email-writer`／`google-maps-bookmark`／`update-wanderlog` 等）。做相關任務時優先讀對應 `<skill-name>/SKILL.md`；Cursor 全域快捷入口為 `~/.cursor/skills/`（symlink 指向此目錄）
 - **晚餐／今晚煮咩好**：命中觸發詞時，**必讀** `02_Knowledge_Base/skills/tonight-dinner/SKILL.md`（可先讀同目錄 `memory.md`），再依 skill 輸出；唔好用一般聊天格式代替
 - **電郵／幫我寫封電郵／寫封 email**：命中觸發詞或語意明確是在起草寫給上司／同事的工作電郵時，**必讀** `02_Knowledge_Base/skills/email-writer/SKILL.md`，再直接輸出英文電郵草稿；若資料不足，用 placeholder 補位，不追問
 - **Google Maps／收藏景點／加 note**：命中「存到 Maps／bookmark／加入某某 list／幫景點加中文 note」等時，**必讀** `02_Knowledge_Base/skills/google-maps-bookmark/SKILL.md`（批次 Save 腳本見同目錄 `reference.md`）；note 必須在 list 視圖用 `browser_fill`
+- **Wanderlog／加景點／改 note／Maps 同步到 Wanderlog**：命中時 **必讀** `02_Knowledge_Base/skills/update-wanderlog/SKILL.md`（腳本見 `reference.md`）；未提供 `connect.sid` 時先問並教取得方式；**勿 commit** cookie
 
 ## 我的思考原則
 - 先讀現況，再問清楚，最後才產出

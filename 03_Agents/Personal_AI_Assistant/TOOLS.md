@@ -1,13 +1,13 @@
 # Sasa 的工具箱（TOOLS）
 
-> 最後更新：2026-08-12
+> 最後更新：2026-08-13
 
 ## 可以使用（唯讀／草擬）
 | 工具 / 動作 | 用途 |
 |---|---|
 | 讀取 `03_Agents/Personal_AI_Assistant/` 內 files | 了解角色／任務／記憶 |
 | 讀取 `02_Knowledge_Base/approved_references/` | 使用已批准 reference |
-| 讀取 `02_Knowledge_Base/skills/` | UIUX／DS／Figma／`tonight-dinner`／`email-writer`／`google-maps-bookmark` 等工作技能（`SKILL.md` 真源；Cursor 另以 `~/.cursor/skills/` symlink 全域載入） |
+| 讀取 `02_Knowledge_Base/skills/` | UIUX／DS／Figma／`tonight-dinner`／`email-writer`／`google-maps-bookmark`／`update-wanderlog` 等工作技能（`SKILL.md` 真源；Cursor 另以 `~/.cursor/skills/` symlink 全域載入） |
 | 草擬 email／訊息／文件內容 | 先出草稿，等你確認 |
 | MCP（唯讀）：Slack/Calendar/Drive/Docs/Sheets/Figma | 查詢、整理、截圖、評審（不改動） |
 | MCP：`cursor-ide-browser` | Google Maps 存 list／加 note（依 `google-maps-bookmark`；改動前確認已登入與目標 list） |
@@ -36,8 +36,19 @@
 
 已驗證：2026-07-08 成功讀取 Google Calendar 今日行程。
 
+## Wanderlog（非 MCP，Cloud Agent 可用）
+
+| 方式 | 用途 | 備註 |
+|---|---|---|
+| 貼 `connect.sid` + **`update-wanderlog` skill** | Cloud Agent 以 API 讀寫行程、加景點、改 note（粗體中文名＋交通＋特色概要） | 取得 cookie 步驟見 `02_Knowledge_Base/skills/update-wanderlog/SKILL.md`；**勿 commit** |
+| Local Agent + 本機 Chrome | 可配合已登入的 Google Maps／Wanderlog 網頁操作 | 電腦 Cursor 新開 Local chat |
+
+- 無官方 Google Maps「寫入 saved list」API；讀 Maps 清單可貼文字，或 Local 瀏覽器
+- Gmail／Drive MCP **不能**代替 Google Maps 瀏覽器登入
+
 ## 尚未連接
 | 工具 | 狀態 | 備註 |
 |---|---|---|
 | Notion | 未連接 | 需要時可再加 MCP |
+| Wanderlog MCP | 未固定配置 | 可選：Cursor MCP 設 `WANDERLOG_COOKIE`（仍勿 commit） |
 
