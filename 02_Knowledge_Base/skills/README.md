@@ -28,6 +28,7 @@ for name in \
   fix-design-system-finding \
   frontend-design \
   google-maps-bookmark \
+  wanderlog-places \
   hktvmall-target-customers \
   ricky-design-guideline \
   tonight-dinner \
