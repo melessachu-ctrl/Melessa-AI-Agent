@@ -10,6 +10,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-08-21：建立 `claim-cursor` skill（Cursor receipt + enJoy e-statement／Expense `M:YY`）；Sasa 路由與 symlink；下載 July receipt 至 `Expense/7:26`
 - 2026-08-14：Wanderlog「富士山河口湖景點」10 景點同步；建立 `update-wanderlog` skill 並 merge `main`；本機 symlink；刪 Canada 行程與 MGM Figma SOP 本地資料夾
 - 2026-08-13：Wanderlog「前往Tokyo的旅行」→「東京景点」同步 13 景點＋繁中 note（Cloud Agent + connect.sid）；寫 session
 - 2026-08-12：東京景點存入 Google Maps「東京」list + 繁中 note；建立 `google-maps-bookmark` skill 並接上 Sasa 路由

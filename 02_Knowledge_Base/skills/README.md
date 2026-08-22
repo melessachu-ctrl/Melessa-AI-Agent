@@ -12,7 +12,7 @@ Sasa 與任何連到本 Melessa repo 的 AI 可讀的工作技能放這裡。
 
 ## 換電腦／重建 symlink
 
-先 clone 或 pull 本 repo，再執行（路徑會自動偵測，不用手改）：
+先 clone 或 pull 本 repo，再執行（路徑與 skill 清單會自動偵測，不用手改）：
 
 ```bash
 bash 02_Knowledge_Base/skills/setup-symlinks.sh
@@ -27,8 +27,8 @@ bash setup-symlinks.sh
 ## 新增 skill
 
 1. 在本目錄建立 `<skill-name>/SKILL.md`
-2. 在本機執行：`ln -sfn "<本目錄絕對路徑>/<skill-name>" "$HOME/.cursor/skills/<skill-name>"`
-3. 更新上方重建清單與 Sasa 的 `TOOLS.md`／`BRAIN.md`／`AGENTS.md`（若需要）
+2. 在本機執行：`bash 02_Knowledge_Base/skills/setup-symlinks.sh`（或手動 `ln -sfn "<本目錄絕對路徑>/<skill-name>" "$HOME/.cursor/skills/<skill-name>"`）
+3. 更新 Sasa 的 `TOOLS.md`／`BRAIN.md`／`AGENTS.md`（若需要）
 
 ## 不放在這裡
 

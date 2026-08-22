@@ -25,12 +25,14 @@
 - **2026-07-27**：之後在 `Melessa AI Agent` repo 新增每個 skill，預設都要同時做到「repo-source + `~/.cursor/skills` symlink」；若 skill 涉及觸發詞（例如一講某句就要出餐／做事），同步更新 Sasa routing（至少檢查 `AGENTS.md`、`BRAIN.md`、`TOOLS.md` 是否要補）。
 - **2026-08-13**：**Wanderlog（Cloud Agent）**：可在對話貼 `connect.sid`（從已登入 wanderlog.com 的瀏覽器 DevTools 複製），Agent 用 API 改行程；**勿寫入 repo／MEMORY**。**Google Maps 網頁**：Cloud VM 難登入 Google；可改貼景點清單，或電腦 **Local Agent** 用本機 Chrome。**Cursor Agent 環境**：Local↔Cloud 主要在電腦 **Agents 視窗** Move to；手機 Remote 看不到 VM 瀏覽器。
 - **2026-08-14**：Wanderlog 改行程／加景點／改 note → 讀 **`update-wanderlog`** skill（`02_Knowledge_Base/skills/update-wanderlog/`）；預設 note：**粗體中文名** + `交通：` + `•` 特色概要；未提供 cookie 時 Agent 須先問並教取得方式。
+- **2026-08-21**：Cursor 公司 claim（receipt + enJoy e-statement）→ 讀 **`claim-cursor`** skill；Expense folder 為 `M:YY`（冒號）；預設上個月；folder 已有 e-statement 則不催下載；Cursor 下旬扣款通常對應恒生「下一個月約 13 日」結單（例：July claim → `13-08-YYYY`）。
 
 ## 踩過的坑
 
 - **2026-08-12｜Google Maps note**：在 place 詳情頁用 JS／偶發 fill 加 note **常不持久**。穩定做法：開 Saved **list 本體視圖** → 點該列 `Add note` → `browser_fill` → 點下一列 blur 存檔。詳見 `02_Knowledge_Base/skills/google-maps-bookmark/`。
 - **Cloud Agent 瀏覽器 ≠ 本機／手機 Chrome**：在 phone／本機登入 Google／Wanderlog，不代表 VM 已登入；Wanderlog 可改貼 `connect.sid` 繞過。
 - **2026-08-14｜Wanderlog place search**：河口湖等離 trip center 較遠時加大 `radius`；`place_id` 為 undefined 的 autocomplete 結果要跳過；「已存在」用 note 中文名判斷，勿 fuzzy 英文 match。
+- **2026-08-21｜恒生 e-Statement**：信用卡結單 **不會** PDF 附件寄 Gmail（只有提示）。Cursor Browser Tab 下載常落 hidden iframe／blob，CDP 難自動存檔 → `claim-cursor` 以檢查 Expense folder + 引導手動下載為主。Expense 年月資料夾勿用路徑斜線建成 `7/26` 巢狀。
 
 ## 不應記錄
 

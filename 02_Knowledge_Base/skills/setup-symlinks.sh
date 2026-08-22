@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Link repo skills into ~/.cursor/skills so Cursor loads them globally.
 # Run after: git clone / git pull
+# Discovers every subdirectory that contains SKILL.md (no hard-coded list).
 
 set -euo pipefail
 
@@ -9,41 +10,25 @@ SKILLS_SRC="${HOME}/.cursor/skills"
 
 mkdir -p "$SKILLS_SRC"
 
-SKILL_NAMES=(
-  apply-design-system
-  audit-design-system
-  email-writer
-  figma-file-cleanup
-  figma-mcp-server-guide
-  fix-design-system-finding
-  frontend-design
-  google-maps-bookmark
-  hktvmall-target-customers
-  ricky-design-guideline
-  tonight-dinner
-  ui-ux-pro-max
-  uiux-design-studio
-  uiux-review
-  update-wanderlog
-)
-
 linked=0
 skipped=0
 
-for name in "${SKILL_NAMES[@]}"; do
-  src="${SKILLS_DST}/${name}"
+shopt -s nullglob
+for src in "$SKILLS_DST"/*/; do
+  name="$(basename "$src")"
   dst="${SKILLS_SRC}/${name}"
 
-  if [[ ! -d "$src" ]]; then
-    echo "skip: ${name} (missing in repo)"
+  if [[ ! -f "${src}SKILL.md" ]]; then
+    echo "skip: ${name} (no SKILL.md)"
     skipped=$((skipped + 1))
     continue
   fi
 
-  ln -sfn "$src" "$dst"
-  echo "linked: ${dst} -> ${src}"
+  ln -sfn "${src%/}" "$dst"
+  echo "linked: ${dst} -> ${src%/}"
   linked=$((linked + 1))
 done
+shopt -u nullglob
 
 echo
 echo "Done. Linked ${linked} skill(s), skipped ${skipped}."
