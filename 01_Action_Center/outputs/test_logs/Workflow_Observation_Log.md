@@ -7,3 +7,4 @@
 | 日期時間 | 做了甚麼 | 用了多久 | 感受 | 價值 |
 |---|---|---|---|---|
 | 2026-08-12 13:17–14:12 | 從文章抽出東京景點 → 存入 Google Maps「東京」list → 加繁中 note → 整理成 `google-maps-bookmark` skill 並接 Sasa 路由 | 約 55 分鐘 | 耗能（瀏覽器重複操作） | 高（已做成可重用 skill） |
+| 2026-08-22–23 | Trip.com 東京美食 13 間 → Wanderlog「東京 Food」+ 景點 note 補齊；`地區｜景點名` 格式寫入 `update-wanderlog`／`google-maps-bookmark` skill；Maps「東京美食」約 3/13 | 約 2+ 小時（跨日、含 browser 阻塞） | 耗能（Maps 自動化不穩、MCP 中斷） | 中高（Wanderlog 完成 + 格式標準化；Maps 待續） |

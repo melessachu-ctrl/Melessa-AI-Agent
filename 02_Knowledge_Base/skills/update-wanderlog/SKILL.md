@@ -1,7 +1,7 @@
 ---
 name: update-wanderlog
 description: >-
-  用 Wanderlog 非官方 API（connect.sid + wanderlog-mcp）在指定行程加入景點、撰寫 place note（粗體中文名、交通、景點特色概要）、
+  用 Wanderlog 非官方 API（connect.sid + wanderlog-mcp）在指定行程加入景點、撰寫 place note（粗體「地區｜景點名」、交通、景點特色概要）、
   更新或補齊既有清單。Use when the user asks to add places to Wanderlog, sync Maps list to Wanderlog,
   edit Wanderlog itinerary notes, or modify a Wanderlog trip list/section.
 ---
@@ -76,8 +76,8 @@ Progress:
 - [ ] connect.sid 已取得
 - [ ] 目標行程名稱或 trip key（例：前往Tokyo的旅行 / afnmohflkhpeqqpp）
 - [ ] 目標 section／list 名稱（例：東京景点、富士山河口湖景點）
-- [ ] 景點清單：Maps 搜尋名 | 中文名 | 交通 | 特色概要（bullet）
-- [ ] note 格式確認（預設：粗體中文名 + 交通：… + • 特色）
+- [ ] 景點清單：Maps 搜尋名 | 地區 | 景點名 | 交通 | 特色概要（bullet）
+- [ ] note 格式確認（預設：粗體「地區｜景點名」+ 交通：… + • 特色）
 - [ ] 已存在景點：跳過新增 or 只補 note？
 - [ ] 執行 API 同步
 - [ ] 驗證數量與 note，回報結果表
@@ -89,7 +89,7 @@ Progress:
 | --- | --- |
 | 行程 | 名稱關鍵字即可；腳本用 `listTrips()` 找 |
 | Section | `trip.itinerary.sections` 裡 `heading` 完全匹配（區分大小寫／簡繁） |
-| 每個 place | **搜尋關鍵字** + **中文名** + **交通** + **特色概要**（2–4 個 bullet） |
+| 每個 place | **搜尋關鍵字** + **地區** + **景點名** + **交通** + **特色概要**（2–4 個 bullet） |
 
 若使用者只給 Maps 截圖／表格且缺特色概要：依景點常識簡短補 2–4 點（繁體、每點一行）；不確定時先問。
 
@@ -99,26 +99,61 @@ Progress:
 
 Place 的 inline note 用 **rich-text**，結構為三段落：
 
-1. **粗體中文名**（獨立一行）
+1. **粗體標題**（獨立一行）：預設 **`地區｜景點名`**（全形豎線 `｜`）
 2. `交通：` + 交通資訊（獨立一行）
 3. 景點特色概要（**point form**，每行以 `• ` 開頭）
+
+### 標題格式：`地區｜景點名`
+
+- **地區**：繁體中文行政區／商圈（例：新宿、銀座、淺草、河口湖）
+- **景點名**：繁體中文常見名稱（例：敘敘苑燒肉、築地市場）
+- 組合：`${area}｜${name}` → `新宿｜敘敘苑燒肉`
+- 分隔符用 **全形 `｜`**，不用半形 `|`
+- 若使用者只給景點名、未給地區：依常識補地區；無法判斷時先問
+- 若使用者明確要求舊格式（只粗體景點名、不要地區前綴）：依指定，但預設用 `地區｜景點名`
 
 ### 顯示範例
 
 ```
-河口湖遊覽船          ← 粗體
-交通：搭紅線至遊覽船・纜車入口
-• 湖上遠眺富士山
-• 約 20 分環湖
-• 可配纜車同遊
+新宿｜敘敘苑燒肉        ← 粗體（地區｜景點名）
+交通：新宿站西口步行約8分
+• 高品質燒肉套餐
+• 各類肉類＋海鮮＋沙律飲品
+• 適合慶祝聚餐
+```
+
+```
+築地｜築地市場          ← 粗體（地區｜景點名）
+交通：築地市場站步行約5分／日比線「築地」站
+• 外圍市場海鮮小食與玉子燒
+• 生魚片丼與握壽司名店林立
+• 建議早上前往避開人潮
 ```
 
 ### rich-text ops
 
 ```javascript
-function defaultNoteOps(zh, transport, highlights = []) {
+function formatPlaceTitle(area, name) {
+  return `${area}｜${name}`;
+}
+
+function defaultNoteOps(area, name, transport, highlights = []) {
+  const title = formatPlaceTitle(area, name);
   const ops = [
-    { insert: zh, attributes: { bold: true } },
+    { insert: title, attributes: { bold: true } },
+    { insert: '\n' },
+  ];
+  if (transport) ops.push({ insert: `交通：${transport}\n` });
+  for (const point of highlights) {
+    ops.push({ insert: `• ${point}\n` });
+  }
+  return ops;
+}
+
+// 相容舊腳本：已組好完整標題字串時
+function defaultNoteOpsFromTitle(title, transport, highlights = []) {
+  const ops = [
+    { insert: title, attributes: { bold: true } },
     { insert: '\n' },
   ];
   if (transport) ops.push({ insert: `交通：${transport}\n` });
@@ -129,7 +164,7 @@ function defaultNoteOps(zh, transport, highlights = []) {
 }
 ```
 
-- 中文名用 **繁體**（使用者指定則從）
+- 景點名用 **繁體**（使用者指定則從）
 - `highlights`：字串陣列，每項一個 bullet（**不要**在字串內再加 `•`）
 - 無交通或無特色時可省略該段；但預設應盡量齊全
 - 若使用者指定其他格式（例如不要 bullet）：依指定調整
@@ -159,17 +194,24 @@ npm init -y && npm install wanderlog-mcp
 
 ### 3.3 判斷是否已存在
 
-用 place **note 內的中文名** 判斷（比英文 place 名可靠）：
+用 place **note 內的標題** 判斷（比英文 place 名可靠）。標題可能是新格式 `地區｜景點名`，或舊格式只有景點名：
 
 ```javascript
-function noteContainsZh(block, zh) {
-  return (block.text?.ops ?? []).some(
-    (o) => typeof o.insert === 'string' && o.insert.includes(zh),
-  );
+function getNoteTitle(block) {
+  const ops = block.text?.ops ?? [];
+  const bold = ops.find((o) => o.attributes?.bold && typeof o.insert === 'string');
+  return bold?.insert?.trim() ?? '';
+}
+
+function noteContainsPlace(block, area, name) {
+  const title = getNoteTitle(block);
+  const full = `${area}｜${name}`;
+  return title === full || title.includes(name) || title.endsWith(`｜${name}`);
 }
 ```
 
-- 已存在且 note 正確 → **跳過**
+- 已存在且 note 標題、交通、特色都正確 → **跳過**
+- 已存在但標題仍為舊格式（只有景點名、無 `地區｜`）→ 走 **§4 更新 note**，改為 `地區｜景點名` 並保留／補齊交通與特色
 - 已存在但 note 缺／錯 → 走 **§4 更新 note**（不要重複 insert place）
 
 ### 3.4 解析 Google Place
@@ -202,7 +244,7 @@ await client.submit([
   {
     p: [...blockPath, 'text'],
     t: 'rich-text',
-    o: defaultNoteOps(zh, transport, highlights),
+    o: defaultNoteOps(area, name, transport, highlights),
   },
 ]);
 ```
@@ -215,7 +257,7 @@ await client.submit([
 再次 `getTripWithResources`，確認：
 
 - section 內 place **數量**符合預期
-- 每個 note：第一行粗體中文名、`交通：` 行、至少一個 `•` bullet（若有提供特色）
+- 每個 note：第一行粗體 **`地區｜景點名`**、`交通：` 行、至少一個 `•` bullet（若有提供特色）
 - 回報表格給使用者
 
 ---
@@ -224,16 +266,29 @@ await client.submit([
 
 不新增 block，只改 `text` rich-text：
 
-1. 在 section.blocks 找到目標 place（依中文 note 或 `place.name`）
-2. ShareDB submit：
+1. 在 section.blocks 找到目標 place（依 note 標題 `地區｜景點名`、舊版景點名、或 `place.name`）
+2. 若舊 note 只有景點名：用 `formatPlaceTitle(area, name)` 升級標題；**保留**使用者原有補充文字（交通、bullet 以外的段落），合併進新 note
+3. ShareDB submit：
 
 ```javascript
 {
   p: [...blockPath, 'text'],
   t: 'rich-text',
-  o: defaultNoteOps(zh, transport, highlights),
+  o: defaultNoteOps(area, name, transport, highlights),
 }
 ```
+
+### 舊格式 → 新格式（常見任務）
+
+當 section 內已有「只寫景點名」的 note，使用者要求統一為 `地區｜景點名`：
+
+| 舊 note 粗體 | 新 note 粗體 |
+| --- | --- |
+| 築地市場 | 築地｜築地市場 |
+| 月島文字燒 | 月島｜月島文字燒 |
+| 阿美橫町 | 上野｜阿美橫町 |
+
+做法：逐 block 讀現有 ops → 抽出非標題段落 → 以新標題 + 交通 + bullet 重建；若舊 note 已有交通／特色且仍正確，可沿用，只改粗體第一行。
 
 若需保留其他欄位，先讀現有 `block.text.ops` 再合併。**不要**覆寫與本次無關的 place note。
 
@@ -247,7 +302,7 @@ await client.submit([
 | `Place not found` | autocomplete 第一筆無效 place_id，或 details API 失敗 | 換搜尋詞／指定 place_id／試下一筆 prediction |
 | ShareDB conflict | 連續 submit 版本衝突 | 每 place 新 client + 刷新 trip；加 sleep |
 | 搜尋偏離目的地 | trip center 在東京，河口湖太遠 | 搜尋時用該區座標 + `radius: 50000` |
-| 誤判已存在 | 英文 fuzzy match 太寬 | 改以 note 中文名判斷 |
+| 誤判已存在 | 英文 fuzzy match 太寬 | 改以 note 標題（`地區｜景點名`）判斷 |
 
 ---
 
@@ -268,8 +323,9 @@ await client.submit([
 
 | Place 名稱 | Note 摘要 | 狀態 |
 | --- | --- | --- |
-| Ensoleille Excursion Ship | **河口湖遊覽船**／交通：搭紅線…／3 點特色 | 新增 |
-| 浅草寺 | **浅草寺** | 略過（已存在） |
+| Jojoen Tokyo Opera City | **新宿｜敘敘苑燒肉**／交通：新宿站西口…／3 點特色 | 新增 |
+| 築地場外市場 | **築地｜築地市場** | 更新（舊格式升級） |
+| 浅草寺 | **淺草｜浅草寺** | 略過（已存在且格式正確） |
 ```
 
 失敗項寫明原因與已嘗試的搜尋詞。

@@ -22,9 +22,14 @@ import { buildPlaceBlock } from 'wanderlog-mcp/dist/tools/shared.js';
 ## Note 格式：`defaultNoteOps`
 
 ```javascript
-function defaultNoteOps(zh, transport, highlights = []) {
+function formatPlaceTitle(area, name) {
+  return `${area}｜${name}`;
+}
+
+function defaultNoteOps(area, name, transport, highlights = []) {
+  const title = formatPlaceTitle(area, name);
   const ops = [
-    { insert: zh, attributes: { bold: true } },
+    { insert: title, attributes: { bold: true } },
     { insert: '\n' },
   ];
   if (transport) ops.push({ insert: `交通：${transport}\n` });
@@ -35,10 +40,10 @@ function defaultNoteOps(zh, transport, highlights = []) {
 }
 
 // 範例
-defaultNoteOps('河口湖遊覽船', '搭紅線至遊覽船・纜車入口', [
-  '湖上遠眺富士山',
-  '約 20 分環湖',
-  '可配纜車同遊',
+defaultNoteOps('新宿', '敘敘苑燒肉', '新宿站西口步行約8分', [
+  '高品質燒肉套餐',
+  '各類肉類＋海鮮＋沙律飲品',
+  '適合慶祝聚餐',
 ]);
 ```
 
@@ -59,18 +64,31 @@ const SEARCH_RADIUS = 50000;
 
 const PLACES = [
   {
+    search: 'Jojoen 3-20-2 Nishishinjuku Tokyo',
+    area: '新宿',
+    name: '敘敘苑燒肉',
+    transport: '新宿站西口步行約8分',
+    highlights: ['高品質燒肉套餐', '各類肉類＋海鮮＋沙律飲品', '適合慶祝聚餐'],
+  },
+  {
     search: 'Kawaguchiko Pleasure Boat',
     placeId: 'ChIJ4--VEiZeGWARcfjS0dFw7B0',
-    zh: '河口湖遊覽船',
+    area: '河口湖',
+    name: '河口湖遊覽船',
     transport: '搭紅線至遊覽船・纜車入口',
     highlights: ['湖上遠眺富士山', '約 20 分環湖', '可配纜車同遊'],
   },
   // ...
 ];
 
-function defaultNoteOps(zh, transport, highlights = []) {
+function formatPlaceTitle(area, name) {
+  return `${area}｜${name}`;
+}
+
+function defaultNoteOps(area, name, transport, highlights = []) {
+  const title = formatPlaceTitle(area, name);
   const ops = [
-    { insert: zh, attributes: { bold: true } },
+    { insert: title, attributes: { bold: true } },
     { insert: '\n' },
   ];
   if (transport) ops.push({ insert: `交通：${transport}\n` });
@@ -84,10 +102,16 @@ function sleep(ms) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
-function noteContainsZh(block, zh) {
-  return (block.text?.ops ?? []).some(
-    (o) => typeof o.insert === 'string' && o.insert.includes(zh),
-  );
+function getNoteTitle(block) {
+  const ops = block.text?.ops ?? [];
+  const bold = ops.find((o) => o.attributes?.bold && typeof o.insert === 'string');
+  return bold?.insert?.trim() ?? '';
+}
+
+function noteContainsPlace(block, area, name) {
+  const title = getNoteTitle(block);
+  const full = `${area}｜${name}`;
+  return title === full || title.includes(name) || title.endsWith(`｜${name}`);
 }
 
 async function resolvePlace(rest, item, center, radius) {
@@ -169,8 +193,8 @@ async function main() {
     ({ tripPlan: trip } = await rest.getTripWithResources(tripKey));
     const section = trip.itinerary.sections[sectionIndex];
 
-    if (section.blocks.some((b) => noteContainsZh(b, item.zh))) {
-      console.log(`Skip: ${item.zh}`);
+    if (section.blocks.some((b) => noteContainsPlace(b, item.area, item.name))) {
+      console.log(`Skip: ${formatPlaceTitle(item.area, item.name)}`);
       continue;
     }
 
@@ -182,7 +206,7 @@ async function main() {
       tripKey,
       sectionIndex,
       place,
-      defaultNoteOps(item.zh, item.transport, item.highlights ?? []),
+      defaultNoteOps(item.area, item.name, item.transport, item.highlights ?? []),
     );
     console.log(`Added: ${name}`);
     await sleep(1500);
@@ -207,7 +231,26 @@ WANDERLOG_COOKIE='s%3A...' node wanderlog-sync.mjs
 
 | 行程 | trip key | 常用 section |
 | --- | --- | --- |
-| 前往Tokyo的旅行 | `afnmohflkhpeqqpp` | `東京景点`、`富士山河口湖景點` |
+| 前往Tokyo的旅行 | `afnmohflkhpeqqpp` | `東京景点`、`東京 Food`、`富士山河口湖景點` |
+
+---
+
+## 東京 Food：標題格式範例（`地區｜景點名`）
+
+| 地區 | 景點名 | note 粗體標題 |
+| --- | --- | --- |
+| 新宿 | 肉亭 ふたごiki 新宿店 | 新宿｜肉亭 ふたごiki 新宿店 |
+| 新宿 | 壽司三味 | 新宿｜壽司三味 |
+| 新宿 | 敘敘苑燒肉 | 新宿｜敘敘苑燒肉 |
+| 銀座 | 龍吟 | 銀座｜龍吟 |
+| 淺草 | 色川鰻魚飯 | 淺草｜色川鰻魚飯 |
+| 人形町 | 人形町今半本店 | 人形町｜人形町今半本店 |
+| 上野 | 鮪魚一代 | 上野｜鮪魚一代 |
+| 澀谷 | 梅丘壽司美登利總本店 | 澀谷｜梅丘壽司美登利總本店 |
+| 原宿 | 炸牛排本村 | 原宿｜炸牛排本村 |
+| 池袋 | 燒肉內臟武田 | 池袋｜燒肉內臟武田 |
+
+Section 名稱須完全匹配（例：`東京 Food`，注意空格與大小寫）。
 
 ---
 
@@ -231,12 +274,12 @@ WANDERLOG_COOKIE='s%3A...' node wanderlog-sync.mjs
   p: ['itinerary', 'sections', sectionIndex, 'blocks', insertIndex, 'text'],
   t: 'rich-text',
   o: [
-    { insert: '河口湖遊覽船', attributes: { bold: true } },
+    { insert: '新宿｜敘敘苑燒肉', attributes: { bold: true } },
     { insert: '\n' },
-    { insert: '交通：搭紅線至遊覽船・纜車入口\n' },
-    { insert: '• 湖上遠眺富士山\n' },
-    { insert: '• 約 20 分環湖\n' },
-    { insert: '• 可配纜車同遊\n' },
+    { insert: '交通：新宿站西口步行約8分\n' },
+    { insert: '• 高品質燒肉套餐\n' },
+    { insert: '• 各類肉類＋海鮮＋沙律飲品\n' },
+    { insert: '• 適合慶祝聚餐\n' },
   ],
 }
 ```
