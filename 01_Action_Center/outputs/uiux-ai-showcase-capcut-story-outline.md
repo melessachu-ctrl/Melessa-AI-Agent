@@ -86,3 +86,34 @@ Lite App × AI 工作流：Figma → Prototype → 回寫設計
 | 6-Screencap Prototype.mov | 截圖 prototype | Step 4（短過渡） |
 | 7-use Figma MCP to draw design.mov | Cursor + Figma MCP | Step 4 |
 | 8-Generating Figma Design.mov | 生成最終設計 | Step 4（收束） |
+
+---
+
+## Voiceover — English short script
+
+Paste into CapCut text-to-speech. Target runtime **2:30–2:45** (leave pauses on key screens).
+
+```
+Today we are using Lite App to show how the UIUX Team applies AI in our project workflow.
+
+We start in Figma: a static screen built with the Lite App Design System. This is our design anchor.
+
+Next, we import that design into Base44, which automatically generates a working prototype.
+
+Then we add more functions with natural-language prompts, and walk through the interactive prototype — so stakeholders can feel the product the same day.
+
+Once confirmed, we capture the prototype screens. In Cursor, we use Figma MCP to draw the design back into Figma, so the design file stays the source of truth.
+
+In short: a testable prototype, faster; iteration by prompt; then sync back to Figma. Next, we will turn this into a standard SOP.
+```
+
+### Optional beat labels (for TTS timing)
+
+| Beat | Line |
+|------|------|
+| Open | Today we are using Lite App to show how the UIUX Team applies AI in our project workflow. |
+| Step 1 | We start in Figma: a static screen built with the Lite App Design System. This is our design anchor. |
+| Step 2 | Next, we import that design into Base44, which automatically generates a working prototype. |
+| Step 3 | Then we add more functions with natural-language prompts, and walk through the interactive prototype — so stakeholders can feel the product the same day. |
+| Step 4 | Once confirmed, we capture the prototype screens. In Cursor, we use Figma MCP to draw the design back into Figma, so the design file stays the source of truth. |
+| Close | In short: a testable prototype, faster; iteration by prompt; then sync back to Figma. Next, we will turn this into a standard SOP. |
