@@ -117,3 +117,35 @@ In short: a testable prototype, faster; iteration by prompt; then sync back to F
 | Step 3 | Then we add more functions with natural-language prompts, and walk through the interactive prototype — so stakeholders can feel the product the same day. |
 | Step 4 | Once confirmed, we capture the prototype screens. In Cursor, we use Figma MCP to draw the design back into Figma, so the design file stays the source of truth. |
 | Close | In short: a testable prototype, faster; iteration by prompt; then sync back to Figma. Next, we will turn this into a standard SOP. |
+
+---
+
+## 旁白 — 廣東話口語稿
+
+貼入 CapCut 文字轉語音。目標時長 **2:30–2:45**（關鍵畫面要留停頓）。  
+語氣：公司會議匯報，口語但唔滑瀉；專有名詞保留英文（Figma、Base44、Cursor、MCP、Lite App、prototype、prompt、SOP）。
+
+```
+今日我哋用 Lite App 嚟示範 UIUX Team 點樣喺 project 流程入面用 AI。
+
+我哋喺 Figma 用 Lite App Design System 完成一頁靜態設計，呢個就係成個流程嘅設計錨點。
+
+跟住將個 design import 去 Base44，自動 generate 一個可以操作嘅 prototype。
+
+然後用日常語言寫 prompt，幫 prototype 加入更多 function，再直接操作呢個互動原型——stakeholder 當日已經可以驗證產品感覺。
+
+確認咗之後，我哋截低 prototype 畫面。喺 Cursor 用 Figma MCP 將設計畫返入 Figma，等設計檔保持 source of truth。
+
+簡單嚟講：更快做出可以驗證嘅原型、用 prompt 嚟 iterate、再 sync 返 Figma。下一步，我哋會將呢套流程 SOP 化。
+```
+
+### 分段標籤（方便對時間軸）
+
+| Beat | 台詞 |
+|------|------|
+| Open | 今日我哋用 Lite App 嚟示範 UIUX Team 點樣喺 project 流程入面用 AI。 |
+| Step 1 | 我哋喺 Figma 用 Lite App Design System 完成一頁靜態設計，呢個就係成個流程嘅設計錨點。 |
+| Step 2 | 跟住將個 design import 去 Base44，自動 generate 一個可以操作嘅 prototype。 |
+| Step 3 | 然後用日常語言寫 prompt，幫 prototype 加入更多 function，再直接操作呢個互動原型——stakeholder 當日已經可以驗證產品感覺。 |
+| Step 4 | 確認咗之後，我哋截低 prototype 畫面。喺 Cursor 用 Figma MCP 將設計畫返入 Figma，等設計檔保持 source of truth。 |
+| Close | 簡單嚟講：更快做出可以驗證嘅原型、用 prompt 嚟 iterate、再 sync 返 Figma。下一步，我哋會將呢套流程 SOP 化。 |
