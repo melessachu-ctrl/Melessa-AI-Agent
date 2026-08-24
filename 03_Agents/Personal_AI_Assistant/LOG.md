@@ -4,6 +4,7 @@
 
 | 日期 | 任務 | 成果 | 備註 |
 |---|---|---|---|
+| 2026-08-24 | Finish session 流程 + observation log Skills 欄 | HEARTBEAT／MEMORY／BRAIN 更新；finish session 自動寫 log | 本回合無 skill 使用 |
 | 2026-08-23 | Trip.com 東京美食 13 間；Wanderlog「東京 Food」+ 景点 note；`地區｜景點名` skill 更新 | Wanderlog 13 美食 + 16 景点 note；兩 skill 格式統一；Maps「東京美食」~3/13 | Maps 剩 ~10 間；browser MCP 不穩 |
 | 2026-08-13 | Google Maps「東京」→ Wanderlog「東京景点」同步 | Cloud Agent 以 `connect.sid` + API 完成 13 景點＋中文 note；session 紀錄 Cloud／Local 分工 | 不存 cookie；VM 瀏覽器登入 Google 未成功 |
 | 2026-08-12 | 建立 `google-maps-bookmark` skill；東京景點存 Maps + note | Skill 真源 + symlink；Sasa 路由／README／MEMORY 踩坑；13 景點繁中 note | 只用 cursor-ide-browser；note 必須在 list 視圖 |

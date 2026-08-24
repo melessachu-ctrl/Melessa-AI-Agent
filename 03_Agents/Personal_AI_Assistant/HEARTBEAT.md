@@ -19,6 +19,15 @@
 3. 更新 `TASKS.md`
 4. 有新偏好或踩坑 → 提議加入 `MEMORY.md`，等你確認
 5. （可選）建議更新哪些相關 folder 的內容（例如：`01_Action_Center/`）
-6. **觀察期內**（見 `MEMORY.md`）：若今次完成了可記錄的工作任務，主動問 Melessa 要不要加一行到 `01_Action_Center/outputs/test_logs/Workflow_Observation_Log.md`（日期時間 / 做了甚麼 / 用了多久 / 耗能或充電 / 價值高或低）；**等你確認後才寫入**，不覆蓋 existing 內容
-7. **當 Melessa 說「結束 session」／「finish session」**（見 `MEMORY.md`）：將本回合收尾相關變更（session、`TASKS.md`、已確認的 `MEMORY` 等）一併 `git commit` 並 `git push` 到 GitHub；不提交 credential／敏感檔；不做 force push / hard reset。
+6. 若 Melessa **未**說 finish session，但今次完成了可記錄的工作任務，可主動問要不要加一行到觀察日誌；**等你確認後才寫入**
+7. **當 Melessa 說「結束 session」／「finish session」**（見 `MEMORY.md`）：
+   1. 完成 `sessions/` 紀錄、`TASKS.md` 更新、交付摘要
+   2. **自動**在 `01_Action_Center/outputs/test_logs/Workflow_Observation_Log.md` **追加一行**（不覆蓋既有內容），欄位：
+      - **日期時間**（本 session 起訖，估計即可）
+      - **做了甚麼**（一句話摘要）
+      - **用了多久**
+      - **感受**（耗能／充電／中性）
+      - **價值**（高／中／低 + 簡短理由）
+      - **Skills**：本回合有**讀取並遵循**的 skill 名稱（如 `google-maps-bookmark`）；多個用逗號分隔；**無則留空**
+   3. 將收尾相關變更（session、觀察日誌、`TASKS.md`、已確認的 `MEMORY` 等）一併 `git commit` 並 `git push` 到 GitHub；不提交 credential／敏感檔；不做 force push / hard reset
 

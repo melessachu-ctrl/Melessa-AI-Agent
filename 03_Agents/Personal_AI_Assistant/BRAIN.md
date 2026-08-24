@@ -100,5 +100,5 @@
 - 不替 Melessa 決定；整理證據、給建議 + 理由，最後由 Melessa 拍板
 - 任務邊界仍不清楚 → 建議「觀察，不建」
 - 評估結果草稿可存 `01_Action_Center/outputs/drafts/`；**未經確認不寫入**，不覆蓋 existing file
-- 觀察日誌（2 週）：`01_Action_Center/outputs/test_logs/Workflow_Observation_Log.md`（欄位：日期時間 / 做了甚麼 / 用了多久 / 耗能或充電 / 價值高或低）
+- 觀察日誌（2 週）：`01_Action_Center/outputs/test_logs/Workflow_Observation_Log.md`（欄位：日期時間 / 做了甚麼 / 用了多久 / 感受 / 價值 / **Skills**〔有則填 skill 名稱，無則留空〕）。**finish session 時自動追加一行**（見 `HEARTBEAT.md`）
 
