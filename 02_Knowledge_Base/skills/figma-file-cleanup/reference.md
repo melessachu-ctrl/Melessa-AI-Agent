@@ -45,7 +45,7 @@ Deliverable Lang：       [選填，預設 zh-HK]
 old_name,old_id,new_name,new_id,note
 ```
 
-- `note`：例如 `alias`、`library-instance`、`blocked-by-permission`。
+- `note`：例如 `alias`、`library-instance`、`blocked-by-permission`、或完整語意路徑（如 `3PL/Section/Description`；Figma 圖層名仍只寫 leaf `Description`）。
 
 ---
 
@@ -116,14 +116,16 @@ old_name,old_id,new_name,new_id,note
 
 ## 7. 命名規範速查
 
-| 層級 | 前綴範例 |
-|------|----------|
-| 頁面 | `PDP/Page/…` |
-| 版面 | `PDP/Layout/…` |
-| 區塊 | `PDP/Section/…` |
-| 元件 | `PDP/Component/…` |
+**Leaf-only**：Figma `node.name` 只寫最後一段；層級靠巢狀結構，不靠 `/` 前綴。
 
-禁用於最終名稱：`Frame 123`、`Group 11`、`Copy`。
+| 類型 | Figma 圖層名 | 勿用 |
+|------|-------------|------|
+| 頁面 | `App-MobileWeb-ZH` | `3PL/Page/App-MobileWeb-ZH` |
+| 版面 | `Content` | `3PL/Layout/Content` |
+| 區塊 | `Description` | `3PL/Section/Description` |
+| 元件 | `Agree-Primary` | `3PL/Button/Agree-Primary` |
+
+禁用於最終 Figma 圖層名：`Frame 123`、`Group 11`、`Copy`、路徑式名稱（含 `/`）。TEXT 文案若本身含 `/`，圖層名維持完整文案，勿截斷。
 
 ---
 

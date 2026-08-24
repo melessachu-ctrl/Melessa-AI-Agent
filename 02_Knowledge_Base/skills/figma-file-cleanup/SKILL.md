@@ -107,15 +107,25 @@ Task Progress — Phase D
 
 ## 命名規範（建議）
 
-| 類型 | 範例 |
-|------|------|
-| 頁面 | `PDP/Page/Desktop` |
-| 版面 | `PDP/Layout/MainContent` |
-| 區塊 | `PDP/Section/FAQ` |
-| 元件 | `PDP/Component/Pagination` |
-| 變體 | 例：`State=Collapsed`；多狀態以 variant 屬性組合（勿用裸 `|` 分隔於節點名內） |
+### 原則：Leaf-only（只顯示最後一層）
 
-**禁止**作為最終名稱：`Frame 123`、`Group 11`、`Copy`。
+Figma 圖層面板上的 `node.name` **只寫語意化的最後一段**；層級關係靠**巢狀結構**表達，不靠 `/` 路徑前綴。
+
+| 類型 | Figma 圖層名（`node.name`） | 勿用（路徑式） |
+|------|---------------------------|----------------|
+| 頁面 | `App-MobileWeb-ZH` | `3PL/Page/App-MobileWeb-ZH` |
+| 版面 | `Content` | `3PL/Layout/Content` |
+| 區塊 | `Description` | `3PL/Section/Description` |
+| 元件 | `Agree-Primary` | `3PL/Button/Agree-Primary` |
+| 變體 | `State=Collapsed` | 多狀態以 variant 屬性組合（勿用裸 `|` 分隔於節點名內） |
+
+**交付文件**（`changes.md`、`mapping.csv`）可於 `note` 欄保留完整語意路徑（如 `3PL/Section/Description`）供追溯；**寫入 Figma 時必須剝離為 leaf 名**（如 `Description`）。
+
+**禁止**作為最終 Figma 圖層名：`Frame 123`、`Group 11`、`Copy`、含 `/` 的路徑式名稱。
+
+**批次重新命名注意**：
+- 只對刻意設定的路徑式圖層名做 leaf 剝離；**勿**對 TEXT 節點盲目依 `/` 截斷（文案可能含 `/`）。
+- 不同父層下允許重複 leaf 名（如多個 `CheckCircle`）。
 
 ## 驗收標準（DoD）
 

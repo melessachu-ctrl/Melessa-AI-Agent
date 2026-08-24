@@ -173,7 +173,7 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 
 - **DS 現況**：可直接用的 token/元件（若未知就列「待盤點」）
 - **缺口清單**：缺哪些 token/元件/變體/互動狀態
-- **命名與結構**：命名規則、屬性維度（size/state/tone）
+- **命名與結構**：Figma 圖層名採 **leaf-only**（只寫最後一段，如 `Description`；層級靠巢狀結構，不用 `3PL/Section/Description` 路徑式名稱）。詳見 `figma-file-cleanup` 命名規範。屬性維度（size/state/tone）維持 variant 屬性表達。
 - **變更提案**：新增/調整/棄用（含風險）
 - **發佈註記**：版本號（可選）、breaking change、遷移指引
 
