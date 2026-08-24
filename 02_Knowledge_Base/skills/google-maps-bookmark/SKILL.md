@@ -2,7 +2,7 @@
 name: google-maps-bookmark
 description: >-
   用 Cursor 內建瀏覽器（cursor-ide-browser）在 Google Maps 把地點存入指定 Saved list，並可在 list
-  視圖為各地點加上 note（預設繁體中文名稱）。Use when the user asks to bookmark / save /
+  視圖為各地點加上 note（預設「地區｜景點名」繁體格式）。Use when the user asks to bookmark / save /
   收藏 / 加入 Google Maps list、為 Maps 景點加 note、或把文章／清單裡的地點存進 Maps。
 ---
 
@@ -11,7 +11,7 @@ description: >-
 ## 載入時機（必遵守）
 命中下列**任一**情況時，必須載入並依本 skill 執行：
 - 使用者要求把地點／景點 **save／bookmark／收藏／加入** Google Maps（或指定 list）
-- 使用者要求為 Maps 已存地點 **加 note／備註／中文名稱**
+- 使用者要求為 Maps 已存地點 **加 note／備註**（預設 **`地區｜景點名`** 格式）
 - 使用者提供文章／連結／清單，並要求把其中地點存進 Maps
 
 ## 工具與限制
@@ -27,7 +27,8 @@ description: >-
 Progress:
 - [ ] 確認已登入正確 Google 帳號
 - [ ] 確認目標 list 名稱（使用者指定；未指定則先問）
-- [ ] 整理待存清單（搜尋關鍵字 ↔ note）
+- [ ] 整理待存清單（搜尋關鍵字 | 地區 | 景點名 | note）
+- [ ] note 格式確認（預設：`地區｜景點名`）
 - [ ] 逐一 Save 到 list
 - [ ]（若需要）在 list 視圖加 note
 - [ ] 抽查並回報
@@ -101,13 +102,49 @@ Progress:
 4. 立刻點下一個目標的 `Add note`（或下一個 note 欄）以 blur／存檔。
 5. snapshot 確認該列 `Note` 的 `value` 已是目標文字。
 
-### B3. Note 內容預設
-- 使用者要「中文名稱／看得懂是哪裡」→ 用**繁體中文**常用地名（例如 Tokyo Tower → 東京鐵塔）。
-- 使用者有指定 note 原文 → 用指定內容。
-- 不要覆寫既有、與本次無關的 note。
+### B3. Note 內容預設：`地區｜景點名`
+
+Google Maps list 的 note 為**純文字**（非 Wanderlog rich-text）。預設只寫標題一行：
+
+```
+地區｜景點名
+```
+
+**規則**
+
+- **地區**：繁體中文行政區／商圈（例：新宿、銀座、淺草、河口湖）
+- **景點名**：繁體中文常見名稱（例：敘敘苑燒肉、築地市場）
+- 組合：`${area}｜${name}` → `新宿｜敘敘苑燒肉`
+- 分隔符用 **全形 `｜`**，不用半形 `|`
+- 若使用者只給景點名、未給地區：依常識補地區；無法判斷時先問
+- 若使用者明確要求舊格式（只寫景點名、不要地區前綴）：依指定，但預設用 `地區｜景點名`
+- 若使用者要 note 含交通／特色 bullet：Maps note 不適合長文；**交通與特色放 Wanderlog**（用 `update-wanderlog` skill），Maps 仍只用 `地區｜景點名`
+
+**範例**
+
+| 地區 | 景點名 | Maps note |
+| --- | --- | --- |
+| 新宿 | 敘敘苑燒肉 | 新宿｜敘敘苑燒肉 |
+| 築地 | 築地市場 | 築地｜築地市場 |
+| 河口湖 | 餺飥不動（東戀路店） | 河口湖｜餺飥不動（東戀路店） |
+
+**舊 note 升級**
+
+list 內已有只寫景點名（無 `地區｜`）的 note 時，在 list 視圖逐列改為新格式；**不要**覆寫與本次無關的 note。
+
+| 舊 note | 新 note |
+| --- | --- |
+| 築地市場 | 築地｜築地市場 |
+| 月島文字燒 | 月島｜月島文字燒 |
+| 阿美橫町 | 上野｜阿美橫町 |
+
+**其他**
+
+- 使用者有指定 note 原文 → 用指定內容
+- 不要覆寫既有、與本次無關的 note
 
 ### B4. 完成前抽查
-- 所有本次目標列都有正確 note value。
+- 所有本次目標列都有正確 note value（預設為 `地區｜景點名`）。
 - list 標題仍是原名（未被改成編輯中的字數顯示等）。
 - 最後一個 note 已 blur 存檔。
 
@@ -115,7 +152,7 @@ Progress:
 
 ## C. 建議整體順序
 
-1. 從來源抽出地點 → 做成表格：`搜尋關鍵字 | 預期英文名 | note（繁中）`
+1. 從來源抽出地點 → 做成表格：`搜尋關鍵字 | 地區 | 景點名 | note（預設 地區｜景點名）`
 2. 先全部 Save（流程 A）
 3. 再開 list 一次做完所有 note（流程 B）——比「每存一個就在 place 頁加 note」快且穩
 4. 用繁中回報結果表（成功／略過／失敗）
@@ -127,10 +164,21 @@ Progress:
 
 | Maps 名稱 | Note | 狀態 |
 | --- | --- | --- |
-| Tokyo Tower | 東京鐵塔 | 成功 |
+| Jojoen Tokyo Opera City | 新宿｜敘敘苑燒肉 | 成功 |
+| Tsukiji Outer Market | 築地｜築地市場 | 更新（舊格式升級） |
 ```
 
 失敗項寫明原因（找不到地點／未登入／list 不存在等）。
+
+## 與 Wanderlog skill 的分工
+
+| 欄位 | Google Maps（本 skill） | Wanderlog（`update-wanderlog`） |
+| --- | --- | --- |
+| 標題 | `地區｜景點名`（純文字 note） | 粗體 `地區｜景點名`（rich-text 第一行） |
+| 交通 | 通常不寫 | `交通：…` |
+| 特色 | 通常不寫 | `•` bullet 列表 |
+
+Maps → Wanderlog 同步時，兩邊標題格式應一致（皆為 `地區｜景點名`）。
 
 ## 詳細腳本
 CDP `saveToList` 與常見 selector：見 [reference.md](reference.md)。

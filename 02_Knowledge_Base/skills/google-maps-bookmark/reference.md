@@ -2,6 +2,38 @@
 
 配套 [SKILL.md](SKILL.md)。僅在執行批次 Save／除錯時讀本檔。
 
+## Note 格式：`地區｜景點名`
+
+Maps list note 為純文字，預設一行：
+
+```javascript
+function formatPlaceNote(area, name) {
+  return `${area}｜${name}`;
+}
+
+// 範例
+formatPlaceNote('新宿', '敘敘苑燒肉'); // → "新宿｜敘敘苑燒肉"
+```
+
+在 list 視圖用 `browser_fill` 填入 `formatPlaceNote(area, name)` 的值。
+
+---
+
+## 批次清單模板
+
+執行前整理成表（Save 用 `search`，Note 用 `area` + `name`）：
+
+| # | search | area | name | note |
+| --- | --- | --- | --- | --- |
+| 1 | Nikutei Futago iki Shinjuku Tokyo | 新宿 | 肉亭 ふたごiki 新宿店 | 新宿｜肉亭 ふたごiki 新宿店 |
+| 3 | Jojoen 3-20-2 Nishishinjuku Tokyo | 新宿 | 敘敘苑燒肉 | 新宿｜敘敘苑燒肉 |
+| 4 | Nihonryori RyuGin Ginza Tokyo | 銀座 | 龍吟 | 銀座｜龍吟 |
+| 6 | Unagi Irokawa Asakusa Tokyo | 淺草 | 色川鰻魚飯 | 淺草｜色川鰻魚飯 |
+
+`expect` regex（CDP 驗證 h1）可對應英文名或日文片段，例如 `/Jojoen|叙叙苑/i`。
+
+---
+
 ## CDP：`saveToList(query, listName)`
 
 在已開的 Maps tab 用 `browser_cdp` → `Runtime.evaluate`，設 `awaitPromise: true`、`returnByValue: true`。
@@ -101,5 +133,6 @@ Blur 建議：點下一個 `Add note`。避免點 list 標題（會進入重新�
 
 ## 批次節奏建議
 - Save：navigate → CDP save → 記結果 → 下一個（約 2–4 秒／點）
-- Note：全部 Save 完後 **只開一次 list**，由上到下 fill
-- 每 5 個可 snapshot 一次抽查，避免 silent fail
+- Note：全部 Save 完後 **只開一次 list**，由上到下 fill `地區｜景點名`
+- 每 5 個可 snapshot 一次抽查 note value，避免 silent fail
+- 與 Wanderlog 同步時，Maps note 標題應與 Wanderlog 粗體第一行一致

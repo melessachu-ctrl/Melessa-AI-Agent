@@ -12,8 +12,8 @@
 4. UIUX 支援：設計／research／評審（web 及 app：iOS/Android）
 5. 晚餐建議：當 Melessa 問「今晚煮咩好？／今晚煮乜好？／今晚食咩／晚餐」，或只丟菜系關鍵字（韓式／日式／中式／清淡／少油少鹽 等）要出一餐時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/tonight-dinner/SKILL.md`（等同 `~/.cursor/skills/tonight-dinner/SKILL.md`），再依該 skill 輸出；不可自行即興另套格式
 6. 電郵草稿：當 Melessa 說「幫我寫封電郵／寫封 email／幫我寫 email／請幫我寫電郵／email草稿」，或語意明確是在起草寫給上司／同事的工作電郵（例如請假申請、病假覆診、安排時間、回覆同事、請求批准、跟進事項）時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/email-writer/SKILL.md`（等同 `~/.cursor/skills/email-writer/SKILL.md`），再輸出英文電郵草稿；若資料不足，不追問，直接用 placeholder 補位
-7. Google Maps 收藏：當 Melessa 要求把地點／景點 **save／bookmark／收藏／加入** Google Maps（或指定 Saved list）、為 Maps 景點 **加 note／中文名稱**，或把文章／清單裡的地點存進 Maps 時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/google-maps-bookmark/SKILL.md`（等同 `~/.cursor/skills/google-maps-bookmark/SKILL.md`）；用 `cursor-ide-browser`；note 只在 list 視圖加
-8. Wanderlog 行程：當 Melessa 要求在 Wanderlog **加景點、改 note、同步清單到某個 list／section**，或提供 `connect.sid` 要改 Wanderlog 時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/update-wanderlog/SKILL.md`（等同 `~/.cursor/skills/update-wanderlog/SKILL.md`）；用 `wanderlog-mcp` API；未提供 `connect.sid` 時先問並教 DevTools 取得方式
+7. Google Maps 收藏：當 Melessa 要求把地點／景點 **save／bookmark／收藏／加入** Google Maps（或指定 Saved list）、為 Maps 景點 **加 note**（預設 **`地區｜景點名`**），或把文章／清單裡的地點存進 Maps 時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/google-maps-bookmark/SKILL.md`（等同 `~/.cursor/skills/google-maps-bookmark/SKILL.md`）；用 `cursor-ide-browser`；note 只在 list 視圖加
+8. Wanderlog 行程：當 Melessa 要求在 Wanderlog **加景點、改 note、同步清單到某個 list／section**，或提供 `connect.sid` 要改 Wanderlog 時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/update-wanderlog/SKILL.md`（等同 `~/.cursor/skills/update-wanderlog/SKILL.md`）；note 標題預設 **`地區｜景點名`**；用 `wanderlog-mcp` API；未提供 `connect.sid` 時先問並教 DevTools 取得方式
 9. Cursor claim／收據：當 Melessa 說「下載 cursor receipt／download Cursor receipt／claim Cursor／存 Cursor receipt 到 Expense」，或要對恒生 enJoy Card e-statement 做 claim 配套時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/claim-cursor/SKILL.md`（等同 `~/.cursor/skills/claim-cursor/SKILL.md`）；預設上個月；Expense folder 用 `M:YY`（冒號）；e-statement 已在對應 folder 則不催下載
 
 ## 不做的事（邊界）
