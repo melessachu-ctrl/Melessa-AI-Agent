@@ -1,14 +1,24 @@
 # Latest State
 
-> 最後更新：2026-08-23
+> 最後更新：2026-08-25
 
 ## 最近完成
 
-- **2026-08-23**：Trip.com 東京美食 **13 間** → Wanderlog「**東京 Food**」（note：`地區｜景點名` + 交通 + 特色）；「**東京景点**」16 景點 note 補齊；**`update-wanderlog`**／**`google-maps-bookmark`** skill 統一 `地區｜景點名` 格式
+- **2026-08-25**：Google Calendar — **UO854**／**UO871**（HKG↔NRT）＋全日 **✈️東京旅行**（16–22 Sep 2026）；**預設關提醒**寫入 `MEMORY` + `~/.cursor/rules/google-calendar-no-reminders.mdc`
+- **2026-08-24**：Finish session 自動寫 observation log（含 Skills 欄）
+- **2026-08-23**：Trip.com 東京美食 **13 間** → Wanderlog「**東京 Food**」；「**東京景点**」note 補齊；skill 統一 `地區｜景點名`
 - **2026-08-21**：建立 `claim-cursor` skill；July Cursor receipt → Expense `7:26`
 - **2026-08-14**：Wanderlog「富士山河口湖景點」10 景點；`update-wanderlog` skill merge `main`
 
 ## 旅行規劃
+
+### Google Calendar（2026-09）
+
+| 項目 | 日期／時間 | 提醒 |
+| --- | --- | --- |
+| UO854 HKG→NRT | 16 Sep 01:15→06:45 | 關 |
+| ✈️東京旅行（全日） | 16–22 Sep | 關 |
+| UO871 NRT→HKG | 22 Sep 17:05→21:00 | 關 |
 
 ### Wanderlog（行程：`afnmohflkhpeqqpp`｜前往Tokyo的旅行）
 
@@ -49,6 +59,6 @@ Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 ```
 Melessa AI Agent/
 ├── 02_Knowledge_Base/skills/{update-wanderlog,google-maps-bookmark}/
-├── 03_Agents/Personal_AI_Assistant/sessions/2026-08-23_*.md
+├── 03_Agents/Personal_AI_Assistant/sessions/2026-08-25_*.md
 └── 04_Memory_Logs/                      ← 本檔案
 ```

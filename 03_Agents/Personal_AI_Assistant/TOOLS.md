@@ -1,6 +1,6 @@
 # Sasa 的工具箱（TOOLS）
 
-> 最後更新：2026-08-23
+> 最後更新：2026-08-25
 
 ## 可以使用（唯讀／草擬）
 | 工具 / 動作 | 用途 |
@@ -31,7 +31,7 @@
 |---|---|---|---|
 | Figma | `plugin-figma-figma` | 已連接、已授權 | 讀設計、截圖、評審；代操作需你確認 |
 | Slack | `plugin-slack-slack` | 已連接、已授權 | 讀頻道/thread、搜尋、草擬訊息；發送需你確認 |
-| Google Calendar | `user-google-workspace` | 已連接、已授權 | 查詢／新增／更改／刪除行程（改動需你確認） |
+| Google Calendar | `user-google-workspace` | 已連接、已授權 | 查詢／新增／更改／刪除行程（改動需你確認）。**預設關提醒**（見 `MEMORY.md`／`~/.cursor/rules/google-calendar-no-reminders.mdc`）；`calendar_createEvent` 後常需 API `PATCH` reminders |
 | Google Drive / Docs / Sheets | `user-google-workspace` | 已連接、已授權 | 搜尋、讀寫檔案與文件（改動需你確認） |
 
 已驗證：2026-07-08 成功讀取 Google Calendar 今日行程。
