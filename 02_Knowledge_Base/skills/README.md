@@ -12,42 +12,23 @@ Sasa 與任何連到本 Melessa repo 的 AI 可讀的工作技能放這裡。
 
 ## 換電腦／重建 symlink
 
-先 clone 本 repo，再執行：
+先 clone 或 pull 本 repo，再執行（路徑與 skill 清單會自動偵測，不用手改）：
 
 ```bash
-SKILLS_DST="/Users/mchu/Melessa AI Agent/02_Knowledge_Base/skills"
-SKILLS_SRC="$HOME/.cursor/skills"
-mkdir -p "$SKILLS_SRC"
-
-for name in \
-  apply-design-system \
-  audit-design-system \
-  claim-cursor \
-  email-writer \
-  figma-file-cleanup \
-  figma-mcp-server-guide \
-  fix-design-system-finding \
-  frontend-design \
-  google-maps-bookmark \
-  update-wanderlog \
-  hktvmall-target-customers \
-  ricky-design-guideline \
-  tonight-dinner \
-  ui-ux-pro-max \
-  uiux-design-studio \
-  uiux-review
-do
-  ln -sfn "$SKILLS_DST/$name" "$SKILLS_SRC/$name"
-done
+bash 02_Knowledge_Base/skills/setup-symlinks.sh
 ```
 
-（若 Melessa 路徑不同，先改 `SKILLS_DST`。）
+或從 skills 目錄內：
+
+```bash
+bash setup-symlinks.sh
+```
 
 ## 新增 skill
 
 1. 在本目錄建立 `<skill-name>/SKILL.md`
-2. 在本機執行：`ln -sfn "<本目錄絕對路徑>/<skill-name>" "$HOME/.cursor/skills/<skill-name>"`
-3. 更新上方重建清單與 Sasa 的 `TOOLS.md`／`BRAIN.md`／`AGENTS.md`（若需要）
+2. 在本機執行：`bash 02_Knowledge_Base/skills/setup-symlinks.sh`（或手動 `ln -sfn "<本目錄絕對路徑>/<skill-name>" "$HOME/.cursor/skills/<skill-name>"`）
+3. 更新 Sasa 的 `TOOLS.md`／`BRAIN.md`／`AGENTS.md`（若需要）
 
 ## 不放在這裡
 
