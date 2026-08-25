@@ -4,6 +4,7 @@
 
 ## 最近完成
 
+- **2026-08-25**：本機 Portfolio Designer → Melessa skill **`portfolio-designer`**（文案＋mockup；symlink + Sasa 路由）
 - **2026-08-25**：Google Calendar — **UO854**／**UO871**（HKG↔NRT）＋全日 **✈️東京旅行**（16–22 Sep 2026）；**預設關提醒**寫入 `MEMORY` + `~/.cursor/rules/google-calendar-no-reminders.mdc`
 - **2026-08-24**：Finish session 自動寫 observation log（含 Skills 欄）
 - **2026-08-23**：Trip.com 東京美食 **13 間** → Wanderlog「**東京 Food**」；「**東京景点**」note 補齊；skill 統一 `地區｜景點名`
@@ -46,11 +47,14 @@ Maps 更新：**Local Agent** + `google-maps-bookmark` skill（Cloud browser 常
 | `update-wanderlog` | 粗體 **`地區｜景點名`** + 交通 + • 特色 |
 | `google-maps-bookmark` | 純文字 **`地區｜景點名`**（交通／特色放 Wanderlog） |
 
+**Portfolio（2026-08-25）**：`portfolio-designer` — Lovable project details 中英對照文案 + device mockup；觸發詞見 skill。
+
 Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 
 ## 下一步
 
 - [ ] **優先**：Maps「東京美食」剩餘 ~10 間 Save + note（Local Agent）
+- [ ] （可選）用 `portfolio-designer` 寫一則新專案文案做端到端驗證
 - [ ] （可選）河口湖 10 景點 note 升級為 `地區｜` + 特色 bullet
 - [ ] （可選）Maps「東京」list note 升級為 `地區｜景點名`
 
@@ -58,7 +62,7 @@ Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 
 ```
 Melessa AI Agent/
-├── 02_Knowledge_Base/skills/{update-wanderlog,google-maps-bookmark}/
+├── 02_Knowledge_Base/skills/{portfolio-designer,update-wanderlog,google-maps-bookmark,...}/
 ├── 03_Agents/Personal_AI_Assistant/sessions/2026-08-25_*.md
 └── 04_Memory_Logs/                      ← 本檔案
 ```

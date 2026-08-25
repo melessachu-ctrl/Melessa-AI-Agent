@@ -31,6 +31,7 @@ for name in \
   google-maps-bookmark \
   update-wanderlog \
   hktvmall-target-customers \
+  portfolio-designer \
   ricky-design-guideline \
   tonight-dinner \
   ui-ux-pro-max \

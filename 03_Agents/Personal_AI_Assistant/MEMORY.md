@@ -7,6 +7,7 @@
 - 預設使用繁體中文（除非你要求其他語言）
 - 當 Melessa 說「結束 session」或「finish session」：除了寫 session／更新 `TASKS.md` 等收尾外，**自動追加一行**到 `01_Action_Center/outputs/test_logs/Workflow_Observation_Log.md`（含 **Skills** 欄：本回合用過的 skill 才填，無則留空），然後**直接 `git commit` 並 `git push` 到 GitHub**（無需再另行確認一次）。仍須遵守安全：不提交 credential／敏感資料；destructive git（force push 等）永遠先問。
 - **2026-08-25｜Google Calendar**：建立／新增行程時**預設關閉提醒**（`useDefault: false`、無 overrides）；**只有** Melessa 明確要求提醒時才開啟。Cursor 規則：`~/.cursor/rules/google-calendar-no-reminders.mdc`。MCP `calendar_createEvent` 不支援 reminders → 建完後用 Calendar API `PATCH`（token 在 `~/.google-workspace-mcp/`，勿 commit）。
+- **2026-08-25｜Portfolio**：寫 portfolio／作品集文案／device mockup／Lovable project details → 讀 **`portfolio-designer`** skill（真源在 `02_Knowledge_Base/skills/portfolio-designer/`）。以 Skill 承載，不做獨立 Agent；勿用 `alwaysApply` rule。
 
 ## 健康／個人背景
 

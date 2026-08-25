@@ -1,0 +1,98 @@
+{
+  "project_slug": "eats365-scan-to-order",
+  "project_type": "portfolio_project_details",
+  "target_platform": "lovable",
+  "reference_url": "https://www.eats365pos.com/hk/expansion-module/scan-order-byod",
+  "portfolio_reference": "https://melessa-chu-design.lovable.app/projects/product-search-tool",
+  "fields": {
+    "title": {
+      "en": "Eats365 Scan-to-Order — mobile-first food ordering that restaurants can brand in minutes",
+      "zh": "Eats365 掃碼點餐 — 以手機為核心的自助點餐體驗，讓餐廳快速呈現品牌風格"
+    },
+    "short_description": {
+      "en": "A responsive web ordering experience for Eats365's BYOD scan-to-order module — from QR landing to menu browsing, customization, and checkout — designed to cut front-of-house steps while keeping orders accurate and on-brand.",
+      "zh": "為 Eats365 掃碼點餐（BYOD）模組設計的響應式網頁點餐體驗，涵蓋掃碼進入、瀏覽菜單、客製化選項到結帳的完整流程，減少樓面人手步驟，同時確保點餐準確並貼合餐廳品牌。"
+    },
+    "category": {
+      "en": "UX/UI Design · Web Design",
+      "zh": "UX/UI 設計 · 網頁設計"
+    },
+    "client": {
+      "en": "Eats365",
+      "zh": "Eats365"
+    },
+    "duration": {
+      "en": "Client project",
+      "zh": "客戶專案"
+    }
+  },
+  "sections": [
+    {
+      "key": "vision_and_innovation",
+      "label": "Vision and Innovation",
+      "subtitle": {
+        "en": "Turning a Five-Step Ordering Flow into One Tap on the Customer's Phone",
+        "zh": "把五步點餐流程，濃縮成顧客手機上的一次操作"
+      },
+      "body": {
+        "en": "Hong Kong restaurants often juggle menu handoffs, order-taking, confirmation, manual POS entry, and kitchen tickets — five or more steps before a single order is complete. Eats365's scan-to-order (BYOD) model digitizes that journey: guests scan a QR code and order directly on their phone, with orders syncing instantly to POS and kitchen systems — no extra hardware required.\n\nThis project translates that product promise into a polished, brand-ready ordering web experience. The design supports delivery and pickup modes, rich digital menus with photography and descriptions, and a checkout flow that feels as natural on mobile as it does on desktop — helping restaurants serve more guests during peak hours without adding floor pressure.",
+        "zh": "香港餐廳的點餐流程往往涉及遞菜單、接單、確認、手動輸入 POS、再送廚房單——一個顧客至少要走五個以上步驟。Eats365 掃碼點餐（BYOD）把這條路徑數碼化：顧客掃描 QR Code 即可在手機上點餐，訂單即時同步至 POS 與廚房系統，無需額外硬體。\n\n此專案將這套產品價值轉化為可上線、可品牌化的點餐網頁體驗。設計支援外送與自取模式、以圖文呈現的豐富數位菜單，以及在手機與桌面都流暢的結帳流程——讓餐廳在繁忙時段服務更多顧客，同時減輕樓面壓力。"
+      }
+    },
+    {
+      "key": "identifying_unique_challenges",
+      "label": "Identifying Unique Challenges",
+      "subtitle": {
+        "en": "The Hard Part Isn't the Menu — It's Making Self-Service Feel Effortless",
+        "zh": "難點不在菜單本身，而是讓自助點餐感覺毫不費力"
+      },
+      "body": {
+        "en": "Scan-to-order sounds simple, but the UX friction hides in the details:\n\n• Mode complexity — Guests may dine in, order for delivery, or pick up; the interface must make the right path obvious without extra taps.\n• Menu depth at small screen size — Restaurants need room for categories, modifiers, combo sets, and special notes — without overwhelming a phone screen.\n• Multi-guest, one table — Several people may order from their own devices; the experience should still feel unified when it's time to pay.\n• Brand flexibility — Every restaurant has its own identity; the system can't look like a generic template.\n• Speed under pressure — During rush hour, every extra step costs turnover. Clarity and visual hierarchy matter as much as feature coverage.",
+        "zh": "掃碼點餐聽起來簡單，但 UX 摩擦往往藏在細節裡：\n\n• 模式複雜 — 顧客可能堂食、外送或自取；介面必須讓正確路徑一目了然，不需多餘點擊。\n• 小螢幕承載深度菜單 — 餐廳需要分類、改碼、套餐與備註空間，卻不能讓手機畫面過載。\n• 多人同桌、各自點餐 — 多位顧客可能用各自裝置點餐，結帳時仍須感覺是一張統一訂單。\n• 品牌彈性 — 每家餐廳都有獨特形象，系統不能看起來像通用模板。\n• 繁忙時段的速度 — 高峰時每一個多餘步驟都影響翻檯率；資訊層級與清晰度與功能完整同樣重要。"
+      }
+    },
+    {
+      "key": "resolving_complex_problems",
+      "label": "Resolving Complex Problems",
+      "subtitle": {
+        "en": "A Structured Flow from Scan to Checkout",
+        "zh": "從掃碼到結帳的結構化流程"
+      },
+      "body": {
+        "en": "The solution breaks the ordering journey into clear, repeatable stages:\n\n1. Entry & service mode — A branded landing screen lets guests choose delivery or pickup and confirm location, setting context before they browse.\n2. Discovery — Home screen with search, promotional carousel, and restaurant listings helps guests find what they want quickly — or jump straight into a bound restaurant menu after scanning a table QR.\n3. Restaurant detail — Hero imagery, ratings, cuisine tags, delivery info, and operating hours build trust before the first item is added.\n4. Menu navigation — Tabbed categories (Recommended, Noodles, Sets, etc.) keep long menus scannable; sticky cart summary shows item count and running total at all times.\n5. Item customization — Modifier groups (e.g. meat selection with price deltas) use clear radio controls and quantity steppers, reducing order errors at the source.\n6. Cart & checkout — Desktop uses a persistent side cart; mobile uses a bottom action bar — both leading to a streamlined guest checkout form.\n\nAcross mobile and desktop, the same design language — Eats365 orange accents, clean white surfaces, appetizing food photography — keeps the experience consistent whether guests order on their phone at the table or browse on a larger screen.",
+        "zh": "解法將點餐旅程拆成清晰、可重複的階段：\n\n1. 進入與服務模式 — 品牌化的進入頁讓顧客選擇外送或自取並確認地點，在瀏覽菜單前先建立情境。\n2. 探索 — 首頁整合搜尋、促銷輪播與餐廳列表，幫助顧客快速找到目標——或掃描桌號 QR 後直接進入綁定餐廳菜單。\n3. 餐廳詳情 — 主視覺、評分、菜系標籤、外送資訊與營業時間，在加入第一道菜前就建立信任。\n4. 菜單導覽 — 分類標籤（推薦、麵食、套餐等）讓長菜單易於掃讀；底部固定購物車列顯示品項數與即時總額。\n5. 餐點客製化 — 改碼群組（如肉類選擇與加價）以清楚的單選與數量步進器呈現，從源頭降低點錯機率。\n6. 購物車與結帳 — 桌面版以側邊購物車常駐；手機版以底部操作列引導——兩者皆通往精簡的訪客結帳表單。\n\n手機與桌面共用同一套設計語言——Eats365 橙色點綴、乾淨白底、誘人的美食攝影——無論顧客在桌上用手機點餐或在較大螢幕瀏覽，體驗都保持一致。"
+      }
+    },
+    {
+      "key": "user_centric_design",
+      "label": "User-Centric Design",
+      "subtitle": {
+        "en": "Designed for Guests Who Want to Order — Not Learn a System",
+        "zh": "為想點餐的顧客而設，而非讓他們先學會一套系統"
+      },
+      "body": {
+        "en": "Key design decisions grounded in real dining behaviour:\n\n• Delivery / Pickup toggle up front — Service mode is visible from the first screen, so guests never order under the wrong context.\n• Location-aware entry — Address and area selection appear early, matching how Hong Kong users think about delivery feasibility.\n• Visual menus that sell — Large dish photos, short descriptions, and discount tags (e.g. 20% Off) turn the digital menu into a merchandising surface — not just a price list.\n• Sticky cart affordance — A persistent bottom bar (mobile) and side panel (desktop) keep order status visible without leaving the menu.\n• Modifier clarity — Required choices are grouped and labelled; price changes (+$12) are shown inline so guests confirm exactly what they're paying for.\n• Brand theming built in — Logo placement, accent colour, and hero imagery slots let each restaurant feel distinct while staying within the Eats365 system.\n• No app download — Web-based UI works on any smartphone browser after a QR scan, lowering the barrier for first-time and tourist diners.\n• Responsive parity — Mobile flows cover the full order path; desktop adds sidebar filtering and wider menu layouts for back-office or kiosk-style browsing.",
+        "zh": "以真實用餐行為為基礎的關鍵設計決策：\n\n• 外送／自取切換置頂 — 服務模式從第一屏就可見，避免顧客在錯誤情境下點餐。\n• 地點導向的進入流程 — 地址與區域選擇提前出現，符合香港用戶對外送可行性的思考方式。\n• 會賣菜的視覺菜單 — 大尺寸菜品圖、簡短描述與折扣標籤（如 8 折），讓數位菜單成為推銷介面，而不只是價目表。\n• 固定購物車提示 — 手機底部列與桌面側欄讓訂單狀態隨時可見，無需離開菜單頁。\n• 改碼清晰可讀 — 必選項目分組標示；加價（如 +$12）inline 顯示，讓顧客確認所付即所得。\n• 內建品牌主題 — Logo 位置、強調色與主視覺圖槽位，讓每家餐廳保有獨特感，同時維持 Eats365 系統一致性。\n• 無需下載 App — 掃碼後即可在瀏覽器完成點餐，降低首次與旅客用戶的使用門檻。\n• 響應式體驗對等 — 手機版涵蓋完整點餐路徑；桌面版加入側欄篩選與更寬的菜單版面，適合後台或自助機式瀏覽。"
+      }
+    }
+  ],
+  "lovable_mapping": {
+    "page_route": "/projects/eats365-scan-to-order",
+    "hero_title": "fields.title.en",
+    "hero_subtitle": "fields.short_description.en",
+    "meta_category": "fields.category.en",
+    "meta_client": "fields.client.en",
+    "meta_duration": "fields.duration.en",
+    "content_sections_order": [
+      "vision_and_innovation",
+      "identifying_unique_challenges",
+      "resolving_complex_problems",
+      "user_centric_design"
+    ]
+  },
+  "design_assets": [
+    "Food Ordering Web_1.pdf — Hero overview (desktop + mobile)",
+    "Food Ordering Web_2.pdf — Mobile flow (landing, home, restaurant, menu, customization)",
+    "Food Ordering Web_3.pdf — Desktop flow (landing, listing, detail, cart, checkout)"
+  ]
+}

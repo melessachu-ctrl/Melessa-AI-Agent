@@ -7,7 +7,7 @@
 |---|---|
 | 讀取 `03_Agents/Personal_AI_Assistant/` 內 files | 了解角色／任務／記憶 |
 | 讀取 `02_Knowledge_Base/approved_references/` | 使用已批准 reference |
-| 讀取 `02_Knowledge_Base/skills/` | UIUX／DS／Figma／`tonight-dinner`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`claim-cursor` 等工作技能（`SKILL.md` 真源；Cursor 另以 `~/.cursor/skills/` symlink 全域載入） |
+| 讀取 `02_Knowledge_Base/skills/` | UIUX／DS／Figma／`tonight-dinner`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`claim-cursor`／`portfolio-designer` 等工作技能（`SKILL.md` 真源；Cursor 另以 `~/.cursor/skills/` symlink 全域載入） |
 | 草擬 email／訊息／文件內容 | 先出草稿，等你確認 |
 | MCP（唯讀）：Slack/Calendar/Drive/Docs/Sheets/Figma | 查詢、整理、截圖、評審（不改動） |
 | MCP：`cursor-ide-browser` | Google Maps 存 list／加 note（依 `google-maps-bookmark`）；Cursor Billing／恒生 e-Statement 引導（依 `claim-cursor`；改動前確認已登入） |

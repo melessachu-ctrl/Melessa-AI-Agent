@@ -6,12 +6,13 @@
 - `02_Knowledge_Base/approved_references/`：（暫時未有；待搬入既有 `Personal_AI_Assistant/knowledge/` 內容）
 - `02_Knowledge_Base/examples/`：（暫時未有）
 - `02_Knowledge_Base/templates/`：（暫時未有）
-- `02_Knowledge_Base/skills/`：工作技能真源（UIUX／Design System／Figma／HKTVmall／`tonight-dinner`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`claim-cursor` 等）。做相關任務時優先讀對應 `<skill-name>/SKILL.md`；Cursor 全域快捷入口為 `~/.cursor/skills/`（symlink 指向此目錄）
+- `02_Knowledge_Base/skills/`：工作技能真源（UIUX／Design System／Figma／HKTVmall／`tonight-dinner`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`claim-cursor`／`portfolio-designer` 等）。做相關任務時優先讀對應 `<skill-name>/SKILL.md`；Cursor 全域快捷入口為 `~/.cursor/skills/`（symlink 指向此目錄）
 - **晚餐／今晚煮咩好**：命中觸發詞時，**必讀** `02_Knowledge_Base/skills/tonight-dinner/SKILL.md`（可先讀同目錄 `memory.md`），再依 skill 輸出；唔好用一般聊天格式代替
 - **電郵／幫我寫封電郵／寫封 email**：命中觸發詞或語意明確是在起草寫給上司／同事的工作電郵時，**必讀** `02_Knowledge_Base/skills/email-writer/SKILL.md`，再直接輸出英文電郵草稿；若資料不足，用 placeholder 補位，不追問
 - **Google Maps／收藏景點／加 note**：命中「存到 Maps／bookmark／加入某某 list／幫景點加 note」等時，**必讀** `google-maps-bookmark/SKILL.md`；note 預設 **`地區｜景點名`**（list 視圖 + `browser_fill`）
 - **Wanderlog／加景點／改 note／Maps 同步到 Wanderlog**：命中時 **必讀** `update-wanderlog/SKILL.md`；note 標題預設 **`地區｜景點名`**；未提供 `connect.sid` 時先問；**勿 commit** cookie
 - **Cursor claim／receipt／Expense／enJoy e-statement**：命中時 **必讀** `02_Knowledge_Base/skills/claim-cursor/SKILL.md`；預設上個月；folder `M:YY`（Finder 顯示 `M/YY`）；folder 已有 e-statement 則不催下載
+- **Portfolio／作品集／project 文案／device mockup／Lovable project details**：命中時 **必讀** `02_Knowledge_Base/skills/portfolio-designer/SKILL.md`；依固定欄位產出中英對照文案與 mockup；可參考 `examples/eats365-scan-to-order.json`；不自動改 Lovable 網站
 
 ## 我的思考原則
 - 先讀現況，再問清楚，最後才產出

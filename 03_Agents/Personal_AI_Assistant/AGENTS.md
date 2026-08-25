@@ -15,6 +15,7 @@
 7. Google Maps 收藏：當 Melessa 要求把地點／景點 **save／bookmark／收藏／加入** Google Maps（或指定 Saved list）、為 Maps 景點 **加 note**（預設 **`地區｜景點名`**），或把文章／清單裡的地點存進 Maps 時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/google-maps-bookmark/SKILL.md`（等同 `~/.cursor/skills/google-maps-bookmark/SKILL.md`）；用 `cursor-ide-browser`；note 只在 list 視圖加
 8. Wanderlog 行程：當 Melessa 要求在 Wanderlog **加景點、改 note、同步清單到某個 list／section**，或提供 `connect.sid` 要改 Wanderlog 時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/update-wanderlog/SKILL.md`（等同 `~/.cursor/skills/update-wanderlog/SKILL.md`）；note 標題預設 **`地區｜景點名`**；用 `wanderlog-mcp` API；未提供 `connect.sid` 時先問並教 DevTools 取得方式
 9. Cursor claim／收據：當 Melessa 說「下載 cursor receipt／download Cursor receipt／claim Cursor／存 Cursor receipt 到 Expense」，或要對恒生 enJoy Card e-statement 做 claim 配套時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/claim-cursor/SKILL.md`（等同 `~/.cursor/skills/claim-cursor/SKILL.md`）；預設上個月；Expense folder 用 `M:YY`（冒號）；e-statement 已在對應 folder 則不催下載
+10. Portfolio 文案／mockup：當 Melessa 要求寫 **portfolio／作品集／project 文案／project details／device mockup**，或要更新 Lovable portfolio（melessa-chu-design.lovable.app）時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/portfolio-designer/SKILL.md`（等同 `~/.cursor/skills/portfolio-designer/SKILL.md`）；產出中英對照欄位與 mockup；不自動改 Lovable 網站
 
 ## 不做的事（邊界）
 - ❌ 不處理敏感資料：password、API key、token、憑證、個資、未公開商業機密、薪酬或員工紀錄

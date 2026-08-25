@@ -10,6 +10,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-08-25：本機 Portfolio Designer 遷入 `portfolio-designer` skill（文案＋mockup SOP、範例 JSON／PNG、PDF exporter）；symlink + Sasa 路由；已 push
 - 2026-08-25：Google Calendar 東京行程（UO854／UO871＋全日「✈️東京旅行」16–22 Sep）；預設關提醒規則寫入 `MEMORY` + `~/.cursor/rules/google-calendar-no-reminders.mdc`
 - 2026-08-24：更新 finish session 流程（自動寫 observation log + **Skills** 欄）；同步 `HEARTBEAT`／`MEMORY`／`BRAIN`
 - 2026-08-23：Trip.com 東京美食 13 間 → Wanderlog「東京 Food」（`地區｜景點名` note）；「東京景点」16 景點 note 補交通+特色；`update-wanderlog`／`google-maps-bookmark` skill 格式更新
