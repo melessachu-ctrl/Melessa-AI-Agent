@@ -10,6 +10,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-08-26：`claim-cursor` 加入 eStatement 淺灰遮罩（§6d）與「claim cursor」完整 §1–7；July 產出 `Jul eStatement Cursor.pdf`；Sasa 路由同步
 - 2026-08-26：Google Maps「東京美食」續存 — Trip.com 12/13（鮪魚一代已閉店略過）；list 15 places + `地區｜景點名` note；session 已寫
 - 2026-08-26：Lite App Figma — 主元件 `img` → DS `PDP IMG`；新建頁 `PDP v3.0 (OOS)`（IMG＋Add to cart 皆 OOS）；session 已寫
 - 2026-08-25：本機 Portfolio Designer 遷入 `portfolio-designer` skill（文案＋mockup SOP、範例 JSON／PNG、PDF exporter）；symlink + Sasa 路由；已 push

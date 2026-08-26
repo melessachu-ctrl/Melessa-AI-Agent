@@ -29,6 +29,7 @@
 - **2026-08-14**：Wanderlog 改行程／加景點／改 note → 讀 **`update-wanderlog`** skill；預設 note：**粗體 `地區｜景點名`** + `交通：` + `•` 特色概要；未提供 cookie 時 Agent 須先問並教取得方式。
 - **2026-08-23**：Google Maps list note 預設 **`地區｜景點名`**（純文字，全形 `｜`）；交通／特色 bullet 放 Wanderlog。Maps ↔ Wanderlog 同步時標題格式應一致。詳見 `google-maps-bookmark`／`update-wanderlog` skill。
 - **2026-08-21**：Cursor 公司 claim（receipt + enJoy e-statement）→ 讀 **`claim-cursor`** skill；Expense folder 為 `M:YY`（冒號）；預設上個月；folder 已有 e-statement 則不催下載；Cursor 下旬扣款通常對應恒生「下一個月約 13 日」結單（例：July claim → `13-08-YYYY`）。
+- **2026-08-26**：`claim-cursor` 擴充 eStatement **淺灰遮罩**（產出 `{Mon} eStatement Cursor.pdf`）；「我要 claim cursor／幫我 claim cursor」預設跑完整 **§1–7**；卡關須明確回報欠缺（結單／登入／Browser 等）。
 
 ## 踩過的坑
 
