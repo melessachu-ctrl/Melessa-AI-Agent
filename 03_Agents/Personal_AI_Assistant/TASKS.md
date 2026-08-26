@@ -3,13 +3,14 @@
 > 只記錄 Melessa 確認要我跟進的工作；每次 session 結束可更新。
 
 ## 🔴 進行中
-- Google Maps「**東京美食**」：Trip.com 13 間餐廳（排除 5／11／13／15）— 約 3/13 已存；待 Save 剩餘 + list note（`地區｜景點名`）。**建議 Local Agent + 單一 browser**，依 `google-maps-bookmark` skill
+- （無）
 
 ## 🟡 待辦
 - （可選）芒果去皮觀察；記錄會否同樣誘發濕疹
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-08-26：Google Maps「東京美食」續存 — Trip.com 12/13（鮪魚一代已閉店略過）；list 15 places + `地區｜景點名` note；session 已寫
 - 2026-08-26：Lite App Figma — 主元件 `img` → DS `PDP IMG`；新建頁 `PDP v3.0 (OOS)`（IMG＋Add to cart 皆 OOS）；session 已寫
 - 2026-08-25：本機 Portfolio Designer 遷入 `portfolio-designer` skill（文案＋mockup SOP、範例 JSON／PNG、PDF exporter）；symlink + Sasa 路由；已 push
 - 2026-08-25：Google Calendar 東京行程（UO854／UO871＋全日「✈️東京旅行」16–22 Sep）；預設關提醒規則寫入 `MEMORY` + `~/.cursor/rules/google-calendar-no-reminders.mdc`

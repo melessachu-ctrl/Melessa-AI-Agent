@@ -15,11 +15,11 @@
 - **東京景点** 16 個景點 note 已補 **交通 + 特色**（保留原有補充文字）
 - 舊「東京 Food」部分地點（如築地市場、月島文字燒、阿美橫町）已升級為 **`地區｜景點名`** 標題
 
-### Google Maps ⏸️ 未完成
+### Google Maps ✅（後續完成）
 
 - 目標 list：**東京美食**
-- 約 **3/13** 確認存入（肉亭ふたごiki、壽司三味、敘敘苑）；其餘 10 間 + list note 未完成
-- 阻塞：`cursor-ide-browser` MCP 多次被拒／Aborted；子 agent 無法共用已 lock 的 browser tab；搜尋結果偶爾點錯店
+- 當時約 **3/13** 確認存入（肉亭ふたごiki、壽司三味、敘敘苑）；其餘 + list note **於 2026-08-26 完成**
+- 見 session：`2026-08-26_tokyo-food-maps-bookmark-finish.md`（**12/13**；鮪魚一代閉店略過；list 15 places）
 
 ### Skills 更新 ✅
 
@@ -28,13 +28,13 @@
 
 ## 未完成甚麼
 
-- [ ] Google Maps「**東京美食**」：剩餘 ~10 間 Save + 全部 list note（`地區｜景點名`）
+- [x] Google Maps「**東京美食**」：剩餘 Save + list note（`地區｜景點名`）→ **2026-08-26 完成**
 - [ ] （可選）抽查 Wanderlog autocomplete 是否個別存錯 place（如色川、鳥貴族）
 
 ## 下次由哪裡開始
 
-1. **Local Agent** + 已登入 Google 帳號，開 Maps Saved →「東京美食」看現況
-2. 單一 browser：`navigate` → CDP `saveToList`（加 `expect` regex）→ 最後一次 list 視圖 fill note
+1. （本項已結）Maps「東京美食」見 `2026-08-26_tokyo-food-maps-bookmark-finish.md`
+2. （可選）Maps「東京」／河口湖 note 升級為 `地區｜景點名`
 3. 詳見 `02_Knowledge_Base/skills/google-maps-bookmark/SKILL.md`
 
 ## 今日學到

@@ -4,6 +4,7 @@
 
 ## 最近完成
 
+- **2026-08-26**：Google Maps「**東京美食**」— Trip.com **12/13** 已存＋`地區｜景點名` note（list **15** places；鮪魚一代閉店略過）
 - **2026-08-26**：Lite App Figma — 主元件 `PDP - 黑價＝SP` 的 `img` → DS **`PDP IMG`**；新建頁 **`PDP v3.0 (OOS)`**（IMG＋Add to cart 皆 OOS）
 - **2026-08-25**：本機 Portfolio Designer → Melessa skill **`portfolio-designer`**（文案＋mockup；symlink + Sasa 路由）
 - **2026-08-25**：Google Calendar — **UO854**／**UO871**（HKG↔NRT）＋全日 **✈️東京旅行**（16–22 Sep 2026）；**預設關提醒**寫入 `MEMORY` + `~/.cursor/rules/google-calendar-no-reminders.mdc`
@@ -47,7 +48,7 @@ DS 元件：`PDP IMG`（Default｜OOS）；`Button / Add to cart`（`Page=PDP, S
 
 | List | 狀態 |
 | --- | --- |
-| 東京美食 | **進行中** — Trip.com 13 間約 **3/13** 已存；note 待填 `地區｜景點名` |
+| 東京美食 | **完成** — Trip.com **12/13**（一代閉店略過）；list **15** places；note 皆 `地區｜景點名`（2026-08-26） |
 | 東京 | 13 景點 + 繁中 note（2026-08-12；可升級為 `地區｜` 格式） |
 
 Maps 更新：**Local Agent** + `google-maps-bookmark` skill（Cloud browser 常無法登入 Google）
@@ -66,7 +67,6 @@ Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 ## 下一步
 
 - [ ] （可選）刪 Lite App 畫布備份 `Backup - img (pre PDP IMG)`
-- [ ] **優先**：Maps「東京美食」剩餘 ~10 間 Save + note（Local Agent）
 - [ ] （可選）用 `portfolio-designer` 寫一則新專案文案做端到端驗證
 - [ ] （可選）河口湖 10 景點 note 升級為 `地區｜` + 特色 bullet
 - [ ] （可選）Maps「東京」list note 升級為 `地區｜景點名`
@@ -75,7 +75,7 @@ Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 
 ```
 Melessa AI Agent/
-├── 02_Knowledge_Base/skills/{uiux-design-studio,portfolio-designer,...}/
-├── 03_Agents/Personal_AI_Assistant/sessions/2026-08-26_lite-app-pdp-img-oos.md
+├── 02_Knowledge_Base/skills/{google-maps-bookmark,portfolio-designer,...}/
+├── 03_Agents/Personal_AI_Assistant/sessions/2026-08-26_tokyo-food-maps-bookmark-finish.md
 └── 04_Memory_Logs/                      ← 本檔案
 ```
