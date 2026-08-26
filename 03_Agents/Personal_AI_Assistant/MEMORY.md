@@ -32,6 +32,7 @@
 
 ## 踩過的坑
 
+- **2026-08-26｜Lite App PDP DS swap**：Instance 內本地 frame（如 `img`）不能直接結構替換 → 改 **main component** 才會同步。OOS demo 用獨立 Page／instance override（`PDP IMG`＋`Button / Add to cart` 的 `State=OOS`），勿把有貨主元件永久改成 OOS。寫入前先 clone 備份；`search_design_system` 找 Lite App DS 元件。
 - **2026-08-12｜Google Maps note**：在 place 詳情頁用 JS／偶發 fill 加 note **常不持久**。穩定做法：開 Saved **list 本體視圖** → 點該列 `Add note` → `browser_fill` → 點下一列 blur 存檔；note 預設 **`地區｜景點名`**。詳見 `google-maps-bookmark` skill。
 - **2026-08-23｜Google Maps 批次存**：單一 browser + CDP `saveToList` 最快；subagent 無法共用已 lock tab；Cloud `cursor-ide-browser` 可能 Aborted／需 Local Agent + 已登入 Google。
 - **Cloud Agent 瀏覽器 ≠ 本機／手機 Chrome**：在 phone／本機登入 Google／Wanderlog，不代表 VM 已登入；Wanderlog 可改貼 `connect.sid` 繞過。

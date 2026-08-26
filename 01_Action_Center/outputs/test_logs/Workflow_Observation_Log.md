@@ -11,3 +11,4 @@
 | 2026-08-24 09:49–10:17 | 更新 finish session 流程：自動寫 observation log；新增 Skills 欄；同步 HEARTBEAT／MEMORY／BRAIN | 約 30 分鐘 | 中性（流程整理） | 中（改善 Step 5 觀察資料品質，Skills 可追蹤重用度） | |
 | 2026-08-25 10:41–11:15 | Google Calendar：UO854／UO871＋全日東京旅行；設「預設關提醒」規則（MEMORY + Cursor rule） | 約 35 分鐘 | 中性（行政＋偏好固化） | 中（可重用 calendar 預設；減少每次重講） | |
 | 2026-08-25 12:13–14:21 | 本機 Portfolio Designer 遷入 Melessa 為 `portfolio-designer` skill（非 Agent）；symlink + Sasa 路由；範例／exporter exporter | 約 50 分鐘（含規劃） | 充電（能力可版控、隨處可用） | 高（固定 SOP 可重用；對齊 BRAIN 階梯） | |
+| 2026-08-26 10:28–11:18 | Lite App Figma：PDP `img` → DS `PDP IMG`；新建 `PDP v3.0 (OOS)` demo（IMG＋Add to cart OOS） | 約 50 分鐘 | 中性（DS 對齊＋demo 出稿） | 中高（library-first 可重用；OOS 狀態可示範） | `uiux-design-studio`, `figma-use`, `hktvmall-target-customers`, `ricky-design-guideline`, `fix-design-system-finding` |

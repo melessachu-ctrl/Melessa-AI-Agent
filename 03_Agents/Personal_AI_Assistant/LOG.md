@@ -4,6 +4,7 @@
 
 | 日期 | 任務 | 成果 | 備註 |
 |---|---|---|---|
+| 2026-08-26 | Lite App PDP IMG 對齊＋OOS demo 頁 | 主元件換 `PDP IMG`；新頁 `PDP v3.0 (OOS)`（IMG＋ATC OOS） | fileKey `rCF6Dj4hH8rb2lPd85i3C3`；備份可刪 |
 | 2026-08-25 | Portfolio Designer 遷入 Melessa（Skill） | `portfolio-designer` 真源＋symlink＋Sasa 路由；範例 JSON／PNG；PDF exporter | 不做獨立 Agent；非 alwaysApply rule |
 | 2026-08-25 | Google Calendar 東京航班＋全日旅行；預設關提醒 | UO854／UO871＋「✈️東京旅行」入曆；MEMORY + `google-calendar-no-reminders` rule | MCP 建事件後須 API PATCH 關提醒 |
 | 2026-08-24 | Finish session 流程 + observation log Skills 欄 | HEARTBEAT／MEMORY／BRAIN 更新；finish session 自動寫 log | 本回合無 skill 使用 |

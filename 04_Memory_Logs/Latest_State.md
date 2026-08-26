@@ -1,15 +1,27 @@
 # Latest State
 
-> 最後更新：2026-08-25
+> 最後更新：2026-08-26
 
 ## 最近完成
 
+- **2026-08-26**：Lite App Figma — 主元件 `PDP - 黑價＝SP` 的 `img` → DS **`PDP IMG`**；新建頁 **`PDP v3.0 (OOS)`**（IMG＋Add to cart 皆 OOS）
 - **2026-08-25**：本機 Portfolio Designer → Melessa skill **`portfolio-designer`**（文案＋mockup；symlink + Sasa 路由）
 - **2026-08-25**：Google Calendar — **UO854**／**UO871**（HKG↔NRT）＋全日 **✈️東京旅行**（16–22 Sep 2026）；**預設關提醒**寫入 `MEMORY` + `~/.cursor/rules/google-calendar-no-reminders.mdc`
 - **2026-08-24**：Finish session 自動寫 observation log（含 Skills 欄）
 - **2026-08-23**：Trip.com 東京美食 **13 間** → Wanderlog「**東京 Food**」；「**東京景点**」note 補齊；skill 統一 `地區｜景點名`
 - **2026-08-21**：建立 `claim-cursor` skill；July Cursor receipt → Expense `7:26`
 - **2026-08-14**：Wanderlog「富士山河口湖景點」10 景點；`update-wanderlog` skill merge `main`
+
+## Lite App Figma（2026-08-26）
+
+| 項目 | 狀態 |
+| --- | --- |
+| 檔案 | [HKTVmall — Lite App](https://www.figma.com/design/rCF6Dj4hH8rb2lPd85i3C3/HKTVmall---Lite-App)（`rCF6Dj4hH8rb2lPd85i3C3`） |
+| PDP IMG | 主元件已換 DS `PDP IMG`（Default）；[範例 instance](https://www.figma.com/design/rCF6Dj4hH8rb2lPd85i3C3/HKTVmall---Lite-App?node-id=17081-17574) |
+| OOS Demo | 頁 `PDP v3.0 (OOS)` · frame `PDP - OOS` · [開啟](https://www.figma.com/design/rCF6Dj4hH8rb2lPd85i3C3/HKTVmall---Lite-App?node-id=19013-3220) |
+| 備份 | `Backup - img (pre PDP IMG)`（`19012:3242`）— 確認後可刪 |
+
+DS 元件：`PDP IMG`（Default｜OOS）；`Button / Add to cart`（`Page=PDP, State=OOS`）
 
 ## 旅行規劃
 
@@ -53,6 +65,7 @@ Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 
 ## 下一步
 
+- [ ] （可選）刪 Lite App 畫布備份 `Backup - img (pre PDP IMG)`
 - [ ] **優先**：Maps「東京美食」剩餘 ~10 間 Save + note（Local Agent）
 - [ ] （可選）用 `portfolio-designer` 寫一則新專案文案做端到端驗證
 - [ ] （可選）河口湖 10 景點 note 升級為 `地區｜` + 特色 bullet
@@ -62,7 +75,7 @@ Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 
 ```
 Melessa AI Agent/
-├── 02_Knowledge_Base/skills/{portfolio-designer,update-wanderlog,google-maps-bookmark,...}/
-├── 03_Agents/Personal_AI_Assistant/sessions/2026-08-25_*.md
+├── 02_Knowledge_Base/skills/{uiux-design-studio,portfolio-designer,...}/
+├── 03_Agents/Personal_AI_Assistant/sessions/2026-08-26_lite-app-pdp-img-oos.md
 └── 04_Memory_Logs/                      ← 本檔案
 ```
