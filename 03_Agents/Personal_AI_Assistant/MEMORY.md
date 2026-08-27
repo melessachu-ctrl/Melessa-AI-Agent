@@ -8,6 +8,7 @@
 - 當 Melessa 說「結束 session」或「finish session」：除了寫 session／更新 `TASKS.md` 等收尾外，**自動追加一行**到 `01_Action_Center/outputs/test_logs/Workflow_Observation_Log.md`（含 **Skills** 欄：本回合用過的 skill 才填，無則留空），然後**直接 `git commit` 並 `git push` 到 GitHub**（無需再另行確認一次）。仍須遵守安全：不提交 credential／敏感資料；destructive git（force push 等）永遠先問。
 - **2026-08-25｜Google Calendar**：建立／新增行程時**預設關閉提醒**（`useDefault: false`、無 overrides）；**只有** Melessa 明確要求提醒時才開啟。Cursor 規則：`~/.cursor/rules/google-calendar-no-reminders.mdc`。MCP `calendar_createEvent` 不支援 reminders → 建完後用 Calendar API `PATCH`（token 在 `~/.google-workspace-mcp/`，勿 commit）。
 - **2026-08-25｜Portfolio**：寫 portfolio／作品集文案／device mockup／Lovable project details → 讀 **`portfolio-designer`** skill（真源在 `02_Knowledge_Base/skills/portfolio-designer/`）。以 Skill 承載，不做獨立 Agent；勿用 `alwaysApply` rule。
+- **2026-08-27｜Base44 MCP**：Cursor 全域已接 `base44`（`https://app.base44.com/mcp`）；建／改 Base44 app、entities、sandbox → 讀 **`base44-mcp-server-guide`**。寫入操作先問。勿與「已發布 app 的 App MCP」混淆。
 
 ## 健康／個人背景
 
@@ -29,6 +30,7 @@
 - **2026-08-14**：Wanderlog 改行程／加景點／改 note → 讀 **`update-wanderlog`** skill；預設 note：**粗體 `地區｜景點名`** + `交通：` + `•` 特色概要；未提供 cookie 時 Agent 須先問並教取得方式。
 - **2026-08-23**：Google Maps list note 預設 **`地區｜景點名`**（純文字，全形 `｜`）；交通／特色 bullet 放 Wanderlog。Maps ↔ Wanderlog 同步時標題格式應一致。詳見 `google-maps-bookmark`／`update-wanderlog` skill。
 - **2026-08-21**：Cursor 公司 claim（receipt + enJoy e-statement）→ 讀 **`claim-cursor`** skill；Expense folder 為 `M:YY`（冒號）；預設上個月；folder 已有 e-statement 則不催下載；Cursor 下旬扣款通常對應恒生「下一個月約 13 日」結單（例：July claim → `13-08-YYYY`）。
+- **2026-08-27**：Cursor 接入官方 **Base44 MCP**（Builder plan+、OAuth 選 workspace）；操作指南 skill `base44-mcp-server-guide`；寫入級操作與 Calendar／Figma 同級需先確認。
 - **2026-08-26**：`claim-cursor` 擴充 eStatement **淺灰遮罩**（產出 `{Mon} eStatement Cursor.pdf`）；「我要 claim cursor／幫我 claim cursor」預設跑完整 **§1–7**；卡關須明確回報欠缺（結單／登入／Browser 等）。
 
 ## 踩過的坑

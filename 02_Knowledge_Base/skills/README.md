@@ -22,6 +22,7 @@ mkdir -p "$SKILLS_SRC"
 for name in \
   apply-design-system \
   audit-design-system \
+  base44-mcp-server-guide \
   claim-cursor \
   email-writer \
   figma-file-cleanup \

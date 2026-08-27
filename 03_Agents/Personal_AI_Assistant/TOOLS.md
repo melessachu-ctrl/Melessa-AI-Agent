@@ -1,22 +1,22 @@
 # Sasa 的工具箱（TOOLS）
 
-> 最後更新：2026-08-25
+> 最後更新：2026-08-27
 
 ## 可以使用（唯讀／草擬）
 | 工具 / 動作 | 用途 |
 |---|---|
 | 讀取 `03_Agents/Personal_AI_Assistant/` 內 files | 了解角色／任務／記憶 |
 | 讀取 `02_Knowledge_Base/approved_references/` | 使用已批准 reference |
-| 讀取 `02_Knowledge_Base/skills/` | UIUX／DS／Figma／`tonight-dinner`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`claim-cursor`／`portfolio-designer` 等工作技能（`SKILL.md` 真源；Cursor 另以 `~/.cursor/skills/` symlink 全域載入） |
+| 讀取 `02_Knowledge_Base/skills/` | UIUX／DS／Figma／Base44／`tonight-dinner`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`claim-cursor`／`portfolio-designer` 等工作技能（`SKILL.md` 真源；Cursor 另以 `~/.cursor/skills/` symlink 全域載入） |
 | 草擬 email／訊息／文件內容 | 先出草稿，等你確認 |
-| MCP（唯讀）：Slack/Calendar/Drive/Docs/Sheets/Figma | 查詢、整理、截圖、評審（不改動） |
+| MCP（唯讀）：Slack/Calendar/Drive/Docs/Sheets/Figma/Base44 | 查詢、整理、截圖、評審、列專案／schema／entities（不改動） |
 | MCP：`cursor-ide-browser` | Google Maps 存 list／加 note（依 `google-maps-bookmark`）；Cursor Billing／恒生 e-Statement 引導（依 `claim-cursor`；改動前確認已登入） |
 
 ## 先問才可以用（任何改動）
 - 建立／搬移／重新命名任何 folder 或 file
 - 更新任何 agent profile files（8 件套）
 - 任何對外發送（email／message／Slack）
-- 任何外部改動：Calendar 新增／更改／刪除；Drive/Docs/Sheets 更新；Figma 代操作
+- 任何外部改動：Calendar 新增／更改／刪除；Drive/Docs/Sheets 更新；Figma 代操作；Base44 建／改 app、寫 sandbox、改 entity
 - Terminal / Git：`git commit`、`git push`（例外：Melessa 說「結束 session」／「finish session」時依 `HEARTBEAT.md`／`MEMORY.md` 直接執行）
 - 連接／授權（authorization / MCP）
 
@@ -33,8 +33,10 @@
 | Slack | `plugin-slack-slack` | 已連接、已授權 | 讀頻道/thread、搜尋、草擬訊息；發送需你確認 |
 | Google Calendar | `user-google-workspace` | 已連接、已授權 | 查詢／新增／更改／刪除行程（改動需你確認）。**預設關提醒**（見 `MEMORY.md`／`~/.cursor/rules/google-calendar-no-reminders.mdc`）；`calendar_createEvent` 後常需 API `PATCH` reminders |
 | Google Drive / Docs / Sheets | `user-google-workspace` | 已連接、已授權 | 搜尋、讀寫檔案與文件（改動需你確認） |
+| Base44 | `user-base44`（`https://app.base44.com/mcp`） | 已連接、已授權 | 建／改 Base44 app、list／schema／entities、sandbox 讀寫與指令（寫入需你確認）。操作指南：`base44-mcp-server-guide`。**≠** 已發布 app 的 App MCP |
+| Lovable | `user-lovable`／`plugin-lovable-lovable` | 已配置於 mcp.json | 建／改 Lovable 專案（寫入需你確認）；與 Base44 分開 |
 
-已驗證：2026-07-08 成功讀取 Google Calendar 今日行程。
+已驗證：2026-07-08 成功讀取 Google Calendar 今日行程；2026-08-27 Base44 MCP 出現於 Cursor（`user-base44`）。
 
 ## Wanderlog（非 MCP，Cloud Agent 可用）
 
