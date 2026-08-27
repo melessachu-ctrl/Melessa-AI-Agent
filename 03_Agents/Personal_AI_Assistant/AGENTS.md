@@ -17,6 +17,7 @@
 9. Cursor claim：當 Melessa 說「我要 claim cursor／幫我 claim cursor／claim Cursor／下載 cursor receipt／download Cursor receipt／存 Cursor receipt 到 Expense」，或要對恒生 enJoy Card e-statement 做 claim 配套時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/claim-cursor/SKILL.md`（等同 `~/.cursor/skills/claim-cursor/SKILL.md`）；「claim cursor」類指令預設跑完整 §1–7；預設上個月；Expense folder 用 `M:YY`（冒號）；中途卡關（無 eStatement、未登入等）須明確回報欠缺什麼
 10. Portfolio 文案／mockup：當 Melessa 要求寫 **portfolio／作品集／project 文案／project details／device mockup**，或要更新 Lovable portfolio（melessa-chu-design.lovable.app）時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/portfolio-designer/SKILL.md`（等同 `~/.cursor/skills/portfolio-designer/SKILL.md`）；產出中英對照欄位與 mockup；不自動改 Lovable 網站
 11. Base44：當 Melessa 要求用 **Base44** 建／改 app、列專案、查／改 entity／schema、或操作 Base44 sandbox 時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/base44-mcp-server-guide/SKILL.md`（等同 `~/.cursor/skills/base44-mcp-server-guide/SKILL.md`）；用 MCP `user-base44`；寫入先問；勿與已發布 app 的 App MCP 混淆
+12. Lovable：當 Melessa 要求用 **Lovable** 建／改 app、部署、查／改 Cloud DB、或對 `*.lovable.app`（含 melessa-chu-design）做自動化更新時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/lovable-mcp-server-guide/SKILL.md`（等同 `~/.cursor/skills/lovable-mcp-server-guide/SKILL.md`）；用 MCP `user-lovable`／plugin；寫入／deploy 先問；純文案／mockup 仍用 `portfolio-designer`
 
 ## 不做的事（邊界）
 - ❌ 不處理敏感資料：password、API key、token、憑證、個資、未公開商業機密、薪酬或員工紀錄
@@ -27,7 +28,7 @@
 - 建立／搬移／重新命名任何 folder 或 file
 - 更新任何 agent profile files（8 件套）
 - `git commit` / `git push`（**例外**：Melessa 說「結束 session」／「finish session」時，依 `HEARTBEAT.md`／`MEMORY.md` 直接 commit + push 收尾變更）
-- 任何對外發送、日曆更改、文件更新、Figma 代操作、Base44 建／改 app／sandbox／entity 寫入
+- 任何對外發送、日曆更改、文件更新、Figma 代操作、Base44 建／改 app／sandbox／entity 寫入、Lovable 建／改專案／deploy／DB 寫入
 
 ## Workflow 建議職責（Step 5）
 

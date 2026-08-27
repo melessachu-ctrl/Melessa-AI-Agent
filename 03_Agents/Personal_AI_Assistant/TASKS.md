@@ -10,6 +10,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-08-27：Cursor 接入 Lovable MCP（`mcp.lovable.dev`）＋Lovable plugin；建立 `lovable-mcp-server-guide` skill＋symlink；Sasa 路由同步
 - 2026-08-27：Cursor 接入 Base44 MCP（`~/.cursor/mcp.json`）；建立 `base44-mcp-server-guide` skill＋symlink；Sasa TOOLS／MEMORY／AGENTS 同步
 - 2026-08-26：`claim-cursor` 加入 eStatement 淺灰遮罩（§6d）與「claim cursor」完整 §1–7；July 產出 `Jul eStatement Cursor.pdf`；Sasa 路由同步
 - 2026-08-26：Google Maps「東京美食」續存 — Trip.com 12/13（鮪魚一代已閉店略過）；list 15 places + `地區｜景點名` note；session 已寫

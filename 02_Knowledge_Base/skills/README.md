@@ -32,6 +32,7 @@ for name in \
   google-maps-bookmark \
   update-wanderlog \
   hktvmall-target-customers \
+  lovable-mcp-server-guide \
   portfolio-designer \
   ricky-design-guideline \
   tonight-dinner \

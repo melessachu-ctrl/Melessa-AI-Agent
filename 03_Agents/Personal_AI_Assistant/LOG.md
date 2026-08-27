@@ -4,6 +4,7 @@
 
 | 日期 | 任務 | 成果 | 備註 |
 |---|---|---|---|
+| 2026-08-27 | Cursor 接入 Lovable MCP＋操作 skill | `mcp.json` 加 lovable；官方 plugin；`lovable-mcp-server-guide`＋symlink；Sasa 路由同步 | 寫入／deploy 先問；≠ portfolio-designer |
 | 2026-08-27 | Cursor 接入 Base44 MCP＋操作 skill | `mcp.json` 加 base44；`base44-mcp-server-guide`＋symlink；TOOLS／MEMORY／AGENTS 同步 | 寫入先問；≠ App MCP |
 | 2026-08-26 | Maps「東京美食」續存＋list note | 新存 9＋補 note 3；list 15 places；`地區｜景點名`；12/13（一代閉店略過） | Local Agent + `google-maps-bookmark`；CDP await 不穩改 poll |
 | 2026-08-26 | Lite App PDP IMG 對齊＋OOS demo 頁 | 主元件換 `PDP IMG`；新頁 `PDP v3.0 (OOS)`（IMG＋ATC OOS） | fileKey `rCF6Dj4hH8rb2lPd85i3C3`；備份可刪 |

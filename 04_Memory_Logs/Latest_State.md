@@ -1,9 +1,11 @@
 # Latest State
 
-> 最後更新：2026-08-26
+> 最後更新：2026-08-27
 
 ## 最近完成
 
+- **2026-08-27**：Cursor 接入 **Lovable MCP**（`mcp.lovable.dev`）＋ Lovable plugin；skill **`lovable-mcp-server-guide`**
+- **2026-08-27**：Cursor 接入 **Base44 MCP**；skill **`base44-mcp-server-guide`**
 - **2026-08-26**：Google Maps「**東京美食**」— Trip.com **12/13** 已存＋`地區｜景點名` note（list **15** places；鮪魚一代閉店略過）
 - **2026-08-26**：Lite App Figma — 主元件 `PDP - 黑價＝SP` 的 `img` → DS **`PDP IMG`**；新建頁 **`PDP v3.0 (OOS)`**（IMG＋Add to cart 皆 OOS）
 - **2026-08-25**：本機 Portfolio Designer → Melessa skill **`portfolio-designer`**（文案＋mockup；symlink + Sasa 路由）
@@ -12,6 +14,14 @@
 - **2026-08-23**：Trip.com 東京美食 **13 間** → Wanderlog「**東京 Food**」；「**東京景点**」note 補齊；skill 統一 `地區｜景點名`
 - **2026-08-21**：建立 `claim-cursor` skill；July Cursor receipt → Expense `7:26`
 - **2026-08-14**：Wanderlog「富士山河口湖景點」10 景點；`update-wanderlog` skill merge `main`
+
+## MCP（Cursor，2026-08-27）
+
+| Server | 狀態 | Guide skill |
+| --- | --- | --- |
+| Figma / Slack / Google Workspace | 已連 | （既有） |
+| Base44 `user-base44` | 已連 | `base44-mcp-server-guide` |
+| Lovable `user-lovable`＋plugin | 已連 | `lovable-mcp-server-guide` |
 
 ## Lite App Figma（2026-08-26）
 
@@ -62,10 +72,13 @@ Maps 更新：**Local Agent** + `google-maps-bookmark` skill（Cloud browser 常
 
 **Portfolio（2026-08-25）**：`portfolio-designer` — Lovable project details 中英對照文案 + device mockup；觸發詞見 skill。
 
+**Lovable MCP（2026-08-27）**：`lovable-mcp-server-guide` — 建／改／部署 Lovable 專案；與 `portfolio-designer` 分工見 skill。
+
 Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 
 ## 下一步
 
+- [ ] （可選）用 Lovable MCP 實際改 `melessa-chu-design` 或建新專案做煙測
 - [ ] （可選）刪 Lite App 畫布備份 `Backup - img (pre PDP IMG)`
 - [ ] （可選）用 `portfolio-designer` 寫一則新專案文案做端到端驗證
 - [ ] （可選）河口湖 10 景點 note 升級為 `地區｜` + 特色 bullet
@@ -75,7 +88,7 @@ Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 
 ```
 Melessa AI Agent/
-├── 02_Knowledge_Base/skills/{google-maps-bookmark,portfolio-designer,...}/
-├── 03_Agents/Personal_AI_Assistant/sessions/2026-08-26_tokyo-food-maps-bookmark-finish.md
+├── 02_Knowledge_Base/skills/{lovable-mcp-server-guide,base44-mcp-server-guide,portfolio-designer,...}/
+├── 03_Agents/Personal_AI_Assistant/sessions/2026-08-27_lovable-mcp-setup.md
 └── 04_Memory_Logs/                      ← 本檔案
 ```
