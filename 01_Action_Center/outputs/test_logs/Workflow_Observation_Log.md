@@ -16,3 +16,4 @@
 | 2026-08-26 09:25–17:06 | claim-cursor：July eStatement 遮罩 PDF；skill 加 §6d＋完整 §1–7 觸發；Sasa 路由同步 | 約 1–1.5 小時（跨多段對話） | 充電（claim 流程可重用） | 高（每月 claim 可一鍵跑完；隱私 redact 固化） | `claim-cursor` |
 | 2026-08-27 12:11–13:55 | Cursor 接入 Base44 MCP；建 `base44-mcp-server-guide` skill；更新 Sasa TOOLS／MEMORY／路由 | 約 45 分鐘（含 OAuth／說明） | 充電（新平台可從 Cursor 建 app） | 高（官方 MCP 可重用；與 App MCP 已區分） | `base44-mcp-server-guide` |
 | 2026-08-27 12:28–14:10 | Cursor 接入 Lovable MCP＋plugin；建 `lovable-mcp-server-guide`；釐清 vs portfolio-designer；更新 Sasa 路由 | 約 1–1.5 小時（含 OAuth／plugin／說明） | 充電（portfolio 可從 Cursor 直改） | 高（官方 MCP＋plugin 可重用；文案／改站已分工） | `lovable-mcp-server-guide` |
+| 2026-08-28 09:59–10:46 | 查聽日 Calendar；記住港富閣／豪廷峯；4M→黃竹坑→港鐵去 LALA 路線；修正香港仔站誤判 | 約 45 分鐘 | 充電（行政＋偏好固化） | 中（通勤起點可重用；減少每次問住址） | |

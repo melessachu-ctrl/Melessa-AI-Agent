@@ -1,9 +1,10 @@
 # Latest State
 
-> 最後更新：2026-08-27
+> 最後更新：2026-08-28
 
 ## 最近完成
 
+- **2026-08-28**：Sasa 長期記憶 — **現居**香港仔中心港富閣、**前址**炮台山 Le Sommet 豪廷峯（`MEMORY.md`「個人／居住」）
 - **2026-08-27**：Cursor 接入 **Lovable MCP**（`mcp.lovable.dev`）＋ Lovable plugin；skill **`lovable-mcp-server-guide`**
 - **2026-08-27**：Cursor 接入 **Base44 MCP**；skill **`base44-mcp-server-guide`**
 - **2026-08-26**：Google Maps「**東京美食**」— Trip.com **12/13** 已存＋`地區｜景點名` note（list **15** places；鮪魚一代閉店略過）

@@ -10,6 +10,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-08-28：Sasa 長期記憶 — 現居港富閣（4M→黃竹坑→港鐵）、前址炮台山豪廷峯；聽日 LALA 午餐路線；session 已寫
 - 2026-08-27：Cursor 接入 Lovable MCP（`mcp.lovable.dev`）＋Lovable plugin；建立 `lovable-mcp-server-guide` skill＋symlink；Sasa 路由同步
 - 2026-08-27：Cursor 接入 Base44 MCP（`~/.cursor/mcp.json`）；建立 `base44-mcp-server-guide` skill＋symlink；Sasa TOOLS／MEMORY／AGENTS 同步
 - 2026-08-26：`claim-cursor` 加入 eStatement 淺灰遮罩（§6d）與「claim cursor」完整 §1–7；July 產出 `Jul eStatement Cursor.pdf`；Sasa 路由同步

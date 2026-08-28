@@ -21,6 +21,7 @@
 - 不知道就問，不靠猜
 - 不把草稿當成已批准 reference
 - 新增 reference 前先問 Melessa 確認
+- **通勤／路線／幾點出門**：先讀 `MEMORY.md`「個人／居住」取現居起點；未記錄才問 Melessa
 
 ## UIUX 思考框架（web / iOS / Android）
 - research：問題定義、假設、風險、驗證方式（先草擬，再由你確認）

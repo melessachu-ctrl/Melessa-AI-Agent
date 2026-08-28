@@ -11,6 +11,14 @@
 - **2026-08-27｜Base44 MCP**：Cursor 全域已接 `base44`（`https://app.base44.com/mcp`）；建／改 Base44 app、entities、sandbox → 讀 **`base44-mcp-server-guide`**。寫入操作先問。勿與「已發布 app 的 App MCP」混淆。
 - **2026-08-27｜Lovable MCP**：Cursor 全域已接 `lovable`（`https://mcp.lovable.dev`）＋可裝 Lovable plugin（`/lovable-new` 等）；建／改／部署 Lovable 專案 → 讀 **`lovable-mcp-server-guide`**。寫入／deploy 先問。文案／mockup 仍用 **`portfolio-designer`**（不自動改站）。
 
+## 個人／居住
+
+- **現居（2026-08 起）**：香港仔中心，**港富閣**（與丈夫同住）。
+- **平時去港鐵**：搭 **4M 小巴** 去 **黃竹坑**，再轉 **南港島綫**（黃竹坑站）。**港鐵香港仔站現未使用**（2026-08 仍無此站）。
+- **以前（與父母同住）**：炮台山，**Le Sommet 豪廷峯**。最近港鐵：**炮台山站**（港島綫）。
+- **用途**：行程規劃、通勤時間估算、路線建議時，預設起點為**現居**，並用 **4M → 黃竹坑 → 港鐵** 作為預設出發模式；若 Melessa 提及「返父母家／炮台山」則改用前址。
+- **不記錄**：單位樓層、門牌、業主／租約細節。
+
 ## 健康／個人背景
 
 - **濕疹**：不時復發、原因未明；主要在手掌／手背、膝頭後方、耳背、頸，範圍通常很小。
