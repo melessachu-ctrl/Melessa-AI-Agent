@@ -1,0 +1,23 @@
+{
+  "target_repo": "melessachu-ctrl/UIUX-Skills",
+  "target_branch": "main",
+  "skills_source": "02_Knowledge_Base/skills",
+  "skills": [
+    "uiux-design-studio",
+    "uiux-review",
+    "hktvmall-target-customers",
+    "ricky-design-guideline",
+    "ui-ux-pro-max",
+    "frontend-design",
+    "figma-mcp-server-guide",
+    "figma-file-cleanup",
+    "apply-design-system",
+    "audit-design-system",
+    "fix-design-system-finding"
+  ],
+  "rules_source": "sync/cursor-rules",
+  "rules": [
+    "hktvmall-figma-design-system.mdc",
+    "lite-app-figma-design-tokens.mdc"
+  ]
+}

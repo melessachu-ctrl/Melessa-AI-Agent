@@ -1,0 +1,44 @@
+---
+description: "Lite App Figma 設計／Lite App DS 更新時，字體必須連結 Design Tokens（跨專案）。未指定其他字體來源時，預設使用 Design Tokens Typography。"
+alwaysApply: true
+---
+
+# Lite App Figma Design Tokens（字體）
+
+## 觸發條件
+
+下列**任一**成立時，視為 Lite App Figma／DS 任務，**必須**套用本規則：
+
+- 使用者要在 Figma 做 **Lite App**／**Lite App DS**／**Lite-App** 相關設計、改版、元件或 Prototype
+- 任務目標檔為 Lite App Design System（例如 `fileKey` `IiOaK3Cf62CeWkAReR1Pqi`，或檔名含 `Lite App` / `Lite-App` / `Lite App - Design System`）
+- 呼叫 **`uiux-design-studio`** 且任務屬 Lite App UI/UX 或 Lite App DS 補洞／更新
+
+## 字體規則（必遵守）
+
+1. **所有 font／文字樣式必須 link Design Tokens**  
+   禁止僅用本機字級／字重硬編碼（例如直接設 `fontSize` 而未套用 text style），也禁止自創未入庫的字體樣式頂替。
+2. **未特別指明時的預設 Typography DS**：
+
+| 欄位 | 值 |
+| --- | --- |
+| 名稱 | Design Tokens（Typography） |
+| Figma URL | https://www.figma.com/design/I5A9GqmJdvoskfDeCBtNsL/Design-Tokens?node-id=120-1278 |
+| `fileKey` | `I5A9GqmJdvoskfDeCBtNsL` |
+| 預設入口 `nodeId` | `120:1278`（頁面：𝐓 Typography） |
+
+3. 使用者若**明確指定**其他字體／text style 來源，以使用者指定為準；其餘情況一律用上表。
+4. 套用方式：以 `importStyleByKeyAsync`／已訂閱 library 的 **Text Style**（如 `NS 20/App NS 20|24 Regular`）綁定文字節點（`setTextStyleIdAsync`）；寫入後若需保留顏色，先 snapshot 再還原 fills（勿因換 text style 默默改色）。
+
+## 必做流程（Lite App Figma 相關工作）
+
+1. **先查 Typography tokens**：在 Design Tokens 檔或 `search_design_system` 盤點對應 `NS {size}/…` text styles，再套用。
+2. **新建／更新元件**：Label、Value、Helper、Button label 等文字節點都必須有綁定的 text style id。
+3. **產出標註**：Director Final Pack／UI Spec／DS 變更說明須列出 Typography 來源（名稱、`fileKey`、主要 text style 名稱）；未知則標「待盤點」並說明阻塞。
+
+## 與其他技能聯動
+
+Lite App Figma／DS 任務須同時遵守：
+
+- `uiux-design-studio`（若為編排流程；見其中「Lite App Design Tokens 預設」）
+- `figma-use`（任何 `use_figma` 寫入前）
+- `apply-design-system`／`figma-generate-library`（元件或多區塊 DS 對齊時）

@@ -52,6 +52,15 @@ done
 2. 在本機執行：`ln -sfn "<本目錄絕對路徑>/<skill-name>" "$HOME/.cursor/skills/<skill-name>"`
 3. 更新上方重建清單與 Sasa 的 `TOOLS.md`／`BRAIN.md`／`AGENTS.md`（若需要）
 
+## 下游分發（UIUX-Skills）
+
+設計師 teammate 使用的下游 repo：[melessachu-ctrl/UIUX-Skills](https://github.com/melessachu-ctrl/UIUX-Skills)
+
+- **真源**：本目錄（Melessa）；**下游**：UIUX-Skills 的 `skills/`
+- Push 到 Melessa `main` 且變更本目錄時，GitHub Actions 會自動 sync（見 [`sync/README.md`](../../sync/README.md)）
+- Sync 清單定義於 [`sync/uiux-skills-manifest.json`](../../sync/uiux-skills-manifest.json)（11 個 UI/UX skills + 2 個 cursor rules）
+- Teammate 在 UIUX-Skills 的 skill 改動須 **PR 回 Melessa**，不可只改下游
+
 ## 不放在這裡
 
 Cursor 內建 skills 在 `~/.cursor/skills-cursor/`，由系統管理，不要搬入本 repo。

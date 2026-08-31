@@ -21,6 +21,7 @@ _archive/
 *credentials*
 *secret*
 *token*
+!sync/cursor-rules/lite-app-figma-design-tokens.mdc
 
 # Raw or real company data must never be committed
 raw_data/

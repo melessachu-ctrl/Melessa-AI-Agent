@@ -1,0 +1,53 @@
+name: Sync UIUX-Skills
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '02_Knowledge_Base/skills/**'
+      - 'sync/uiux-skills-manifest.json'
+      - 'sync/cursor-rules/**'
+      - 'sync/sync-uiux-skills.sh'
+      - '.github/workflows/sync-uiux-skills.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Melessa
+        uses: actions/checkout@v4
+
+      - name: Checkout UIUX-Skills
+        uses: actions/checkout@v4
+        with:
+          repository: melessachu-ctrl/UIUX-Skills
+          token: ${{ secrets.UIUX_SKILLS_SYNC_TOKEN }}
+          path: uiux-skills-out
+          fetch-depth: 0
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq rsync
+
+      - name: Run sync script
+        run: bash sync/sync-uiux-skills.sh . ./uiux-skills-out
+
+      - name: Commit and push if changed
+        working-directory: uiux-skills-out
+        env:
+          GITHUB_TOKEN: ${{ secrets.UIUX_SKILLS_SYNC_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git add -A
+          git commit -m "chore(sync): from Melessa @ ${GITHUB_SHA:0:7}"
+          git push origin main
