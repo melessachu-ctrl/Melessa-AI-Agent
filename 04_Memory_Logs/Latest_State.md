@@ -1,9 +1,10 @@
 # Latest State
 
-> 最後更新：2026-08-28
+> 最後更新：2026-09-01
 
 ## 最近完成
 
+- **2026-09-01**：**UIUX Design Agent** 規劃 — 8 步實施手冊 `01_Action_Center/outputs/docs/UIUX_Design_Agent_Implementation_8_Steps.md`；Hermes 同級 read-only lookup agent 架構；Slack `#agent-uiux-design`／`@uiux-design-agent`；刪 `.tmp-pdp-assets`
 - **2026-08-28**：Sasa 長期記憶 — **現居**香港仔中心港富閣、**前址**炮台山 Le Sommet 豪廷峯（`MEMORY.md`「個人／居住」）
 - **2026-08-27**：Cursor 接入 **Lovable MCP**（`mcp.lovable.dev`）＋ Lovable plugin；skill **`lovable-mcp-server-guide`**
 - **2026-08-27**：Cursor 接入 **Base44 MCP**；skill **`base44-mcp-server-guide`**
@@ -77,8 +78,20 @@ Maps 更新：**Local Agent** + `google-maps-bookmark` skill（Cloud browser 常
 
 Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 
+## UIUX Design Agent（2026-09-01）
+
+| 項目 | 狀態 |
+| --- | --- |
+| 實施手冊 | ✅ `01_Action_Center/outputs/docs/UIUX_Design_Agent_Implementation_8_Steps.md` |
+| Agent 命名 | UIUX Design Agent（Slack `@uiux-design-agent`） |
+| PoC repo 路線 | Phase 1 Melessa → Phase 2 `HKTV-UIUX-Design-Agent` |
+| 8 件套 / design-index | ⏳ 未建 |
+| Hermes 接 Slack | ⏳ 待 PM team 對齊 Step 0 |
+
 ## 下一步
 
+- [ ] UIUX Design Agent PoC：`design-index/` 首個 YAML + Cursor Figma MCP 試跑（Step 2–3）
+- [ ] 同 Hermes PM team 對齊 inter-agent Slack schema（Step 0）
 - [ ] （可選）用 Lovable MCP 實際改 `melessa-chu-design` 或建新專案做煙測
 - [ ] （可選）刪 Lite App 畫布備份 `Backup - img (pre PDP IMG)`
 - [ ] （可選）用 `portfolio-designer` 寫一則新專案文案做端到端驗證
