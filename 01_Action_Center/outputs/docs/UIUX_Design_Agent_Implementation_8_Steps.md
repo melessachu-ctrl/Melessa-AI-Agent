@@ -1,11 +1,11 @@
-# UI/UX Design Agent 實施步驟（8 步）
+# UIUX Design Agent 實施步驟（8 步）
 
 > 供 PM / UIUX / Hermes team 隨時參考之實施手冊  
 > **文件版本：** 2026-09-01
 
 **背景：** PM team 使用 Hermes Agent（本地 macOS + 雲端 LLM），經 WhatsApp 回應 stakeholder；跨 agent 協作在 Slack channel 進行。UIUX team 目前無對外 AI agent，PM 查 Figma design 需人手找設計師。
 
-**目標：** 建立 Design Lookup Agent（Hermes 同級），令 PM 可自助查設計稿、screenshot、UI spec，並在 low confidence 時 escalate 設計師。
+**目標：** 建立 UIUX Design Agent（Hermes 同級），令 PM 可自助查設計稿、screenshot、UI spec，並在 low confidence 時 escalate 設計師。
 
 **技術分工：** Hermes = production agent｜Cursor = skills 開發／PoC lab｜Repo = agent 設定 + design-index 真源
 
@@ -18,7 +18,7 @@
 3. [Step 1：盤點 PM top 10 查詢](#step-1盤點-pm-top-10-查詢)
 4. [Step 2：建 Design Index](#step-2建-design-index)
 5. [Step 3：喺 Cursor 試 Figma MCP + 寫 lookup skill](#step-3喺-cursor-試-figma-mcp--寫-lookup-skill)
-6. [Step 4：建 Hermes Design Agent](#step-4建-hermes-design-agent)
+6. [Step 4：建 Hermes UIUX Design Agent](#step-4建-hermes-uiux-design-agent)
 7. [Step 5：接 Slack channel](#step-5接-slack-channel)
 8. [Step 6：PoC 試跑](#step-6poc-試跑)
 9. [Step 7：加 governance + 設計師把關](#step-7加-governance--設計師把關)
@@ -36,9 +36,9 @@ Stakeholder (WhatsApp)
         ↓
    Hermes PM Agent（macOS 常駐）
         ↓ 設計相關問題
-   Slack #agent-design-lookup
+   Slack #agent-uiux-design
         ↓
-   Design Lookup Agent（Hermes 同級）
+   UIUX Design Agent（Hermes 同級）
         ↓
    Slack 回覆 → Hermes 整合 → WhatsApp 答 stakeholder
 ```
@@ -46,7 +46,7 @@ Stakeholder (WhatsApp)
 | 元件 | 角色 |
 |------|------|
 | **Hermes PM Agent** | 理解 stakeholder 問題、routing、整合回覆 |
-| **Design Lookup Agent** | read-only 查 design-index + Figma，回覆 link / screenshot / 摘要 |
+| **UIUX Design Agent** | read-only 查 design-index + Figma，回覆 link / screenshot / 摘要 |
 | **Design Index（repo）** | feature → Figma link、Jira、status、keywords 目錄 |
 | **Figma MCP** | get_metadata、get_screenshot、get_design_context、search_design_system |
 | **Cursor** | 開發 skills、PoC 試 lookup；唔係 production Slack bot |
@@ -61,21 +61,21 @@ Stakeholder (WhatsApp)
 
 **⏱ 約 1 天｜與 Hermes PM team 協作**
 
-同 Hermes PM team 確認 Slack channel 規則同 message schema，確保 PM agent 知道點 parse Design Agent 回覆並整合至 WhatsApp。
+同 Hermes PM team 確認 Slack channel 規則同 message schema，確保 PM agent 知道點 parse UIUX Design Agent 回覆並整合至 WhatsApp。
 
 ### 建議 Slack channel
 
-`#agent-design-lookup`（或沿用現有 agent channel 命名規則）
+`#agent-uiux-design`（或沿用現有 agent channel 命名規則）
 
 ### PM Hermes 發送格式（示例）
 
 ```
-@design-agent lookup
+@uiux-design-agent lookup
 query: "Checkout v3 最新 approved design 喺邊？"
 context: { jira: "HKTV-1234", platform: "app" }
 ```
 
-### Design Agent 回覆格式（示例）
+### UIUX Design Agent 回覆格式（示例）
 
 ```
 status: found | partial | not_found | escalate
@@ -123,7 +123,7 @@ escalate_to: @designer（若 confidence=low）
 
 **⏱ 1–2 週｜設計師主導**
 
-在 repo 建立 `design-index/`，每個 feature 一個 YAML 檔，記錄結構化 metadata。Agent 先查 index，再開 Figma，唔使每次問設計師「檔案喺邊」。
+在 repo 建立 `design-index/`，每個 feature 一個 YAML 檔，記錄結構化 metadata。UIUX Design Agent 先查 index，再開 Figma，唔使每次問設計師「檔案喺邊」。
 
 ### Phase 0 範圍
 
@@ -165,7 +165,7 @@ escalate_to: @designer（若 confidence=low）
 
 1. 加 Figma MCP（`https://mcp.figma.com/mcp`）
 2. 重用現有 skills：`figma-mcp-server-guide`、`uiux-design-studio` 等
-3. 新建 `design-lookup/SKILL.md`，定死流程：
+3. 新建 `uiux-design-lookup/SKILL.md`，定死流程：
    - 收到 query → 先查 design-index → 再 call Figma tools
    - 固定回覆格式（answer + evidence + confidence + design_status）
    - 邊界：read-only、唔做設計決策
@@ -188,7 +188,7 @@ escalate_to: @designer（若 confidence=low）
 
 ---
 
-## Step 4：建 Hermes Design Agent
+## Step 4：建 Hermes UIUX Design Agent
 
 **⏱ 1–2 週｜Hermes + UIUX 協作**
 
@@ -197,8 +197,8 @@ escalate_to: @designer（若 confidence=low）
 ### Agent 8 件套（放 repo）
 
 ```
-03_Agents/Design_Lookup_Agent/
-  AGENTS.md    ← 角色：Design Lookup Agent，read-only
+03_Agents/UIUX_Design_Agent/
+  AGENTS.md    ← 角色：UIUX Design Agent，read-only
   SOUL.md      ← 語氣、邊界、escalation 原則
   TOOLS.md     ← Figma MCP、design-index、Slack
   BRAIN.md     ← 引用 skills + design-index 路徑
@@ -233,15 +233,15 @@ escalate_to: @designer（若 confidence=low）
 
 **⏱ 3–5 天**
 
-1. 開 `#agent-design-lookup`（或沿用現有 agent channel pattern）
-2. Design Agent Hermes instance 監聽該 channel
+1. 開 `#agent-uiux-design`（或沿用現有 agent channel pattern）
+2. UIUX Design Agent Hermes instance 監聽該 channel
 3. PM Hermes 收到 WhatsApp 設計問題 → 轉發 Slack → 等 thread 回覆 → 整合 → WhatsApp
 
 ### PM Hermes routing 邏輯（示意）
 
 ```
 if query matches design_patterns:
-    slack_post("#agent-design-lookup", query)
+    slack_post("#agent-uiux-design", query)
     response = wait_for_thread_reply(timeout=60s)
     if response.confidence == "low":
         append "⚠️ 設計師確認中"
@@ -283,13 +283,13 @@ else:
 | 設計師 confirm loop | Designer 確認後更新 index + MEMORY |
 | Rate limit | Figma MCP 有 read limit；batch 查詢、cache screenshot |
 
-### Design Agent 應該做
+### UIUX Design Agent 應該做
 
 - ✅ 搵設計稿、show screenshot、summarize UI spec
 - ✅ 回答「用咩 component / token」
 - ✅ 指出 design 同 PRD 可能不一致（初稿）
 
-### Design Agent 唔應該做
+### UIUX Design Agent 唔應該做
 
 - ❌ 改 Figma（write 留畀設計師）
 - ❌ 做設計決策（例如「應該改 layout」）
@@ -304,8 +304,8 @@ else:
 1. **自動 sync index**：Figma webhook / 定期 script 更新 metadata
 2. **Jira 雙向 link**：Jira ticket 自動帶 `figma_url` field
 3. **Vector search**：index + Confluence design spec 語意搜尋
-4. **PRD cross-check**：PM 寫 PRD 時 Hermes 自動 call Design Agent 做 gap analysis
-5. **開正式 repo**：若 PoC 在 Melessa repo，搬 agent 專用檔案至 `HKTV-Design-Agent`；skills 真源留 Melessa / UIUX-Skills
+4. **PRD cross-check**：PM 寫 PRD 時 Hermes 自動 call UIUX Design Agent 做 gap analysis
+5. **開正式 repo**：若 PoC 在 Melessa repo，搬 agent 專用檔案至 `HKTV-UIUX-Design-Agent`；skills 真源留 Melessa / UIUX-Skills
 
 ---
 
@@ -315,11 +315,11 @@ else:
 
 ```
 Phase 1（Melessa repo + Cursor）
-  → 建 Design Agent 8 件套 + design-index + design-lookup skill
+  → 建 UIUX Design Agent 8 件套 + design-index + uiux-design-lookup skill
   → Cursor 試 Figma MCP + lookup 流程
 
 Phase 2（PoC OK）
-  → 開新 repo HKTV-Design-Agent
+  → 開新 repo HKTV-UIUX-Design-Agent
   → 只搬 agent 專用檔案；skills 共用部分留 Melessa
 
 Phase 3
@@ -330,7 +330,7 @@ Phase 3
 
 | 放喺 repo | 唔放喺 repo |
 |-----------|-------------|
-| Agent 8 件套、design-index YAML、design-lookup skill、Slack schema、PoC log | Figma 設計稿本體、API keys、WhatsApp 對話、完整 Confluence/Jira 內容 |
+| Agent 8 件套、design-index YAML、uiux-design-lookup skill、Slack schema、PoC log | Figma 設計稿本體、API keys、WhatsApp 對話、完整 Confluence/Jira 內容 |
 
 ---
 
@@ -383,4 +383,4 @@ YAML 係純文字設定檔，可用 Cursor / VS Code 編輯；push 上 GitHub �
 
 ---
 
-*本文件由 UI/UX Design Agent 規劃對話整理而成，供 HKTVmall PM / UIUX / Hermes team 內部參考。*
+*本文件由 UIUX Design Agent 規劃對話整理而成，供 HKTVmall PM / UIUX / Hermes team 內部參考。*
