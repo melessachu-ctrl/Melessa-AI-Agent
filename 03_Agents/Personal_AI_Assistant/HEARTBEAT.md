@@ -29,5 +29,11 @@
       - **感受**（耗能／充電／中性）
       - **價值**（高／中／低 + 簡短理由）
       - **Skills**：本回合有**讀取並遵循**的 skill 名稱（如 `google-maps-bookmark`）；多個用逗號分隔；**無則留空**
-   3. 將收尾相關變更（session、觀察日誌、`TASKS.md`、已確認的 `MEMORY` 等）一併 `git commit` 並 `git push` 到 GitHub；不提交 credential／敏感檔；不做 force push / hard reset
-
+   3. 將收尾相關變更（session、觀察日誌、`TASKS.md`、已確認的 `MEMORY` 等）一併 `git commit` 並 `git push` 到 **Melessa-AI-Agent** GitHub；不提交 credential／敏感檔；不做 force push / hard reset
+   4. **UIUX-Skills 下游（條件式，見 `MEMORY.md`）**：若本 session 有修改 `02_Knowledge_Base/skills/**` 或 `sync/**`，在 Melessa push 成功後：
+      - **不要**每次 finish session 都手動 sync／push [UIUX-Skills](https://github.com/melessachu-ctrl/UIUX-Skills) 的 `skills/`（真源在 Melessa；下游由 GitHub Actions **Sync UIUX-Skills** 自動更新）
+      - **不要**在 Melessa 本機跑 `update-skills.sh`（該腳本給 clone UIUX-Skills 的 designer 用；Melessa 用 symlink 指向真源即可）
+      - **要**確認 Actions workflow 跑成功；若失敗或未觸發，手動 **Run workflow**（`workflow_dispatch`）或查 [`sync/README.md`](../../sync/README.md)
+      - **可選**：在 `#uiux-designer` 公告「skills 已更新，請跑 `./scripts/update-skills.sh`」（Canvas：[懶人包](https://hktvitlo.slack.com/docs/T1PH69YNN/F0BTSHFDX50)）
+      - 若本 session **只**改 UIUX-Skills 的非 sync 檔（如 README、`scripts/update-skills.sh`），才另 commit／push **UIUX-Skills** repo
+      - 若本 session **未**改上述路徑 → 跳過，不做任何 UIUX-Skills 操作

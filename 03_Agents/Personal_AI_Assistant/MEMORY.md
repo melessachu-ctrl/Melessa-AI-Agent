@@ -5,7 +5,8 @@
 ## Melessa 的偏好
 
 - 預設使用繁體中文（除非你要求其他語言）
-- 當 Melessa 說「結束 session」或「finish session」：除了寫 session／更新 `TASKS.md` 等收尾外，**自動追加一行**到 `01_Action_Center/outputs/test_logs/Workflow_Observation_Log.md`（含 **Skills** 欄：本回合用過的 skill 才填，無則留空），然後**直接 `git commit` 並 `git push` 到 GitHub**（無需再另行確認一次）。仍須遵守安全：不提交 credential／敏感資料；destructive git（force push 等）永遠先問。
+- 當 Melessa 說「結束 session」或「finish session」：除了寫 session／更新 `TASKS.md` 等收尾外，**自動追加一行**到 `01_Action_Center/outputs/test_logs/Workflow_Observation_Log.md`（含 **Skills** 欄：本回合用過的 skill 才填，無則留空），然後**直接 `git commit` 並 `git push` 到 Melessa-AI-Agent GitHub**（無需再另行確認一次）。仍須遵守安全：不提交 credential／敏感資料；destructive git（force push 等）永遠先問。
+- **Finish session｜UIUX-Skills 下游（條件式）**：Melessa 為 UI/UX skills 真源（`02_Knowledge_Base/skills/`）；[UIUX-Skills](https://github.com/melessachu-ctrl/UIUX-Skills) 為 designer 分發包，由 Actions **Sync UIUX-Skills** 自動同步。**預設 finish session 只 push Melessa**；僅當本 session 改過 `02_Knowledge_Base/skills/**` 或 `sync/**` 時，push 後確認 Actions 成功（失敗則 `workflow_dispatch`），可選在 `#uiux-designer` 提醒 designer 跑 `./scripts/update-skills.sh`。勿每次 finish session 手動 push UIUX-Skills 的 `skills/`；勿在 Melessa 本機跑 `update-skills.sh`。
 - **2026-08-25｜Google Calendar**：建立／新增行程時**預設關閉提醒**（`useDefault: false`、無 overrides）；**只有** Melessa 明確要求提醒時才開啟。Cursor 規則：`~/.cursor/rules/google-calendar-no-reminders.mdc`。MCP `calendar_createEvent` 不支援 reminders → 建完後用 Calendar API `PATCH`（token 在 `~/.google-workspace-mcp/`，勿 commit）。
 - **2026-08-25｜Portfolio**：寫 portfolio／作品集文案／device mockup／Lovable project details → 讀 **`portfolio-designer`** skill（真源在 `02_Knowledge_Base/skills/portfolio-designer/`）。以 Skill 承載，不做獨立 Agent；勿用 `alwaysApply` rule。
 - **2026-08-27｜Base44 MCP**：Cursor 全域已接 `base44`（`https://app.base44.com/mcp`）；建／改 Base44 app、entities、sandbox → 讀 **`base44-mcp-server-guide`**。寫入操作先問。勿與「已發布 app 的 App MCP」混淆。
@@ -41,7 +42,7 @@
 - **2026-08-21**：Cursor 公司 claim（receipt + enJoy e-statement）→ 讀 **`claim-cursor`** skill；Expense folder 為 `M:YY`（冒號）；預設上個月；folder 已有 e-statement 則不催下載；Cursor 下旬扣款通常對應恒生「下一個月約 13 日」結單（例：July claim → `13-08-YYYY`）。
 - **2026-08-27**：Cursor 接入官方 **Base44 MCP**（Builder plan+、OAuth 選 workspace）；操作指南 skill `base44-mcp-server-guide`；寫入級操作與 Calendar／Figma 同級需先確認。
 - **2026-08-27**：Cursor 接入官方 **Lovable MCP**（`mcp.lovable.dev`）＋ Cursor Lovable plugin；操作指南 skill `lovable-mcp-server-guide`；寫入／deploy／DB 與 Calendar／Figma／Base44 同級需先確認。
-- **2026-08-26**：`claim-cursor` 擴充 eStatement **淺灰遮罩**（產出 `{Mon} eStatement Cursor.pdf`）；「我要 claim cursor／幫我 claim cursor」預設跑完整 **§1–7**；卡關須明確回報欠缺（結單／登入／Browser 等）。
+- **2026-08-31**：**UIUX-Skills 模式 B（下游分發）**：skill 內容真源在 Melessa `02_Knowledge_Base/skills/`；push `main` 後 GitHub Actions 同步到 [UIUX-Skills](https://github.com/melessachu-ctrl/UIUX-Skills)。Designer 用 `./scripts/update-skills.sh` 更新；skill 改動 PR 回 Melessa，勿只改下游。Manifest／workflow 見 `sync/`。Finish session 見 `HEARTBEAT.md` step 7.4（條件式，非每次必跑）。
 
 ## 踩過的坑
 
