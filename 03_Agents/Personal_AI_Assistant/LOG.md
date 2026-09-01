@@ -1,5 +1,11 @@
 # LOG｜Sasa
 
+## 2026-09
+
+| 日期 | 任務 | 成果 | 備註 |
+|---|---|---|---|
+| 2026-09-01 | UIUX Design Agent 規劃＋8 步實施手冊 | `UIUX_Design_Agent_Implementation_8_Steps.md`；命名統一；刪 PDF/HTML + `.tmp-pdp-assets`；PR #5–#7 | PoC 待 Step 0–3；Hermes + Slack 待 PM team |
+
 ## 2026-08
 
 | 日期 | 任務 | 成果 | 備註 |

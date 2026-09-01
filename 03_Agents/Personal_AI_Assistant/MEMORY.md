@@ -42,7 +42,9 @@
 - **2026-08-21**：Cursor 公司 claim（receipt + enJoy e-statement）→ 讀 **`claim-cursor`** skill；Expense folder 為 `M:YY`（冒號）；預設上個月；folder 已有 e-statement 則不催下載；Cursor 下旬扣款通常對應恒生「下一個月約 13 日」結單（例：July claim → `13-08-YYYY`）。
 - **2026-08-27**：Cursor 接入官方 **Base44 MCP**（Builder plan+、OAuth 選 workspace）；操作指南 skill `base44-mcp-server-guide`；寫入級操作與 Calendar／Figma 同級需先確認。
 - **2026-08-27**：Cursor 接入官方 **Lovable MCP**（`mcp.lovable.dev`）＋ Cursor Lovable plugin；操作指南 skill `lovable-mcp-server-guide`；寫入／deploy／DB 與 Calendar／Figma／Base44 同級需先確認。
+- **2026-08-26**：`claim-cursor` 擴充 eStatement **淺灰遮罩**（產出 `{Mon} eStatement Cursor.pdf`）；「我要 claim cursor／幫我 claim cursor」預設跑完整 **§1–7**；卡關須明確回報欠缺（結單／登入／Browser 等）。
 - **2026-08-31**：**UIUX-Skills 模式 B（下游分發）**：skill 內容真源在 Melessa `02_Knowledge_Base/skills/`；push `main` 後 GitHub Actions 同步到 [UIUX-Skills](https://github.com/melessachu-ctrl/UIUX-Skills)。Designer 用 `./scripts/update-skills.sh` 更新；skill 改動 PR 回 Melessa，勿只改下游。Manifest／workflow 見 `sync/`。Finish session 見 `HEARTBEAT.md` step 7.4（條件式，非每次必跑）。
+- **2026-09-01｜UIUX Design Agent（HKTVmall）**：PM 查 Figma design 痛點 → 規劃 Hermes 同級 **read-only lookup** agent（唔做 design 決策）。實施手冊：`01_Action_Center/outputs/docs/UIUX_Design_Agent_Implementation_8_Steps.md`。Slack：`#agent-uiux-design`／`@uiux-design-agent`。PoC 路線：Melessa repo（8 件套 + `design-index/`）→ 正式 `HKTV-UIUX-Design-Agent`；skills 真源留 Melessa／UIUX-Skills。
 
 ## 踩過的坑
 
@@ -52,6 +54,7 @@
 - **Cloud Agent 瀏覽器 ≠ 本機／手機 Chrome**：在 phone／本機登入 Google／Wanderlog，不代表 VM 已登入；Wanderlog 可改貼 `connect.sid` 繞過。
 - **2026-08-14｜Wanderlog place search**：河口湖等離 trip center 較遠時加大 `radius`；`place_id` 為 undefined 的 autocomplete 結果要跳過；「已存在」用 note 中文名判斷，勿 fuzzy 英文 match。
 - **2026-08-21｜恒生 e-Statement**：信用卡結單 **不會** PDF 附件寄 Gmail（只有提示）。Cursor Browser Tab 下載常落 hidden iframe／blob，CDP 難自動存檔 → `claim-cursor` 以檢查 Expense folder + 引導手動下載為主。Expense 年月資料夾勿用路徑斜線建成 `7/26` 巢狀。
+- **2026-09-01｜Cursor 開 PDF**：Cursor IDE **無法預覽 PDF**（Binary file not supported）。參考文件用 `.md`；PDF 用 macOS Preview／Finder 開。Cloud agent 建檔後本機需 `git pull origin main` 先見到。
 
 ## 不應記錄
 

@@ -3,14 +3,20 @@
 > 只記錄 Melessa 確認要我跟進的工作；每次 session 結束可更新。
 
 ## 🔴 進行中
-- （無）
+- UIUX Design Agent PoC（規劃完成；待 Step 0–3 執行）— 手冊 `01_Action_Center/outputs/docs/UIUX_Design_Agent_Implementation_8_Steps.md`
 
 ## 🟡 待辦
+- UIUX Design Agent：同 Hermes PM team 對齊 Slack inter-agent schema（Step 0）
+- UIUX Design Agent：盤點 PM top 10 設計查詢（Step 1）
+- UIUX Design Agent：建 `design-index/` 首批 5–10 YAML + `03_Agents/UIUX_Design_Agent/` 8 件套骨架（Step 2–4）
+- UIUX Design Agent：Cursor 試 Figma MCP + `uiux-design-lookup` skill（Step 3）
 - （可選）芒果去皮觀察；記錄會否同樣誘發濕疹
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-09-01：UIUX Design Agent 8 步實施手冊（`.md`）；命名統一；刪 PDF/HTML + `.tmp-pdp-assets`；PR #5–#7 merge；session 已寫
 - 2026-08-31：UIUX-Skills 模式 B — Melessa 真源 + Actions 自動 sync 至下游；UIUX-Skills onboarding（README／install／update script）；Slack Canvas + #uiux-designer 公告；Sasa finish session 條件式 UIUX 規則（HEARTBEAT／MEMORY）
+- 2026-08-28：Sasa 長期記憶 — 現居港富閣（4M→黃竹坑→港鐵）、前址炮台山豪廷峯；聽日 LALA 午餐路線；session 已寫
 - 2026-08-27：Cursor 接入 Lovable MCP（`mcp.lovable.dev`）＋Lovable plugin；建立 `lovable-mcp-server-guide` skill＋symlink；Sasa 路由同步
 - 2026-08-27：Cursor 接入 Base44 MCP（`~/.cursor/mcp.json`）；建立 `base44-mcp-server-guide` skill＋symlink；Sasa TOOLS／MEMORY／AGENTS 同步
 - 2026-08-26：`claim-cursor` 加入 eStatement 淺灰遮罩（§6d）與「claim cursor」完整 §1–7；July 產出 `Jul eStatement Cursor.pdf`；Sasa 路由同步
