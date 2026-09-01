@@ -384,5 +384,3 @@ YAML 係純文字設定檔，可用 Cursor / VS Code 編輯；push 上 GitHub �
 ---
 
 *本文件由 UI/UX Design Agent 規劃對話整理而成，供 HKTVmall PM / UIUX / Hermes team 內部參考。*
-
-*PDF 版本：`Design_Agent_Implementation_8_Steps.pdf`（請用 macOS Preview 或 Finder 開啟，Cursor 無法預覽 PDF）*
