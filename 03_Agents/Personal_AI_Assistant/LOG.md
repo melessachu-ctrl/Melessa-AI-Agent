@@ -4,6 +4,7 @@
 
 | 日期 | 任務 | 成果 | 備註 |
 |---|---|---|---|
+| 2026-09-03 | 3rd Party Login Permissions List 更新為 7 項 | Consent ZH 主元件＋實例；`3911:222` 保留「您已授權：」 | fileKey `3gnFYaXhhARa39OqRf0MdX`；注意實例 text override |
 | 2026-09-01 | UIUX Design Agent 規劃＋8 步實施手冊 | `UIUX_Design_Agent_Implementation_8_Steps.md`；命名統一；刪 PDF/HTML + `.tmp-pdp-assets`；PR #5–#7 | PoC 待 Step 0–3；Hermes + Slack 待 PM team |
 
 ## 2026-08

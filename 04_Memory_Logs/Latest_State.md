@@ -1,9 +1,10 @@
 # Latest State
 
-> 最後更新：2026-09-01
+> 最後更新：2026-09-03
 
 ## 最近完成
 
+- **2026-09-03**：**3rd Party Login** Permissions List → 7 項獨立權限（Consent ZH 主元件＋`3911:222`「您已授權」）；fileKey `3gnFYaXhhARa39OqRf0MdX`
 - **2026-09-01**：**UIUX Design Agent** 規劃 — 8 步實施手冊 `01_Action_Center/outputs/docs/UIUX_Design_Agent_Implementation_8_Steps.md`；Hermes 同級 read-only lookup agent 架構；Slack `#agent-uiux-design`／`@uiux-design-agent`；刪 `.tmp-pdp-assets`
 - **2026-08-28**：Sasa 長期記憶 — **現居**香港仔中心港富閣、**前址**炮台山 Le Sommet 豪廷峯（`MEMORY.md`「個人／居住」）
 - **2026-08-27**：Cursor 接入 **Lovable MCP**（`mcp.lovable.dev`）＋ Lovable plugin；skill **`lovable-mcp-server-guide`**
@@ -35,6 +36,15 @@
 | 備份 | `Backup - img (pre PDP IMG)`（`19012:3242`）— 確認後可刪 |
 
 DS 元件：`PDP IMG`（Default｜OOS）；`Button / Add to cart`（`Page=PDP, State=OOS`）
+
+## 3rd Party Login Figma（2026-09-03）
+
+| 項目 | 狀態 |
+| --- | --- |
+| 檔案 | [HKTVmall — 3rd Party Login](https://www.figma.com/design/3gnFYaXhhARa39OqRf0MdX/HKTVmall---3rd-Party-Login)（`3gnFYaXhhARa39OqRf0MdX`） |
+| Permissions List | 7 項獨立權限（帳戶資料＋編號／電郵／會員級別／手機／送貨地址／付款資料） |
+| Consent ZH | [3rd Party Consent](https://www.figma.com/design/3gnFYaXhhARa39OqRf0MdX/HKTVmall---3rd-Party-Login?node-id=3907-1420) |
+| 已授權列表 | [PermissionsList](https://www.figma.com/design/3gnFYaXhhARa39OqRf0MdX/HKTVmall---3rd-Party-Login?node-id=3911-222) |
 
 ## 旅行規劃
 
@@ -103,6 +113,6 @@ Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 ```
 Melessa AI Agent/
 ├── 02_Knowledge_Base/skills/{lovable-mcp-server-guide,base44-mcp-server-guide,portfolio-designer,...}/
-├── 03_Agents/Personal_AI_Assistant/sessions/2026-08-27_lovable-mcp-setup.md
+├── 03_Agents/Personal_AI_Assistant/sessions/2026-09-03_3rd-party-login-permissions-list.md
 └── 04_Memory_Logs/                      ← 本檔案
 ```

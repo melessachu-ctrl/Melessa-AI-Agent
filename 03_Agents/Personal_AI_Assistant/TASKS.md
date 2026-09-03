@@ -14,6 +14,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-09-03：3rd Party Login Permissions List → 7 項獨立權限（Consent ZH 主元件＋`3911:222`）；session 已寫
 - 2026-09-01：UIUX Design Agent 8 步實施手冊（`.md`）；命名統一；刪 PDF/HTML + `.tmp-pdp-assets`；PR #5–#7 merge；session 已寫
 - 2026-08-31：UIUX-Skills 模式 B — Melessa 真源 + Actions 自動 sync 至下游；UIUX-Skills onboarding（README／install／update script）；Slack Canvas + #uiux-designer 公告；Sasa finish session 條件式 UIUX 規則（HEARTBEAT／MEMORY）
 - 2026-08-28：Sasa 長期記憶 — 現居港富閣（4M→黃竹坑→港鐵）、前址炮台山豪廷峯；聽日 LALA 午餐路線；session 已寫
