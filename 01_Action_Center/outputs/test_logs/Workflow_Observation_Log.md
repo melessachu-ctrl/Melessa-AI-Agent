@@ -21,3 +21,4 @@
 | 2026-09-01 08:07–07:00 | UIUX Design Agent 規劃（Hermes 架構諮詢）；8 步實施手冊 `.md`；命名統一；cleanup PDF/tmp assets | 約 1.5–2 小時 | 充電（戰略＋可交付手冊） | 高（HKTVmall PM/UIUX 可共用；下一步 PoC 路線清晰） | `uiux-design-studio`, `figma-mcp-server-guide` |
 | 2026-09-03 16:39–16:59 | 3rd Party Login Permissions List 改為 7 項獨立權限（Consent ZH＋已授權列表） | 約 20 分鐘 | 中性（文案／列數同步） | 中（Consent 文案對齊；實例 override 需核對） | `figma-use` |
 | 2026-09-02～09-04 | HKTVmall KA Price＋Search Result：真實 SKU／一位小數價格／Show KA Off＋Cart；VIP 巢狀漏改補齊 | 約 3–4 小時（跨日多段） | 耗能（大批次 Figma＋巢狀價格漏掃） | 高（多檔多 section 交付；踩坑可重用） | `uiux-design-studio`, `figma-use`, `figma-mcp-server-guide`, `hktvmall-target-customers`, `ricky-design-guideline` |
+| 2026-09-04 10:20–10:40 | `uiux-design-studio` 加 DS Component Write Gate（auto-layout／font token／leaf-only）；同步 cleanup、apply-DS、cursor rules、sync | 約 20 分鐘 | 中性（skill 閘門補強） | 高（修 designer 回報缺口；下游可自動分發） | `uiux-design-studio`, `figma-file-cleanup`, `apply-design-system` |

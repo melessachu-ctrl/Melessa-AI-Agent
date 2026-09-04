@@ -29,6 +29,8 @@ When the task is **Lite App** / **Lite App DS** related (design, component creat
 
 **Hard rule:** every text node must be linked to a Design Tokens **Text Style** (e.g. via `importStyleByKeyAsync` + `setTextStyleIdAsync`). Do not leave fonts as unbound hardcoded `fontSize` / weight. Prefer `NS {size}/App NS …` styles from this library. See also user rule `lite-app-figma-design-tokens`.
 
+**Creating or updating a DS component** (not just swapping instances on a screen): follow `uiux-design-studio` **DS Component Write Gate** — auto-layout on containers, bound text styles, leaf-only layer naming per `figma-file-cleanup`. Prefer routing that work through `uiux-design-studio` + `figma-generate-library` rather than inventing unbound local components here.
+
 # Connect A Design To A Design System
 
 Use this skill for an existing Figma design that should reuse a published design system instead of detached layers, local wrappers, or one-off components.

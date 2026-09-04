@@ -1,6 +1,6 @@
 ---
 name: uiux-design-studio
-description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬角色」方式擔任 Design Director / 設計總監，將 UI/UX 工作拆成 intake → routing → 各角色輸出 → 最終統稿。適用於：新頁面/新功能設計、改版/視覺升級、UX 流程/使用者旅程/IA、可用性與無障礙（a11y/WCAG）、設計評審（design/code/prototype）、Figma 交付（screens/components/prototype）、Design System / token / component library 補洞或更新、Figma 檔案治理／cleanup（圖層／命名／舊檔 SOP）。HKTVmall 相關 Figma 設計預設套用 HKTVmall Design System（fileKey F0tjdruLjJTfWgmTeZKBnw）。Lite App／Lite App DS 相關設計時字體必須連結 Design Tokens（fileKey I5A9GqmJdvoskfDeCBtNsL，Typography node 120:1278）。會引導載入 `hktvmall-target-customers`（HKTVmall 目標客群／零售 UX 心智模型）、`ricky-design-guideline`（HKTVmall 設計原則）、`ui-ux-pro-max`（規範與品質）、`frontend-design`（視覺與實作導向）、以及 Figma 相關技能（figma-file-cleanup / figma-implement-design / figma-mcp-server-guide / apply-design-system）。"
+description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬角色」方式擔任 Design Director / 設計總監，將 UI/UX 工作拆成 intake → routing → 各角色輸出 → 最終統稿。適用於：新頁面/新功能設計、改版/視覺升級、UX 流程/使用者旅程/IA、可用性與無障礙（a11y/WCAG）、設計評審（design/code/prototype）、Figma 交付（screens/components/prototype）、Design System / token / component library 補洞或更新（建立／更新元件時強制 auto-layout、font／text style token、leaf-only layer naming）、Figma 檔案治理／cleanup（圖層／命名／舊檔 SOP）。HKTVmall 相關 Figma 設計預設套用 HKTVmall Design System（fileKey F0tjdruLjJTfWgmTeZKBnw）。Lite App／Lite App DS 相關設計時字體必須連結 Design Tokens（fileKey I5A9GqmJdvoskfDeCBtNsL，Typography node 120:1278）。會引導載入 `hktvmall-target-customers`、`ricky-design-guideline`、`ui-ux-pro-max`、`frontend-design`，以及 Figma 相關技能（figma-file-cleanup／figma-use／figma-generate-library／figma-implement-design／figma-mcp-server-guide／apply-design-system）。"
 ---
 
 ## 平台現實（必讀）
@@ -50,7 +50,7 @@ description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬�
 | 新頁面 / 新功能（0→1） | Director + Research + Designer + Review（必要時 DS/Prototype） | IA + UI specs + 風險/驗收 |
 | 既有頁面改版 / 視覺升級 | Director + Designer + Review（必要時 DS） | Before/After 方向 + UI 規格 |
 | 元件/表單/表格等單點優化 | Director + Designer + Review（必要時 DS） | 元件狀態與 API + a11y |
-| 設計系統建置/補洞 | Director + DS Owner + Review（必要時 Designer） | token/元件/命名/版本說明 |
+| 設計系統建置/補洞／**create or update DS component** | Director + DS Owner + Review（必要時 Designer） | token/元件/變體 + **必過「DS Component Write Gate」**（auto-layout／font token／leaf-only naming）／版本說明 |
 | Figma 檔案治理／file cleanup／整理 Figma 檔／清理圖層／命名與結構批次治理 | Director + DS Owner + Review（必要時 Designer） | 依 `figma-file-cleanup`：審計→策略→分批治理→驗證；變更清單／遷移映射／驗證／阻塞 + Director Final Pack |
 | 只要評審（design/code/prototype/Figma/live URL） | Director + Review（**必先讀 `uiux-review`**；必要時 Designer） | 依 `uiux-review` 7-step SOP：Reviewer Lens + Heuristic + Walkthrough + Strengths + Must/Should/Nice/Keep + AC |
 | 要做可點 Prototype | Director + Designer + Prototype + Review | 流轉圖 + hotspot + 測試腳本 |
@@ -70,6 +70,7 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 - **涉及前端介面實作、元件/頁面 UI code、視覺呈現落地**：必須讀 `~/.cursor/skills/frontend-design/SKILL.md`
 - **涉及 HKTVmall Figma 設計出稿／Prototype／DS 對齊**：遵守「HKTVmall Design System 預設」；`search_design_system` 優先於從零繪製；必要時讀 `apply-design-system`
 - **涉及 Lite App／Lite App DS 設計出稿、元件建立／更新、Prototype、或 DS 補洞**：遵守「Lite App Design Tokens 預設」與使用者規則 `lite-app-figma-design-tokens`；**所有 font／文字樣式必須 link Design Tokens**（未特別指明時用 `I5A9GqmJdvoskfDeCBtNsL` Typography）；禁止硬編碼字級頂替 text style
+- **涉及 Design System 元件建立／更新／補洞（create／update／add variant／DS component）**：**必須先讀**本 Skill「DS Component Write Gate」；寫入前讀 `figma-use` + `figma-generate-library`；命名與 auto-layout 規範**必須對齊** `~/.cursor/skills/figma-file-cleanup/SKILL.md`（至少讀「命名規範」與 auto-layout／`layoutMode` 相關段落）；**未通過 Write Gate 不得宣告完成或進入 Final Pack 的「已交付」狀態**
 - **涉及 Figma 讀設計稿/從 Figma 實作**：使用 `figma-implement-design` 的流程（必要時搭配 `figma-mcp-server-guide`）
 - **涉及 Figma 連線/授權/抓圖/節點**：必須讀 `~/.cursor/skills/figma-mcp-server-guide/SKILL.md`
 - **涉及 Figma 檔案治理／cleanup（與 `figma-file-cleanup` 對齊之觸發）**：**必須先讀** `~/.cursor/skills/figma-file-cleanup/SKILL.md`，再依其中 Phase A→D 與 Skills 聯動表鏈式載入 `figma-mcp-server-guide`、`figma-use`、`figma-generate-design` 等；虛擬角色固定為 **Director + DS Owner + Review（必要時 + Designer）**，產出須覆蓋該 skill 規定之交付物（變更清單、遷移映射、驗證、阻塞）。
@@ -123,6 +124,70 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 
 > 跨專案規則詳見 `~/.cursor/rules/lite-app-figma-design-tokens.mdc`。
 
+#### DS Component Write Gate（建立／更新 DS 元件 — 強制）
+
+當任務符合下列**任一**條件時，**每一次** `use_figma` 寫入元件（含新建 component／component set、改 variant、改內部結構）前後都必須遵守本閘門；**禁止**只畫視覺外觀就交件：
+
+- Routing 為「設計系統建置/補洞／create or update DS component」
+- 使用者要求 **update design system component**、**create new design system component**、新增／調整 variant、DS 元件補洞
+- Design System Owner 角色實際在 Figma 寫入元件
+
+##### 寫入前必讀（順序）
+
+1. `figma-use`（Plugin API／`use_figma` 語法）
+2. `figma-generate-library`（元件須 auto-layout + variable／style 綁定）
+3. `figma-file-cleanup` 的 **命名規範（Leaf-only）** 與 auto-layout／`layoutMode` 治理預期（不必跑完整 Phase A→D，但命名與 layout 規則**必須**套用）
+4. 目標專案之 token 來源：HKTVmall → HKTVmall DS；Lite App → Design Tokens Typography（見上）；其他 → 使用者指定或檔內既有 Text Style／Variables
+
+##### Gate A — Auto-layout（必做）
+
+- 元件根節點與所有承載多個子層的 **FRAME／COMPONENT／COMPONENT_SET 內容器**，預設必須設 `layoutMode = 'HORIZONTAL' | 'VERTICAL'`（不得留 `NONE`），並設好 `padding*`、`itemSpacing`／`counterAxisSpacing`、`primaryAxisAlignItems`、`counterAxisAlignItems`、`layoutSizingHorizontal`／`Vertical`（HUG／FILL／FIXED 依語意）。
+- **允許例外**（須在 DS Changes／Final Pack 註明 node id + 原因）：純裝飾絕對定位層、刻意重疊的 illustration mask、單一 VECTOR／icon glyph 本體（其外層包裝框仍應 auto-layout）。
+- 新建時**先**開 auto-layout 再塞內容；更新既有元件時，若目標範圍內仍有 `layoutMode=NONE` 的容器，**同次任務必須改掉**（除非已列為例外）。
+- 寫入後用 `get_metadata` 或 read-only `use_figma` 抽樣確認：目標元件樹內不應再出現未註明例外的 `layoutMode=NONE` 容器。
+
+##### Gate B — Font／Typography token（必做）
+
+- 元件內**每一個 TEXT 節點**必須綁定 Text Style（`textStyleId`／`setTextStyleIdAsync`）或專案規定之 typography variable／token；**禁止**只設裸 `fontSize`／`fontName`／字重作為最終態。
+- 套用順序：`search_design_system`（或目標 DS／Design Tokens 檔）盤點既有 text style → `importStyleByKeyAsync`（若為 library）→ `setTextStyleIdAsync`。換 style 若需保留顏色，先 snapshot `fills` 再還原。
+- **Lite App／Lite App DS**：強制用 Design Tokens（`I5A9GqmJdvoskfDeCBtNsL`）之 `NS {size}/…` styles（見「Lite App Design Tokens 預設」）。
+- **HKTVmall／其他 DS**：優先用該 DS 已發佈之 Text Style／typography token；缺口列「待新增／待盤點」，**不得**默默硬編碼字級頂替。
+- 寫入後驗證：目標元件內所有 TEXT 的 `textStyleId` 非空（或已綁定等效 typography token）；否則視為未完成。
+
+##### Gate C — Layer naming（必做；對齊 `figma-file-cleanup`）
+
+寫入 Figma 時 `node.name` 採 **leaf-only**（只寫語意化最後一段；層級靠巢狀，不用 `/` 路徑前綴）：
+
+| 類型 | 正確（Figma `node.name`） | 禁止 |
+|------|---------------------------|------|
+| 元件根 | `Agree-Primary`、`TextField` | `3PL/Button/Agree-Primary`、`Frame 123` |
+| 區塊／列 | `Content`、`Leading`、`Trailing` | `Group 11`、`Frame 45`、`Copy` |
+| 標籤／值 | `Label`、`Value`、`Helper` | 路徑式 `Form/Label` |
+| 變體 | 用 variant 屬性（如 `State=Hover`） | 節點名內裸 `|` 堆狀態；`Component 1` |
+
+- **禁止**最終名：`Frame N`、`Group N`、`Rectangle N`、`Copy`、`Layer N`、含 `/` 的路徑式名稱。
+- 不同父層下允許重複 leaf 名（如多個 `Icon`）。
+- **勿**對 TEXT 節點文案內容做 `/` 截斷當作改名依據（文案可能含 `/`）；改的是圖層名，不是字串內容。
+- 交付文件可保留完整語意路徑供追溯；**寫入 Figma 必須已剝離為 leaf 名**（規則原文見 `figma-file-cleanup`「命名規範」）。
+
+##### 寫入後驗收（DS Owner 必勾；未全過不得交件）
+
+```
+DS Component Write Gate — Checklist
+- [ ] 已讀 figma-use + figma-generate-library + figma-file-cleanup 命名／layout 規範
+- [ ] 已 search_design_system／盤點 text style 與可用 token（未盤點不得硬編碼）
+- [ ] 根與容器均為 auto-layout（例外已註明）
+- [ ] 所有 TEXT 已綁定 text style／typography token（Lite App → Design Tokens）
+- [ ] 目標範圍內無 Frame/Group/Copy 等預設名；均為 leaf-only 語意名
+- [ ] get_metadata 或等效檢查已跑；get_screenshot 視覺可接受
+- [ ] DS Changes／Final Pack 已記錄：元件名、主要 text style、auto-layout 例外（若有）
+```
+
+##### 與 Review／Final Pack 的銜接
+
+- **UIUX Review**：若 Routing 含 DS 元件寫入，Must fix 須涵蓋 Write Gate 失敗項（`layoutMode=NONE` 未治理、未綁 text style、違法圖層名）。
+- **Director Final Pack** 附錄「DS Changes」須含一句 **Write Gate 結果**（Pass／Pass with exceptions／Blocked + 原因）。
+
 #### `figma-file-cleanup` 觸發詞（與該 skill 之 `description` 對齊）
 
 當使用者提到下列任一語意時，視為已命中本條、**Routing 必取「Figma 檔案治理」列**，並在產出前 **Read** `~/.cursor/skills/figma-file-cleanup/SKILL.md`：
@@ -173,7 +238,10 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 
 - **DS 現況**：可直接用的 token/元件（若未知就列「待盤點」）
 - **缺口清單**：缺哪些 token/元件/變體/互動狀態
-- **命名與結構**：Figma 圖層名採 **leaf-only**（只寫最後一段，如 `Description`；層級靠巢狀結構，不用 `3PL/Section/Description` 路徑式名稱）。詳見 `figma-file-cleanup` 命名規範。屬性維度（size/state/tone）維持 variant 屬性表達。
+- **命名與結構**：Figma 圖層名採 **leaf-only**（只寫最後一段，如 `Description`；層級靠巢狀結構，不用 `3PL/Section/Description` 路徑式名稱）。詳見 `figma-file-cleanup` 命名規範。屬性維度（size/state/tone）維持 variant 屬性表達。**禁止**留下 `Frame N`／`Group N`／`Copy` 等預設名。
+- **Auto-layout**：新建／更新之元件根與承載子層的容器必須為 `HORIZONTAL`／`VERTICAL`；註明任何 `layoutMode=NONE` 例外（node id + 原因）。對齊「DS Component Write Gate」Gate A。
+- **Typography／font token**：元件內所有 TEXT 必須綁定 Text Style（Lite App → Design Tokens `I5A9GqmJdvoskfDeCBtNsL`；其餘 → 目標 DS text style）。禁止最終態只留裸 `fontSize`。對齊 Write Gate B。
+- **Write Gate 結果**：Pass／Pass with exceptions／Blocked（未 Pass 不得標為已交付）
 - **變更提案**：新增/調整/棄用（含風險）
 - **發佈註記**：版本號（可選）、breaking change、遷移指引
 
@@ -189,6 +257,7 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 - **可量化驗收清單（AC）**：對應 Must/Should 的勾選項；附「已符合一般標準（無需改動）」一行總結
 - **a11y 檢查**：對比、焦點、鍵盤、ARIA/標籤、觸控目標（對齊 `ui-ux-pro-max` §1）
 - **一致性檢查**：字級/間距/元件狀態/語氣/圖示（對齊 `ui-ux-pro-max` §4、§6）
+- **DS Component Write Gate（有建立／更新 DS 元件時必查）**：未過 Gate 的項目一律進 Must fix — (1) 容器仍為 `layoutMode=NONE` 且無例外註記；(2) TEXT 未綁 text style／typography token；(3) 圖層名為 `Frame N`／`Group N`／`Copy` 或含 `/` 路徑式名稱（對齊 `figma-file-cleanup` leaf-only）
 
 ## Director Final Pack（最後一定要輸出）
 
@@ -206,13 +275,14 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 - Research（若有）
 - UI Specs（若有）
 - Prototype Notes（若有）
-- DS Changes（若有）
+- DS Changes（若有）：含 **Write Gate 結果**（auto-layout／font token／leaf-only naming）；Pass with exceptions 時列例外 node id
 - Figma 檔案治理（若有）：變更清單、遷移映射、驗證清單、阻塞清單（格式與路徑依 `figma-file-cleanup`）
 - Review Report（必有）
 - Ricky Pass 檢查清單（Figma 設計 / Prototype / 評審時必有；格式見 `ricky-design-guideline`）
 - Target Customer 對齊（HKTVmall 相關時必有）：segment 對應、KPI 取捨、推薦可解釋性（格式見 `hktvmall-target-customers`）
 - **DS 採用聲明**（HKTVmall Figma 相關時必有）：HKTVmall Design System、`fileKey`、主要引用元件／token 或盤點阻塞
 - **Typography／DS 採用聲明**（Lite App／Lite App DS 相關時必有）：Design Tokens（Typography）、`fileKey` `I5A9GqmJdvoskfDeCBtNsL`、主要 text style 名稱或盤點阻塞
+- **DS Component Write Gate**（有建立／更新 DS 元件時必有）：Checklist 勾選結果＋主要 text style 名稱＋auto-layout 例外（若有）
 
 ## 跨專案試跑（Pilot）與迭代方式
 

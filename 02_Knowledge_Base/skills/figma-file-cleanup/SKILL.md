@@ -107,6 +107,8 @@ Task Progress — Phase D
 
 ## 命名規範（建議）
 
+> 經 `uiux-design-studio` **建立／更新 Design System component** 時，本節為**強制**（見該 skill「DS Component Write Gate」Gate C），不是可選建議。
+
 ### 原則：Leaf-only（只顯示最後一層）
 
 Figma 圖層面板上的 `node.name` **只寫語意化的最後一段**；層級關係靠**巢狀結構**表達，不靠 `/` 路徑前綴。
@@ -126,6 +128,11 @@ Figma 圖層面板上的 `node.name` **只寫語意化的最後一段**；層級
 **批次重新命名注意**：
 - 只對刻意設定的路徑式圖層名做 leaf 剝離；**勿**對 TEXT 節點盲目依 `/` 截斷（文案可能含 `/`）。
 - 不同父層下允許重複 leaf 名（如多個 `CheckCircle`）。
+
+## Auto-layout（與 DS 元件寫入對齊）
+
+- 檔案治理 Phase C 批次 2：區塊內部容器應改為 auto-layout。
+- 若任務同時是 **DS 元件新建／更新**（經 `uiux-design-studio`）：元件根與承載子層的容器預設必須 `layoutMode = HORIZONTAL | VERTICAL`，與該 skill Write Gate A 一致；`layoutMode=NONE` 僅允許已註明例外。
 
 ## 驗收標準（DoD）
 

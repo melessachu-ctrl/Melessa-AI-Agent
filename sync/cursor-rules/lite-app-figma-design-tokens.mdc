@@ -33,12 +33,14 @@ alwaysApply: true
 
 1. **先查 Typography tokens**：在 Design Tokens 檔或 `search_design_system` 盤點對應 `NS {size}/…` text styles，再套用。
 2. **新建／更新元件**：Label、Value、Helper、Button label 等文字節點都必須有綁定的 text style id。
-3. **產出標註**：Director Final Pack／UI Spec／DS 變更說明須列出 Typography 來源（名稱、`fileKey`、主要 text style 名稱）；未知則標「待盤點」並說明阻塞。
+3. **建立／更新 DS 元件**：同時遵守 `uiux-design-studio`「DS Component Write Gate」— auto-layout、font／Text Style token（本規則）、leaf-only naming（`figma-file-cleanup`）；未過 Gate 不得交件。
+4. **產出標註**：Director Final Pack／UI Spec／DS 變更說明須列出 Typography 來源（名稱、`fileKey`、主要 text style 名稱）；未知則標「待盤點」並說明阻塞；有 DS 元件寫入時附 Write Gate 結果。
 
 ## 與其他技能聯動
 
 Lite App Figma／DS 任務須同時遵守：
 
-- `uiux-design-studio`（若為編排流程；見其中「Lite App Design Tokens 預設」）
+- `uiux-design-studio`（若為編排流程；見「Lite App Design Tokens 預設」與「DS Component Write Gate」）
 - `figma-use`（任何 `use_figma` 寫入前）
 - `apply-design-system`／`figma-generate-library`（元件或多區塊 DS 對齊時）
+- `figma-file-cleanup`（DS 元件命名／auto-layout 規範）
