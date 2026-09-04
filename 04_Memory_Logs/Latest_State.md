@@ -1,9 +1,10 @@
 # Latest State
 
-> 最後更新：2026-09-03
+> 最後更新：2026-09-04
 
 ## 最近完成
 
+- **2026-09-04**：**KA Price**＋**Search Result 3-4 Columns** Figma — 真實 SKU（出前一丁／美素佳兒）、價格一位小數、Show KA Off＋Cart；fileKeys `sVR8HBaQAfiJp5SqPfA1lo`／`SPD3XrBhgiW57uBo28UxjZ`
 - **2026-09-03**：**3rd Party Login** Permissions List → 7 項獨立權限（Consent ZH 主元件＋`3911:222`「您已授權」）；fileKey `3gnFYaXhhARa39OqRf0MdX`
 - **2026-09-01**：**UIUX Design Agent** 規劃 — 8 步實施手冊 `01_Action_Center/outputs/docs/UIUX_Design_Agent_Implementation_8_Steps.md`；Hermes 同級 read-only lookup agent 架構；Slack `#agent-uiux-design`／`@uiux-design-agent`；刪 `.tmp-pdp-assets`
 - **2026-08-28**：Sasa 長期記憶 — **現居**香港仔中心港富閣、**前址**炮台山 Le Sommet 豪廷峯（`MEMORY.md`「個人／居住」）
@@ -36,6 +37,14 @@
 | 備份 | `Backup - img (pre PDP IMG)`（`19012:3242`）— 確認後可刪 |
 
 DS 元件：`PDP IMG`（Default｜OOS）；`Button / Add to cart`（`Page=PDP, State=OOS`）
+
+## Search Result／KA Price Figma（2026-09-04）
+
+| 項目 | 狀態 |
+| --- | --- |
+| KA Price | [HKTVmall — KA Price](https://www.figma.com/design/sVR8HBaQAfiJp5SqPfA1lo/HKTVmall---KA-Price)（`sVR8HBaQAfiJp5SqPfA1lo`）— Typography Regular；真實 SKU sections |
+| Search Result | [Search Result — 3-4 Columns](https://www.figma.com/design/SPD3XrBhgiW57uBo28UxjZ/Search-Result---3-4-Columns)（`SPD3XrBhgiW57uBo28UxjZ`）— 多 section 一位小數；`21354:131898` Show KA Off＋Cart |
+| 踩坑 | VIP／專屬價折扣價在 Price card **子樹**內層 frame；Unit Price 可能多 instance；`Show KA 1` 在 RP、`Show KA` 在 Price card |
 
 ## 3rd Party Login Figma（2026-09-03）
 
@@ -113,6 +122,6 @@ Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 ```
 Melessa AI Agent/
 ├── 02_Knowledge_Base/skills/{lovable-mcp-server-guide,base44-mcp-server-guide,portfolio-designer,...}/
-├── 03_Agents/Personal_AI_Assistant/sessions/2026-09-03_3rd-party-login-permissions-list.md
+├── 03_Agents/Personal_AI_Assistant/sessions/2026-09-04_hktvmall-ka-price-search-result-figma.md
 └── 04_Memory_Logs/                      ← 本檔案
 ```

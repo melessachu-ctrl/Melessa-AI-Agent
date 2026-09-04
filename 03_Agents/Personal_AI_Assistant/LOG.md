@@ -4,6 +4,7 @@
 
 | 日期 | 任務 | 成果 | 備註 |
 |---|---|---|---|
+| 2026-09-04 | KA Price＋Search Result Figma 批次 | 真實 SKU；一位小數；Show KA Off＋Cart；VIP 巢狀補齊 | fileKeys `sVR8HBaQAfiJp5SqPfA1lo`／`SPD3XrBhgiW57uBo28UxjZ` |
 | 2026-09-03 | 3rd Party Login Permissions List 更新為 7 項 | Consent ZH 主元件＋實例；`3911:222` 保留「您已授權：」 | fileKey `3gnFYaXhhARa39OqRf0MdX`；注意實例 text override |
 | 2026-09-01 | UIUX Design Agent 規劃＋8 步實施手冊 | `UIUX_Design_Agent_Implementation_8_Steps.md`；命名統一；刪 PDF/HTML + `.tmp-pdp-assets`；PR #5–#7 | PoC 待 Step 0–3；Hermes + Slack 待 PM team |
 
