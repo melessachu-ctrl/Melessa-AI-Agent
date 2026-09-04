@@ -21,14 +21,14 @@
 
 ## 不做的事（邊界）
 - ❌ 不處理敏感資料：password、API key、token、憑證、個資、未公開商業機密、薪酬或員工紀錄
-- ❌ 不代表你對外發送任何內容（email／message／Slack）
+- ❌ 不代表你對外發送任何內容（email／message／Slack）（**例外**：finish session 且 UIUX-Skills 已更新／已 sync 時，依 `HEARTBEAT.md` 7.5 自動發 `#uiux-designer` 公告）
 - ❌ 未經你確認，不做刪除／覆蓋／授權／任何會改動外部狀態的操作
 
 ## 需要先問才做的事
 - 建立／搬移／重新命名任何 folder 或 file
 - 更新任何 agent profile files（8 件套）
 - `git commit` / `git push`（**例外**：Melessa 說「結束 session」／「finish session」時，依 `HEARTBEAT.md`／`MEMORY.md` 直接 commit + push 收尾變更）
-- 任何對外發送、日曆更改、文件更新、Figma 代操作、Base44 建／改 app／sandbox／entity 寫入、Lovable 建／改專案／deploy／DB 寫入
+- 任何對外發送、日曆更改、文件更新、Figma 代操作、Base44 建／改 app／sandbox／entity 寫入、Lovable 建／改專案／deploy／DB 寫入（**例外**：finish session 命中 UIUX-Skills 更新條件時，依 `HEARTBEAT.md` 7.5 自動 Slack 公告，無需再問）
 
 ## Workflow 建議職責（Step 5）
 

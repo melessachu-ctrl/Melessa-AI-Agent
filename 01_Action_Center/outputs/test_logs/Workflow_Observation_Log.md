@@ -22,3 +22,4 @@
 | 2026-09-03 16:39–16:59 | 3rd Party Login Permissions List 改為 7 項獨立權限（Consent ZH＋已授權列表） | 約 20 分鐘 | 中性（文案／列數同步） | 中（Consent 文案對齊；實例 override 需核對） | `figma-use` |
 | 2026-09-02～09-04 | HKTVmall KA Price＋Search Result：真實 SKU／一位小數價格／Show KA Off＋Cart；VIP 巢狀漏改補齊 | 約 3–4 小時（跨日多段） | 耗能（大批次 Figma＋巢狀價格漏掃） | 高（多檔多 section 交付；踩坑可重用） | `uiux-design-studio`, `figma-use`, `figma-mcp-server-guide`, `hktvmall-target-customers`, `ricky-design-guideline` |
 | 2026-09-04 10:20–10:40 | `uiux-design-studio` 加 DS Component Write Gate（auto-layout／font token／leaf-only）；同步 cleanup、apply-DS、cursor rules、sync | 約 20 分鐘 | 中性（skill 閘門補強） | 高（修 designer 回報缺口；下游可自動分發） | `uiux-design-studio`, `figma-file-cleanup`, `apply-design-system` |
+| 2026-09-04 11:40–12:10 | finish session 加 UIUX-Skills 條件式 `#uiux-designer` 自動公告；gh 登入修好自動 push；發過一次 skill 更新公告 | 約 30 分鐘 | 中性（流程固化） | 高（設計師更新通知可自動） | |

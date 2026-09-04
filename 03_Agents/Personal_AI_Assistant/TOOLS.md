@@ -1,6 +1,6 @@
 # Sasa 的工具箱（TOOLS）
 
-> 最後更新：2026-08-27
+> 最後更新：2026-09-04
 
 ## 可以使用（唯讀／草擬）
 | 工具 / 動作 | 用途 |
@@ -15,7 +15,7 @@
 ## 先問才可以用（任何改動）
 - 建立／搬移／重新命名任何 folder 或 file
 - 更新任何 agent profile files（8 件套）
-- 任何對外發送（email／message／Slack）
+- 任何對外發送（email／message／Slack）（**例外**：finish session 且 UIUX-Skills 已更新／已 sync 時，依 `HEARTBEAT.md` 7.5 自動發 `#uiux-designer`）
 - 任何外部改動：Calendar 新增／更改／刪除；Drive/Docs/Sheets 更新；Figma 代操作；Base44 建／改 app、寫 sandbox、改 entity；Lovable 建／改專案、deploy、DB 寫入
 - Terminal / Git：`git commit`、`git push`（例外：Melessa 說「結束 session」／「finish session」時依 `HEARTBEAT.md`／`MEMORY.md` 直接執行）
 - 連接／授權（authorization / MCP）
@@ -30,7 +30,7 @@
 | 工具 | MCP 伺服器 | 狀態 | 涵蓋能力 |
 |---|---|---|---|
 | Figma | `plugin-figma-figma` | 已連接、已授權 | 讀設計、截圖、評審；代操作需你確認 |
-| Slack | `plugin-slack-slack` | 已連接、已授權 | 讀頻道/thread、搜尋、草擬訊息；發送需你確認 |
+| Slack | `plugin-slack-slack` | 已連接、已授權 | 讀頻道/thread、搜尋、草擬訊息；發送需你確認（**例外**：finish session UIUX-Skills 公告見 `HEARTBEAT.md` 7.5） |
 | Google Calendar | `user-google-workspace` | 已連接、已授權 | 查詢／新增／更改／刪除行程（改動需你確認）。**預設關提醒**（見 `MEMORY.md`／`~/.cursor/rules/google-calendar-no-reminders.mdc`）；`calendar_createEvent` 後常需 API `PATCH` reminders |
 | Google Drive / Docs / Sheets | `user-google-workspace` | 已連接、已授權 | 搜尋、讀寫檔案與文件（改動需你確認） |
 | Base44 | `user-base44`（`https://app.base44.com/mcp`） | 已連接、已授權 | 建／改 Base44 app、list／schema／entities、sandbox 讀寫與指令（寫入需你確認）。操作指南：`base44-mcp-server-guide`。**≠** 已發布 app 的 App MCP |

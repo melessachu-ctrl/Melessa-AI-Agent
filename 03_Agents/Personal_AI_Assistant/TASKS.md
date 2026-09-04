@@ -14,6 +14,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-09-04：finish session 加入 UIUX-Skills 條件式 `#uiux-designer` 自動公告（HEARTBEAT 7.5／MEMORY／AGENTS／TOOLS）；session 已寫
 - 2026-09-04：`uiux-design-studio` 新增 DS Component Write Gate（auto-layout／font token／leaf-only naming）；同步 cleanup、apply-design-system、cursor rules、`sync/cursor-rules`；session 已寫
 - 2026-09-04：HKTVmall KA Price＋Search Result Figma — 真實 SKU、一位小數價格、Show KA Off＋Cart；VIP／專屬價巢狀補齊；session 已寫
 - 2026-09-03：3rd Party Login Permissions List → 7 項獨立權限（Consent ZH 主元件＋`3911:222`）；session 已寫
