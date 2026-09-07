@@ -14,6 +14,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-09-07：`uiux-design-studio` 跨專案規則改為優先讀 `rules/*.md`（非 Cursor 可載）；專案特例加 `AGENTS.md`；session 已寫
 - 2026-09-07：Melessa sync 為 UIUX-Skills rules 雙軌自動產生 portable `.md`（`sync-uiux-skills.sh` + `sync/README.md`）；session 已寫
 - 2026-09-04：finish session 加入 UIUX-Skills 條件式 `#uiux-designer` 自動公告（HEARTBEAT 7.5／MEMORY／AGENTS／TOOLS）；session 已寫
 - 2026-09-04：`uiux-design-studio` 新增 DS Component Write Gate（auto-layout／font token／leaf-only naming）；同步 cleanup、apply-design-system、cursor rules、`sync/cursor-rules`；session 已寫

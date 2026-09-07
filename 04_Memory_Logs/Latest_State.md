@@ -4,6 +4,7 @@
 
 ## 最近完成
 
+- **2026-09-07**：`uiux-design-studio` 跨專案規則改為優先讀 `rules/*.md`（非 Cursor／Spaces）；專案特例加 `AGENTS.md`
 - **2026-09-07**：UIUX-Skills **rules 雙軌** — Melessa sync 複製 `.mdc` 時一併寫出 portable `.md`（`sync/sync-uiux-skills.sh`）
 - **2026-09-04**：**KA Price**＋**Search Result 3-4 Columns** Figma — 真實 SKU（出前一丁／美素佳兒）、價格一位小數、Show KA Off＋Cart；fileKeys `sVR8HBaQAfiJp5SqPfA1lo`／`SPD3XrBhgiW57uBo28UxjZ`
 - **2026-09-03**：**3rd Party Login** Permissions List → 7 項獨立權限（Consent ZH 主元件＋`3911:222`「您已授權」）；fileKey `3gnFYaXhhARa39OqRf0MdX`

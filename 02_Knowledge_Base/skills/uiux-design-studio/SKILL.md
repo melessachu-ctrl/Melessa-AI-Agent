@@ -98,7 +98,7 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 3. **UIUX Designer / DS Owner 產出**：token、間距、字級、顏色、元件**必須**引用上述 DS；缺口列為「待新增／待盤點」，不得默默自創替代樣式。
 4. **Director Final Pack**：附錄須含 **DS 採用聲明**（名稱、fileKey、主要引用元件／token 或盤點阻塞）。
 
-> 跨專案規則詳見 `~/.cursor/rules/hktvmall-figma-design-system.mdc`。
+> 跨專案規則：優先讀 `rules/hktvmall-figma-design-system.md`；找不到再讀同名 `.mdc`（`rules/` 或 Melessa `sync/cursor-rules/`）；Cursor 已安裝則等同使用者規則 `hktvmall-figma-design-system`。皆無則以本節為準，勿阻塞。
 
 #### Lite App 觸發詞
 
@@ -122,7 +122,7 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 4. **UIUX Designer / DS Owner 產出**：字級／字重須引用上述 Typography tokens（例如 `NS 24/App NS 24|28 Regular`）；缺口列「待新增／待盤點」，不得默默自創字體樣式。換 text style 時若需保留顏色，先 snapshot fills 再還原。
 5. **Director Final Pack**：附錄須含 **Typography／DS 採用聲明**（Design Tokens、`fileKey`、主要 text style 名稱或盤點阻塞）。
 
-> 跨專案規則詳見 `~/.cursor/rules/lite-app-figma-design-tokens.mdc`。
+> 跨專案規則：優先讀 `rules/lite-app-figma-design-tokens.md`；找不到再讀同名 `.mdc`（`rules/` 或 Melessa `sync/cursor-rules/`）；Cursor 已安裝則等同使用者規則 `lite-app-figma-design-tokens`。皆無則以本節為準，勿阻塞。
 
 #### DS Component Write Gate（建立／更新 DS 元件 — 強制）
 
@@ -290,5 +290,5 @@ DS Component Write Gate — Checklist
 
 1. **記錄**：哪 3 題 Intake 最常缺？哪些輸出欄位常被跳過？
 2. **收斂**：把不常用欄位改為「可選」，把常缺資訊加入最短追問。
-3. **專案特例**：不要複製整份 Skill；只在該專案 `.cursor/rules/*.mdc` 補 5–20 行短規則（品牌/元件庫/術語/路由結構）。
+3. **專案特例**：不要複製整份 Skill；只補 5–20 行短規則（品牌/元件庫/術語/路由結構）——Cursor：該專案 `.cursor/rules/*.mdc`；其他 agent：該專案 `AGENTS.md`（或同等 instructions 檔）。
 

@@ -24,3 +24,4 @@
 | 2026-09-04 10:20–10:40 | `uiux-design-studio` 加 DS Component Write Gate（auto-layout／font token／leaf-only）；同步 cleanup、apply-DS、cursor rules、sync | 約 20 分鐘 | 中性（skill 閘門補強） | 高（修 designer 回報缺口；下游可自動分發） | `uiux-design-studio`, `figma-file-cleanup`, `apply-design-system` |
 | 2026-09-04 11:40–12:10 | finish session 加 UIUX-Skills 條件式 `#uiux-designer` 自動公告；gh 登入修好自動 push；發過一次 skill 更新公告 | 約 30 分鐘 | 中性（流程固化） | 高（設計師更新通知可自動） | |
 | 2026-09-04 17:36–17:45；2026-09-07 收尾 | UIUX-Skills rules 雙軌後，Melessa sync 改為同時寫出 `rules/*.md`；補 `sync/README.md` | 約 20 分鐘 | 中性（sync 缺口補強） | 高（避免 portable `.md` 漂移；Spaces／其他 agent 與 Cursor 一致） | |
+| 2026-09-07 11:43–11:54 | `uiux-design-studio` 跨專案規則改為優先讀 `rules/*.md`；專案特例加 `AGENTS.md` | 約 10 分鐘 | 中性（路徑可攜） | 高（非 Cursor agent 找得到規則；對齊雙軌） | `uiux-design-studio` |

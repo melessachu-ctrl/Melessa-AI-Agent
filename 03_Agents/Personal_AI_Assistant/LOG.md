@@ -4,6 +4,7 @@
 
 | 日期 | 任務 | 成果 | 備註 |
 |---|---|---|---|
+| 2026-09-07 | `uiux-design-studio` 跨專案規則路徑可攜 | 優先 `rules/*.md`；專案特例 Cursor `.mdc`／其他 `AGENTS.md` | 對齊 UIUX-Skills 雙軌 |
 | 2026-09-07 | UIUX-Skills rules 雙軌：Melessa sync 自動產生 `.md` | `sync-uiux-skills.sh` 寫出 `rules/*.md`；`sync/README.md` 說明 | 真源仍只維護 `.mdc` |
 | 2026-09-04 | KA Price＋Search Result Figma 批次 | 真實 SKU；一位小數；Show KA Off＋Cart；VIP 巢狀補齊 | fileKeys `sVR8HBaQAfiJp5SqPfA1lo`／`SPD3XrBhgiW57uBo28UxjZ` |
 | 2026-09-03 | 3rd Party Login Permissions List 更新為 7 項 | Consent ZH 主元件＋實例；`3911:222` 保留「您已授權：」 | fileKey `3gnFYaXhhARa39OqRf0MdX`；注意實例 text override |
