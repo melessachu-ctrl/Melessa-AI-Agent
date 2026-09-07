@@ -1,9 +1,10 @@
 # Latest State
 
-> 最後更新：2026-09-04
+> 最後更新：2026-09-07
 
 ## 最近完成
 
+- **2026-09-07**：UIUX-Skills **rules 雙軌** — Melessa sync 複製 `.mdc` 時一併寫出 portable `.md`（`sync/sync-uiux-skills.sh`）
 - **2026-09-04**：**KA Price**＋**Search Result 3-4 Columns** Figma — 真實 SKU（出前一丁／美素佳兒）、價格一位小數、Show KA Off＋Cart；fileKeys `sVR8HBaQAfiJp5SqPfA1lo`／`SPD3XrBhgiW57uBo28UxjZ`
 - **2026-09-03**：**3rd Party Login** Permissions List → 7 項獨立權限（Consent ZH 主元件＋`3911:222`「您已授權」）；fileKey `3gnFYaXhhARa39OqRf0MdX`
 - **2026-09-01**：**UIUX Design Agent** 規劃 — 8 步實施手冊 `01_Action_Center/outputs/docs/UIUX_Design_Agent_Implementation_8_Steps.md`；Hermes 同級 read-only lookup agent 架構；Slack `#agent-uiux-design`／`@uiux-design-agent`；刪 `.tmp-pdp-assets`

@@ -41,7 +41,7 @@ while IFS= read -r skill; do
   rsync -a --delete "$src/" "$dst/"
 done < <(jq -r '.skills[]' "$MANIFEST")
 
-# Sync rules
+# Sync rules (Cursor .mdc + identical portable .md twin for Spaces / other agents)
 while IFS= read -r rule; do
   src="${RULES_SOURCE}/${rule}"
   dst="${OUT_DIR}/rules/${rule}"
@@ -53,6 +53,15 @@ while IFS= read -r rule; do
     CHANGED_ITEMS+=("rule:${rule}")
   fi
   cp "$src" "$dst"
+
+  if [[ "$rule" == *.mdc ]]; then
+    md_name="${rule%.mdc}.md"
+    md_dst="${OUT_DIR}/rules/${md_name}"
+    if [[ ! -f "$md_dst" ]] || ! cmp -s "$src" "$md_dst"; then
+      CHANGED_ITEMS+=("rule:${md_name}")
+    fi
+    cp "$src" "$md_dst"
+  fi
 done < <(jq -r '.rules[]' "$MANIFEST")
 
 # Update CHANGELOG when there are changes

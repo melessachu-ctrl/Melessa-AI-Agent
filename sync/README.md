@@ -20,6 +20,13 @@ Push 到 `main` 且變更 `02_Knowledge_Base/skills/**`、manifest 或 workflow 
 
 GitHub → Actions → **Sync UIUX-Skills** → Run workflow。
 
-## Cursor Rules
+## Cursor Rules（雙軌）
 
-`sync/cursor-rules/` 內的 `.mdc` 會一併同步到 UIUX-Skills `rules/`，供 teammate 手動安裝。
+真源在 `sync/cursor-rules/`，**只維護 `.mdc`**（Cursor Project Rules）。Sync 時會寫到 UIUX-Skills `rules/`：
+
+| 下游檔 | 用途 |
+| --- | --- |
+| `*.mdc` | Cursor 安裝用（`cp rules/*.mdc ~/.cursor/rules/`） |
+| `*.md` | 由對應 `.mdc` **同內容產生**，供 ChatGPT／Codex／Claude／Spaces 等只接受 `.md` 的環境 |
+
+不必在 Melessa 另存一份 `.md`；腳本會在同步時自動寫出。之後改 `.mdc` 再 push，下游雙軌會一起更新，無需在 UIUX-Skills 再手工 `export-rules-md.sh`。
