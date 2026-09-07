@@ -15,10 +15,16 @@
 
 本機空目錄試跑：兩個 rule 均產出 `.mdc` + `.md`，內容一致。
 
+## 下游與公告
+
+- Melessa push：`5fc4b6d` → `main`
+- Actions **Sync UIUX-Skills**：成功（[run 34075394128](https://github.com/melessachu-ctrl/Melessa-AI-Agent/actions/runs/34075394128)）
+- Slack `#uiux-designer`：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1788747161287699
+- UIUX-Skills `CONTRIBUTING.md`：改為「Melessa sync 會一併寫 `.md`」，本機改 `.mdc` 才需 `export-rules-md.sh`
+
 ## 未完成甚麼
 
-- Slack `#uiux-designer` 公告：finish session 流程中於 Actions 成功後發送（link 補在下方／交付摘要）
-- （可選）UIUX-Skills `CONTRIBUTING.md` 仍寫「Melessa sync 只更新 `.mdc` 時 maintainer 要再 export」——與現況不符，可另改下游 docs
+- （無阻塞）下次改 `sync/cursor-rules/*.mdc` 時，確認 Actions 下游 commit 含對應 `.md`
 
 ## 下次由哪裡開始
 
