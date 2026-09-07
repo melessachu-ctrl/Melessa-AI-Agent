@@ -14,6 +14,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-09-07：旅行行李清單 — 整理 51 項清單；建 `travel-packing-list` skill + Sasa 路由；Reminders（8 Section）；Notes（point form）；本機 symlink；PR #8 待 merge
 - 2026-09-07：`uiux-design-studio` 跨專案規則改為優先讀 `rules/*.md`（非 Cursor 可載）；專案特例加 `AGENTS.md`；session 已寫
 - 2026-09-07：Melessa sync 為 UIUX-Skills rules 雙軌自動產生 portable `.md`（`sync-uiux-skills.sh` + `sync/README.md`）；session 已寫
 - 2026-09-04：finish session 加入 UIUX-Skills 條件式 `#uiux-designer` 自動公告（HEARTBEAT 7.5／MEMORY／AGENTS／TOOLS）；session 已寫

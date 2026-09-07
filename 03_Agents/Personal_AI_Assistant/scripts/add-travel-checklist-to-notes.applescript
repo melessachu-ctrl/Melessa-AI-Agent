@@ -1,4 +1,4 @@
--- 建立「旅行清單」筆記到 Apple Notes
+-- 建立「旅行清單」筆記到 Apple Notes（point form 項目符號）
 -- 用法：osascript add-travel-checklist-to-notes.applescript
 
 set noteTitle to "旅行清單"
@@ -92,8 +92,10 @@ tell application "Notes"
 	-- 刪除同名舊筆記（如有）
 	repeat with acc in every account
 		repeat with f in every folder of acc
-			repeat with n in (every note of f whose name is noteTitle)
-				delete n
+			repeat with n in every note of f
+				try
+					if name of n is noteTitle then delete n
+				end try
 			end repeat
 		end repeat
 	end repeat

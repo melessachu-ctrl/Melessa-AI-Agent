@@ -35,4 +35,5 @@ description: 當使用者講「旅行清單／行李清單／我要執行李／�
 3. 再輸出新版清單給 Melessa 確認
 
 ## 相關腳本（可選）
-- Reminders／Notes 同步：`03_Agents/Personal_AI_Assistant/scripts/add-travel-checklist-to-notes.applescript`（僅 Melessa 本機執行）
+- **Notes（point form）**：`03_Agents/Personal_AI_Assistant/scripts/add-travel-checklist-to-notes.applescript`（僅 Melessa 本機執行；AppleScript 無法可靠產生 Notes checklist checkbox，輸出為項目符號）
+- **Reminders**：已在本機建立「旅行清單」list（8 Section）；日後改 `checklist.md` 後可手動或再請 Agent 同步
