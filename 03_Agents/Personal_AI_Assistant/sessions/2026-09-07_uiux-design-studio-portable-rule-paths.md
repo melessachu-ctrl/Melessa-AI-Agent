@@ -13,9 +13,14 @@
   - HKTVmall／Lite App 兩段：改為搜尋順序（`rules/<name>.md` → 同名 `.mdc`（`rules/` 或 `sync/cursor-rules/`）→ Cursor 使用者規則）；皆無則以本節為準、勿阻塞
   - 專案特例：Cursor 用 `.cursor/rules/*.mdc`；其他 agent 用 `AGENTS.md`（或同等 instructions）
 
+## 下游與公告
+
+- Melessa push：`9853d1c` → `main`
+- Actions **Sync UIUX-Skills**：成功（下游 `c4db6a7` `chore(sync): from Melessa @ 9853d1c`）
+- Slack `#uiux-designer`：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1788754445441769
+
 ## 未完成甚麼
 
-- Slack `#uiux-designer` 公告：finish session 於 Actions 成功後發送（link 補在下方）
 - （可選）skill 內大量 `~/.cursor/skills/...` 路徑仍偏 Cursor，可之後再改相對路徑
 
 ## 下次由哪裡開始
