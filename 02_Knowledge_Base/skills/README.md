@@ -36,6 +36,7 @@ for name in \
   portfolio-designer \
   ricky-design-guideline \
   tonight-dinner \
+  travel-packing-list \
   ui-ux-pro-max \
   uiux-design-studio \
   uiux-review

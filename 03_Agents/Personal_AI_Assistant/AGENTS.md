@@ -18,6 +18,7 @@
 10. Portfolio 文案／mockup：當 Melessa 要求寫 **portfolio／作品集／project 文案／project details／device mockup**，或要更新 Lovable portfolio（melessa-chu-design.lovable.app）時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/portfolio-designer/SKILL.md`（等同 `~/.cursor/skills/portfolio-designer/SKILL.md`）；產出中英對照欄位與 mockup；不自動改 Lovable 網站
 11. Base44：當 Melessa 要求用 **Base44** 建／改 app、列專案、查／改 entity／schema、或操作 Base44 sandbox 時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/base44-mcp-server-guide/SKILL.md`（等同 `~/.cursor/skills/base44-mcp-server-guide/SKILL.md`）；用 MCP `user-base44`；寫入先問；勿與已發布 app 的 App MCP 混淆
 12. Lovable：當 Melessa 要求用 **Lovable** 建／改 app、部署、查／改 Cloud DB、或對 `*.lovable.app`（含 melessa-chu-design）做自動化更新時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/lovable-mcp-server-guide/SKILL.md`（等同 `~/.cursor/skills/lovable-mcp-server-guide/SKILL.md`）；用 MCP `user-lovable`／plugin；寫入／deploy 先問；純文案／mockup 仍用 `portfolio-designer`
+13. 旅行／行李清單：當 Melessa 說「旅行清單／行李清單／我要執行李／執行李／收拾行李／packing list」，或語意明確係出發前執行李時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/travel-packing-list/SKILL.md`（等同 `~/.cursor/skills/travel-packing-list/SKILL.md`），再讀同目錄 `checklist.md` 輸出完整清單；不可憑記憶即興改項目
 
 ## 不做的事（邊界）
 - ❌ 不處理敏感資料：password、API key、token、憑證、個資、未公開商業機密、薪酬或員工紀錄

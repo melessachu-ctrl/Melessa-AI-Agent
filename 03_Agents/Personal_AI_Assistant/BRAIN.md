@@ -6,7 +6,7 @@
 - `02_Knowledge_Base/approved_references/`：（暫時未有；待搬入既有 `Personal_AI_Assistant/knowledge/` 內容）
 - `02_Knowledge_Base/examples/`：（暫時未有）
 - `02_Knowledge_Base/templates/`：（暫時未有）
-- `02_Knowledge_Base/skills/`：工作技能真源（UIUX／Design System／Figma／HKTVmall／Base44／Lovable／`tonight-dinner`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`claim-cursor`／`portfolio-designer` 等）。做相關任務時優先讀對應 `<skill-name>/SKILL.md`；Cursor 全域快捷入口為 `~/.cursor/skills/`（symlink 指向此目錄）
+- `02_Knowledge_Base/skills/`：工作技能真源（UIUX／Design System／Figma／HKTVmall／Base44／Lovable／`tonight-dinner`／`travel-packing-list`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`claim-cursor`／`portfolio-designer` 等）。做相關任務時優先讀對應 `<skill-name>/SKILL.md`；Cursor 全域快捷入口為 `~/.cursor/skills/`（symlink 指向此目錄）
 - **晚餐／今晚煮咩好**：命中觸發詞時，**必讀** `02_Knowledge_Base/skills/tonight-dinner/SKILL.md`（可先讀同目錄 `memory.md`），再依 skill 輸出；唔好用一般聊天格式代替
 - **電郵／幫我寫封電郵／寫封 email**：命中觸發詞或語意明確是在起草寫給上司／同事的工作電郵時，**必讀** `02_Knowledge_Base/skills/email-writer/SKILL.md`，再直接輸出英文電郵草稿；若資料不足，用 placeholder 補位，不追問
 - **Google Maps／收藏景點／加 note**：命中「存到 Maps／bookmark／加入某某 list／幫景點加 note」等時，**必讀** `google-maps-bookmark/SKILL.md`；note 預設 **`地區｜景點名`**（list 視圖 + `browser_fill`）
@@ -15,6 +15,7 @@
 - **Portfolio／作品集／project 文案／device mockup／Lovable project details**：命中時 **必讀** `02_Knowledge_Base/skills/portfolio-designer/SKILL.md`；依固定欄位產出中英對照文案與 mockup；可參考 `examples/eats365-scan-to-order.json`；不自動改 Lovable 網站
 - **Base44／建 Base44 app／改 Base44／list Base44 projects**：命中時 **必讀** `02_Knowledge_Base/skills/base44-mcp-server-guide/SKILL.md`；用 MCP `user-base44`；寫入先問；勿與已發布 app 的 App MCP 混淆
 - **Lovable／建 Lovable app／改 Lovable／deploy／lovable.app 自動化**：命中時 **必讀** `02_Knowledge_Base/skills/lovable-mcp-server-guide/SKILL.md`；用 MCP `user-lovable`；寫入／deploy 先問；純 portfolio 文案仍用 `portfolio-designer`
+- **旅行清單／行李清單／我要執行李**：命中時 **必讀** `02_Knowledge_Base/skills/travel-packing-list/SKILL.md` 及同目錄 `checklist.md`，再輸出完整 8 分類清單；唔好憑記憶改項目
 
 ## 我的思考原則
 - 先讀現況，再問清楚，最後才產出
