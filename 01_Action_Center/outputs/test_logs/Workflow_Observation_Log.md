@@ -26,3 +26,4 @@
 | 2026-09-04 17:36–17:45；2026-09-07 收尾 | UIUX-Skills rules 雙軌後，Melessa sync 改為同時寫出 `rules/*.md`；補 `sync/README.md` | 約 20 分鐘 | 中性（sync 缺口補強） | 高（避免 portable `.md` 漂移；Spaces／其他 agent 與 Cursor 一致） | |
 | 2026-09-07 11:43–11:54 | `uiux-design-studio` 跨專案規則改為優先讀 `rules/*.md`；專案特例加 `AGENTS.md` | 約 10 分鐘 | 中性（路徑可攜） | 高（非 Cursor agent 找得到規則；對齊雙軌） | `uiux-design-studio` |
 | 2026-09-07 12:46–15:20 | 康泰紙本清單整理 → `travel-packing-list` skill；Reminders 8 Section；Notes point form；symlink | 約 2.5 小時 | 充電（出發前可一講即出清單） | 高（個人清單版控 + 觸發詞固化） | `travel-packing-list` |
+| 2026-09-08 10:43–10:52 | 同步 iCloud Notes 旅行清單 → skill（44 項）；加回 Heat Tech／暖包／蚊怕水等 5 項 | 約 10 分鐘 | 中性（清單維護） | 中（真源與 Notes 對齊；Reminders 待同步） | `travel-packing-list` |

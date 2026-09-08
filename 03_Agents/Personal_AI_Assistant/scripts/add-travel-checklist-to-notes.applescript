@@ -7,14 +7,14 @@ set noteBody to "<h1>旅行清單</h1>
 
 <h2>證件與重要文件</h2>
 <ul>
-<li>旅遊證件</li>
+<li>旅遊證件／VISA</li>
 <li>香港身份證 / 護照 / 回鄉卡</li>
-<li>SIM 卡</li>
+<li>SIM 卡／小袋／針</li>
 </ul>
 
 <h2>衣物</h2>
 <ul>
-<li>T 恤 / 上衣 / Hoodies（衛衣）</li>
+<li>T 恤 / 上衣 / Hoodies</li>
 <li>短褲 / 長褲</li>
 <li>外套 / 風褸</li>
 <li>運動衫</li>
@@ -23,21 +23,16 @@ set noteBody to "<h1>旅行清單</h1>
 <li>襪</li>
 <li>波鞋 / 皮鞋</li>
 <li>拖鞋</li>
-<li>泳衣</li>
 <li>帽 / 手套</li>
 <li>保暖口罩</li>
 </ul>
 
 <h2>個人護理</h2>
 <ul>
-<li>毛巾</li>
+<li>即棄毛巾</li>
 <li>沐浴露</li>
-<li>洗頭水</li>
-<li>護髮素</li>
-<li>牙刷</li>
-<li>牙膏</li>
-<li>牙線</li>
-<li>漱口水</li>
+<li>洗頭水／護髮素</li>
+<li>牙刷／牙膏／牙線／漱口水</li>
 <li>化妝品（放入密封透明袋）</li>
 <li>化妝袋、鏡</li>
 </ul>
@@ -48,7 +43,7 @@ set noteBody to "<h1>旅行清單</h1>
 <li>濕疹藥</li>
 <li>傷風藥</li>
 <li>尿道炎藥</li>
-<li>消毒藥水</li>
+<li>消毒酒精</li>
 <li>藥水膠布</li>
 <li>保濕口罩</li>
 <li>暖包</li>
@@ -67,25 +62,19 @@ set noteBody to "<h1>旅行清單</h1>
 
 <h2>日常用品</h2>
 <ul>
-<li>背囊 / 腰包</li>
-<li>手袋</li>
+<li>背囊／手袋</li>
 <li>雨傘</li>
 <li>太陽眼鏡</li>
-<li>水樽</li>
+<li>水樽／保溫瓶</li>
 <li>環保袋</li>
 <li>紙巾</li>
-<li>圓珠筆</li>
+<li>筆</li>
 </ul>
 
 <h2>金錢</h2>
 <ul>
 <li>當地貨幣</li>
 <li>信用卡</li>
-</ul>
-
-<h2>零食</h2>
-<ul>
-<li>零食（可與別人一起分享）</li>
 </ul>"
 
 tell application "Notes"
