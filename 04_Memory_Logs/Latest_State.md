@@ -1,9 +1,10 @@
 # Latest State
 
-> 最後更新：2026-09-07
+> 最後更新：2026-09-08
 
 ## 最近完成
 
+- **2026-09-08**：**MABS Ad Platform V2** — search result 瀑布流 Ad 模組等比縮至欄寬 124.95；2×2 SKU 圖／價／Saved 對齊橫向模組 A；fileKey `gvyP4YrHEXraz9b3071uLY`
 - **2026-09-07**：`uiux-design-studio` 跨專案規則改為優先讀 `rules/*.md`（非 Cursor／Spaces）；專案特例加 `AGENTS.md`
 - **2026-09-07**：UIUX-Skills **rules 雙軌** — Melessa sync 複製 `.mdc` 時一併寫出 portable `.md`（`sync/sync-uiux-skills.sh`）
 - **2026-09-04**：**KA Price**＋**Search Result 3-4 Columns** Figma — 真實 SKU（出前一丁／美素佳兒）、價格一位小數、Show KA Off＋Cart；fileKeys `sVR8HBaQAfiJp5SqPfA1lo`／`SPD3XrBhgiW57uBo28UxjZ`
@@ -39,6 +40,15 @@
 | 備份 | `Backup - img (pre PDP IMG)`（`19012:3242`）— 確認後可刪 |
 
 DS 元件：`PDP IMG`（Default｜OOS）；`Button / Add to cart`（`Page=PDP, State=OOS`）
+
+## MABS Ad Preview Figma（2026-09-08）
+
+| 項目 | 狀態 |
+| --- | --- |
+| 檔案 | [MABS — Ad Platform — V2](https://www.figma.com/design/gvyP4YrHEXraz9b3071uLY/MABS---Ad-Platform---V2)（`gvyP4YrHEXraz9b3071uLY`） |
+| 瀑布流 Ad | [30295:5246](https://www.figma.com/design/gvyP4YrHEXraz9b3071uLY/MABS---Ad-Platform---V2?node-id=30295-5246) — 已 `rescale` 至欄寬 **124.95**（約 0.70×）；1x 原稿 `30295:4961` 仍 178×292 |
+| SKU 內容 | 對齊橫向模組 [A 26989:9768](https://www.figma.com/design/gvyP4YrHEXraz9b3071uLY/MABS---Ad-Platform---V2?node-id=26989-9768) 前四格：$174.00/-26%、$74.90/-15%、$199.00/-46%、$41.00/-12% |
+| 踩坑 | 此 preview 是縮尺 2-col，勿把 1x 178 模組直接丟進欄；`rescale` 才會連字級；Redbox SKU 與 For You Search 元件不同（圖 hash + Price prop + 父層 Saved overlay） |
 
 ## Search Result／KA Price Figma（2026-09-04）
 
@@ -124,6 +134,6 @@ Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 ```
 Melessa AI Agent/
 ├── 02_Knowledge_Base/skills/{lovable-mcp-server-guide,base44-mcp-server-guide,portfolio-designer,...}/
-├── 03_Agents/Personal_AI_Assistant/sessions/2026-09-04_hktvmall-ka-price-search-result-figma.md
+├── 03_Agents/Personal_AI_Assistant/sessions/2026-09-08_mabs-ad-waterfall-sku-scale.md
 └── 04_Memory_Logs/                      ← 本檔案
 ```
