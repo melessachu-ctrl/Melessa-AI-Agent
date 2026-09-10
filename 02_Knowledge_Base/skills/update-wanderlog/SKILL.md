@@ -28,7 +28,19 @@ description: >-
 
 ## 0. 憑證：`connect.sid`（必做）
 
-### 使用者**未提供** `connect.sid` 時
+優先順序：**環境變數 `WANDERLOG_COOKIE`**（Cursor Cloud Agent Secrets／MCP env）→ 使用者本則訊息貼上的 cookie。  
+檢查時只確認「有／沒有」，**不要** `echo` 或寫出 cookie 內容。
+
+```bash
+# 只印 yes／空，勿印 cookie 值
+[ -n "$WANDERLOG_COOKIE" ] && echo COOKIE_SET=yes || echo COOKIE_SET=
+```
+
+- 若 `COOKIE_SET=yes`：直接執行，**不要**再問使用者貼 cookie
+- 執行腳本時讓 process **繼承**環境變數（`node script.mjs`），不要把 cookie 寫進 command 字串
+- Cloud Agent Secret 請用 **Runtime Secret**、名稱必須是 `WANDERLOG_COOKIE`（已跑中的 agent 不會拿到新 secret，需開新的 Cloud Agent）
+
+### 使用者未提供、環境也沒有 `WANDERLOG_COOKIE` 時
 
 **停止執行**，用繁體中文一次問清楚並教取得方式：
 
@@ -58,12 +70,20 @@ description: >-
 
 ### 執行時用法
 
+環境已有 `WANDERLOG_COOKIE` 時（Cloud Agent Secret）：
+
+```bash
+node script.mjs
+```
+
+使用者剛貼 cookie 時：
+
 ```bash
 WANDERLOG_COOKIE='<connect.sid value>' node script.mjs
 ```
 
 - 接受 `s%3A...` 或 `connect.sid=s%3A...` 兩種格式
-- 若 API 回 **session invalid / expired**：請使用者重新登入 Wanderlog 後貼新 cookie，**不要**重試猜測
+- 若 API 回 **session invalid / expired**：請使用者更新 Cloud Agent Secret 或貼新 cookie，**不要**重試猜測
 
 ---
 

@@ -37,8 +37,9 @@
 - **2026-07-08**：開始 2 週 Workflow 觀察期；日誌位置 `01_Action_Center/outputs/test_logs/Workflow_Observation_Log.md`（臨時觀察用，非正式長期記憶）
 - **2026-07-15**：Sasa 會用到的工作技能真源在 `02_Knowledge_Base/skills/`；Cursor 全域快捷入口為 `~/.cursor/skills/`（symlink 指向真源）。改 skill 內容改 repo 內檔案即可；換機時依 `02_Knowledge_Base/skills/README.md` 重建 symlink。
 - **2026-07-27**：之後在 `Melessa AI Agent` repo 新增每個 skill，預設都要同時做到「repo-source + `~/.cursor/skills` symlink」；若 skill 涉及觸發詞（例如一講某句就要出餐／做事），同步更新 Sasa routing（至少檢查 `AGENTS.md`、`BRAIN.md`、`TOOLS.md` 是否要補）。
-- **2026-08-13**：**Wanderlog（Cloud Agent）**：可在對話貼 `connect.sid`（從已登入 wanderlog.com 的瀏覽器 DevTools 複製），Agent 用 API 改行程；**勿寫入 repo／MEMORY**。**Google Maps 網頁**：Cloud VM 難登入 Google；可改貼景點清單，或電腦 **Local Agent** 用本機 Chrome。**Cursor Agent 環境**：Local↔Cloud 主要在電腦 **Agents 視窗** Move to；手機 Remote 看不到 VM 瀏覽器。
-- **2026-08-14**：Wanderlog 改行程／加景點／改 note → 讀 **`update-wanderlog`** skill；預設 note：**粗體 `地區｜景點名`** + `交通：` + `•` 特色概要；未提供 cookie 時 Agent 須先問並教取得方式。
+- **2026-08-13**：**Wanderlog（Cloud Agent）**：用 `connect.sid` + API 改行程；**勿寫入 repo／MEMORY**。**Google Maps 網頁**：Cloud VM 難登入 Google；可改貼景點清單，或電腦 **Local Agent** 用本機 Chrome。**Cursor Agent 環境**：Local↔Cloud 主要在電腦 **Agents 視窗** Move to；手機 Remote 看不到 VM 瀏覽器。
+- **2026-08-14**：Wanderlog 改行程／加景點／改 note → 讀 **`update-wanderlog`** skill；預設 note：**粗體 `地區｜景點名`** + `交通：` + `•` 特色概要。
+- **2026-09-10｜Wanderlog 街上更新**：憑證存在 Cursor **Cloud Agent Secret** `WANDERLOG_COOKIE`（**Runtime Secret**），不貼 chat、不 commit。街上／手機開**新的** Cloud Agent 即可改行程。Local Agent 預設沒有此 secret。工具只認 cookie，**不要把個人帳密給 Agent**；專用協作帳號可縮小權限但仍要存 cookie。過期或登出後回家更新 Secret。Agent 先查 env 有沒有 cookie，沒有才教 DevTools。
 - **2026-08-23**：Google Maps list note 預設 **`地區｜景點名`**（純文字，全形 `｜`）；交通／特色 bullet 放 Wanderlog。Maps ↔ Wanderlog 同步時標題格式應一致。詳見 `google-maps-bookmark`／`update-wanderlog` skill。
 - **2026-08-21**：Cursor 公司 claim（receipt + enJoy e-statement）→ 讀 **`claim-cursor`** skill；Expense folder 為 `M:YY`（冒號）；預設上個月；folder 已有 e-statement 則不催下載；Cursor 下旬扣款通常對應恒生「下一個月約 13 日」結單（例：July claim → `13-08-YYYY`）。
 - **2026-08-27**：Cursor 接入官方 **Base44 MCP**（Builder plan+、OAuth 選 workspace）；操作指南 skill `base44-mcp-server-guide`；寫入級操作與 Calendar／Figma 同級需先確認。
@@ -53,7 +54,7 @@
 - **2026-08-26｜Lite App PDP DS swap**：Instance 內本地 frame（如 `img`）不能直接結構替換 → 改 **main component** 才會同步。OOS demo 用獨立 Page／instance override（`PDP IMG`＋`Button / Add to cart` 的 `State=OOS`），勿把有貨主元件永久改成 OOS。寫入前先 clone 備份；`search_design_system` 找 Lite App DS 元件。
 - **2026-08-12｜Google Maps note**：在 place 詳情頁用 JS／偶發 fill 加 note **常不持久**。穩定做法：開 Saved **list 本體視圖** → 點該列 `Add note` → `browser_fill` → 點下一列 blur 存檔；note 預設 **`地區｜景點名`**。詳見 `google-maps-bookmark` skill。
 - **2026-08-23｜Google Maps 批次存**：單一 browser + CDP `saveToList` 最快；subagent 無法共用已 lock tab；Cloud `cursor-ide-browser` 可能 Aborted／需 Local Agent + 已登入 Google。
-- **Cloud Agent 瀏覽器 ≠ 本機／手機 Chrome**：在 phone／本機登入 Google／Wanderlog，不代表 VM 已登入；Wanderlog 可改貼 `connect.sid` 繞過。
+- **Cloud Agent 瀏覽器 ≠ 本機／手機 Chrome**：在 phone／本機登入 Google／Wanderlog，不代表 VM 已登入。Wanderlog 用 Cloud Agent Secret `WANDERLOG_COOKIE`（或例外時貼 `connect.sid`）繞過瀏覽器登入。已在跑的 Cloud Agent 讀不到新 Secret，須新開。
 - **2026-08-14｜Wanderlog place search**：河口湖等離 trip center 較遠時加大 `radius`；`place_id` 為 undefined 的 autocomplete 結果要跳過；「已存在」用 note 中文名判斷，勿 fuzzy 英文 match。
 - **2026-08-21｜恒生 e-Statement**：信用卡結單 **不會** PDF 附件寄 Gmail（只有提示）。Cursor Browser Tab 下載常落 hidden iframe／blob，CDP 難自動存檔 → `claim-cursor` 以檢查 Expense folder + 引導手動下載為主。Expense 年月資料夾勿用路徑斜線建成 `7/26` 巢狀。
 - **2026-09-01｜Cursor 開 PDF**：Cursor IDE **無法預覽 PDF**（Binary file not supported）。參考文件用 `.md`；PDF 用 macOS Preview／Finder 開。Cloud agent 建檔後本機需 `git pull origin main` 先見到。

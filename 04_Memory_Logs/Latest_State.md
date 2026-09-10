@@ -1,9 +1,10 @@
 # Latest State
 
-> 最後更新：2026-09-08
+> 最後更新：2026-09-10
 
 ## 最近完成
 
+- **2026-09-10**：Wanderlog「**東京 Food**」加 **燗アガリ**（17 places）；Cloud Agent Secret **`WANDERLOG_COOKIE`**（Runtime Secret）已驗證；`update-wanderlog` 先讀 env
 - **2026-09-08**：**MABS Ad Platform V2** — search result 瀑布流 Ad 模組等比縮至欄寬 124.95；2×2 SKU 圖／價／Saved 對齊橫向模組 A；fileKey `gvyP4YrHEXraz9b3071uLY`
 - **2026-09-07**：`uiux-design-studio` 跨專案規則改為優先讀 `rules/*.md`（非 Cursor／Spaces）；專案特例加 `AGENTS.md`
 - **2026-09-07**：UIUX-Skills **rules 雙軌** — Melessa sync 複製 `.mdc` 時一併寫出 portable `.md`（`sync/sync-uiux-skills.sh`）
@@ -82,10 +83,10 @@ DS 元件：`PDP IMG`（Default｜OOS）；`Button / Add to cart`（`Page=PDP, S
 | Section | 狀態 | Note 格式 |
 | --- | --- | --- |
 | 東京景点 | 16 景點，交通+特色已補 | 粗體 `地區｜景點名`（部分仍為舊標題，可再統一） |
-| 東京 Food | 13 美食（Trip.com）+ 舊 6 筆；新加入皆 `地區｜` | 粗體 `地區｜景點名` + 交通 + • 特色 |
+| 東京 Food | **17** places（含 2026-09-10 新宿｜燗アガリ） | 粗體 `地區｜景點名` + 交通 + • 特色 |
 | 富士山河口湖景點 | 10 景點 | 舊版粗體中文名 + 交通（尚未加 `地區｜`／特色 bullet） |
 
-更新方式：貼 `connect.sid` → Agent 依 **`update-wanderlog`** skill
+更新方式：Cloud Agent Secret **`WANDERLOG_COOKIE`**（Runtime Secret）→ 開**新的** Cloud Agent，依 **`update-wanderlog`** skill（不必每次貼 cookie）
 
 ### Google Maps
 
@@ -134,6 +135,6 @@ Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 ```
 Melessa AI Agent/
 ├── 02_Knowledge_Base/skills/{lovable-mcp-server-guide,base44-mcp-server-guide,portfolio-designer,...}/
-├── 03_Agents/Personal_AI_Assistant/sessions/2026-09-08_mabs-ad-waterfall-sku-scale.md
+├── 03_Agents/Personal_AI_Assistant/sessions/2026-09-10_wanderlog-kan-agari-cloud-agent.md
 └── 04_Memory_Logs/                      ← 本檔案
 ```

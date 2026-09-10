@@ -28,3 +28,4 @@
 | 2026-09-07 12:46–15:20 | 康泰紙本清單整理 → `travel-packing-list` skill；Reminders 8 Section；Notes point form；symlink | 約 2.5 小時 | 充電（出發前可一講即出清單） | 高（個人清單版控 + 觸發詞固化） | `travel-packing-list` |
 | 2026-09-08 10:43–10:52 | 同步 iCloud Notes 旅行清單 → skill（44 項）；加回 Heat Tech／暖包／蚊怕水等 5 項 | 約 10 分鐘 | 中性（清單維護） | 中（真源與 Notes 對齊；Reminders 待同步） | `travel-packing-list` |
 | 2026-09-08 11:56–14:49 | MABS Ad 瀑布流模組等比縮至欄寬；2×2 SKU 圖／價／Saved 對齊橫向模組 A | 約 1–1.5 小時（中間有間隔） | 中性（Figma 縮尺＋內容對齊） | 中高（preview rescale 可重用；SKU 跨元件對齊） | `uiux-design-studio`, `figma-use`, `figma-mcp-server-guide`, `ricky-design-guideline`, `uiux-review`, `hktvmall-target-customers` |
+| 2026-09-10 13:03–13:10；17:35–17:48 | Wanderlog「東京 Food」加燗アガリ；設 Cloud Agent Secret `WANDERLOG_COOKIE` 並驗證；skill 改為先讀 env | 約 40 分鐘（中間有間隔） | 充電（街上可改行程、不必貼 cookie） | 高（個人 Wanderlog 流程可重用；勿把密碼／cookie 寫進 repo） | `update-wanderlog` |

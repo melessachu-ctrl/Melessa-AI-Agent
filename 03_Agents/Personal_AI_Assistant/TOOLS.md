@@ -1,6 +1,6 @@
 # Sasa 的工具箱（TOOLS）
 
-> 最後更新：2026-09-04
+> 最後更新：2026-09-10
 
 ## 可以使用（唯讀／草擬）
 | 工具 / 動作 | 用途 |
@@ -42,15 +42,17 @@
 
 | 方式 | 用途 | 備註 |
 |---|---|---|
-| 貼 `connect.sid` + **`update-wanderlog` skill** | Cloud Agent 以 API 讀寫行程、加景點、改 note（粗體 **`地區｜景點名`**＋交通＋特色概要） | 取得 cookie 步驟見 `update-wanderlog/SKILL.md`；**勿 commit** |
-| Local Agent + 本機 Chrome | 可配合已登入的 Google Maps／Wanderlog 網頁操作 | 電腦 Cursor 新開 Local chat |
+| Cloud Agent Secret **`WANDERLOG_COOKIE`**（Runtime Secret）+ **`update-wanderlog` skill** | 街上／手機開**新的** Cloud Agent 即可加景點、改 note（粗體 **`地區｜景點名`**＋交通＋特色概要） | Secret 在 [Cloud Agents dashboard](https://cursor.com/dashboard/cloud-agents)；**勿 commit**、勿貼 chat |
+| 例外：對話貼 `connect.sid` | Secret 過期或未設時 | 取得步驟見 `update-wanderlog/SKILL.md` |
+| Local Agent + 本機 Chrome | 可配合已登入的 Google Maps／Wanderlog 網頁操作 | 本機 chat **沒有** Cloud Agent Secret |
 
 - 無官方 Google Maps「寫入 saved list」API；讀 Maps 清單可貼文字，或 Local 瀏覽器
 - Gmail／Drive MCP **不能**代替 Google Maps 瀏覽器登入
+- **不要**把個人 Wanderlog 帳密交給 Agent；工具只認 cookie
 
 ## 尚未連接
 | 工具 | 狀態 | 備註 |
 |---|---|---|
 | Notion | 未連接 | 需要時可再加 MCP |
-| Wanderlog MCP | 未固定配置 | 可選：Cursor MCP 設 `WANDERLOG_COOKIE`（仍勿 commit） |
+| Wanderlog MCP | 未固定配置 | 憑證已用 Cloud Agent Secret `WANDERLOG_COOKIE`；可選再加 MCP（仍勿 commit） |
 
