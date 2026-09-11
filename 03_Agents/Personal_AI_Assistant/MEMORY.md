@@ -8,7 +8,8 @@
 - 當 Melessa 說「結束 session」或「finish session」：除了寫 session／更新 `TASKS.md` 等收尾外，**自動追加一行**到 `01_Action_Center/outputs/test_logs/Workflow_Observation_Log.md`（含 **Skills** 欄：本回合用過的 skill 才填，無則留空），然後**直接 `git commit` 並 `git push` 到 Melessa-AI-Agent GitHub**（無需再另行確認一次）。仍須遵守安全：不提交 credential／敏感資料；destructive git（force push 等）永遠先問。
 - **Finish session｜UIUX-Skills 下游（條件式）**：Melessa 為 UI/UX skills 真源（`02_Knowledge_Base/skills/`）；[UIUX-Skills](https://github.com/melessachu-ctrl/UIUX-Skills) 為 designer 分發包，由 Actions **Sync UIUX-Skills** 自動同步。**預設 finish session 只 push Melessa**；僅當本 session 改過 `02_Knowledge_Base/skills/**` 或 `sync/**`（或直接更新 UIUX-Skills）時，push 後確認 Actions／下游成功。勿每次 finish session 手動 push UIUX-Skills 的 `skills/`；勿在 Melessa 本機跑 `update-skills.sh`。
 - **Finish session｜`#uiux-designer` 公告（條件式）**：當 update 已 sync 到 UIUX-Skills、或本 session 更新了 UIUX-Skills，在**整個 finish session 流程完成後**（含 Actions 成功）**自動**用 Slack MCP 發公告到 `#uiux-designer`（`C02TNPKRE81`），結構固定：`<!channel> — UIUX Skill Repo 已更新 ✨` → **更新內容**（今次摘要）→ **如何更新**（`./scripts/update-skills.sh` + Canvas https://hktvitlo.slack.com/docs/T1PH69YNN/F0BTSHFDX50）。參考訊息：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1788494400986859。未命中條件則不發。
-- **2026-08-25｜Google Calendar**：建立／新增行程時**預設關閉提醒**（`useDefault: false`、無 overrides）；**只有** Melessa 明確要求提醒時才開啟。Cursor 規則：`~/.cursor/rules/google-calendar-no-reminders.mdc`。MCP `calendar_createEvent` 不支援 reminders → 建完後用 Calendar API `PATCH`（token 在 `~/.google-workspace-mcp/`，勿 commit）。
+- **2026-08-25｜Google Calendar**：建立／新增行程時**預設關閉提醒**（`useDefault: false`、無 overrides）；**只有** Melessa 明確要求提醒時才開啟。全日活動用 UTC date-only（`YYYY-MM-DDT00:00:00Z`），勿用 `+08:00` 午夜，否則會寫成前一日。
+- **2026-09-11｜黎 m／period-calendar**：講「黎 m／來月經／大姨媽」→ 在 Google Calendar 記全日 **🩸**（`colorId: 4`、不佔時間、無關提醒）；問幾時黎 m → 查日曆 🩸，不靠記憶。Skill：`period-calendar`（個人，不進 UIUX-Skills）。MEMORY／session **不列**歷次日期。
 - **2026-08-25｜Portfolio**：寫 portfolio／作品集文案／device mockup／Lovable project details → 讀 **`portfolio-designer`** skill（真源在 `02_Knowledge_Base/skills/portfolio-designer/`）。以 Skill 承載，不做獨立 Agent；勿用 `alwaysApply` rule。
 - **2026-08-27｜Base44 MCP**：Cursor 全域已接 `base44`（`https://app.base44.com/mcp`）；建／改 Base44 app、entities、sandbox → 讀 **`base44-mcp-server-guide`**。寫入操作先問。勿與「已發布 app 的 App MCP」混淆。
 - **2026-08-27｜Lovable MCP**：Cursor 全域已接 `lovable`（`https://mcp.lovable.dev`）＋可裝 Lovable plugin（`/lovable-new` 等）；建／改／部署 Lovable 專案 → 讀 **`lovable-mcp-server-guide`**。寫入／deploy 先問。文案／mockup 仍用 **`portfolio-designer`**（不自動改站）。
@@ -25,7 +26,8 @@
 
 - **濕疹**：不時復發、原因未明；主要在手掌／手背、膝頭後方、耳背、頸，範圍通常很小。
 - **相關過敏表現**：有鼻敏感，但較少流鼻水／打噴嚏，主要是眼痕、眼紅。
-- **2026-08 MedDx AiLergy**：295 項 IgE 篩查；總 IgE < 20 kU/L（正常）；**無任何項目達 ≥ 0.3 kUA/L 明確陽性**。邊界值（仍屬陰性／不確定）包括乳膠 Hev b 1（0.18）、蟹（0.15）等。結論：未見明確 IgE 致敏；症狀若持續仍可能屬非 IgE 機制，必要時帶報告見專科。
+- **2026-08-06 MedDx AiLergy**：295 項 IgE 篩查；總 IgE < 20 kU/L（正常）；**無任何項目達 ≥ 0.3 kUA/L 明確陽性**。邊界值（仍屬陰性／不確定）包括乳膠 Hev b 1（0.18）、蟹（0.15）等。結論：未見明確 IgE 致敏；症狀若持續仍可能屬非 IgE 機制，必要時帶報告見專科。
+- **月經開始日**：Google Calendar 全日 🩸 追蹤；流程見 `period-calendar` skill。不在 MEMORY 列日期。
 
 ## 紅線
 
@@ -57,6 +59,7 @@
 - **Cloud Agent 瀏覽器 ≠ 本機／手機 Chrome**：在 phone／本機登入 Google／Wanderlog，不代表 VM 已登入。Wanderlog 用 Cloud Agent Secret `WANDERLOG_COOKIE`（或例外時貼 `connect.sid`）繞過瀏覽器登入。已在跑的 Cloud Agent 讀不到新 Secret，須新開。
 - **2026-08-14｜Wanderlog place search**：河口湖等離 trip center 較遠時加大 `radius`；`place_id` 為 undefined 的 autocomplete 結果要跳過；「已存在」用 note 中文名判斷，勿 fuzzy 英文 match。
 - **2026-08-21｜恒生 e-Statement**：信用卡結單 **不會** PDF 附件寄 Gmail（只有提示）。Cursor Browser Tab 下載常落 hidden iframe／blob，CDP 難自動存檔 → `claim-cursor` 以檢查 Expense folder + 引導手動下載為主。Expense 年月資料夾勿用路徑斜線建成 `7/26` 巢狀。
+- **2026-08-25｜Google Calendar 全日時差**：`allDay` + `YYYY-MM-DDT00:00:00+08:00` 會被寫成 **前一日**。正確：`startTime`／`endTime` 用 UTC `T00:00:00Z`（結束為翌日），再核對回傳的 `start.date`。
 - **2026-09-01｜Cursor 開 PDF**：Cursor IDE **無法預覽 PDF**（Binary file not supported）。參考文件用 `.md`；PDF 用 macOS Preview／Finder 開。Cloud agent 建檔後本機需 `git pull origin main` 先見到。
 
 ## 不應記錄

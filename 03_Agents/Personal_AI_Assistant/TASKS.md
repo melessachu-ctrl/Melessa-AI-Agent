@@ -14,6 +14,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-09-11：Google Calendar 記今日 🩸；建立 `period-calendar` skill + Sasa 路由 + 本機 symlink；個人 skill 不進 UIUX-Skills；session 已寫
 - 2026-09-10：Wanderlog「東京 Food」加燗アガリ；Cloud Agent Secret `WANDERLOG_COOKIE`（Runtime Secret）；`update-wanderlog` 先讀 env；session 已寫
 - 2026-09-08：MABS Ad 瀑布流模組等比縮至欄寬 124.95；2×2 SKU 圖／價／Saved 對齊橫向模組 A；session 已寫
 - 2026-09-08：`travel-packing-list` 同步 iCloud Notes 版本（7 分類、44 項）；加回 Heat Tech／帽手套／保暖口罩／暖包／蚊怕水；session 已寫

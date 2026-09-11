@@ -1,9 +1,10 @@
 # Latest State
 
-> 最後更新：2026-09-10
+> 最後更新：2026-09-11
 
 ## 最近完成
 
+- **2026-09-11**：Google Calendar 全日 🩸（今日）；建立 **`period-calendar`** skill（黎 m 即記／問幾時即查日曆）；symlink + Sasa 路由；**不**進 UIUX-Skills
 - **2026-09-10**：Wanderlog「**東京 Food**」加 **燗アガリ**（17 places）；Cloud Agent Secret **`WANDERLOG_COOKIE`**（Runtime Secret）已驗證；`update-wanderlog` 先讀 env
 - **2026-09-08**：**MABS Ad Platform V2** — search result 瀑布流 Ad 模組等比縮至欄寬 124.95；2×2 SKU 圖／價／Saved 對齊橫向模組 A；fileKey `gvyP4YrHEXraz9b3071uLY`
 - **2026-09-07**：`uiux-design-studio` 跨專案規則改為優先讀 `rules/*.md`（非 Cursor／Spaces）；專案特例加 `AGENTS.md`

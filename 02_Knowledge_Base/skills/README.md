@@ -33,6 +33,7 @@ for name in \
   update-wanderlog \
   hktvmall-target-customers \
   lovable-mcp-server-guide \
+  period-calendar \
   portfolio-designer \
   ricky-design-guideline \
   tonight-dinner \

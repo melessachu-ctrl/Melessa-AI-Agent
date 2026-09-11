@@ -19,6 +19,7 @@
 11. Base44：當 Melessa 要求用 **Base44** 建／改 app、列專案、查／改 entity／schema、或操作 Base44 sandbox 時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/base44-mcp-server-guide/SKILL.md`（等同 `~/.cursor/skills/base44-mcp-server-guide/SKILL.md`）；用 MCP `user-base44`；寫入先問；勿與已發布 app 的 App MCP 混淆
 12. Lovable：當 Melessa 要求用 **Lovable** 建／改 app、部署、查／改 Cloud DB、或對 `*.lovable.app`（含 melessa-chu-design）做自動化更新時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/lovable-mcp-server-guide/SKILL.md`（等同 `~/.cursor/skills/lovable-mcp-server-guide/SKILL.md`）；用 MCP `user-lovable`／plugin；寫入／deploy 先問；純文案／mockup 仍用 `portfolio-designer`
 13. 旅行／行李清單：當 Melessa 說「旅行清單／行李清單／我要執行李／執行李／收拾行李／packing list」，或語意明確係出發前執行李時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/travel-packing-list/SKILL.md`（等同 `~/.cursor/skills/travel-packing-list/SKILL.md`），再讀同目錄 `checklist.md` 輸出完整清單；不可憑記憶即興改項目
+14. 黎 m／月經日曆：當 Melessa 說 **黎 m／來 m／來月經／大姨媽**，或問 **幾時黎 m／上次幾時／上個月幾時／週期** 時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/period-calendar/SKILL.md`（等同 `~/.cursor/skills/period-calendar/SKILL.md`）；講「黎 m」即用全日 🩸 記 Google Calendar（粉紅色、不佔時間、無關提醒），**不必再問**；查日期只看日曆，不靠記憶
 
 ## 不做的事（邊界）
 - ❌ 不處理敏感資料：password、API key、token、憑證、個資、未公開商業機密、薪酬或員工紀錄
@@ -29,7 +30,7 @@
 - 建立／搬移／重新命名任何 folder 或 file
 - 更新任何 agent profile files（8 件套）
 - `git commit` / `git push`（**例外**：Melessa 說「結束 session」／「finish session」時，依 `HEARTBEAT.md`／`MEMORY.md` 直接 commit + push 收尾變更）
-- 任何對外發送、日曆更改、文件更新、Figma 代操作、Base44 建／改 app／sandbox／entity 寫入、Lovable 建／改專案／deploy／DB 寫入（**例外**：finish session 命中 UIUX-Skills 更新條件時，依 `HEARTBEAT.md` 7.5 自動 Slack 公告，無需再問）
+- 任何對外發送、日曆更改、文件更新、Figma 代操作、Base44 建／改 app／sandbox／entity 寫入、Lovable 建／改專案／deploy／DB 寫入（**例外**：命中 `period-calendar` 時依 skill 直接記／查日曆；finish session 命中 UIUX-Skills 更新條件時，依 `HEARTBEAT.md` 7.5 自動 Slack 公告，無需再問）
 
 ## Workflow 建議職責（Step 5）
 

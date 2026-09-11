@@ -1,13 +1,13 @@
 # Sasa 的工具箱（TOOLS）
 
-> 最後更新：2026-09-10
+> 最後更新：2026-09-11
 
 ## 可以使用（唯讀／草擬）
 | 工具 / 動作 | 用途 |
 |---|---|
 | 讀取 `03_Agents/Personal_AI_Assistant/` 內 files | 了解角色／任務／記憶 |
 | 讀取 `02_Knowledge_Base/approved_references/` | 使用已批准 reference |
-| 讀取 `02_Knowledge_Base/skills/` | UIUX／DS／Figma／Base44／Lovable／`tonight-dinner`／`travel-packing-list`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`claim-cursor`／`portfolio-designer` 等工作技能（`SKILL.md` 真源；Cursor 另以 `~/.cursor/skills/` symlink 全域載入） |
+| 讀取 `02_Knowledge_Base/skills/` | UIUX／DS／Figma／Base44／Lovable／`tonight-dinner`／`travel-packing-list`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`claim-cursor`／`portfolio-designer`／`period-calendar` 等工作技能（`SKILL.md` 真源；Cursor 另以 `~/.cursor/skills/` symlink 全域載入） |
 | 草擬 email／訊息／文件內容 | 先出草稿，等你確認 |
 | MCP（唯讀）：Slack/Calendar/Drive/Docs/Sheets/Figma/Base44/Lovable | 查詢、整理、截圖、評審、列專案／schema／entities／workspaces（不改動） |
 | MCP：`cursor-ide-browser` | Google Maps 存 list／加 note（依 `google-maps-bookmark`）；Cursor Billing／恒生 e-Statement 引導（依 `claim-cursor`；改動前確認已登入） |
@@ -31,7 +31,7 @@
 |---|---|---|---|
 | Figma | `plugin-figma-figma` | 已連接、已授權 | 讀設計、截圖、評審；代操作需你確認 |
 | Slack | `plugin-slack-slack` | 已連接、已授權 | 讀頻道/thread、搜尋、草擬訊息；發送需你確認（**例外**：finish session UIUX-Skills 公告見 `HEARTBEAT.md` 7.5） |
-| Google Calendar | `user-google-workspace` | 已連接、已授權 | 查詢／新增／更改／刪除行程（改動需你確認）。**預設關提醒**（見 `MEMORY.md`／`~/.cursor/rules/google-calendar-no-reminders.mdc`）；`calendar_createEvent` 後常需 API `PATCH` reminders |
+| Google Calendar | `plugin-google-calendar-google-calendar`／`user-google-workspace` | 已連接、已授權 | 查詢／新增／更改／刪除行程（改動需你確認）。**例外**：命中 `period-calendar`（黎 m）時依 skill 直接記／查，無需再問。**預設關提醒**（見 `MEMORY.md`）；全日活動用 UTC date-only，勿用 `+08:00` 午夜 |
 | Google Drive / Docs / Sheets | `user-google-workspace` | 已連接、已授權 | 搜尋、讀寫檔案與文件（改動需你確認） |
 | Base44 | `user-base44`（`https://app.base44.com/mcp`） | 已連接、已授權 | 建／改 Base44 app、list／schema／entities、sandbox 讀寫與指令（寫入需你確認）。操作指南：`base44-mcp-server-guide`。**≠** 已發布 app 的 App MCP |
 | Lovable | `user-lovable`／`plugin-lovable-lovable`（`https://mcp.lovable.dev`） | 已連接、已授權 | 建／改／部署 Lovable 專案、knowledge、workspace skills、Cloud DB、analytics（寫入／deploy 需你確認）。操作指南：`lovable-mcp-server-guide`。文案用 `portfolio-designer`，勿混淆 |
