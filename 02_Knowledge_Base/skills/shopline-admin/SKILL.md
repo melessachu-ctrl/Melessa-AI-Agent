@@ -120,6 +120,8 @@ await context.add_cookies([{
 
 路徑：**訂單 → 更多動作 → 匯出訂單報表**
 
+**UI 注意（2026-09 起）：** modal 內「選擇範圍」「欄位設定」可能**收合**（`content-block` height=0）。Playwright 操作前須點 section 標題旁的 **▼/▲** 展開，否則看不到 checkbox、日期欄位亦可能 disabled。
+
 ### 3.1 選擇範圍（重要）
 
 | 模式 | 何時用 |

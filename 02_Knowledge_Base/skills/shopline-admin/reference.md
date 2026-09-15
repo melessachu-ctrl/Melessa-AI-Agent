@@ -42,6 +42,11 @@ async def export_orders_report(fields_to_check: list[str]):
         await page.goto(URL, wait_until="networkidle", timeout=90000)
         await page.get_by_text("更多動作", exact=True).first.click()
         await page.get_by_text("匯出訂單報表", exact=True).first.click()
+        # New UI: 「選擇範圍」「欄位設定」區塊可能收合（height:0）；先點 section 的 fa-angle 展開
+        for title in await page.locator(".modal .modal-section-title").all():
+            block = title.locator("xpath=following-sibling::div[contains(@class,'content-block')][1]")
+            if await block.evaluate("el => el.getBoundingClientRect().height") < 5:
+                await title.locator("i.fa").click()
         await page.locator('input[value="duringDates"]').click(force=True)
         start = page.locator('.modal input[name="start_at"]').first
         end = page.locator('.modal input[name="end_at"]').first
