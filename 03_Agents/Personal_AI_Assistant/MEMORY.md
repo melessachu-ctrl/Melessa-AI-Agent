@@ -61,6 +61,7 @@
 - **2026-08-21｜恒生 e-Statement**：信用卡結單 **不會** PDF 附件寄 Gmail（只有提示）。Cursor Browser Tab 下載常落 hidden iframe／blob，CDP 難自動存檔 → `claim-cursor` 以檢查 Expense folder + 引導手動下載為主。Expense 年月資料夾勿用路徑斜線建成 `7/26` 巢狀。
 - **2026-08-25｜Google Calendar 全日時差**：`allDay` + `YYYY-MM-DDT00:00:00+08:00` 會被寫成 **前一日**。正確：`startTime`／`endTime` 用 UTC `T00:00:00Z`（結束為翌日），再核對回傳的 `start.date`。
 - **2026-09-01｜Cursor 開 PDF**：Cursor IDE **無法預覽 PDF**（Binary file not supported）。參考文件用 `.md`；PDF 用 macOS Preview／Finder 開。Cloud agent 建檔後本機需 `git pull origin main` 先見到。
+- **2026-09-14｜Cloud Agent checkout ≠ 本機 folder**：Agents 視窗／Cloud Files「已 checkout」只係 VM。本機 `Melessa AI Agent` 要自己 `git fetch origin <branch>` + `checkout` 先見到新 folder。Cloud **Files** 右鍵無 Open in Browser → **Download**，或本機 `open path/to/file.html`。
 
 ## 不應記錄
 

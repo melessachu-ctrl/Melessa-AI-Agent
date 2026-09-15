@@ -4,6 +4,7 @@
 
 | 日期 | 任務 | 成果 | 備註 |
 |---|---|---|---|
+| 2026-09-10～14 | Apple 發佈會摘要；Duo × HKTVmall homepage | 直欄／sidebar 文字方案；`duo-mockups.html`＋外屏截圖；PR #9 | 本機須 fetch branch 先睇到 HTML；內屏 render 有亂碼 |
 | 2026-09-11 | 黎 m 記日曆 + `period-calendar` skill | 全日 🩸 已入曆；skill 真源＋symlink＋Sasa 路由 | 個人 skill，不進 UIUX-Skills；全日用 UTC date |
 | 2026-09-10 | 東京 Food 加燗アガリ；Wanderlog Cloud Agent Secret | 「東京 Food」17 間；`WANDERLOG_COOKIE` Runtime Secret 已驗證；skill 先讀 env | 勿 commit cookie；街上開新 Cloud Agent |
 | 2026-09-08 | MABS Ad 瀑布流縮尺＋SKU 對齊 | 模組 `rescale` 至欄寬 124.95；四格圖／價／Saved 對齊模組 A | fileKey `gvyP4YrHEXraz9b3071uLY`；1x 原稿未改 |
