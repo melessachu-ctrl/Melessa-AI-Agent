@@ -36,6 +36,7 @@ for name in \
   period-calendar \
   portfolio-designer \
   ricky-design-guideline \
+  shopline-admin \
   tonight-dinner \
   travel-packing-list \
   ui-ux-pro-max \
