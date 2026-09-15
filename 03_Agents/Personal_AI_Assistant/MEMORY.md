@@ -50,6 +50,7 @@
 - **2026-08-31**：**UIUX-Skills 模式 B（下游分發）**：skill 內容真源在 Melessa `02_Knowledge_Base/skills/`；push `main` 後 GitHub Actions 同步到 [UIUX-Skills](https://github.com/melessachu-ctrl/UIUX-Skills)。Designer 用 `./scripts/update-skills.sh` 更新；skill 改動 PR 回 Melessa，勿只改下游。Manifest／workflow 見 `sync/`。Finish session 見 `HEARTBEAT.md` step 7.4–7.5。
 - **2026-09-04｜UIUX-Skills Slack 公告**：finish session 若 skills 已 sync 到 UIUX-Skills（或 UIUX-Skills 有更新），流程完成後**必須**自動發 `#uiux-designer` 公告（結構見 HEARTBEAT 7.5／參考 https://hktvitlo.slack.com/archives/C02TNPKRE81/p1788494400986859）；改「可選」為「條件式必做」。
 - **2026-09-01｜UIUX Design Agent（HKTVmall）**：PM 查 Figma design 痛點 → 規劃 Hermes 同級 **read-only lookup** agent（唔做 design 決策）。實施手冊：`01_Action_Center/outputs/docs/UIUX_Design_Agent_Implementation_8_Steps.md`。Slack：`#agent-uiux-design`／`@uiux-design-agent`。PoC 路線：Melessa repo（8 件套 + `design-index/`）→ 正式 `HKTV-UIUX-Design-Agent`；skills 真源留 Melessa／UIUX-Skills。
+- **2026-09-15｜Shopline Admin（Gym Master Nutrition）**：`hkgymmn` 後台 task → 讀 **`shopline-admin`** skill；Cloud Agent Secret **`SHOPLINE_COOKIES`**（Runtime Secret，格式 `_shopline_sso_session_id=...`）；Playwright 登入；匯出訂單報表預設 **訂單日期 + 日期區間**（`duringDates`）。個人 skill，不進 UIUX-Skills。報表寄 Admin email；Agent 無 Yahoo 授權。
 
 ## 踩過的坑
 
@@ -57,6 +58,7 @@
 - **2026-08-12｜Google Maps note**：在 place 詳情頁用 JS／偶發 fill 加 note **常不持久**。穩定做法：開 Saved **list 本體視圖** → 點該列 `Add note` → `browser_fill` → 點下一列 blur 存檔；note 預設 **`地區｜景點名`**。詳見 `google-maps-bookmark` skill。
 - **2026-08-23｜Google Maps 批次存**：單一 browser + CDP `saveToList` 最快；subagent 無法共用已 lock tab；Cloud `cursor-ide-browser` 可能 Aborted／需 Local Agent + 已登入 Google。
 - **Cloud Agent 瀏覽器 ≠ 本機／手機 Chrome**：在 phone／本機登入 Google／Wanderlog，不代表 VM 已登入。Wanderlog 用 Cloud Agent Secret `WANDERLOG_COOKIE`（或例外時貼 `connect.sid`）繞過瀏覽器登入。已在跑的 Cloud Agent 讀不到新 Secret，須新開。
+- **2026-09-15｜Shopline Admin 匯出**：modal 須先選 **`duringDates`** radio，日期欄位才 enable；否則只匯「目前頁面」。Admin（`_shopline_sso_session_id`）與 Shoplytics（`shoplytics-dashboard.sid`）係不同 cookie。Secret 名 **`SHOPLINE_COOKIES`**；新 secret 須新開 agent。
 - **2026-08-14｜Wanderlog place search**：河口湖等離 trip center 較遠時加大 `radius`；`place_id` 為 undefined 的 autocomplete 結果要跳過；「已存在」用 note 中文名判斷，勿 fuzzy 英文 match。
 - **2026-08-21｜恒生 e-Statement**：信用卡結單 **不會** PDF 附件寄 Gmail（只有提示）。Cursor Browser Tab 下載常落 hidden iframe／blob，CDP 難自動存檔 → `claim-cursor` 以檢查 Expense folder + 引導手動下載為主。Expense 年月資料夾勿用路徑斜線建成 `7/26` 巢狀。
 - **2026-08-25｜Google Calendar 全日時差**：`allDay` + `YYYY-MM-DDT00:00:00+08:00` 會被寫成 **前一日**。正確：`startTime`／`endTime` 用 UTC `T00:00:00Z`（結束為翌日），再核對回傳的 `start.date`。
