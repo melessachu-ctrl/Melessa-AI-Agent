@@ -31,3 +31,4 @@
 | 2026-09-10 13:03–13:10；17:35–17:48 | Wanderlog「東京 Food」加燗アガリ；設 Cloud Agent Secret `WANDERLOG_COOKIE` 並驗證；skill 改為先讀 env | 約 40 分鐘（中間有間隔） | 充電（街上可改行程、不必貼 cookie） | 高（個人 Wanderlog 流程可重用；勿把密碼／cookie 寫進 repo） | `update-wanderlog` |
 | 2026-09-11 14:48–15:20 | 黎 m 記 Google Calendar 全日 🩸；建立 `period-calendar` skill＋Sasa 路由＋symlink | 約 30 分鐘 | 中性（行政＋偏好固化） | 高（每月可重用；講黎 m 即記、問幾時即查） | `period-calendar` |
 | 2026-09-15 05:49–10:26 | Shopline Admin 登入／匯出訂單報表欄位整理／觸發 2025/04–2026/03 匯出；建 `shopline-admin` skill + `SHOPLINE_COOKIES` Secret；PR #10 merge；Sasa 路由 | 約 4–5 小時（跨多段） | 充電（合夥報稅流程可重用） | 高（Admin 自動化 + secret 安全存放；勿貼 cookie） | `shopline-admin` |
+| 2026-09-23 10:02–10:07 | `shopline-admin` 本機 symlink；`main` 與遠端合併 push；刪已 merge 功能分支 | 約 10 分鐘 | 中性（repo 整理） | 中（本機 Cursor 可載 skill；git 乾淨） | |
