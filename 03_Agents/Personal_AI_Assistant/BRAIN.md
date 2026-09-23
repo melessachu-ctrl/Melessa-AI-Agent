@@ -6,7 +6,7 @@
 - `02_Knowledge_Base/approved_references/`：（暫時未有；待搬入既有 `Personal_AI_Assistant/knowledge/` 內容）
 - `02_Knowledge_Base/examples/`：（暫時未有）
 - `02_Knowledge_Base/templates/`：（暫時未有）
-- `02_Knowledge_Base/skills/`：工作技能真源（UIUX／Design System／Figma／HKTVmall／Base44／Lovable／`tonight-dinner`／`travel-packing-list`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`claim-cursor`／`portfolio-designer`／`period-calendar` 等）。做相關任務時優先讀對應 `<skill-name>/SKILL.md`；Cursor 全域快捷入口為 `~/.cursor/skills/`（symlink 指向此目錄）
+- `02_Knowledge_Base/skills/`：工作技能真源（UIUX／Design System／Figma／HKTVmall／Base44／Lovable／`tonight-dinner`／`travel-packing-list`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`shopline-admin`／`claim-cursor`／`portfolio-designer`／`period-calendar` 等）。做相關任務時優先讀對應 `<skill-name>/SKILL.md`；Cursor 全域快捷入口為 `~/.cursor/skills/`（symlink 指向此目錄）
 - **晚餐／今晚煮咩好**：命中觸發詞時，**必讀** `02_Knowledge_Base/skills/tonight-dinner/SKILL.md`（可先讀同目錄 `memory.md`），再依 skill 輸出；唔好用一般聊天格式代替
 - **電郵／幫我寫封電郵／寫封 email**：命中觸發詞或語意明確是在起草寫給上司／同事的工作電郵時，**必讀** `02_Knowledge_Base/skills/email-writer/SKILL.md`，再直接輸出英文電郵草稿；若資料不足，用 placeholder 補位，不追問
 - **Google Maps／收藏景點／加 note**：命中「存到 Maps／bookmark／加入某某 list／幫景點加 note」等時，**必讀** `google-maps-bookmark/SKILL.md`；note 預設 **`地區｜景點名`**（list 視圖 + `browser_fill`）
@@ -17,6 +17,7 @@
 - **Lovable／建 Lovable app／改 Lovable／deploy／lovable.app 自動化**：命中時 **必讀** `02_Knowledge_Base/skills/lovable-mcp-server-guide/SKILL.md`；用 MCP `user-lovable`；寫入／deploy 先問；純 portfolio 文案仍用 `portfolio-designer`
 - **旅行清單／行李清單／我要執行李**：命中時 **必讀** `02_Knowledge_Base/skills/travel-packing-list/SKILL.md` 及同目錄 `checklist.md`，再輸出完整 8 分類清單；唔好憑記憶改項目
 - **黎 m／來月經／幾時黎 m**：命中時 **必讀** `02_Knowledge_Base/skills/period-calendar/SKILL.md`；講黎 m 即在 Google Calendar 記全日 🩸（不必再問）；問幾時則查日曆，不靠記憶；個人 skill，不進 UIUX-Skills
+- **Shopline Admin／hkgymmn／匯出訂單報表／Gym Master Nutrition**：命中時 **必讀** `02_Knowledge_Base/skills/shopline-admin/SKILL.md`；先查 env `SHOPLINE_COOKIES`，沒有才教 My Secrets；Playwright + `_shopline_sso_session_id`；匯出預設日期區間（`duringDates`）；**勿 commit** cookie；**無** Yahoo 收件匣；個人 skill，不進 UIUX-Skills
 
 ## 我的思考原則
 - 先讀現況，再問清楚，最後才產出

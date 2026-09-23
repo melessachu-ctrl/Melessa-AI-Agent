@@ -1,13 +1,13 @@
 # Sasa 的工具箱（TOOLS）
 
-> 最後更新：2026-09-11
+> 最後更新：2026-09-15
 
 ## 可以使用（唯讀／草擬）
 | 工具 / 動作 | 用途 |
 |---|---|
 | 讀取 `03_Agents/Personal_AI_Assistant/` 內 files | 了解角色／任務／記憶 |
 | 讀取 `02_Knowledge_Base/approved_references/` | 使用已批准 reference |
-| 讀取 `02_Knowledge_Base/skills/` | UIUX／DS／Figma／Base44／Lovable／`tonight-dinner`／`travel-packing-list`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`claim-cursor`／`portfolio-designer`／`period-calendar` 等工作技能（`SKILL.md` 真源；Cursor 另以 `~/.cursor/skills/` symlink 全域載入） |
+| 讀取 `02_Knowledge_Base/skills/` | UIUX／DS／Figma／Base44／Lovable／`tonight-dinner`／`travel-packing-list`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`shopline-admin`／`claim-cursor`／`portfolio-designer`／`period-calendar` 等工作技能（`SKILL.md` 真源；Cursor 另以 `~/.cursor/skills/` symlink 全域載入） |
 | 草擬 email／訊息／文件內容 | 先出草稿，等你確認 |
 | MCP（唯讀）：Slack/Calendar/Drive/Docs/Sheets/Figma/Base44/Lovable | 查詢、整理、截圖、評審、列專案／schema／entities／workspaces（不改動） |
 | MCP：`cursor-ide-browser` | Google Maps 存 list／加 note（依 `google-maps-bookmark`）；Cursor Billing／恒生 e-Statement 引導（依 `claim-cursor`；改動前確認已登入） |
@@ -50,9 +50,21 @@
 - Gmail／Drive MCP **不能**代替 Google Maps 瀏覽器登入
 - **不要**把個人 Wanderlog 帳密交給 Agent；工具只認 cookie
 
+## Shopline Admin（非 MCP，Cloud Agent 可用）
+
+| 方式 | 用途 | 備註 |
+|---|---|---|
+| Cloud Agent Secret **`SHOPLINE_COOKIES`**（Runtime Secret）+ **`shopline-admin` skill** | 登入 Admin（`hkgymmn`）、匯出訂單報表、查訂單、報稅用 CSV 欄位設定 | Secret 在 [Cloud Agents dashboard](https://cursor.com/dashboard/cloud-agents)；格式 `_shopline_sso_session_id=...`；**勿 commit**、勿貼 chat |
+| 例外：對話貼 session cookie | Secret 過期或未注入此 agent 時 | 取得步驟見 `shopline-admin/SKILL.md`；更新 secret 後須**新開** Cloud Agent |
+| Shoplytics Dashboard | 汇总／趨勢（非完整訂單明細） | 需另 cookie `shoplytics-dashboard.sid`；見 skill `reference.md` 擴展格式 |
+
+- 報表完成後通常寄至**觸發匯出之 Admin email**；Agent **無** Yahoo Mail MCP，不能代查收件匣
+- Admin 與 Shoplytics **不同 session**；勿混用 cookie
+
 ## 尚未連接
 | 工具 | 狀態 | 備註 |
 |---|---|---|
 | Notion | 未連接 | 需要時可再加 MCP |
 | Wanderlog MCP | 未固定配置 | 憑證已用 Cloud Agent Secret `WANDERLOG_COOKIE`；可選再加 MCP（仍勿 commit） |
+| Yahoo Mail | 未連接 | Shopline 報表可能寄 Yahoo；Agent 無法代讀；Melessa 自行查收 |
 
