@@ -1,0 +1,16 @@
+---
+description: HKTVmall UI / Figma 價錢顯示慣例——有 price 一律保留一位小數
+alwaysApply: true
+---
+
+# HKTVmall UI — Price format
+
+做 HKTVmall 相關 UI design（含 Figma mock、search result、PDP、SKU card、badge、stamp 等）時：
+
+- **凡有 price 的地方，一律顯示小數點後一位**（即使是整數）
+- 正確例子：`$289.0`、`$68.0`、`$35.8`、`$1,530.0`
+- 錯誤例子：`$289`、`$68`、`$1,530`
+- 適用範圍包括：售價、刪價錢／原價、85 折 bubble、promo price、unit price 等所有金額文案
+- **除非**用戶當次明確指定其他小數位需求（例如兩位、或不顯示小數），否則一律跟此規則
+
+完整說明（給唔用 Cursor 的 designer 亦適用）：見 `docs/hktvmall-ui-conventions.md`
