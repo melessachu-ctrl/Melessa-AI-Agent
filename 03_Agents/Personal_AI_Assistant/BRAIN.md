@@ -17,7 +17,7 @@
 - **Lovable／建 Lovable app／改 Lovable／deploy／lovable.app 自動化**：命中時 **必讀** `02_Knowledge_Base/skills/lovable-mcp-server-guide/SKILL.md`；用 MCP `user-lovable`；寫入／deploy 先問；純 portfolio 文案仍用 `portfolio-designer`
 - **旅行清單／行李清單／我要執行李**：命中時 **必讀** `02_Knowledge_Base/skills/travel-packing-list/SKILL.md` 及同目錄 `checklist.md`，再輸出完整 8 分類清單；唔好憑記憶改項目
 - **黎 m／來月經／幾時黎 m**：命中時 **必讀** `02_Knowledge_Base/skills/period-calendar/SKILL.md`；講黎 m 即在 Google Calendar 記全日 🩸（不必再問）；問幾時則查日曆，不靠記憶；個人 skill，不進 UIUX-Skills
-- **OnLux book／排期**：命中時 **必讀** `02_Knowledge_Base/skills/onlux-appointment/SKILL.md`；EU1 已用晒；Peel／Jet 每月清潔；Pico 與 HF 相隔 ≥14 日；個人 skill，不進 UIUX-Skills
+- **OnLux book／排期**：命中時 **必讀** `onlux-appointment`；預約下個月 → **Calendar 簡稱 + WhatsApp 全名草稿**；EU1 已用晒；Pico 與 HF ≥14 日；個人 skill，不進 UIUX-Skills
 - **Shopline Admin／hkgymmn／匯出訂單報表／Gym Master Nutrition**：命中時 **必讀** `02_Knowledge_Base/skills/shopline-admin/SKILL.md`；先查 env `SHOPLINE_COOKIES`，沒有才教 My Secrets；Playwright + `_shopline_sso_session_id`；匯出預設日期區間（`duringDates`）；**勿 commit** cookie；**無** Yahoo 收件匣；個人 skill，不進 UIUX-Skills
 
 ## 我的思考原則
