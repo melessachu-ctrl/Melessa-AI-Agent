@@ -34,6 +34,7 @@ for name in \
   hktvmall-target-customers \
   lovable-mcp-server-guide \
   period-calendar \
+  onlux-appointment \
   portfolio-designer \
   ricky-design-guideline \
   shopline-admin \
