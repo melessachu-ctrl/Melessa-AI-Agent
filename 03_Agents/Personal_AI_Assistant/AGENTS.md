@@ -21,6 +21,7 @@
 13. 旅行／行李清單：當 Melessa 說「旅行清單／行李清單／我要執行李／執行李／收拾行李／packing list」，或語意明確係出發前執行李時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/travel-packing-list/SKILL.md`（等同 `~/.cursor/skills/travel-packing-list/SKILL.md`），再讀同目錄 `checklist.md` 輸出完整清單；不可憑記憶即興改項目
 14. 黎 m／月經日曆：當 Melessa 說 **黎 m／來 m／來月經／大姨媽**，或問 **幾時黎 m／上次幾時／上個月幾時／週期** 時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/period-calendar/SKILL.md`（等同 `~/.cursor/skills/period-calendar/SKILL.md`）；講「黎 m」即用全日 🩸 記 Google Calendar（粉紅色、不佔時間、無關提醒），**不必再問**；查日期只看日曆，不靠記憶
 15. Shopline Admin（Gym Master Nutrition）：當 Melessa 要求在 **Shopline Admin** 後台操作（`hkgymmn`、匯出訂單報表、查訂單、報稅用 CSV 等），或提到 **`SHOPLINE_COOKIES`**／**`_shopline_sso_session_id`** 時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/shopline-admin/SKILL.md`（等同 `~/.cursor/skills/shopline-admin/SKILL.md`）；**先查環境變數 `SHOPLINE_COOKIES`**（Cloud Agent Runtime Secret），有則直接用、不要再問；沒有才教更新 My Secrets。用 Playwright 登入；匯出預設 **訂單日期 + 日期區間**（`duringDates`）。**勿**把 cookie 寫進 chat／repo；**無法**代讀 Yahoo email 確認報表
+16. OnLux 療程排期：當 Melessa 說 **book／預約／排 OnLux**、改 OnLux 行程、或討論 Peel／Jet／Pico／HF 等 OnLux 排期時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/onlux-appointment/SKILL.md`（等同 `~/.cursor/skills/onlux-appointment/SKILL.md`）；依 skill 庫存與高能量 ≥14 日間隔排 Google Calendar；**明確**要求排期時可直接改日曆，不必逐欄再問；分店 WhatsApp confirm 仍由 Melessa 自己完成
 
 ## 不做的事（邊界）
 - ❌ 不處理敏感資料：password、API key、token、憑證、個資、未公開商業機密、薪酬或員工紀錄
@@ -31,7 +32,7 @@
 - 建立／搬移／重新命名任何 folder 或 file
 - 更新任何 agent profile files（8 件套）
 - `git commit` / `git push`（**例外**：Melessa 說「結束 session」／「finish session」時，依 `HEARTBEAT.md`／`MEMORY.md` 直接 commit + push 收尾變更）
-- 任何對外發送、日曆更改、文件更新、Figma 代操作、Base44 建／改 app／sandbox／entity 寫入、Lovable 建／改專案／deploy／DB 寫入（**例外**：命中 `period-calendar` 時依 skill 直接記／查日曆；finish session 命中 UIUX-Skills 更新條件時，依 `HEARTBEAT.md` 7.5 自動 Slack 公告，無需再問）
+- 任何對外發送、日曆更改、文件更新、Figma 代操作、Base44 建／改 app／sandbox／entity 寫入、Lovable 建／改專案／deploy／DB 寫入（**例外**：命中 `period-calendar` 時依 skill 直接記／查日曆；命中 `onlux-appointment` 且 Melessa **明確**要求排／改 OnLux 時依 skill 直接改日曆；finish session 命中 UIUX-Skills 更新條件時，依 `HEARTBEAT.md` 7.5 自動 Slack 公告，無需再問）
 
 ## Workflow 建議職責（Step 5）
 

@@ -32,3 +32,4 @@
 | 2026-09-11 14:48–15:20 | 黎 m 記 Google Calendar 全日 🩸；建立 `period-calendar` skill＋Sasa 路由＋symlink | 約 30 分鐘 | 中性（行政＋偏好固化） | 高（每月可重用；講黎 m 即記、問幾時即查） | `period-calendar` |
 | 2026-09-15 05:49–10:26 | Shopline Admin 登入／匯出訂單報表欄位整理／觸發 2025/04–2026/03 匯出；建 `shopline-admin` skill + `SHOPLINE_COOKIES` Secret；PR #10 merge；Sasa 路由 | 約 4–5 小時（跨多段） | 充電（合夥報稅流程可重用） | 高（Admin 自動化 + secret 安全存放；勿貼 cookie） | `shopline-admin` |
 | 2026-09-23 10:02–10:07 | `shopline-admin` 本機 symlink；`main` 與遠端合併 push；刪已 merge 功能分支 | 約 10 分鐘 | 中性（repo 整理） | 中（本機 Cursor 可載 skill；git 乾淨） | |
+| 2026-10-03 14:35–15:05 | OnLux 11 月 Google Calendar；建 `onlux-appointment` skill（EU1／Peel／Jet／Pico-HF 間隔）；WhatsApp 草稿；PR #11 | 約 30 分鐘 | 中性（行政＋規則固化） | 高（每月 book OnLux 可重用；減少 rotation 靠估） | `onlux-appointment` |
