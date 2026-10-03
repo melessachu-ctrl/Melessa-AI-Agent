@@ -1,5 +1,11 @@
 # LOG｜Sasa
 
+## 2026-10
+
+| 日期 | 任務 | 成果 | 備註 |
+|---|---|---|---|
+| 2026-10-03 | OnLux 11 月排期 + `onlux-appointment` skill | Calendar 三個 11 月事件；skill 真源 + 路由；PR #11 | 個人 skill；WhatsApp confirm 待 Melessa |
+
 ## 2026-09
 
 | 日期 | 任務 | 成果 | 備註 |
