@@ -1,9 +1,10 @@
 # Latest State
 
-> 最後更新：2026-09-11
+> 最後更新：2026-10-05
 
 ## 最近完成
 
+- **2026-10-05**：**Search Result category tree** — 護膚化妝 18 卡改 SubCate Card＋美妝 Brand Logo Section；圖上字下（1）把超級市場品牌列／divider 移入「全部零食甜品」下，並換成零食甜品熱門品牌；fileKey `SPD3XrBhgiW57uBo28UxjZ`
 - **2026-09-11**：Google Calendar 全日 🩸（今日）；建立 **`period-calendar`** skill（黎 m 即記／問幾時即查日曆）；symlink + Sasa 路由；**不**進 UIUX-Skills
 - **2026-09-10**：Wanderlog「**東京 Food**」加 **燗アガリ**（17 places）；Cloud Agent Secret **`WANDERLOG_COOKIE`**（Runtime Secret）已驗證；`update-wanderlog` 先讀 env
 - **2026-09-08**：**MABS Ad Platform V2** — search result 瀑布流 Ad 模組等比縮至欄寬 124.95；2×2 SKU 圖／價／Saved 對齊橫向模組 A；fileKey `gvyP4YrHEXraz9b3071uLY`
@@ -52,13 +53,15 @@ DS 元件：`PDP IMG`（Default｜OOS）；`Button / Add to cart`（`Page=PDP, S
 | SKU 內容 | 對齊橫向模組 [A 26989:9768](https://www.figma.com/design/gvyP4YrHEXraz9b3071uLY/MABS---Ad-Platform---V2?node-id=26989-9768) 前四格：$174.00/-26%、$74.90/-15%、$199.00/-46%、$41.00/-12% |
 | 踩坑 | 此 preview 是縮尺 2-col，勿把 1x 178 模組直接丟進欄；`rescale` 才會連字級；Redbox SKU 與 For You Search 元件不同（圖 hash + Price prop + 父層 Saved overlay） |
 
-## Search Result／KA Price Figma（2026-09-04）
+## Search Result／KA Price Figma（2026-09-04；category tree 2026-10-05）
 
 | 項目 | 狀態 |
 | --- | --- |
 | KA Price | [HKTVmall — KA Price](https://www.figma.com/design/sVR8HBaQAfiJp5SqPfA1lo/HKTVmall---KA-Price)（`sVR8HBaQAfiJp5SqPfA1lo`）— Typography Regular；真實 SKU sections |
 | Search Result | [Search Result — 3-4 Columns](https://www.figma.com/design/SPD3XrBhgiW57uBo28UxjZ/Search-Result---3-4-Columns)（`SPD3XrBhgiW57uBo28UxjZ`）— 多 section 一位小數；`21354:131898` Show KA Off＋Cart |
-| 踩坑 | VIP／專屬價折扣價在 Price card **子樹**內層 frame；Unit Price 可能多 instance；`Show KA 1` 在 RP、`Show KA` 在 Price card |
+| 護膚化妝 | [PC - Subcate](https://www.figma.com/design/SPD3XrBhgiW57uBo28UxjZ/Search-Result---3-4-Columns?node-id=24219-52223) — 18 卡為 SubCate Card `Layout=Default, Selected=Off`；標題下有美妝 Brand Logo Section |
+| 零食甜品品牌列 | [圖上字下（1）](https://www.figma.com/design/SPD3XrBhgiW57uBo28UxjZ/Search-Result---3-4-Columns?node-id=23987-694) — 品牌列在「全部零食甜品 >」下；熱門品牌來自分類 `AA11150000000`。Phone 已 detach（`24239:749`），勿再改主元件 `with Brand` `9227:25187` |
+| 踩坑 | VIP／專屬價折扣價在 Price card **子樹**內層 frame；Unit Price 可能多 instance；`Show KA 1` 在 RP、`Show KA` 在 Price card。Instance 內 auto-layout 子層設 `visible=false` 會刪掉圖層；要從單一 demo 移除先 detach。分類熱門品牌以 submenu 的 `data-maincat` 為準，alt 可與圖片不一致 |
 
 ## 3rd Party Login Figma（2026-09-03）
 
@@ -136,6 +139,6 @@ Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 ```
 Melessa AI Agent/
 ├── 02_Knowledge_Base/skills/{lovable-mcp-server-guide,base44-mcp-server-guide,portfolio-designer,...}/
-├── 03_Agents/Personal_AI_Assistant/sessions/2026-09-10_wanderlog-kan-agari-cloud-agent.md
+├── 03_Agents/Personal_AI_Assistant/sessions/2026-10-05_search-result-cate-brand.md
 └── 04_Memory_Logs/                      ← 本檔案
 ```

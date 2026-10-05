@@ -34,3 +34,4 @@
 | 2026-09-15 05:49–10:26 | Shopline Admin 登入／匯出訂單報表欄位整理／觸發 2025/04–2026/03 匯出；建 `shopline-admin` skill + `SHOPLINE_COOKIES` Secret；PR #10 merge；Sasa 路由 | 約 4–5 小時（跨多段） | 充電（合夥報稅流程可重用） | 高（Admin 自動化 + secret 安全存放；勿貼 cookie） | `shopline-admin` |
 | 2026-09-23 10:02–10:07 | `shopline-admin` 本機 symlink；`main` 與遠端合併 push；刪已 merge 功能分支 | 約 10 分鐘 | 中性（repo 整理） | 中（本機 Cursor 可載 skill；git 乾淨） | |
 | 2026-10-03 14:35–15:05 | OnLux 11 月 Google Calendar；建 `onlux-appointment` skill（EU1／Peel／Jet／Pico-HF 間隔）；WhatsApp 草稿；PR #11 | 約 30 分鐘 | 中性（行政＋規則固化） | 高（每月 book OnLux 可重用；減少 rotation 靠估） | `onlux-appointment` |
+| 2026-10-02～10-05 | Search Result category tree：護膚化妝改 SubCate Card＋品牌列；零食甜品品牌列移入 Child Category 並換成分類熱門品牌 | 約數小時（跨日多段） | 耗能（instance 不能藏圖層、品牌圖要對分類） | 高（cate tree demo 對齊真實 HKTVmall 分類與熱門品牌） | `figma-use` |
