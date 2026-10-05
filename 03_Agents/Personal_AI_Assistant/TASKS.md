@@ -17,6 +17,7 @@
 - 2026-10-03：OnLux 11 月 Calendar（BFGF+Pico／Peel+Exo／HF+bfgf）；建 `onlux-appointment` skill + Sasa 路由；PR #11 draft；WhatsApp 草稿；session 已寫
 - 2026-09-23：`shopline-admin` 本機 symlink；本機 `main` 與 `origin/main` 合併同步（`05f5135`）；刪除已 merge 分支 `cursor/shopline-admin-skill-8cde`；session 已寫
 - 2026-09-15：Shopline Admin — 探索匯出訂單報表／觸發 2025/04–2026/03 日期區間匯出；建 `shopline-admin` skill + Cloud Secret `SHOPLINE_COOKIES`；PR #10 merge；Sasa 路由同步；session 已寫
+- 2026-09-10～09-14：Apple 發佈會摘要；iPhone Duo × HKTVmall homepage 直欄／sidebar 方案；`outputs/hktvmall-duo-homepage` mockup；PR #9；session 已寫
 - 2026-09-11：Google Calendar 記今日 🩸；建立 `period-calendar` skill + Sasa 路由 + 本機 symlink；個人 skill 不進 UIUX-Skills；session 已寫
 - 2026-09-10：Wanderlog「東京 Food」加燗アガリ；Cloud Agent Secret `WANDERLOG_COOKIE`（Runtime Secret）；`update-wanderlog` 先讀 env；session 已寫
 - 2026-09-08：MABS Ad 瀑布流模組等比縮至欄寬 124.95；2×2 SKU 圖／價／Saved 對齊橫向模組 A；session 已寫

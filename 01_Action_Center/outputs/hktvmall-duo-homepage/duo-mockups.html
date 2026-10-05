@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HKTVmall · iPhone Duo homepage</title>
+  <style>
+    :root {
+      --mall-green: #00b140;
+      --mall-green-deep: #009a38;
+      --mall-red: #e31c3d;
+      --mall-pink: #ff2d55;
+      --ink: #1c1c1e;
+      --muted: #8e8e93;
+      --line: #e5e5ea;
+      --paper: #f2f2f7;
+      --bar: rgba(255, 255, 255, 0.86);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { background: #1a1c1f; }
+    body {
+      font-family: "PingFang TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", "Hiragino Sans GB", sans-serif;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .stage {
+      min-height: 100vh;
+      padding: 48px 40px 56px;
+      background:
+        radial-gradient(ellipse at 20% 0%, #2a2d32 0%, transparent 50%),
+        #16181b;
+    }
+    .stage-head {
+      max-width: 1480px;
+      margin: 0 auto 36px;
+      color: #f4f4f5;
+    }
+    .stage-kicker {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #a1a1aa;
+      margin-bottom: 8px;
+    }
+    .stage-head h1 {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+    }
+    .stage-head p {
+      margin-top: 8px;
+      color: #a1a1aa;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .board {
+      max-width: 1480px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 64px;
+    }
+    .device-wrap { text-align: center; }
+    .device-label {
+      margin-top: 18px;
+      color: #d4d4d8;
+      font-size: 13px;
+      letter-spacing: 0.02em;
+    }
+    .device-label small {
+      display: block;
+      margin-top: 4px;
+      color: #8b8b93;
+      font-size: 12px;
+    }
+
+    .phone, .folio {
+      background: #1c1c1e;
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+    .phone {
+      width: 402px;
+      height: 748px;
+      border-radius: 36px;
+      padding: 8px;
+    }
+    .folio {
+      width: 860px;
+      height: 748px;
+      border-radius: 28px;
+      padding: 8px;
+    }
+    .screen {
+      width: 100%;
+      height: 100%;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #fff;
+      position: relative;
+      display: flex;
+    }
+    .folio .screen { border-radius: 22px; }
+    .hinge {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 10px;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, rgba(0,0,0,0.04), rgba(255,255,255,0.18), rgba(0,0,0,0.06));
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* ===== shared app chrome ===== */
+    .app { display: flex; width: 100%; height: 100%; }
+    .main {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+    }
+    .header {
+      background: var(--mall-green);
+      padding: 10px 10px 12px;
+      flex-shrink: 0;
+    }
+    .search-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border-radius: 22px;
+      height: 40px;
+      padding: 0 10px 0 8px;
+    }
+    .icon-btn {
+      width: 28px;
+      height: 28px;
+      border: 0;
+      background: transparent;
+      color: #3a3a3c;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .search-row input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      font-size: 14px;
+      color: var(--ink);
+      background: transparent;
+      font-family: inherit;
+    }
+    .search-row input::placeholder { color: #8e8e93; }
+
+    .scroll {
+      flex: 1;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .cats {
+      display: flex;
+      gap: 14px;
+      padding: 12px 12px 4px;
+      overflow: hidden;
+    }
+    .cat {
+      width: 58px;
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .cat-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 6px;
+      border-radius: 14px;
+      background: #f4f4f5;
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      border: 1px solid #eee;
+    }
+    .cat b {
+      display: block;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 1.25;
+      color: #3a3a3c;
+    }
+
+    .banner {
+      margin: 10px 12px 0;
+      height: 148px;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(90deg, #1d4ed8 0 42%, transparent 42%),
+        #f3f4f6;
+    }
+    .banner-copy {
+      position: absolute;
+      left: 14px;
+      top: 16px;
+      color: #fff;
+      width: 42%;
+    }
+    .banner-copy .brand {
+      font-size: 11px;
+      opacity: 0.8;
+      letter-spacing: 0.08em;
+    }
+    .banner-copy h2 {
+      font-size: 22px;
+      line-height: 1.15;
+      font-weight: 800;
+      margin: 6px 0 8px;
+    }
+    .banner-copy .offer {
+      display: inline-block;
+      background: #fff;
+      color: var(--mall-red);
+      font-weight: 800;
+      font-size: 20px;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .meat {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 58%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 60% 40%, #fff 0 12%, transparent 13%),
+        linear-gradient(160deg, #f8fafc 0%, #e5e7eb 100%);
+    }
+    .meat::after {
+      content: "";
+      position: absolute;
+      inset: 18px 18px 10px 8px;
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 45%, #f5d0c8 0%, #e8b4a8 42%, #d4a5a5 70%);
+      border-radius: 40% 45% 38% 42%;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    }
+    .dots {
+      position: absolute;
+      right: 12px;
+      bottom: 10px;
+      display: flex;
+      gap: 5px;
+    }
+    .dots i {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.45);
+      display: block;
+    }
+    .dots i.on { background: #fff; }
+
+    .board-card { margin: 14px 12px 0; }
+    .board-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .ping {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--mall-red);
+      color: var(--mall-red);
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+      font-weight: 800;
+      background: #fff;
+    }
+    .board-title h3 { font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
+
+    table.price {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    table.price th {
+      font-weight: 600;
+      color: var(--muted);
+      padding: 0 0 8px;
+      text-align: right;
+    }
+    table.price th:first-child { text-align: left; }
+    table.price td {
+      padding: 8px 0;
+      border-top: 1px solid #f1f1f4;
+      vertical-align: middle;
+    }
+    table.price .name {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .thumb {
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: #f4f4f5;
+      flex-shrink: 0;
+    }
+    .name span { font-size: 11px; line-height: 1.3; }
+    .name small { display: block; color: var(--muted); }
+    .col-h { color: var(--mall-red); font-weight: 800; text-align: right; white-space: nowrap; }
+    .col-s { color: #111; text-align: right; white-space: nowrap; }
+    .add {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1.5px solid var(--mall-green);
+      color: var(--mall-green);
+      display: grid;
+      place-items: center;
+      margin-left: 6px;
+      background: #fff;
+    }
+
+    .cta {
+      margin: 14px 12px 16px;
+      height: 46px;
+      border: 0;
+      border-radius: 23px;
+      background: var(--mall-pink);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      width: calc(100% - 24px);
+      font-family: inherit;
+    }
+
+    /* right system bar */
+    .vbar {
+      width: 52px;
+      flex-shrink: 0;
+      background: var(--bar);
+      backdrop-filter: blur(20px);
+      border-left: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 0 12px;
+    }
+    .status {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .status .time { font-size: 11px; font-weight: 600; }
+    .status .sys {
+      font-size: 9px;
+      color: #636366;
+      letter-spacing: 0.02em;
+      margin-top: 2px;
+    }
+    .island {
+      width: 18px;
+      height: 28px;
+      border-radius: 10px;
+      background: #111;
+      margin: 0 auto 8px;
+    }
+    .tool {
+      width: 36px;
+      height: 36px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      color: #1c1c1e;
+      position: relative;
+    }
+    .tool svg { width: 20px; height: 20px; }
+    .vbar .grow { flex: 1; }
+    .tabs { display: flex; flex-direction: column; gap: 2px; align-items: center; }
+    .tab {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #6e6e73;
+      position: relative;
+    }
+    .tab.on { color: var(--mall-red); background: rgba(227, 28, 61, 0.08); }
+    .tab svg { width: 22px; height: 22px; }
+    .badge {
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      min-width: 14px;
+      height: 14px;
+      padding: 0 4px;
+      border-radius: 7px;
+      background: var(--mall-red);
+      color: #fff;
+      font-size: 8px;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+    }
+
+    /* inner sidebar */
+    .sidebar {
+      width: 168px;
+      flex-shrink: 0;
+      background: #f7f7f8;
+      border-right: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      padding: 12px 8px 10px;
+    }
+    .side-brand {
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 8px 12px;
+      color: var(--mall-green-deep);
+    }
+    .side-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 10px;
+      border-radius: 12px;
+      color: #3a3a3c;
+      font-size: 13px;
+      font-weight: 500;
+      position: relative;
+    }
+    .side-item svg { width: 20px; height: 20px; flex-shrink: 0; }
+    .side-item.on {
+      background: #fff;
+      color: var(--mall-red);
+      box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+      font-weight: 700;
+    }
+    .side-item .badge { top: 8px; left: 24px; right: auto; }
+
+    .split {
+      display: flex;
+      gap: 0;
+      min-height: 0;
+      flex: 1;
+    }
+    .split .pane {
+      flex: 1;
+      min-width: 0;
+      padding-bottom: 8px;
+    }
+    .split .pane + .pane { border-left: 1px dashed rgba(0,0,0,0.08); }
+    .detail {
+      padding: 16px 16px 12px 20px;
+    }
+    .detail .hero {
+      height: 220px;
+      border-radius: 12px;
+      background:
+        linear-gradient(180deg, #f8fafc, #eef2f7);
+      position: relative;
+      overflow: hidden;
+    }
+    .detail .hero::after {
+      content: "";
+      position: absolute;
+      inset: 28px 36px 24px;
+      background: radial-gradient(ellipse at 50% 45%, #f5d0c8 0%, #e8b4a8 50%, #d4a5a5 78%);
+      border-radius: 42%;
+    }
+    .detail h4 { margin: 14px 0 6px; font-size: 18px; }
+    .detail .price-lg { color: var(--mall-red); font-size: 28px; font-weight: 800; }
+    .detail .was { color: var(--muted); text-decoration: line-through; margin-left: 8px; }
+    .detail .spec { color: #636366; font-size: 13px; margin: 8px 0 16px; }
+    .buy-row { display: flex; gap: 8px; }
+    .buy-row .ghost, .buy-row .solid {
+      height: 42px;
+      border-radius: 21px;
+      flex: 1;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .buy-row .ghost {
+      border: 1.5px solid var(--mall-green);
+      background: #fff;
+      color: var(--mall-green);
+    }
+    .buy-row .solid {
+      border: 0;
+      background: var(--mall-green);
+      color: #fff;
+    }
+
+    .solo { min-height: 100vh; display: grid; place-items: center; padding: 32px; background: #16181b; }
+  </style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-list" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><path fill="currentColor" d="M9 4 7.2 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-3.2L15 4H9zm3 13a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></symbol>
+  <symbol id="i-house" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3 3 10.2V21h6v-6h6v6h6V10.2z"/></symbol>
+  <symbol id="i-cs" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3a7 7 0 0 0-7 7v3H4a1 1 0 0 0-1 1v3a2 2 0 0 0 2 2h2v-8a5 5 0 0 1 10 0v8h2a2 2 0 0 0 2-2v-3a1 1 0 0 0-1-1h-1v-3a7 7 0 0 0-7-7z"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12.1 20.3 11 19.3C6.4 15.1 3.5 12.5 3.5 9.3A4.3 4.3 0 0 1 8 5a4.7 4.7 0 0 1 4.1 2.4A4.7 4.7 0 0 1 16.2 5a4.3 4.3 0 0 1 4.5 4.3c0 3.2-2.9 5.8-7.5 10z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="currentColor" d="M4 4h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-sale" viewBox="0 0 24 24"><path fill="currentColor" d="M12.6 3.2 20.8 11.4a2 2 0 0 1 0 2.8l-6.6 6.6a2 2 0 0 1-2.8 0L3.2 12.6 3 4.2 11.4 3.2zm-1.1 6.3a1.8 1.8 0 1 0-2.5-2.5 1.8 1.8 0 0 0 2.5 2.5z"/></symbol>
+  <symbol id="i-price" viewBox="0 0 24 24"><path fill="currentColor" d="M4 5h16v3H4zm0 5h7v9H4zm9 0h7v9h-7z"/></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><path fill="currentColor" d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM6.2 6l.4 2H21l-1.6 7H8L6.2 6zM6 4H3v2h2.2l.4 2"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path fill="currentColor" d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path fill="currentColor" d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6z"/></symbol>
+</svg>
+
+<template id="cats">
+  <div class="cats">
+    <div class="cat"><div class="cat-icon">🏬</div><b>13 Landmarks</b></div>
+    <div class="cat"><div class="cat-icon">🛒</div><b>超級市場</b></div>
+    <div class="cat"><div class="cat-icon">💊</div><b>護理保健</b></div>
+    <div class="cat"><div class="cat-icon">🧴</div><b>護膚化妝</b></div>
+    <div class="cat"><div class="cat-icon">👗</div><b>時尚服飾</b></div>
+    <div class="cat"><div class="cat-icon">🐕</div><b>寵物用品</b></div>
+    <div class="cat"><div class="cat-icon">🧸</div><b>Livivto</b></div>
+  </div>
+</template>
+
+<template id="banner">
+  <div class="banner">
+    <div class="banner-copy">
+      <div class="brand">42 SOUTHSTA</div>
+      <h2>無激素澳洲鵪鶉<br>折上折優惠</h2>
+      <div class="offer">-$40</div>
+    </div>
+    <div class="meat"></div>
+    <div class="dots"><i class="on"></i><i></i><i></i></div>
+  </div>
+</template>
+
+<template id="price-rows">
+  <table class="price">
+    <thead>
+      <tr>
+        <th></th>
+        <th>HKTVmall</th>
+        <th>樓超參考價</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="name"><div class="thumb" style="background:#fde68a"></div><span>金牌鮮茄汁焗豆<small>220克 x 4</small></span></div></td>
+        <td class="col-h">$39.9</td>
+        <td class="col-s">$70.00</td>
+        <td><div class="add"><svg viewBox="0 0 24 24" width="16" height="16"><use href="#i-cart"/></svg></div></td>
+      </tr>
+      <tr>
+        <td><div class="name"><div class="thumb" style="background:#fecaca"></div><span>淘大珍珠雞<small>3件裝</small></span></div></td>
+        <td class="col-h">$19.9</td>
+        <td class="col-s">$25.90</td>
+        <td><div class="add"><svg viewBox="0 0 24 24" width="16" height="16"><use href="#i-cart"/></svg></div></td>
+      </tr>
+      <tr>
+        <td><div class="name"><div class="thumb" style="background:#bfdbfe"></div><span>清涼純淨水<small>1.5升 x 12</small></span></div></td>
+        <td class="col-h">$59.9</td>
+        <td class="col-s">$132.00</td>
+        <td><div class="add"><svg viewBox="0 0 24 24" width="16" height="16"><use href="#i-cart"/></svg></div></td>
+      </tr>
+      <tr>
+        <td><div class="name"><div class="thumb" style="background:#e5e7eb"></div><span>子母原味牛奶<small>110毫升 x 4</small></span></div></td>
+        <td class="col-h">$13.9</td>
+        <td class="col-s">$16.00</td>
+        <td><div class="add"><svg viewBox="0 0 24 24" width="16" height="16"><use href="#i-cart"/></svg></div></td>
+      </tr>
+    </tbody>
+  </table>
+</template>
+
+<div class="solo" id="solo-outer" hidden>
+  <div class="phone"><div class="screen" id="solo-outer-screen"></div></div>
+</div>
+<div class="solo" id="solo-inner" hidden>
+  <div class="folio"><div class="screen" id="solo-inner-screen"></div><div class="hinge"></div></div>
+</div>
+<div class="stage" id="board">
+  <div class="stage-head">
+    <div class="stage-kicker">HKTVmall · iPhone Duo</div>
+    <h1>Homepage 適配效果</h1>
+    <p>外屏 Compact：搜尋留頂、右側直欄放主頁／客服／六個 tab。內屏 Regular：同一套目的地改 sidebar，內容分欄，避免拉闊單欄。</p>
+  </div>
+  <div class="board">
+    <div class="device-wrap">
+      <div class="phone" id="outer-device">
+        <div class="screen" id="outer-screen"></div>
+      </div>
+      <div class="device-label">外屏 · Compact · 5.4"<small>合上單手 · 直欄在右 · 搜尋／分類留橫</small></div>
+    </div>
+    <div class="device-wrap">
+      <div class="folio" id="inner-device">
+        <div class="screen" id="inner-screen"></div>
+        <div class="hinge"></div>
+      </div>
+      <div class="device-label">內屏 · Regular · 7.6"<small>打開分欄 · sidebar 等同六個 tab · 主頁／客服仍在右側</small></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const icons = {
+    house: "i-house",
+    cs: "i-cs",
+    heart: "i-heart",
+    chat: "i-chat",
+    sale: "i-sale",
+    price: "i-price",
+    cart: "i-cart",
+    user: "i-user"
+  };
+
+  function svg(id) {
+    return `<svg viewBox="0 0 24 24"><use href="#${id}"/></svg>`;
+  }
+
+  function vbar({ showTabs = true } = {}) {
+    return `
+      <aside class="vbar">
+        <div class="status">
+          <div class="island"></div>
+          <div class="time">6:25</div>
+          <div class="sys">5G 72</div>
+        </div>
+        <div class="tool" title="HKTVmall">${svg(icons.house)}</div>
+        <div class="tool" title="客服">${svg(icons.cs)}</div>
+        <div class="grow"></div>
+        ${showTabs ? `
+        <div class="tabs">
+          <div class="tab" title="我的清單">${svg(icons.heart)}</div>
+          <div class="tab" title="ChicChat">${svg(icons.chat)}<span class="badge">8</span></div>
+          <div class="tab" title="減價優惠">${svg(icons.sale)}</div>
+          <div class="tab on" title="今日格價榜">${svg(icons.price)}</div>
+          <div class="tab" title="購物車">${svg(icons.cart)}</div>
+          <div class="tab" title="帳戶／設定">${svg(icons.user)}</div>
+        </div>` : ""}
+      </aside>`;
+  }
+
+  function header() {
+    return `
+      <header class="header">
+        <div class="search-row">
+          <button class="icon-btn" title="分類">${svg("i-list")}</button>
+          <input value="" placeholder="搜尋商品、品牌…" readonly />
+          <button class="icon-btn" title="相機搜尋">${svg("i-cam")}</button>
+        </div>
+      </header>`;
+  }
+
+  function mountOuter() {
+    const root = document.getElementById("outer-screen");
+    root.innerHTML = `
+      <div class="app">
+        <div class="main">
+          ${header()}
+          <div class="scroll">
+            ${document.getElementById("cats").innerHTML}
+            ${document.getElementById("banner").innerHTML}
+            <div class="board-card">
+              <div class="board-title"><div class="ping">平</div><h3>今日格價榜</h3></div>
+              ${document.getElementById("price-rows").innerHTML}
+            </div>
+            <button class="cta">查看更多「今日格價榜」貨品</button>
+          </div>
+        </div>
+        ${vbar({ showTabs: true })}
+      </div>`;
+  }
+
+  function mountInner() {
+    const root = document.getElementById("inner-screen");
+    root.innerHTML = `
+      <div class="app">
+        <aside class="sidebar">
+          <div class="side-brand">HKTVmall</div>
+          <div class="side-item">${svg(icons.heart)} 我的清單</div>
+          <div class="side-item">${svg(icons.chat)} ChicChat<span class="badge">8</span></div>
+          <div class="side-item">${svg(icons.sale)} 減價優惠</div>
+          <div class="side-item on">${svg(icons.price)} 今日格價榜</div>
+          <div class="side-item">${svg(icons.cart)} 購物車</div>
+          <div class="side-item">${svg(icons.user)} 帳戶／設定</div>
+        </aside>
+        <div class="main">
+          ${header()}
+          <div class="scroll">
+            ${document.getElementById("cats").innerHTML}
+            <div class="split">
+              <div class="pane">
+                ${document.getElementById("banner").innerHTML}
+                <div class="board-card">
+                  <div class="board-title"><div class="ping">平</div><h3>今日格價榜</h3></div>
+                  ${document.getElementById("price-rows").innerHTML}
+                </div>
+                <button class="cta">查看更多「今日格價榜」貨品</button>
+              </div>
+              <div class="pane">
+                <div class="detail">
+                  <div class="hero"></div>
+                  <h4>金牌鮮茄汁焗豆</h4>
+                  <div><span class="price-lg">$39.9</span><span class="was">$70.00</span></div>
+                  <div class="spec">220克 x 4 · 樓超參考價 $70</div>
+                  <div class="buy-row">
+                    <button class="ghost">加入購物車</button>
+                    <button class="solid">立即購買</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        ${vbar({ showTabs: false })}
+      </div>`;
+  }
+
+  function fill(id, html) { document.getElementById(id).innerHTML = html; }
+
+  const outerHTML = () => document.getElementById("outer-screen").innerHTML;
+  const innerHTML = () => document.getElementById("inner-screen").innerHTML;
+
+  mountOuter();
+  mountInner();
+
+  const view = new URLSearchParams(location.search).get("view") || "board";
+  if (view === "outer") {
+    document.getElementById("board").hidden = true;
+    document.getElementById("solo-outer").hidden = false;
+    fill("solo-outer-screen", outerHTML());
+  } else if (view === "inner") {
+    document.getElementById("board").hidden = true;
+    document.getElementById("solo-inner").hidden = false;
+    fill("solo-inner-screen", innerHTML());
+  }
+</script>
+</body>
+</html>

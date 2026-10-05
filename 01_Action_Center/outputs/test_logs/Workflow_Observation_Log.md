@@ -30,6 +30,7 @@
 | 2026-09-08 11:56–14:49 | MABS Ad 瀑布流模組等比縮至欄寬；2×2 SKU 圖／價／Saved 對齊橫向模組 A | 約 1–1.5 小時（中間有間隔） | 中性（Figma 縮尺＋內容對齊） | 中高（preview rescale 可重用；SKU 跨元件對齊） | `uiux-design-studio`, `figma-use`, `figma-mcp-server-guide`, `ricky-design-guideline`, `uiux-review`, `hktvmall-target-customers` |
 | 2026-09-10 13:03–13:10；17:35–17:48 | Wanderlog「東京 Food」加燗アガリ；設 Cloud Agent Secret `WANDERLOG_COOKIE` 並驗證；skill 改為先讀 env | 約 40 分鐘（中間有間隔） | 充電（街上可改行程、不必貼 cookie） | 高（個人 Wanderlog 流程可重用；勿把密碼／cookie 寫進 repo） | `update-wanderlog` |
 | 2026-09-11 14:48–15:20 | 黎 m 記 Google Calendar 全日 🩸；建立 `period-calendar` skill＋Sasa 路由＋symlink | 約 30 分鐘 | 中性（行政＋偏好固化） | 高（每月可重用；講黎 m 即記、問幾時即查） | `period-calendar` |
+| 2026-09-10～09-14 | Apple 發佈會摘要；iPhone Duo HKTVmall homepage 適配方案＋HTML／效果圖 mockup（PR #9） | 約 2–3 小時（跨日多段） | 耗能（Chrome 截圖不穩；Cloud checkout ≠ 本機） | 高（Duo chrome 規則可重用；homepage 有可預覽原型） | `hktvmall-target-customers`, `ricky-design-guideline`, `frontend-design` |
 | 2026-09-15 05:49–10:26 | Shopline Admin 登入／匯出訂單報表欄位整理／觸發 2025/04–2026/03 匯出；建 `shopline-admin` skill + `SHOPLINE_COOKIES` Secret；PR #10 merge；Sasa 路由 | 約 4–5 小時（跨多段） | 充電（合夥報稅流程可重用） | 高（Admin 自動化 + secret 安全存放；勿貼 cookie） | `shopline-admin` |
 | 2026-09-23 10:02–10:07 | `shopline-admin` 本機 symlink；`main` 與遠端合併 push；刪已 merge 功能分支 | 約 10 分鐘 | 中性（repo 整理） | 中（本機 Cursor 可載 skill；git 乾淨） | |
 | 2026-10-03 14:35–15:05 | OnLux 11 月 Google Calendar；建 `onlux-appointment` skill（EU1／Peel／Jet／Pico-HF 間隔）；WhatsApp 草稿；PR #11 | 約 30 分鐘 | 中性（行政＋規則固化） | 高（每月 book OnLux 可重用；減少 rotation 靠估） | `onlux-appointment` |
