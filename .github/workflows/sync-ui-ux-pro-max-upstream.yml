@@ -1,0 +1,147 @@
+name: Sync ui-ux-pro-max upstream
+
+# Monthly check against nextlevelbuilder/ui-ux-pro-max-skill.
+# If Melessa is behind, overwrite the skill, commit + push main.
+# Existing "Sync UIUX-Skills" workflow then updates the downstream repo.
+on:
+  schedule:
+    # 09:00 HKT on the 1st of each month ≈ 01:00 UTC
+    - cron: "0 1 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: sync-ui-ux-pro-max-upstream
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    outputs:
+      status: ${{ steps.run.outputs.status }}
+      upstream_short: ${{ steps.run.outputs.upstream_short }}
+      upstream_sha: ${{ steps.run.outputs.upstream_sha }}
+      commit_sha: ${{ steps.commit.outputs.commit_sha }}
+    steps:
+      - name: Checkout Melessa
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install -y rsync
+
+      - name: Compare and sync from upstream
+        id: run
+        run: |
+          set +e
+          bash sync/sync-ui-ux-pro-max-upstream.sh .
+          EC=$?
+          set -e
+
+          if [[ ! -f sync/outputs/ui-ux-pro-max-upstream.env ]]; then
+            echo "Missing sync output env file" >&2
+            exit 1
+          fi
+          # shellcheck disable=SC1091
+          source sync/outputs/ui-ux-pro-max-upstream.env
+
+          {
+            echo "status=${STATUS}"
+            echo "upstream_sha=${UPSTREAM_SHA}"
+            echo "upstream_short=${UPSTREAM_SHORT}"
+            echo "upstream_date=${UPSTREAM_DATE}"
+            echo "local_commit=${LOCAL_COMMIT}"
+            echo "script_exit=${EC}"
+          } >> "$GITHUB_OUTPUT"
+
+          case "$EC" in
+            0)
+              echo "Already up to date at ${UPSTREAM_SHORT}."
+              ;;
+            10)
+              echo "Synced to ${UPSTREAM_SHORT}; ready to commit."
+              ;;
+            *)
+              echo "Sync script failed with exit ${EC}" >&2
+              exit "$EC"
+              ;;
+          esac
+
+      - name: Commit and push if synced
+        id: commit
+        if: steps.run.outputs.status == 'synced'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add -A -- 02_Knowledge_Base/skills/ui-ux-pro-max
+          if git diff --cached --quiet; then
+            echo "No staged changes after sync (unexpected)." >&2
+            exit 1
+          fi
+
+          SHORT="${{ steps.run.outputs.upstream_short }}"
+          git commit -m "chore(skills): sync ui-ux-pro-max to upstream ${SHORT}"
+          git push origin HEAD:main
+
+          SHA="$(git rev-parse HEAD)"
+          echo "commit_sha=${SHA}" >> "$GITHUB_OUTPUT"
+          echo "Pushed ${SHA} to main."
+
+      # GITHUB_TOKEN pushes do not re-trigger workflows; dispatch downstream sync explicitly.
+      - name: Trigger Sync UIUX-Skills
+        if: steps.run.outputs.status == 'synced'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run sync-uiux-skills.yml --ref main
+          echo "Dispatched Sync UIUX-Skills on main."
+
+      - name: Summary
+        run: |
+          {
+            echo "## ui-ux-pro-max upstream sync"
+            echo ""
+            echo "- **Status:** \`${{ steps.run.outputs.status }}\`"
+            echo "- **Upstream:** \`${{ steps.run.outputs.upstream_short }}\` (\`${{ steps.run.outputs.upstream_sha }}\`)"
+            if [[ "${{ steps.run.outputs.status }}" == "synced" ]]; then
+              echo "- **Melessa commit:** \`${{ steps.commit.outputs.commit_sha }}\`"
+              echo "- Dispatched **Sync UIUX-Skills** (GITHUB_TOKEN push does not auto-chain)."
+              echo ""
+              echo "### Local follow-up"
+              echo "1. Melessa: \`git pull origin main\`"
+              echo "2. Designers (UIUX-Skills): \`./scripts/update-skills.sh\`"
+            else
+              echo "- No Melessa / UIUX-Skills changes."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  # Optional Slack notify when secrets are configured.
+  # Prefer Cursor Automation for rich DM + dependency audit; this is a backup ping.
+  notify:
+    needs: sync
+    runs-on: ubuntu-latest
+    if: always() && needs.sync.result == 'success'
+    steps:
+      - name: Checkout Melessa
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            sync/notify-ui-ux-pro-max-slack.py
+          sparse-checkout-cone-mode: false
+
+      - name: Slack notify (optional)
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_DM_USER_ID: ${{ secrets.SLACK_DM_USER_ID }}
+          STATUS: ${{ needs.sync.outputs.status }}
+          UPSTREAM_SHORT: ${{ needs.sync.outputs.upstream_short }}
+          UPSTREAM_SHA: ${{ needs.sync.outputs.upstream_sha }}
+          COMMIT_SHA: ${{ needs.sync.outputs.commit_sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python3 sync/notify-ui-ux-pro-max-slack.py

@@ -8,6 +8,7 @@
 
 # Local extract / skill sync scratch
 tmp/
+sync/outputs/
 
 # Local-only notes and drafts
 drafts/
