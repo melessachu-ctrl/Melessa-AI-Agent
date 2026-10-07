@@ -3,7 +3,11 @@
 *.log
 *.tmp
 *.bak
+*.bak-*
 *.swp
+
+# Local extract / skill sync scratch
+tmp/
 
 # Local-only notes and drafts
 drafts/

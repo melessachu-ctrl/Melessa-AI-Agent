@@ -18,7 +18,7 @@ description: "在不改變視覺結果前提下治理歷史 Figma 檔：統一�
 | Phase A／D：連線、授權、`get_design_context`、`get_metadata`、截圖比對 | `~/.cursor/skills/figma-mcp-server-guide/SKILL.md` |
 | Phase C／任何 `use_figma` 寫入前 | `~/.cursor/plugins/cache/cursor-public/figma/3590366424deba5651026319b71b291d10004f1b/skills/figma-use/SKILL.md` |
 | Phase C 批次 4：元件化、variants、從 DS 搜尋並組裝 | `~/.cursor/plugins/cache/cursor-public/figma/3590366424deba5651026319b71b291d10004f1b/skills/figma-generate-design/SKILL.md` |
-| 可選：介面品質／a11y 檢核基準 | `~/.cursor/skills/ui-ux-pro-max/SKILL.md` |
+| 可選：介面品質／a11y 檢核基準 | `~/.cursor/skills/ui-ux-pro-max/SKILL.md`（入口）＋ `~/.cursor/skills/ui-ux-pro-max/references/quick-reference.md`（§1–§10 全文） |
 
 **規則**：進入對應 Phase 的第一步即 `Read` 上表檔案；未完成讀取不得呼叫該 Phase 所需之 MCP／`use_figma`。
 

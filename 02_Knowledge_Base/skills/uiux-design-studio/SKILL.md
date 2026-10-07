@@ -1,6 +1,6 @@
 ---
 name: uiux-design-studio
-description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬角色」方式擔任 Design Director / 設計總監，將 UI/UX 工作拆成 intake → routing → 各角色輸出 → 最終統稿。適用於：新頁面/新功能設計、改版/視覺升級、UX 流程/使用者旅程/IA、可用性與無障礙（a11y/WCAG）、設計評審（design/code/prototype）、Figma 交付（screens/components/prototype）、Design System / token / component library 補洞或更新（建立／更新元件時強制 auto-layout、font／text style token、leaf-only layer naming）、Figma 檔案治理／cleanup（圖層／命名／舊檔 SOP）。HKTVmall 相關 Figma 設計預設套用 HKTVmall Design System（fileKey F0tjdruLjJTfWgmTeZKBnw）。Lite App／Lite App DS 相關設計時字體必須連結 Design Tokens（fileKey I5A9GqmJdvoskfDeCBtNsL，Typography node 120:1278）。會引導載入 `hktvmall-target-customers`、`ricky-design-guideline`、`ui-ux-pro-max`、`frontend-design`，以及 Figma 相關技能（figma-file-cleanup／figma-use／figma-generate-library／figma-implement-design／figma-mcp-server-guide／apply-design-system）。"
+description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬角色」方式擔任 Design Director / 設計總監，將 UI/UX 工作拆成 intake → routing → 各角色輸出 → 最終統稿。適用於：新頁面/新功能設計、改版/視覺升級、UX 流程/使用者旅程/IA、可用性與無障礙（a11y/WCAG）、設計評審（design/code/prototype）、Figma 交付（screens/components/prototype）、Design System / token / component library 補洞或更新（建立／更新元件時強制 auto-layout、font／text style token、leaf-only layer naming）、Figma 檔案治理／cleanup（圖層／命名／舊檔 SOP）。HKTVmall 相關 Figma 設計預設套用 HKTVmall Design System（fileKey F0tjdruLjJTfWgmTeZKBnw）。Lite App／Lite App DS 相關設計時字體必須連結 Design Tokens（fileKey I5A9GqmJdvoskfDeCBtNsL，Typography node 120:1278）。會引導載入 `hktvmall-target-customers`、`ricky-design-guideline`、`ui-ux-pro-max`、`frontend-design`，以及 Figma 相關技能（figma-file-cleanup／figma-use／figma-generate-library／figma-design-to-code／figma-mcp-server-guide／apply-design-system）。"
 ---
 
 ## 平台現實（必讀）
@@ -65,13 +65,13 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 
 - **涉及 HKTVmall 相關 UI/UX 工作**（見下方「HKTVmall 觸發詞」）：**必須先讀** `~/.cursor/skills/hktvmall-target-customers/SKILL.md`（目標客群 segments A–D、零售 UX 心智模型、推薦可解釋性、KPI 取捨）；Research / Designer / Review 產出須標注對應 **segment（A/B/C/D）** 與所優化的 **KPI**（至少 1 個）；推薦模組須提供 zh-HK 可解釋理由與 fallback
 - **涉及 Figma 設計出稿、Prototype 製作、或設計評審（design / prototype / Figma / live URL）**：**必須先讀** `~/.cursor/skills/ricky-design-guideline/SKILL.md`（Ricky Design Guideline / HKTVmall 王語錄設計原則）；各虛擬角色產出須對照其 R1–R9 原則與 Ricky Pass 檢查清單；Review 角色 Findings 須標注 `ricky:R{n}`
-- **涉及 UI/UX 評審（design / code / prototype / Figma / live URL；含「評審」「設計評審」「critique」「heuristic evaluation」「a11y review」「易用性檢查」等語意）**：**必須先讀** `~/.cursor/skills/uiux-review/SKILL.md`，再依其要求載入 `ui-ux-pro-max`（Heuristic Pass 對齊 Quick Reference §1–§10）；UIUX Review 角色之輸出**必須採用** `uiux-review` 的 7-step SOP 與 Findings 模板（Must/Should/Nice/Keep + AC），並使用該 skill 的預設 Reviewer Lens 或當次覆寫的 Lens；**同時執行** `ricky-design-guideline` 的 Ricky Pass
-- **涉及介面質感/可用性/a11y/互動規範**：必須讀 `~/.cursor/skills/ui-ux-pro-max/SKILL.md`
+- **涉及 UI/UX 評審（design / code / prototype / Figma / live URL；含「評審」「設計評審」「critique」「heuristic evaluation」「a11y review」「易用性檢查」等語意）**：**必須先讀** `~/.cursor/skills/uiux-review/SKILL.md`，再依其要求載入 `ui-ux-pro-max`（Heuristic Pass 對齊 `~/.cursor/skills/ui-ux-pro-max/references/quick-reference.md` §1–§10）；UIUX Review 角色之輸出**必須採用** `uiux-review` 的 7-step SOP 與 Findings 模板（Must/Should/Nice/Keep + AC），並使用該 skill 的預設 Reviewer Lens 或當次覆寫的 Lens；**同時執行** `ricky-design-guideline` 的 Ricky Pass
+- **涉及介面質感/可用性/a11y/互動規範**：必須讀 `~/.cursor/skills/ui-ux-pro-max/SKILL.md`；Heuristic／a11y 全文清單讀 `~/.cursor/skills/ui-ux-pro-max/references/quick-reference.md`
 - **涉及前端介面實作、元件/頁面 UI code、視覺呈現落地**：必須讀 `~/.cursor/skills/frontend-design/SKILL.md`
 - **涉及 HKTVmall Figma 設計出稿／Prototype／DS 對齊**：遵守「HKTVmall Design System 預設」；`search_design_system` 優先於從零繪製；必要時讀 `apply-design-system`
 - **涉及 Lite App／Lite App DS 設計出稿、元件建立／更新、Prototype、或 DS 補洞**：遵守「Lite App Design Tokens 預設」與使用者規則 `lite-app-figma-design-tokens`；**所有 font／文字樣式必須 link Design Tokens**（未特別指明時用 `I5A9GqmJdvoskfDeCBtNsL` Typography）；禁止硬編碼字級頂替 text style
 - **涉及 Design System 元件建立／更新／補洞（create／update／add variant／DS component）**：**必須先讀**本 Skill「DS Component Write Gate」；寫入前讀 `figma-use` + `figma-generate-library`；命名與 auto-layout 規範**必須對齊** `~/.cursor/skills/figma-file-cleanup/SKILL.md`（至少讀「命名規範」與 auto-layout／`layoutMode` 相關段落）；**未通過 Write Gate 不得宣告完成或進入 Final Pack 的「已交付」狀態**
-- **涉及 Figma 讀設計稿/從 Figma 實作**：使用 `figma-implement-design` 的流程（必要時搭配 `figma-mcp-server-guide`）
+- **涉及 Figma 讀設計稿/從 Figma 實作**：使用 `figma-design-to-code` 的流程（必要時搭配 `figma-mcp-server-guide`）
 - **涉及 Figma 連線/授權/抓圖/節點**：必須讀 `~/.cursor/skills/figma-mcp-server-guide/SKILL.md`
 - **涉及 Figma 檔案治理／cleanup（與 `figma-file-cleanup` 對齊之觸發）**：**必須先讀** `~/.cursor/skills/figma-file-cleanup/SKILL.md`，再依其中 Phase A→D 與 Skills 聯動表鏈式載入 `figma-mcp-server-guide`、`figma-use`、`figma-generate-design` 等；虛擬角色固定為 **Director + DS Owner + Review（必要時 + Designer）**，產出須覆蓋該 skill 規定之交付物（變更清單、遷移映射、驗證、阻塞）。
 
@@ -255,8 +255,8 @@ DS Component Write Gate — Checklist
 - **Nice to have**：加分但不阻塞
 - **Keep（保留）**：設計得好應保留之處 + 為何有效
 - **可量化驗收清單（AC）**：對應 Must/Should 的勾選項；附「已符合一般標準（無需改動）」一行總結
-- **a11y 檢查**：對比、焦點、鍵盤、ARIA/標籤、觸控目標（對齊 `ui-ux-pro-max` §1）
-- **一致性檢查**：字級/間距/元件狀態/語氣/圖示（對齊 `ui-ux-pro-max` §4、§6）
+- **a11y 檢查**：對比、焦點、鍵盤、ARIA/標籤、觸控目標（對齊 `ui-ux-pro-max/references/quick-reference.md` §1）
+- **一致性檢查**：字級/間距/元件狀態/語氣/圖示（對齊 `ui-ux-pro-max/references/quick-reference.md` §4、§6）
 - **DS Component Write Gate（有建立／更新 DS 元件時必查）**：未過 Gate 的項目一律進 Must fix — (1) 容器仍為 `layoutMode=NONE` 且無例外註記；(2) TEXT 未綁 text style／typography token；(3) 圖層名為 `Frame N`／`Group N`／`Copy` 或含 `/` 路徑式名稱（對齊 `figma-file-cleanup` leaf-only）
 
 ## Director Final Pack（最後一定要輸出）

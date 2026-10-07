@@ -21,7 +21,7 @@ description: "Standardized UI/UX review SOP for finished designs (screenshots, F
 
 ## 必載技能（執行前先讀）
 
-1. **必讀**：`~/.cursor/skills/ui-ux-pro-max/SKILL.md` —— Heuristic Pass 直接對齊它的 Quick Reference §1–§10，本 skill 不複製條目
+1. **必讀**：`~/.cursor/skills/ui-ux-pro-max/SKILL.md`（技能入口／優先級表）＋ `~/.cursor/skills/ui-ux-pro-max/references/quick-reference.md` —— Heuristic Pass 直接對齊 Quick Reference **§1–§10 全文**（已不在 `SKILL.md` 內），本 skill 不複製條目
 2. 評審對象是 **Figma URL／Figma 檔**：加讀 `~/.cursor/skills/figma-mcp-server-guide/SKILL.md`
 3. 評審對象是 **前端 code**：加讀 `~/.cursor/skills/frontend-design/SKILL.md`
 
@@ -61,9 +61,9 @@ description: "Standardized UI/UX review SOP for finished designs (screenshots, F
 
 ### Step 3 — Heuristic Pass
 
-對齊 `ui-ux-pro-max` Quick Reference 的 10 大類，逐類掃描：
+對齊 `ui-ux-pro-max` `references/quick-reference.md` 的 10 大類，逐類掃描：
 
-| # | 類別 | 對應 pro-max 章節 |
+| # | 類別 | 對應 `quick-reference.md` |
 | --- | --- | --- |
 | 1 | Accessibility | §1 |
 | 2 | Touch & Interaction | §2 |

@@ -14,6 +14,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-10-07：`ui-ux-pro-max` 同步 upstream `477bcb2`；`uiux-review`／`uiux-design-studio`／`figma-file-cleanup` 改讀 `references/quick-reference.md`；session 已寫
 - 2026-10-05：Search Result category tree — 護膚化妝改 SubCate Card＋品牌列；圖上字下（1）品牌列移到「全部零食甜品」下並換成零食甜品熱門品牌；session 已寫
 - 2026-10-03：OnLux 11 月 Calendar（BFGF+Pico／Peel+Exo／HF+bfgf）；建 `onlux-appointment` skill + Sasa 路由；PR #11 draft；WhatsApp 草稿；session 已寫
 - 2026-09-23：`shopline-admin` 本機 symlink；本機 `main` 與 `origin/main` 合併同步（`05f5135`）；刪除已 merge 分支 `cursor/shopline-admin-skill-8cde`；session 已寫
