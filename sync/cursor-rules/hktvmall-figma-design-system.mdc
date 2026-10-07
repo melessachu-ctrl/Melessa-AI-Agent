@@ -30,7 +30,7 @@ alwaysApply: true
 
 1. **先搜尋、再新建**：呼叫 `search_design_system` 或 `use_figma` 盤點既有 token／元件／變體；**禁止**在未查庫前從零畫按鈕、表單、導覽等基礎元件。
 2. **library-first**：版面與互動以 DS 元件組合為主；缺口才提案新增，並標註為 DS 變更。
-3. **寫入前載入技能**：`use_figma` 前讀 `figma-use`；多區塊對齊 DS 時讀 `apply-design-system`；從設計稿實作時讀 `figma-implement-design`。
+3. **寫入前載入技能**：`use_figma` 前讀 `figma-use`；多區塊對齊 DS 時讀 `apply-design-system`；從設計稿實作時讀 `figma-design-to-code`。
 4. **建立／更新 DS 元件**：遵守 `uiux-design-studio`「DS Component Write Gate」— auto-layout、HKTVmall DS Text Style／typography token、leaf-only naming（對齊 `figma-file-cleanup`）；未過 Gate 不得交件。
 5. **產出標註**：Director Final Pack／UI Spec 須列出採用的 DS 名稱、fileKey、以及主要引用元件／token（未知則標「待盤點」並說明阻塞）；有 DS 元件寫入時附 Write Gate 結果。
 
