@@ -31,9 +31,14 @@ Heuristic Pass 不再當全文在 `SKILL.md`。已改：
 - 本機 `UIUX-Skills` 的 `*.bak-*` 可刪（確認新版無誤後）
 - finish session 後靠 Melessa push → Actions **Sync UIUX-Skills**；勿手動 push 下游 `skills/`
 
+## 分發
+
+- Melessa push：`f739b6c`
+- Actions：[Sync UIUX-Skills](https://github.com/melessachu-ctrl/Melessa-AI-Agent/actions/runs/37591973439) success
+- Slack：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1791360657760449
+
 ## 下次由哪裡開始
 
-- 確認 Actions sync 成功、`#uiux-designer` 已公告
 - Designer 本機跑 `./scripts/update-skills.sh`
 - UIUX Design Agent PoC 仍見 `TASKS.md`
 
