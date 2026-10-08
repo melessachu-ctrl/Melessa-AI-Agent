@@ -36,3 +36,4 @@
 | 2026-10-03 14:35–15:05 | OnLux 11 月 Google Calendar；建 `onlux-appointment` skill（EU1／Peel／Jet／Pico-HF 間隔）；WhatsApp 草稿；PR #11 | 約 30 分鐘 | 中性（行政＋規則固化） | 高（每月 book OnLux 可重用；減少 rotation 靠估） | `onlux-appointment` |
 | 2026-10-02～10-05 | Search Result category tree：護膚化妝改 SubCate Card＋品牌列；零食甜品品牌列移入 Child Category 並換成分類熱門品牌 | 約數小時（跨日多段） | 耗能（instance 不能藏圖層、品牌圖要對分類） | 高（cate tree demo 對齊真實 HKTVmall 分類與熱門品牌） | `figma-use` |
 | 2026-10-07 15:09–16:10 | 查 ui-ux-pro-max upstream；sync 最新 skill 到 Melessa 真源；評審／studio／cleanup 改讀 `references/quick-reference.md` | 約 1 小時 | 中性（catalog 同步＋路徑修正） | 高（設計／評審基準與 upstream 對齊；下游可自動分發） | `ui-ux-pro-max`, `uiux-review`, `uiux-design-studio`, `figma-file-cleanup` |
+| 2026-10-07 11:29–15:10；2026-10-08 收尾 | 查官方 Figma skills；確認 `figma-implement-design` 已改名為 `figma-design-to-code`；更新 studio＋HKTVmall Figma rule | 約 1–1.5 小時（跨日） | 中性（官方改名對齊） | 高（避免 agent 讀已刪 skill；下游路由正確） | |

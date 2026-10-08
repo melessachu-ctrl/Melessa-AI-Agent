@@ -4,6 +4,8 @@
 
 | 日期 | 任務 | 成果 | 備註 |
 |---|---|---|---|
+| 2026-10-07～08 | Figma skill 改名對齊 | `uiux-design-studio`＋`hktvmall-figma-design-system` 改指 `figma-design-to-code`；UIUX-Skills 已 sync | 官方已刪 `figma-implement-design` |
+| 2026-10-07 | ui-ux-pro-max upstream sync | 同步 `477bcb2`；評審／studio／cleanup 改讀 `quick-reference.md` | 見 session `2026-10-07_ui-ux-pro-max-upstream-sync` |
 | 2026-10-02～05 | Search Result category tree：護膚化妝卡、品牌列 | 護膚化妝用 SubCate Card＋美妝品牌列；零食甜品品牌列移入 Child Category | fileKey `SPD3XrBhgiW57uBo28UxjZ`；圖上字下（1）已 detach |
 | 2026-10-03 | OnLux 11 月排期 + `onlux-appointment` skill | Calendar 三個 11 月事件；skill 真源 + 路由；PR #11 | 個人 skill；WhatsApp confirm 待 Melessa |
 
