@@ -24,9 +24,9 @@
 
 ## 分發
 
-- Melessa：skill／rule 變更已在 `origin/main`
-- Actions／下游：UIUX-Skills 已有新文案
-- Slack：見本 session 收尾公告 link
+- Melessa push（session／log）：`b1164d8`
+- Skill／rule 變更先前已在 `f739b6c`／`ca9cc41`；下游 UIUX-Skills 已 sync（含 `@ ca9cc41`）
+- Slack：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1791445058724039
 
 ## 下次由哪裡開始
 
