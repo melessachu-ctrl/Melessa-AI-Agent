@@ -1,0 +1,21 @@
+# Google Drive 真源設定（可提交到 git；不含地址內容）
+
+google_drive:
+  master_folder_id: "1P0Vht0sVKpDqESgmFDeYeBbUcRuc6ryg"
+  master_folder_title: "Address Book Skill"
+  master_file_id: "1LYI9YefG1jq-9e_acNUIjYfrytZk2M3P"
+  master_title: "address-book.yaml"
+  master_format: yaml
+  legacy_pdf_file_id: "1Q0M24JTCzcxfhK5EAjCyer0OmoV6W7ds"
+
+local:
+  cache_filename: address-book.yaml
+
+mcp:
+  namespace: Google-drive
+  read_tools:
+    - download_file_content
+    - read_file_content
+  notes: |
+    優先 download_file_content 取得完整 YAML 原文。
+    read_file_content 適合 PDF／Google 文件，YAML 以 download 為準。
