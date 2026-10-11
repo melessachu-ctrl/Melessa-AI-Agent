@@ -39,6 +39,10 @@ bash setup-symlinks.sh
 - Sync 清單定義於 [`sync/uiux-skills-manifest.json`](../../sync/uiux-skills-manifest.json)（11 個 UI/UX skills + 2 個 cursor rules）
 - Teammate 在 UIUX-Skills 的 skill 改動須 **PR 回 Melessa**，不可只改下游
 
+## 私人資料 skill
+
+- **`address-book`**：repo 只有 `SKILL.md` + `master.config.yaml`；**`address-book.yaml`** 在 Google Drive folder「Address Book Skill」，本機 cache 勿 commit（見 `address-book/README.md`）
+
 ## 不放在這裡
 
 Cursor 內建 skills 在 `~/.cursor/skills-cursor/`，由系統管理，不要搬入本 repo。
