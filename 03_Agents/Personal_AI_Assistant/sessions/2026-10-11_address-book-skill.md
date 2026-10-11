@@ -12,7 +12,7 @@
 
 ### Google Drive
 
-- Master：`address-book.yaml` — https://drive.google.com/file/d/1LYI9YefG1jq-9e_acNUIjYfrytZk2M3P/view
+- Master：`address-book.yaml` — https://drive.google.com/file/d/1C1XSYfWKq73cP_BAhzg7Baa_C9PiDnog/view
 - Folder：**Address Book Skill** — https://drive.google.com/drive/folders/1P0Vht0sVKpDqESgmFDeYeBbUcRuc6ryg
 - Legacy PDF id 仍記於 `master.config.yaml`（僅 fallback）
 
