@@ -1,0 +1,20 @@
+id: third-party-login-consent
+name: 3rd Party Login — Consent & permissions list
+platform:
+  - app
+status: approved
+figma:
+  file_key: 3gnFYaXhhARa39OqRf0MdX
+  node_id: "3911:222"
+  url: https://www.figma.com/design/3gnFYaXhhARa39OqRf0MdX/HKTVmall---3rd-Party-Login?node-id=3911-222
+jira: null
+confluence: null
+owner: "@uiux-team"
+keywords:
+  - 3rd party login
+  - consent
+  - permissions
+  - 授權
+  - oauth
+notes: 七項獨立權限；主 consent frame 3907:1420
+last_verified: 2026-09-03

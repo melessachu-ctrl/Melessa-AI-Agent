@@ -1,0 +1,20 @@
+id: mabs-ad-waterfall
+name: MABS Ad Platform — 瀑布流 SKU 模組（縮尺）
+platform:
+  - app
+status: approved
+figma:
+  file_key: gvyP4YrHEXraz9b3071uLY
+  node_id: "30295:5246"
+  url: https://www.figma.com/design/gvyP4YrHEXraz9b3071uLY/MABS---Ad-Platform---V2?node-id=30295-5246
+jira: null
+confluence: null
+owner: "@uiux-team"
+keywords:
+  - mabs
+  - ad
+  - waterfall
+  - sku
+  - 瀑布流
+notes: 欄寬 124.95 rescale；對齊橫向模組 A
+last_verified: 2026-09-08

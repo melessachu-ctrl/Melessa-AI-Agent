@@ -1,0 +1,24 @@
+id: ka-price-search-result
+name: KA Price — Search Result v1.x
+platform:
+  - app
+status: approved
+figma:
+  file_key: sVR8HBaQAfiJp5SqPfA1lo
+  node_id: "9779:29174"
+  url: https://www.figma.com/design/sVR8HBaQAfiJp5SqPfA1lo/HKTVmall---KA-Price?node-id=9779-29174
+jira: null
+confluence: null
+owner: "@uiux-team"
+keywords:
+  - ka price
+  - search result
+  - vip price
+  - 一位小數
+  - show ka off
+  - cart
+related:
+  - id: search-result-2col-section
+    note: 2-col section 在同一 Search Result 檔案
+notes: 價格 UI 跟 HKTVmall 一位小數規則
+last_verified: 2026-09-04

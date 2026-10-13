@@ -1,0 +1,18 @@
+id: search-result-2col-section
+name: Search Result — 2 column section（KA 相關）
+platform:
+  - app
+status: approved
+figma:
+  file_key: SPD3XrBhgiW57uBo28UxjZ
+  node_id: "21354:131898"
+  url: https://www.figma.com/design/SPD3XrBhgiW57uBo28UxjZ/Search-Result---3-4-Columns?node-id=21354-131898
+jira: null
+confluence: null
+owner: "@uiux-team"
+keywords:
+  - search result
+  - 2 col
+  - two column
+  - ka
+last_verified: 2026-09-04

@@ -121,13 +121,14 @@ Symlink：`~/.cursor/skills/` → `02_Knowledge_Base/skills/`
 | 實施手冊 | ✅ `01_Action_Center/outputs/docs/UIUX_Design_Agent_Implementation_8_Steps.md` |
 | Agent 命名 | UIUX Design Agent（Slack `@uiux-design-agent`） |
 | PoC repo 路線 | Phase 1 Melessa → Phase 2 `HKTV-UIUX-Design-Agent` |
-| 8 件套 / design-index | ⏳ 未建 |
+| 8 件套 / design-index | ✅ 2026-10-13 PoC 骨架（9 YAML + lookup skill） |
 | Hermes 接 Slack | ⏳ 待 PM team 對齊 Step 0 |
 
 ## 下一步
 
-- [ ] UIUX Design Agent PoC：`design-index/` 首個 YAML + Cursor Figma MCP 試跑（Step 2–3）
 - [ ] 同 Hermes PM team 對齊 inter-agent Slack schema（Step 0）
+- [ ] PM top 10 查詢訪談（Step 1）；補 checkout／cart Figma link
+- [ ] PoC 5 題 lookup + screenshot 試跑
 - [ ] （可選）用 Lovable MCP 實際改 `melessa-chu-design` 或建新專案做煙測
 - [ ] （可選）刪 Lite App 畫布備份 `Backup - img (pre PDP IMG)`
 - [ ] （可選）用 `portfolio-designer` 寫一則新專案文案做端到端驗證

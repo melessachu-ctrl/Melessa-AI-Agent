@@ -3,17 +3,18 @@
 > 只記錄 Melessa 確認要我跟進的工作；每次 session 結束可更新。
 
 ## 🔴 進行中
-- UIUX Design Agent PoC（規劃完成；待 Step 0–3 執行）— 手冊 `01_Action_Center/outputs/docs/UIUX_Design_Agent_Implementation_8_Steps.md`
+- UIUX Design Agent PoC — Step 0–1 待 Hermes／PM 確認；Step 2–3 骨架已建（見 `design-index/`、`uiux-design-lookup`）
 
 ## 🟡 待辦
-- UIUX Design Agent：同 Hermes PM team 對齊 Slack inter-agent schema（Step 0）
-- UIUX Design Agent：盤點 PM top 10 設計查詢（Step 1）
-- UIUX Design Agent：建 `design-index/` 首批 5–10 YAML + `03_Agents/UIUX_Design_Agent/` 8 件套骨架（Step 2–4）
-- UIUX Design Agent：Cursor 試 Figma MCP + `uiux-design-lookup` skill（Step 3）
+- UIUX Design Agent：同 Hermes PM team 對齊 Slack inter-agent schema（Step 0）— 草稿 `docs/slack-message-schema.md`
+- UIUX Design Agent：盤點 PM top 10 設計查詢（Step 1）— 草稿 `docs/pm-top-10-design-queries-draft.md`
+- UIUX Design Agent：補 `checkout-v3`／`cart-v2` Figma link；PoC 5 題完整試跑 + screenshot
+- UIUX Design Agent：Step 4–5 Hermes instance + Slack
 - （可選）芒果去皮觀察；記錄會否同樣誘發濕疹
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-10-13：UIUX Design Agent PoC Step 2–3 — `design-index/`（9 YAML）、`03_Agents/UIUX_Design_Agent/` 8 件套、`uiux-design-lookup` skill、Slack／PM 查詢草稿；Figma MCP smoke
 - 2026-10-07～08：確認官方已棄用 `figma-implement-design`；`uiux-design-studio`＋`hktvmall-figma-design-system` 改指 `figma-design-to-code`；下游已 sync；session 已寫
 - 2026-10-07：`ui-ux-pro-max` 同步 upstream `477bcb2`；`uiux-review`／`uiux-design-studio`／`figma-file-cleanup` 改讀 `references/quick-reference.md`；session 已寫
 - 2026-10-05：Search Result category tree — 護膚化妝改 SubCate Card＋品牌列；圖上字下（1）品牌列移到「全部零食甜品」下並換成零食甜品熱門品牌；session 已寫

@@ -1,0 +1,19 @@
+id: checkout-v3
+name: Checkout v3（placeholder）
+platform:
+  - app
+  - web
+status: wip
+figma:
+  file_key: null
+  node_id: null
+  url: null
+jira: null
+confluence: null
+owner: "@uiux-team"
+keywords:
+  - checkout
+  - 結帳
+  - payment
+notes: PoC placeholder — 待設計師補 file_key／node_id（Step 1 PM 高頻 #1）
+last_verified: null

@@ -1,0 +1,18 @@
+id: cart-v2
+name: Cart v2（placeholder）
+platform:
+  - app
+status: wip
+figma:
+  file_key: null
+  node_id: null
+  url: null
+jira: null
+confluence: null
+owner: "@uiux-team"
+keywords:
+  - cart
+  - 購物車
+  - basket
+notes: PoC placeholder — 待補 Figma link
+last_verified: null

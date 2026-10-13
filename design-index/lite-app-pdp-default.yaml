@@ -1,0 +1,18 @@
+id: lite-app-pdp-default
+name: Lite App PDP — default（PDP IMG）
+platform:
+  - app
+status: approved
+figma:
+  file_key: rCF6Dj4hH8rb2lPd85i3C3
+  node_id: "17081:17574"
+  url: https://www.figma.com/design/rCF6Dj4hH8rb2lPd85i3C3/HKTVmall---Lite-App?node-id=17081-17574
+jira: null
+confluence: null
+owner: "@uiux-team"
+keywords:
+  - pdp
+  - product detail
+  - lite app
+  - pdp img
+last_verified: 2026-08-26
