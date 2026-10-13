@@ -1,0 +1,22 @@
+id: lite-app-pdp-oos
+name: Lite App PDP — OOS state demo
+platform:
+  - app
+status: approved
+figma:
+  file_key: rCF6Dj4hH8rb2lPd85i3C3
+  node_id: "19013:3220"
+  url: https://www.figma.com/design/rCF6Dj4hH8rb2lPd85i3C3/HKTVmall---Lite-App?node-id=19013-3220
+  page: PDP v3.0 (OOS)
+jira: null
+confluence: null
+owner: "@uiux-team"
+keywords:
+  - pdp
+  - oos
+  - out of stock
+  - lite app
+  - add to cart
+  - 缺貨
+notes: IMG + Add to cart 皆 OOS；主 PDP 見 lite-app-pdp-default
+last_verified: 2026-08-26

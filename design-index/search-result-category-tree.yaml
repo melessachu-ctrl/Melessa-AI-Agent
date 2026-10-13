@@ -1,0 +1,23 @@
+id: search-result-category-tree
+name: Search Result — Category tree（SubCate + 品牌列）
+platform:
+  - app
+status: approved
+figma:
+  file_key: SPD3XrBhgiW57uBo28UxjZ
+  node_id: "23987:694"
+  url: https://www.figma.com/design/SPD3XrBhgiW57uBo28UxjZ/Search-Result---3-4-Columns?node-id=23987-694
+  page: "🏞 Thumbnail"
+jira: null
+confluence: null
+owner: "@uiux-team"
+keywords:
+  - search result
+  - category tree
+  - subcate
+  - 分類
+  - 品牌列
+  - 護膚化妝
+  - 零食甜品
+notes: 2026-10 SubCate Card + Brand Logo Section；圖上字下（1）
+last_verified: 2026-10-05

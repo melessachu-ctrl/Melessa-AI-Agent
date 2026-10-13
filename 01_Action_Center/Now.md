@@ -1,9 +1,13 @@
 # Now
 
-## UIUX Design Agent PoC（2026-09-01 起）
+## UIUX Design Agent PoC
 
-規劃已完成；下一步依手冊 `01_Action_Center/outputs/docs/UIUX_Design_Agent_Implementation_8_Steps.md`：
+手冊：`01_Action_Center/outputs/docs/UIUX_Design_Agent_Implementation_8_Steps.md`
 
-1. Step 0 — 同 Hermes PM team 對齊 Slack inter-agent schema
-2. Step 2–3 — 建首個 `design-index/` YAML + Cursor Figma MCP 試跑
-3. 建 `03_Agents/UIUX_Design_Agent/` 8 件套骨架
+**2026-10-13：** Step 2–3 骨架已落地 — `design-index/`（9 YAML）、`03_Agents/UIUX_Design_Agent/`、`uiux-design-lookup` skill；Figma MCP smoke OK。
+
+下一步：
+
+1. Step 0 — Hermes 確認 `docs/slack-message-schema.md`
+2. Step 1 — PM 驗證 `docs/pm-top-10-design-queries-draft.md`
+3. 補 checkout／cart link；PoC 5 題完整試跑
