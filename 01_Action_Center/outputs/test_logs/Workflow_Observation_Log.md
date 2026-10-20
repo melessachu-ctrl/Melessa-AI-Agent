@@ -38,3 +38,4 @@
 | 2026-10-07 15:09–16:10 | 查 ui-ux-pro-max upstream；sync 最新 skill 到 Melessa 真源；評審／studio／cleanup 改讀 `references/quick-reference.md` | 約 1 小時 | 中性（catalog 同步＋路徑修正） | 高（設計／評審基準與 upstream 對齊；下游可自動分發） | `ui-ux-pro-max`, `uiux-review`, `uiux-design-studio`, `figma-file-cleanup` |
 | 2026-10-07 11:29–15:10；2026-10-08 收尾 | 查官方 Figma skills；確認 `figma-implement-design` 已改名為 `figma-design-to-code`；更新 studio＋HKTVmall Figma rule | 約 1–1.5 小時（跨日） | 中性（官方改名對齊） | 高（避免 agent 讀已刪 skill；下游路由正確） | |
 | 2026-10-11 03:17–04:02 | 建 `address-book` skill：PDF→YAML、Drive master＋folder、cache／fallback；Sasa 路由；repo 無地址明文 | 約 45 分鐘 | 充電（旅行寄 postcard 可重用） | 高（跨 Cursor／Grok Bot＋Drive 真源） | `address-book` |
+| 2026-10-20 14:48–15:57 | Eats365 POS portfolio 中英文案（PDF 定稿）→ Lovable 寫入 eats365；`portfolio-designer` 固化 project_id | 約 1 小時 | 充電（文案可直寫站；不必再搜專案） | 高（portfolio 寫入路徑可重用；Publish 待做） | `portfolio-designer`, `lovable-mcp-server-guide` |

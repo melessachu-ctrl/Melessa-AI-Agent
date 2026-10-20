@@ -14,6 +14,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-10-20：Eats365 POS portfolio 中英文案定稿 → Lovable 寫入 `/projects/eats365`；`portfolio-designer` 固化 Lovable project_id；session 已寫（Publish 待做）
 - 2026-10-07～08：確認官方已棄用 `figma-implement-design`；`uiux-design-studio`＋`hktvmall-figma-design-system` 改指 `figma-design-to-code`；下游已 sync；session 已寫
 - 2026-10-07：`ui-ux-pro-max` 同步 upstream `477bcb2`；`uiux-review`／`uiux-design-studio`／`figma-file-cleanup` 改讀 `references/quick-reference.md`；session 已寫
 - 2026-10-05：Search Result category tree — 護膚化妝改 SubCate Card＋品牌列；圖上字下（1）品牌列移到「全部零食甜品」下並換成零食甜品熱門品牌；session 已寫

@@ -34,7 +34,7 @@
 | Google Calendar | `plugin-google-calendar-google-calendar`／`user-google-workspace` | 已連接、已授權 | 查詢／新增／更改／刪除行程（改動需你確認）。**例外**：命中 `period-calendar`（黎 m）時依 skill 直接記／查；命中 `onlux-appointment` 且 Melessa **明確**要求排／改 OnLux 時依 skill 直接改日曆。**預設關提醒**（見 `MEMORY.md`）；全日活動用 UTC date-only，勿用 `+08:00` 午夜 |
 | Google Drive / Docs / Sheets | `user-google-workspace` | 已連接、已授權 | 搜尋、讀寫檔案與文件（改動需你確認） |
 | Base44 | `user-base44`（`https://app.base44.com/mcp`） | 已連接、已授權 | 建／改 Base44 app、list／schema／entities、sandbox 讀寫與指令（寫入需你確認）。操作指南：`base44-mcp-server-guide`。**≠** 已發布 app 的 App MCP |
-| Lovable | `user-lovable`／`plugin-lovable-lovable`（`https://mcp.lovable.dev`） | 已連接、已授權 | 建／改／部署 Lovable 專案、knowledge、workspace skills、Cloud DB、analytics（寫入／deploy 需你確認）。操作指南：`lovable-mcp-server-guide`。文案用 `portfolio-designer`，勿混淆 |
+| Lovable | `user-lovable`／`plugin-lovable-lovable`（`https://mcp.lovable.dev`） | 已連接、已授權 | 建／改／部署 Lovable 專案、knowledge、workspace skills、Cloud DB、analytics（寫入／deploy 需你確認）。操作指南：`lovable-mcp-server-guide`。文案用 `portfolio-designer`；portfolio 站固定 `project_id` `b5eb4110-69a3-40ff-a113-47d1c71402bb`（見 skill） |
 
 已驗證：2026-07-08 成功讀取 Google Calendar 今日行程；2026-08-27 Base44 MCP（`user-base44`）；2026-08-27 Lovable MCP（`user-lovable`＋plugin）。
 

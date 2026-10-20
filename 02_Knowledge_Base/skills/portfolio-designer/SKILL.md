@@ -27,7 +27,25 @@ description: 當使用者要寫 Melessa portfolio 專案文案、device mockup�
 1. Project details **中英對照文案**（可直接貼上 Lovable）
 2. **Device mockup** 效果圖或合成指引（乾淨、專業、突出產品畫面）
 
-**不做**：自動改 Lovable 網站、commit 大份設計 PDF、代表使用者對外發布。
+**不做**：未經使用者要求就改 Lovable 網站、commit 大份設計 PDF、代表使用者對外發布（Publish）。使用者明確要求寫入／更新網站時，用下方 Lovable 專案，**不必再搜尋**。
+
+## Lovable 專案（寫入網站時必用）
+
+| 項目 | 值 |
+|------|-----|
+| **Name** | `[with Credit] Melessa's Portfolio Design` |
+| **project_id** | `b5eb4110-69a3-40ff-a113-47d1c71402bb` |
+| **Editor** | https://lovable.dev/projects/b5eb4110-69a3-40ff-a113-47d1c71402bb |
+| **Preview** | https://id-preview--b5eb4110-69a3-40ff-a113-47d1c71402bb.lovable.app |
+| **Live** | https://melessa-chu-design.lovable.app |
+| **Workspace** | Melessa07's Lovable（`f1jAT0XzXGS3nCpwiu9M`） |
+
+寫入／更新 project details 時：
+
+- 用 Lovable MCP：`send_message` → `project_id` = 上表 ID
+- 文案與 i18n 主要在 `src/i18n/translations.ts`；專案列表／slug／approach 接線在 `src/data/projects.ts`
+- 單一專案詳情頁路徑：`/projects/{slug}`（例：`/projects/eats365`）
+- Publish 僅在使用者明確要求時執行
 
 ## 網站風格參考
 
