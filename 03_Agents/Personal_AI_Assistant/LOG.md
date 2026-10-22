@@ -4,6 +4,7 @@
 
 | 日期 | 任務 | 成果 | 備註 |
 |---|---|---|---|
+| 2026-10-22 | Receipt Buddy 訪客示範模式 | `/demo` 即棄 household；OCR×3；login／signup CTA 卡片外；knowledge＋skill 固化 | Live demo：`receipt-buddy.lovable.app/demo`；見 session `2026-10-22_receipt-buddy-demo-mode` |
 | 2026-10-20 | Eats365 POS portfolio 文案 + Lovable 寫入 | 中英定稿寫入 `/projects/eats365`；`portfolio-designer` 固化 project_id | 個人 skill；Publish 待做；見 session `2026-10-20_portfolio-eats365-lovable` |
 | 2026-10-07～08 | Figma skill 改名對齊 | `uiux-design-studio`＋`hktvmall-figma-design-system` 改指 `figma-design-to-code`；UIUX-Skills 已 sync | 官方已刪 `figma-implement-design` |
 | 2026-10-07 | ui-ux-pro-max upstream sync | 同步 `477bcb2`；評審／studio／cleanup 改讀 `quick-reference.md` | 見 session `2026-10-07_ui-ux-pro-max-upstream-sync` |

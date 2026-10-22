@@ -14,6 +14,7 @@
 - **2026-10-03｜OnLux／onlux-appointment**：EU1 已用晒；額外 **Peel**、**Jet**（面部清潔，~30 分鐘，每月至少 1 次）；**Pico** 與 **HF** 高能量相隔 ≥14 日。**預約下個月 OnLux** → Calendar 用簡稱（Peel／Exo／HF 等）+ **WhatsApp 草稿用全名**（Magic Peel、Exosome、Hifu Lifteria 等）；見 skill 對照表。個人 skill，不進 UIUX-Skills。
 - **2026-08-25｜Portfolio**：寫 portfolio／作品集文案／device mockup／Lovable project details → 讀 **`portfolio-designer`** skill（真源在 `02_Knowledge_Base/skills/portfolio-designer/`）。以 Skill 承載，不做獨立 Agent；勿用 `alwaysApply` rule。
 - **2026-10-20｜Portfolio Lovable 專案**：寫入 melessa-chu-design 時用固定 **`project_id` `b5eb4110-69a3-40ff-a113-47d1c71402bb`**（`[with Credit] Melessa's Portfolio Design`）；見 skill「Lovable 專案」表。勿每次 `list_projects` 猜；個人 skill，**不進** UIUX-Skills sync。Publish 僅明確要求時做。
+- **2026-10-22｜Receipt Buddy**：家庭開支／收據 OCR 產品。`project_id` **`65e78316-0f7d-4004-b3e6-28d9aeac9fa5`**；Live https://receipt-buddy.lovable.app；**Portfolio 訪客試用** https://receipt-buddy.lovable.app/demo（即棄 `is_demo` household，唔影響真實家庭）。見 `lovable-mcp-server-guide`「常用專案」。
 - **2026-08-27｜Base44 MCP**：Cursor 全域已接 `base44`（`https://app.base44.com/mcp`）；建／改 Base44 app、entities、sandbox → 讀 **`base44-mcp-server-guide`**。寫入操作先問。勿與「已發布 app 的 App MCP」混淆。
 - **2026-08-27｜Lovable MCP**：Cursor 全域已接 `lovable`（`https://mcp.lovable.dev`）＋可裝 Lovable plugin（`/lovable-new` 等）；建／改／部署 Lovable 專案 → 讀 **`lovable-mcp-server-guide`**。寫入／deploy 先問。文案／mockup 用 **`portfolio-designer`**；明確要求寫入 portfolio 站時用 skill 內固定 project_id。
 

@@ -39,3 +39,4 @@
 | 2026-10-07 11:29–15:10；2026-10-08 收尾 | 查官方 Figma skills；確認 `figma-implement-design` 已改名為 `figma-design-to-code`；更新 studio＋HKTVmall Figma rule | 約 1–1.5 小時（跨日） | 中性（官方改名對齊） | 高（避免 agent 讀已刪 skill；下游路由正確） | |
 | 2026-10-11 03:17–04:02 | 建 `address-book` skill：PDF→YAML、Drive master＋folder、cache／fallback；Sasa 路由；repo 無地址明文 | 約 45 分鐘 | 充電（旅行寄 postcard 可重用） | 高（跨 Cursor／Grok Bot＋Drive 真源） | `address-book` |
 | 2026-10-20 14:48–15:57 | Eats365 POS portfolio 中英文案（PDF 定稿）→ Lovable 寫入 eats365；`portfolio-designer` 固化 project_id | 約 1 小時 | 充電（文案可直寫站；不必再搜專案） | 高（portfolio 寫入路徑可重用；Publish 待做） | `portfolio-designer`, `lovable-mcp-server-guide` |
+| 2026-10-22 13:21–16:21 | Receipt Buddy 訪客示範模式（即棄 household、OCR 上限、login CTA 卡片外）；Lovable knowledge＋Melessa 固化 project_id／demo URL | 約 3 小時（跨多段） | 充電（portfolio 可無 login 試用） | 高（多租戶 demo 模式可重用；正式用戶隔離） | `lovable-mcp-server-guide` |

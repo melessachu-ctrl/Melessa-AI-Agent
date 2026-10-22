@@ -47,6 +47,14 @@ description: 當使用者要寫 Melessa portfolio 專案文案、device mockup�
 - 單一專案詳情頁路徑：`/projects/{slug}`（例：`/projects/eats365`）
 - Publish 僅在使用者明確要求時執行
 
+### 相關產品 Live Demo（作品集可外連）
+
+| 產品 | Demo URL | Lovable project_id |
+|------|----------|-------------------|
+| Receipt Buddy（收據記帳） | https://receipt-buddy.lovable.app/demo | `65e78316-0f7d-4004-b3e6-28d9aeac9fa5` |
+
+訪客開 `/demo` 即進入即棄示範帳本（無需自行撳 login CTA）。改產品用 `lovable-mcp-server-guide`「常用專案」。
+
 ## 網站風格參考
 
 設計與文案須與現有網站一致：

@@ -1,9 +1,10 @@
 # Latest State
 
-> 最後更新：2026-10-05
+> 最後更新：2026-10-22
 
 ## 最近完成
 
+- **2026-10-22**：**Receipt Buddy** 訪客示範模式 — `/demo` 即棄 household、OCR 上限 3、分享／成員 disabled＋hints；login／signup「以訪客身份試用」在 glass-card 外；Portfolio 深連結 `https://receipt-buddy.lovable.app/demo`；`project_id` `65e78316-0f7d-4004-b3e6-28d9aeac9fa5`
 - **2026-10-05**：**Search Result category tree** — 護膚化妝 18 卡改 SubCate Card＋美妝 Brand Logo Section；圖上字下（1）把超級市場品牌列／divider 移入「全部零食甜品」下，並換成零食甜品熱門品牌；fileKey `SPD3XrBhgiW57uBo28UxjZ`
 - **2026-09-11**：Google Calendar 全日 🩸（今日）；建立 **`period-calendar`** skill（黎 m 即記／問幾時即查日曆）；symlink + Sasa 路由；**不**進 UIUX-Skills
 - **2026-09-10**：Wanderlog「**東京 Food**」加 **燗アガリ**（17 places）；Cloud Agent Secret **`WANDERLOG_COOKIE`**（Runtime Secret）已驗證；`update-wanderlog` 先讀 env

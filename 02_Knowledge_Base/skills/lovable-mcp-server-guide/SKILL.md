@@ -58,6 +58,30 @@ Marketplace：[cursor.com/marketplace/lovable](https://cursor.com/marketplace/lo
 
 兩者可併用：先用 `portfolio-designer` 產文案，再經 MCP `send_message` 貼上／套用。
 
+## 常用專案（固定 ID，勿每次 list 猜）
+
+### Portfolio 站
+
+| 項目 | 值 |
+|------|-----|
+| **Name** | `[with Credit] Melessa's Portfolio Design` |
+| **project_id** | `b5eb4110-69a3-40ff-a113-47d1c71402bb` |
+| **Live** | https://melessa-chu-design.lovable.app |
+| 詳情 | 見 `portfolio-designer` skill |
+
+### Receipt Buddy（收據記帳）
+
+| 項目 | 值 |
+|------|-----|
+| **Name** | Receipt Buddy |
+| **project_id** | `65e78316-0f7d-4004-b3e6-28d9aeac9fa5` |
+| **Editor** | https://lovable.dev/projects/65e78316-0f7d-4004-b3e6-28d9aeac9fa5 |
+| **Preview** | https://id-preview--65e78316-0f7d-4004-b3e6-28d9aeac9fa5.lovable.app |
+| **Live** | https://receipt-buddy.lovable.app |
+| **Portfolio demo** | https://receipt-buddy.lovable.app/demo |
+
+Demo 要點：即棄 `is_demo` household；login／signup「以訪客身份試用」在 glass-card **外**；分享／成員 disabled＋hints；OCR 上限 3。細節見該專案 Lovable **Project knowledge**。
+
 ## MCP vs workspace skills
 
 | 類型 | 是什麼 | 誰用 |
