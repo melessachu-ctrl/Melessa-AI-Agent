@@ -14,6 +14,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-10-23：本機 `git pull` Screen Token Bind Gate（`uiux-design-studio`）；確認 UIUX-Skills sync；補發 `#uiux-designer`；月更 automation 通知改 `#melessa-cursor`；session `2026-10-23_uiux-studio-screen-bind-gate` 已寫
 - 2026-10-22：Receipt Buddy 訪客示範模式（`/demo` 即棄 household、OCR 上限、login CTA 卡片外）；Lovable knowledge + Melessa skill／MEMORY 固化 project_id；session 已寫（Publish 若要跟最新 CTA 另做）
 - 2026-10-20：Eats365 POS portfolio 中英文案定稿 → Lovable 寫入 `/projects/eats365`；`portfolio-designer` 固化 Lovable project_id；session 已寫（Publish 待做）
 - 2026-10-07～08：確認官方已棄用 `figma-implement-design`；`uiux-design-studio`＋`hktvmall-figma-design-system` 改指 `figma-design-to-code`；下游已 sync；session 已寫

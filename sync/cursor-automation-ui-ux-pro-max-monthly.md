@@ -7,11 +7,11 @@
 | 欄位 | 值 |
 | --- | --- |
 | **Name** | Monthly ui-ux-pro-max dependency audit |
-| **Description** | 每月檢查 Melessa 的 ui-ux-pro-max 是否剛 sync；審計依賴 skills；Slack DM 通知 Melessa；有改動則開 PR 等確認 |
+| **Description** | 每月檢查 Melessa 的 ui-ux-pro-max 是否剛 sync；審計依賴 skills；Slack `#melessa-cursor` 通知；有改動則開 PR 等確認 |
 | **Build** | **Cloud**（唔用 Local） |
 | **Trigger** | Schedule — 每月 1 號 **10:00 HKT**（GHA sync 係 09:00 HKT，留 1 小時緩衝） |
 | **Repo** | `melessachu-ctrl/Melessa-AI-Agent`，branch `main` |
-| **Tools** | GitHub（讀／開 PR）、Slack（DM + 可選 `#uiux-designer`） |
+| **Tools** | GitHub（讀／開 PR）、Slack（`#melessa-cursor` + 可選 `#uiux-designer`） |
 
 ## Instructions（貼入 Automation prompt）
 
@@ -26,7 +26,7 @@
 
 ## 步驟
 1. 讀 `02_Knowledge_Base/skills/ui-ux-pro-max/.upstream-sync.json` 同 `SKILL.md`、`references/quick-reference.md`。記低 commit_short / synced_at。
-2. 查 GitHub Actions：最近一次「Sync ui-ux-pro-max upstream」run 結果（成功／已是最新／失敗）。若失敗，Slack DM Melessa 報錯 + run URL，然後停止。
+2. 查 GitHub Actions：最近一次「Sync ui-ux-pro-max upstream」run 結果（成功／已是最新／失敗）。若失敗，發 Slack `#melessa-cursor`（C0BJ7TUHWSC）報錯 + run URL，然後停止。
 3. 審計依賴 skills（至少）：
    - `02_Knowledge_Base/skills/uiux-review/SKILL.md`
    - `02_Knowledge_Base/skills/uiux-design-studio/SKILL.md`
@@ -34,7 +34,7 @@
    - `02_Knowledge_Base/skills/ricky-design-guideline/SKILL.md`
    對照 ui-ux-pro-max 新結構：Quick Reference 應指向 `references/quick-reference.md`（唔應假設全文喺 SKILL.md）；破路徑、過時 § 假設、遺失檔案引用都記低。
 4. **若無需改依賴 skills**：
-   - Slack **DM Melessa**（唔好只發 channel）：
+   - Slack 發到 **`#melessa-cursor`（C0BJ7TUHWSC）**（唔好改用 DM）：
      - 若今次／今個月 GHA 有 sync：講已 sync 到邊個 upstream SHA、Melessa commit、Actions 連結
      - 若已是最新：講已是最新
      - 一定提醒：
@@ -56,11 +56,11 @@
 5. **若依賴 skills 需要改**：
    - **唔好**直接 push main
    - 開 feature branch（`cursor/ui-ux-pro-max-dep-fix-…`）放建議改動，開 Melessa **draft PR** 指向 main
-   - Slack DM Melessa：附 PR 連結，請確認後再 merge；說明 ui-ux-pro-max 本體若已上 main 就只審依賴改動
+   - Slack `#melessa-cursor`：附 PR 連結，請確認後再 merge；說明 ui-ux-pro-max 本體若已上 main 就只審依賴改動
 6. 唔 force push；唔提交 secrets；唔改 UIUX-Skills 的 skills/（避免同 Actions 雙寫）
 
 ## 完成準則
-- Melessa 一定收到 Slack DM（最新／已 sync／有 PR 等確認／GHA 失敗）
+- `#melessa-cursor` 一定收到通知（最新／已 sync／有 PR 等確認／GHA 失敗）
 - 有依賴改動 ⇒ 有 PR；無 ⇒ 無 PR
 ```
 
@@ -71,7 +71,7 @@
 3. Trigger：Schedule → monthly，1 號 10:00 Asia/Hong_Kong（或等價 cron）
 4. Repo：`Melessa-AI-Agent` / `main`
 5. 貼上上面 Instructions；啟用 GitHub + Slack
-6. Slack：DM 目標選 Melessa 自己；`#uiux-designer` 僅在有下游更新時用
+6. Slack：Send to Slack 選 `#melessa-cursor`（C0BJ7TUHWSC）；`#uiux-designer` 僅在有下游更新時用（private，需先 `/invite @Cursor`）
 7. Save 並可先 **Run once** 試跑（應報 up-to-date 或開空審計）
 
 ## 與 GHA 分工
@@ -82,4 +82,4 @@
 | 本 Automation | 依賴審計、PR（如需）、Slack 通知 |
 | `Sync UIUX-Skills` | Melessa skills 變更後自動推下游 |
 
-可選：repo Secrets `SLACK_BOT_TOKEN` + `SLACK_DM_USER_ID` 令 GHA 亦發簡易 DM；無則只靠本 Automation。
+可選：repo Secrets `SLACK_BOT_TOKEN` + `SLACK_DM_USER_ID` 令 GHA 亦發簡易通知；無則只靠本 Automation。

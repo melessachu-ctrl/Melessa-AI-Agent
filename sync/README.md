@@ -16,13 +16,13 @@ Push 到 `main` 且變更 `02_Knowledge_Base/skills/**`、manifest 或 workflow 
 | --- | --- |
 | [`sync-ui-ux-pro-max-upstream.sh`](sync-ui-ux-pro-max-upstream.sh) | 對比 SHA；落後則覆蓋 skill + 寫 stamp |
 | [`.github/workflows/sync-ui-ux-pro-max-upstream.yml`](../.github/workflows/sync-ui-ux-pro-max-upstream.yml) | 每月 1 號 ~09:00 HKT cron + 手動 `workflow_dispatch`；落後則 **commit + push Melessa `main`** |
-| [`cursor-automation-ui-ux-pro-max-monthly.md`](cursor-automation-ui-ux-pro-max-monthly.md) | Cursor Automation（**Cloud**）草稿：依賴 skill 審計、開 PR（如需）、Slack DM |
-| [`notify-ui-ux-pro-max-slack.py`](notify-ui-ux-pro-max-slack.py) | 可選：GHA 用 Slack bot 發簡易 DM |
+| [`cursor-automation-ui-ux-pro-max-monthly.md`](cursor-automation-ui-ux-pro-max-monthly.md) | Cursor Automation（**Cloud**）草稿：依賴 skill 審計、開 PR（如需）、Slack `#melessa-cursor` |
+| [`notify-ui-ux-pro-max-slack.py`](notify-ui-ux-pro-max-slack.py) | 可選：GHA 用 Slack bot 發簡易通知 |
 
 流程：
 
 1. GHA 跑 `sync-ui-ux-pro-max-upstream.sh`
-2. 已是最新 → 結束（可選 Slack「已是最新」）
+2. 已是最新 → 結束（可選 Slack `#melessa-cursor`「已是最新」）
 3. 有更新 → commit/push Melessa → workflow **顯式** `gh workflow run sync-uiux-skills.yml`（`GITHUB_TOKEN` push 唔會自動連鎖其他 workflow）
 4. Cursor Automation（同日稍晚）審計 `uiux-review`／`uiux-design-studio`／`figma-file-cleanup`／`ricky-design-guideline`；要改則開 **draft PR** 等 Melessa 確認，唔直接 push 依賴改動
 
