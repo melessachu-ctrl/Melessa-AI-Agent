@@ -13,6 +13,7 @@
 - Actions **Sync UIUX-Skills** 於 `acfc7cb` 已成功（run：https://github.com/melessachu-ctrl/Melessa-AI-Agent/actions/runs/39929357499）
 - UIUX-Skills commit：`chore(sync): from Melessa @ acfc7cb`
 - Cloud Agent 推 skill 時未發 `#uiux-designer` 公告 → 本 finish session **補發**
+- 公告：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1792746962353729
 
 ### 月更 Automation 草稿對齊（待 commit 殘件收尾）
 
