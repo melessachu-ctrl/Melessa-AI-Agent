@@ -1,6 +1,6 @@
 ---
 name: uiux-design-studio
-description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬角色」方式擔任 Design Director / 設計總監，將 UI/UX 工作拆成 intake → routing → 各角色輸出 → 最終統稿。適用於：新頁面/新功能設計、改版/視覺升級、UX 流程/使用者旅程/IA、可用性與無障礙（a11y/WCAG）、設計評審（design/code/prototype）、Figma 交付（screens/components/prototype）、Design System / token / component library 補洞或更新（建立／更新元件時強制 auto-layout、font／text style token、leaf-only layer naming）、Figma 檔案治理／cleanup（圖層／命名／舊檔 SOP）。HKTVmall 相關 Figma 設計預設套用 HKTVmall Design System（fileKey F0tjdruLjJTfWgmTeZKBnw）。Lite App／Lite App DS 相關設計時字體必須連結 Design Tokens（fileKey I5A9GqmJdvoskfDeCBtNsL，Typography node 120:1278）。會引導載入 `hktvmall-target-customers`、`ricky-design-guideline`、`ui-ux-pro-max`、`frontend-design`，以及 Figma 相關技能（figma-file-cleanup／figma-use／figma-generate-library／figma-design-to-code／figma-mcp-server-guide／apply-design-system）。"
+description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬角色」方式擔任 Design Director / 設計總監，將 UI/UX 工作拆成 intake → routing → 各角色輸出 → 最終統稿。適用於：新頁面/新功能設計、改版/視覺升級、UX 流程/使用者旅程/IA、可用性與無障礙（a11y/WCAG）、設計評審（design/code/prototype）、Figma 交付（screens/components/prototype）、Design System / token / component library 補洞或更新（建立／更新元件時強制 auto-layout、font／text style token、leaf-only layer naming）、HKTVmall Figma 畫面／flow／sheet／demo 出稿時強制 Screen Token Bind Gate（每個自建 TEXT 綁 DS text style＋文字色綁 color token，未過閘不得交件）、Figma 檔案治理／cleanup（圖層／命名／舊檔 SOP）。HKTVmall 相關 Figma 設計預設套用 HKTVmall Design System（fileKey F0tjdruLjJTfWgmTeZKBnw）。Lite App／Lite App DS 相關設計時字體必須連結 Design Tokens（fileKey I5A9GqmJdvoskfDeCBtNsL，Typography node 120:1278）。會引導載入 `hktvmall-target-customers`、`ricky-design-guideline`、`ui-ux-pro-max`、`frontend-design`，以及 Figma 相關技能（figma-file-cleanup／figma-use／figma-generate-library／figma-design-to-code／figma-mcp-server-guide／apply-design-system）。"
 ---
 
 ## 平台現實（必讀）
@@ -68,7 +68,7 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 - **涉及 UI/UX 評審（design / code / prototype / Figma / live URL；含「評審」「設計評審」「critique」「heuristic evaluation」「a11y review」「易用性檢查」等語意）**：**必須先讀** `~/.cursor/skills/uiux-review/SKILL.md`，再依其要求載入 `ui-ux-pro-max`（Heuristic Pass 對齊 `~/.cursor/skills/ui-ux-pro-max/references/quick-reference.md` §1–§10）；UIUX Review 角色之輸出**必須採用** `uiux-review` 的 7-step SOP 與 Findings 模板（Must/Should/Nice/Keep + AC），並使用該 skill 的預設 Reviewer Lens 或當次覆寫的 Lens；**同時執行** `ricky-design-guideline` 的 Ricky Pass
 - **涉及介面質感/可用性/a11y/互動規範**：必須讀 `~/.cursor/skills/ui-ux-pro-max/SKILL.md`；Heuristic／a11y 全文清單讀 `~/.cursor/skills/ui-ux-pro-max/references/quick-reference.md`
 - **涉及前端介面實作、元件/頁面 UI code、視覺呈現落地**：必須讀 `~/.cursor/skills/frontend-design/SKILL.md`
-- **涉及 HKTVmall Figma 設計出稿／Prototype／DS 對齊**：遵守「HKTVmall Design System 預設」；`search_design_system` 優先於從零繪製；必要時讀 `apply-design-system`
+- **涉及 HKTVmall Figma 設計出稿／Prototype／DS 對齊**：遵守「HKTVmall Design System 預設」與本 Skill「**HKTVmall Screen Token Bind Gate**」；`search_design_system` 優先於從零繪製；必要時讀 `apply-design-system`；**未通過 Screen Token Bind Gate 不得宣告完成或進入 Final Pack 的「已交付」狀態**
 - **涉及 Lite App／Lite App DS 設計出稿、元件建立／更新、Prototype、或 DS 補洞**：遵守「Lite App Design Tokens 預設」與使用者規則 `lite-app-figma-design-tokens`；**所有 font／文字樣式必須 link Design Tokens**（未特別指明時用 `I5A9GqmJdvoskfDeCBtNsL` Typography）；禁止硬編碼字級頂替 text style
 - **涉及 Design System 元件建立／更新／補洞（create／update／add variant／DS component）**：**必須先讀**本 Skill「DS Component Write Gate」；寫入前讀 `figma-use` + `figma-generate-library`；命名與 auto-layout 規範**必須對齊** `~/.cursor/skills/figma-file-cleanup/SKILL.md`（至少讀「命名規範」與 auto-layout／`layoutMode` 相關段落）；**未通過 Write Gate 不得宣告完成或進入 Final Pack 的「已交付」狀態**
 - **涉及 Figma 讀設計稿/從 Figma 實作**：使用 `figma-design-to-code` 的流程（必要時搭配 `figma-mcp-server-guide`）
@@ -95,10 +95,56 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
    - `fileKey`：`F0tjdruLjJTfWgmTeZKBnw`
    - 預設入口 `nodeId`：`11445:16121`
 2. **Routing 後、角色產出前**：遵守使用者規則 `hktvmall-figma-design-system`；Figma 寫入前讀 `figma-use`；多區塊對齊讀 `apply-design-system`。
-3. **UIUX Designer / DS Owner 產出**：token、間距、字級、顏色、元件**必須**引用上述 DS；缺口列為「待新增／待盤點」，不得默默自創替代樣式。
-4. **Director Final Pack**：附錄須含 **DS 採用聲明**（名稱、fileKey、主要引用元件／token 或盤點阻塞）。
+3. **UIUX Designer / DS Owner 產出**：token、間距、字級、顏色、元件**必須**引用上述 DS；缺口列為「待新增／待盤點」，不得默默自創替代樣式。**禁止**以裸 `fontSize`／`fontName`／字重或未綁定之 hex／RGB fill 作為最終態（含 Content SLOT、demo 文案、overlay 內自建 TEXT）。
+4. **每一次** HKTVmall Figma 畫面／流程／bottom sheet／demo 寫入後，必須通過下方「**HKTVmall Screen Token Bind Gate**」；未過閘不得交件。
+5. **Director Final Pack**：附錄須含 **DS 採用聲明**（名稱、fileKey、主要引用元件／token 或盤點阻塞）＋ **Screen Token Bind Gate 結果**（Pass／Pass with exceptions／Blocked + 主要 text style／color token 名稱）。
 
 > 跨專案規則：優先讀 `rules/hktvmall-figma-design-system.md`；找不到再讀同名 `.mdc`（`rules/` 或 Melessa `sync/cursor-rules/`）；Cursor 已安裝則等同使用者規則 `hktvmall-figma-design-system`。皆無則以本節為準，勿阻塞。
+
+#### HKTVmall Screen Token Bind Gate（畫面／流程出稿 — 強制）
+
+當任務符合「HKTVmall 觸發詞」且涉及 **Figma 設計出稿**（新頁、改版、flow、bottom sheet、overlay、demo、Content SLOT 文案、Prototype 畫面），**不論是否建立 DS component**，每一次寫入目標範圍內的 TEXT／文字色都必須過本閘門。此閘門補足「DS Component Write Gate」只罩住建／改元件的缺口，避免外殼用 DS instance、內文卻硬編碼。
+
+**與 DS Component Write Gate 的關係**
+
+| 任務 | 必過閘門 |
+| --- | --- |
+| 只畫／改畫面、flow、sheet、demo（不建 DS 元件） | **僅** Screen Token Bind Gate |
+| 建立／更新 DS component | **DS Component Write Gate**（已含 font）；畫面實例另過 Screen Token Bind Gate |
+| Lite App | 另遵守「Lite App Design Tokens 預設」（字體）；本閘門之 color 規則仍適用若任務同時屬 HKTVmall |
+
+##### Gate T — Text style（必做）
+
+- 本次新建或改動之**每一個 TEXT** 必須綁定 HKTVmall DS **Text Style**（`textStyleId`／`setTextStyleIdAsync`／library text style）。
+- 套用順序：`search_design_system`（`entity: "style"`）或於 DS 檔盤點 → `importStyleByKeyAsync`（若為 library）→ `setTextStyleIdAsync`。換 style 若需保留顏色，先 snapshot `fills` 再還原，再綁 color token（Gate C）。
+- **允許例外**（須在 Final Pack 註明 node id + 原因）：未 detach 之 **DS／iOS Native 元件實例內部**已由主元件綁定的 title／label（例如 Bottom Sheet Top Bar 的 `Headline/Regular`）；一旦 detach 或自建 TEXT，例外失效，必須改綁 DS text style。
+- **禁止**：最終態只留裸 `fontSize`／`fontName`／字重；用系統字／隨意 Noto／Inter 頂替而未 link style。
+- 寫入後用 read-only `use_figma` 抽樣：目標範圍內自建／改動 TEXT 的 `textStyleId` 非空（例外已註明）；否則視為未完成。
+
+##### Gate C — Color token（必做）
+
+- 本次新建或改動之 TEXT（及作為文字色用途的 fills）必須綁定 HKTVmall DS **color variable／style**（例如 `Text/Primary`、`Text/Secondary`、`Text/Tertiary`、`Text/White`、Labels 語意色）；次要文案用 Secondary／Tertiary，勿用未綁定 hex。
+- 套用：`search_design_system`（`entity: "variable"` 或 style）→ import → `setBoundVariableForPaint`／等效綁定。
+- **允許例外**（須註明）：未 detach 之 instance 內部已綁定色；純裝飾非文字色（illustration）可保留，但不得以此藉口讓 body copy 用 hex。
+- 寫入後抽樣：目標 TEXT 的 fills 已綁 variable／style（或例外已註明）；否則視為未完成。
+
+##### 寫入後驗收（Director／執行手必勾；未全過不得交件）
+
+```
+HKTVmall Screen Token Bind Gate — Checklist
+- [ ] 已 search_design_system 盤點本次需要的 text style 與 text color token（未盤點不得硬編碼）
+- [ ] 本次新建／改動 TEXT 均已綁定 DS text style（instance 內部例外已註明 node id）
+- [ ] 本次新建／改動文字色均已綁定 DS color token／variable（例外已註明）
+- [ ] 無「外殼 DS instance + Content SLOT 裸字級／裸 hex」殘留於交付範圍
+- [ ] use_figma 抽樣或等效檢查已跑；get_screenshot 視覺可接受
+- [ ] Final Pack 已記錄：Gate 結果、主要 text style 名稱、主要 color token 名稱、例外（若有）
+```
+
+##### 與 Review／Final Pack／派工的銜接
+
+- **派工給 executor／Figma 執行手**：brief **必須**明示本閘門；回報須含綁定一覽表（元素 → text style → color token）。
+- **UIUX Review**：HKTVmall Figma 出稿未綁 text style／color token（且非已註明 instance 例外）一律 **Must fix**。
+- **Director Final Pack** 附錄須含一句 **Screen Token Bind Gate 結果**（Pass／Pass with exceptions／Blocked + 原因）＋主要 style／token 名稱。
 
 #### Lite App 觸發詞
 
@@ -224,7 +270,7 @@ DS Component Write Gate — Checklist
 - **狀態設計**：Empty / Loading / Error / Success（最少涵蓋關鍵流程）
 - **互動規格**：輸入、驗證、回饋、可撤銷、鍵盤操作
 - **內容規格（Microcopy）**：關鍵標題/按鈕/錯誤訊息語氣與範例
-- **交付給工程**：token/間距/字級/顏色採用策略（盡量引用 DS）；**Lite App／Lite App DS 時字級必須引用 Design Tokens Text Style**（預設 `I5A9GqmJdvoskfDeCBtNsL`）
+- **交付給工程**：token/間距/字級/顏色採用策略（**必須**引用 DS；HKTVmall Figma 出稿另過「Screen Token Bind Gate」）；**Lite App／Lite App DS 時字級必須引用 Design Tokens Text Style**（預設 `I5A9GqmJdvoskfDeCBtNsL`）
 - **客群與 KPI 對齊**（HKTVmall 相關時必填）：本方案服務哪個 segment、優化哪個 KPI、資訊密度／促銷層級如何保持可掃描
 
 ### 4) Prototype Creator
@@ -258,6 +304,7 @@ DS Component Write Gate — Checklist
 - **a11y 檢查**：對比、焦點、鍵盤、ARIA/標籤、觸控目標（對齊 `ui-ux-pro-max/references/quick-reference.md` §1）
 - **一致性檢查**：字級/間距/元件狀態/語氣/圖示（對齊 `ui-ux-pro-max/references/quick-reference.md` §4、§6）
 - **DS Component Write Gate（有建立／更新 DS 元件時必查）**：未過 Gate 的項目一律進 Must fix — (1) 容器仍為 `layoutMode=NONE` 且無例外註記；(2) TEXT 未綁 text style／typography token；(3) 圖層名為 `Frame N`／`Group N`／`Copy` 或含 `/` 路徑式名稱（對齊 `figma-file-cleanup` leaf-only）
+- **HKTVmall Screen Token Bind Gate（HKTVmall Figma 畫面／flow／sheet 出稿時必查）**：未過閘一律 Must fix — (1) 自建／改動 TEXT 未綁 DS text style；(2) 文字色未綁 DS color token；(3) Content SLOT／demo 文案仍為裸 `fontSize`／hex（非已註明之 instance 內部例外）
 
 ## Director Final Pack（最後一定要輸出）
 
@@ -281,6 +328,7 @@ DS Component Write Gate — Checklist
 - Ricky Pass 檢查清單（Figma 設計 / Prototype / 評審時必有；格式見 `ricky-design-guideline`）
 - Target Customer 對齊（HKTVmall 相關時必有）：segment 對應、KPI 取捨、推薦可解釋性（格式見 `hktvmall-target-customers`）
 - **DS 採用聲明**（HKTVmall Figma 相關時必有）：HKTVmall Design System、`fileKey`、主要引用元件／token 或盤點阻塞
+- **HKTVmall Screen Token Bind Gate**（HKTVmall Figma 畫面／flow／sheet／demo 出稿時必有）：Pass／Pass with exceptions／Blocked；主要 text style 與 color token 名稱；例外 node id（若有）
 - **Typography／DS 採用聲明**（Lite App／Lite App DS 相關時必有）：Design Tokens（Typography）、`fileKey` `I5A9GqmJdvoskfDeCBtNsL`、主要 text style 名稱或盤點阻塞
 - **DS Component Write Gate**（有建立／更新 DS 元件時必有）：Checklist 勾選結果＋主要 text style 名稱＋auto-layout 例外（若有）
 
@@ -291,4 +339,3 @@ DS Component Write Gate — Checklist
 1. **記錄**：哪 3 題 Intake 最常缺？哪些輸出欄位常被跳過？
 2. **收斂**：把不常用欄位改為「可選」，把常缺資訊加入最短追問。
 3. **專案特例**：不要複製整份 Skill；只補 5–20 行短規則（品牌/元件庫/術語/路由結構）——Cursor：該專案 `.cursor/rules/*.mdc`；其他 agent：該專案 `AGENTS.md`（或同等 instructions 檔）。
-
