@@ -1,6 +1,6 @@
 ---
 name: uiux-review
-description: "Standardized UI/UX review SOP for finished designs (screenshots, Figma, prototypes, code, live URLs). Use when the user asks for a UIUX review, design critique, heuristic evaluation, a11y review, accessibility check, usability check, design audit, design QA, review screen / page / component / Figma / prototype / live URL, or says 評審 / 設計評審 / 走查 / 檢查 UI / 檢查 UX / 易用性檢查 / 無障礙檢查 / critique my design / review this UI. Runs a 7-step SOP (Intake → Reviewer Lens → Heuristic Pass → Walkthrough → Strengths → Findings → Anti-nitpick + AC) anchored on `ui-ux-pro-max` Quick Reference, with a default Reviewer Lens of a 50+ household shopper. Outputs in 繁體中文."
+description: "Standardized UI/UX review SOP for finished designs (screenshots, Figma, prototypes, code, live URLs). Use when the user asks for a UIUX review, design critique, heuristic evaluation, a11y review, accessibility check, usability check, design audit, design QA, review screen / page / component / Figma / prototype / live URL, or says 評審 / 設計評審 / 走查 / 檢查 UI / 檢查 UX / 易用性檢查 / 無障礙檢查 / critique my design / review this UI. Runs a 7-step SOP (Intake → Reviewer Lens → Heuristic Pass → Walkthrough → Strengths → Findings → Anti-nitpick + AC) anchored on `ui-ux-pro-max` Quick Reference, with a default Reviewer Lens of a 50+ household shopper. Outputs in 繁體中文. When the artifact includes an Apple-native control, also read apple-design and check only that control."
 ---
 
 # UIUX Review SOP
@@ -24,8 +24,9 @@ description: "Standardized UI/UX review SOP for finished designs (screenshots, F
 1. **必讀**：`~/.cursor/skills/ui-ux-pro-max/SKILL.md`（技能入口／優先級表）＋ `~/.cursor/skills/ui-ux-pro-max/references/quick-reference.md` —— Heuristic Pass 直接對齊 Quick Reference **§1–§10 全文**（已不在 `SKILL.md` 內），本 skill 不複製條目
 2. 評審對象是 **Figma URL／Figma 檔**：加讀 `~/.cursor/skills/figma-mcp-server-guide/SKILL.md`
 3. 評審對象是 **前端 code**：加讀 `~/.cursor/skills/frontend-design/SKILL.md`
+4. **僅當**評審對象包含 Apple 原生功能時，才讀 `~/.cursor/skills/apple-design/SKILL.md`，並只打開該功能對應的 HIG 頁。沒有這些功能就不要讀。觸發清單、引用格式與優先順序同 `uiux-design-studio` 的「Apple native function」：Apple Pay、Sign in with Apple、系統權限說明、通知、Widget、Live Activity、Dynamic Island、系統 alert／action sheet／share sheet／系統 picker、用在系統控制項上的 SF Symbols、iPhone Duo 系統列／摺位／外屏、系統 chrome 上的 Liquid Glass、App Review 因設計或品牌被拒。發現仍用本 SOP 的 Must／Should／Nice／Keep，引用 `hig:<file> › <heading>`（Critical → Must fix，High → Should fix）。不採用 apple-design 的報告格式，也不跑它的改版模式。品牌、密度、文案、token 以 Ricky 與 Design System 為準；HIG 只約束該原生控制項。
 
-> 若沒讀上述技能就開始評審，視為違規 SOP。
+> 若沒讀上述技能就開始評審，視為違規 SOP。第 4 點只有命中 Apple 原生功能時才算必讀。
 
 ## 預設 Reviewer Lens（評審視角）
 
@@ -200,7 +201,7 @@ description: "Standardized UI/UX review SOP for finished designs (screenshots, F
 ## 守則摘要
 
 1. **不吹毛求疵**：符合一般 UIUX 標準的部分明確寫「OK，無需改動」，不湊數
-2. **必須有原則對應**：每條 Must / Should 都要 cite `pro-max:<rule-key>` 或 WCAG / HIG / MD
+2. **必須有原則對應**：每條 Must / Should 都要 cite `pro-max:<rule-key>` 或 WCAG / HIG / MD。Apple 原生功能的發現改 cite `hig:<file> › <heading>`
 3. **必須有具體方案**：禁止「建議優化」「考慮改善」這類空話
 4. **必須講人話**：影響描述用 Reviewer Lens 第一人稱，不要寫成抽象體驗論述
 5. **必須有 Strengths**：除非整體不及格，否則最少 2 條保留項

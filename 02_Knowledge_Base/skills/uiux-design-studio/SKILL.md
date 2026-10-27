@@ -1,6 +1,6 @@
 ---
 name: uiux-design-studio
-description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬角色」方式擔任 Design Director / 設計總監，將 UI/UX 工作拆成 intake → routing → 各角色輸出 → 最終統稿。適用於：新頁面/新功能設計、改版/視覺升級、UX 流程/使用者旅程/IA、可用性與無障礙（a11y/WCAG）、設計評審（design/code/prototype）、Figma 交付（screens/components/prototype）、Design System / token / component library 補洞或更新（建立／更新元件時強制 auto-layout、font／text style token、leaf-only layer naming）、HKTVmall Figma 畫面／flow／sheet／demo 出稿時強制 Screen Token Bind Gate（每個自建 TEXT 綁 DS text style＋文字色綁 color token，未過閘不得交件）、Figma 檔案治理／cleanup（圖層／命名／舊檔 SOP）。HKTVmall 相關 Figma 設計預設套用 HKTVmall Design System（fileKey F0tjdruLjJTfWgmTeZKBnw）。Lite App／Lite App DS 相關設計時字體必須連結 Design Tokens（fileKey I5A9GqmJdvoskfDeCBtNsL，Typography node 120:1278）。會引導載入 `hktvmall-target-customers`、`ricky-design-guideline`、`ui-ux-pro-max`、`frontend-design`，以及 Figma 相關技能（figma-file-cleanup／figma-use／figma-generate-library／figma-design-to-code／figma-mcp-server-guide／apply-design-system）。"
+description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬角色」方式擔任 Design Director / 設計總監，將 UI/UX 工作拆成 intake → routing → 各角色輸出 → 最終統稿。適用於：新頁面/新功能設計、改版/視覺升級、UX 流程/使用者旅程/IA、可用性與無障礙（a11y/WCAG）、設計評審（design/code/prototype）、Figma 交付（screens/components/prototype）、Design System / token / component library 補洞或更新（建立／更新元件時強制 auto-layout、font／text style token、leaf-only layer naming）、HKTVmall Figma 畫面／flow／sheet／demo 出稿時強制 Screen Token Bind Gate（每個自建 TEXT 綁 DS text style＋文字色綁 color token，未過閘不得交件）、Figma 檔案治理／cleanup（圖層／命名／舊檔 SOP）。HKTVmall 相關 Figma 設計預設套用 HKTVmall Design System（fileKey F0tjdruLjJTfWgmTeZKBnw）。Lite App／Lite App DS 相關設計時字體必須連結 Design Tokens（fileKey I5A9GqmJdvoskfDeCBtNsL，Typography node 120:1278）。會引導載入 `hktvmall-target-customers`、`ricky-design-guideline`、`ui-ux-pro-max`、`frontend-design`，以及 Figma 相關技能（figma-file-cleanup／figma-use／figma-generate-library／figma-design-to-code／figma-mcp-server-guide／apply-design-system）。App 設計或評審包含 Apple 原生功能時才讀 `apple-design`，且只核對該功能是否符合 HIG。"
 ---
 
 ## 平台現實（必讀）
@@ -67,6 +67,7 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 - **涉及 Figma 設計出稿、Prototype 製作、或設計評審（design / prototype / Figma / live URL）**：**必須先讀** `~/.cursor/skills/ricky-design-guideline/SKILL.md`（Ricky Design Guideline / HKTVmall 王語錄設計原則）；各虛擬角色產出須對照其 R1–R9 原則與 Ricky Pass 檢查清單；Review 角色 Findings 須標注 `ricky:R{n}`
 - **涉及 UI/UX 評審（design / code / prototype / Figma / live URL；含「評審」「設計評審」「critique」「heuristic evaluation」「a11y review」「易用性檢查」等語意）**：**必須先讀** `~/.cursor/skills/uiux-review/SKILL.md`，再依其要求載入 `ui-ux-pro-max`（Heuristic Pass 對齊 `~/.cursor/skills/ui-ux-pro-max/references/quick-reference.md` §1–§10）；UIUX Review 角色之輸出**必須採用** `uiux-review` 的 7-step SOP 與 Findings 模板（Must/Should/Nice/Keep + AC），並使用該 skill 的預設 Reviewer Lens 或當次覆寫的 Lens；**同時執行** `ricky-design-guideline` 的 Ricky Pass
 - **涉及介面質感/可用性/a11y/互動規範**：必須讀 `~/.cursor/skills/ui-ux-pro-max/SKILL.md`；Heuristic／a11y 全文清單讀 `~/.cursor/skills/ui-ux-pro-max/references/quick-reference.md`
+- **App 設計或評審包含 Apple 原生功能時才讀** `~/.cursor/skills/apple-design/SKILL.md`（見下方「Apple native function」）。沒有這些功能就不要讀。只核對該原生控制項；品牌、密度、文案、token 仍以 Ricky 與 HKTVmall／Lite App Design System 為準
 - **涉及前端介面實作、元件/頁面 UI code、視覺呈現落地**：必須讀 `~/.cursor/skills/frontend-design/SKILL.md`
 - **涉及 HKTVmall Figma 設計出稿／Prototype／DS 對齊**：遵守「HKTVmall Design System 預設」與本 Skill「**HKTVmall Screen Token Bind Gate**」；`search_design_system` 優先於從零繪製；必要時讀 `apply-design-system`；**未通過 Screen Token Bind Gate 不得宣告完成或進入 Final Pack 的「已交付」狀態**
 - **涉及 Lite App／Lite App DS 設計出稿、元件建立／更新、Prototype、或 DS 補洞**：遵守「Lite App Design Tokens 預設」與使用者規則 `lite-app-figma-design-tokens`；**所有 font／文字樣式必須 link Design Tokens**（未特別指明時用 `I5A9GqmJdvoskfDeCBtNsL` Typography）；禁止硬編碼字級頂替 text style
@@ -242,6 +243,27 @@ DS Component Write Gate — Checklist
 - 常見口語（同列）：**清理圖層**、**整理 Figma 檔**、歷史／舊檔 Figma **結構治理**（不改變視覺之前提，與該 skill 開頭語意一致）
 
 > 原則：此 Skill 負責「編排與統稿」，具體 UI/UX 規則與視覺決策應委派給既有技能，避免重複維護。
+
+#### Apple native function（有才載入）
+
+App 設計或評審時，畫面或流程**包含下列任一項**才 Read `~/.cursor/skills/apple-design/SKILL.md`。HKTVmall／Lite App 的自訂畫面、Design System 元件、促銷、搜尋、PDP、購物車、一般視覺評審，不讀。
+
+- Apple Pay 按鈕、標誌或結帳
+- Sign in with Apple
+- 系統權限說明、通知、Widget、Live Activity、Dynamic Island
+- 系統 alert、action sheet、share sheet、系統 picker
+- 用在系統控制項上的 SF Symbols
+- iPhone Duo 的系統列、摺位、外屏
+- 系統 chrome 上的 Liquid Glass
+- App Review 因設計或品牌被拒
+
+讀的時候只跟該功能：
+
+1. 讀 `apple-design` 的 `SKILL.md` 只為了對照表與引用格式，然後只打開該功能對應的 HIG 頁（`references/hig-lookup.md` 路由，通常 1–6 頁）。不要把整份 `references/hig/` 讀進上下文。
+2. 只檢查這個原生控制項是否符合指南。發現寫進 `uiux-review` 的 Must／Should／Nice／Keep，引用 `hig:<file> › <heading>`。Critical 對應 Must fix，High 對應 Should fix。
+3. 不採用 apple-design 自己的報告格式，也不跑它的「改版／不要像模板」模式。
+4. 品牌、密度、資訊架構、文案、token 以 Ricky 與 HKTVmall／Lite App Design System 為準。HIG 只約束那個原生控制項。若 HIG 建議會改到周圍的 DS 元件、密度或文案，只記成備註，不要照做。
+5. 檔案不存在時，在 Review／Final Pack 註明「apple-design 未安裝，這次未核對 HIG」，不要憑記憶補指南。
 
 ## 角色輸出模板（照抄填空）
 

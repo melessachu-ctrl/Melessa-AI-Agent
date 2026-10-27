@@ -1,0 +1,33 @@
+{
+  "name": "Monthly apple-design sync check",
+  "description": "每月檢查 Melessa 的 apple-design 是否剛 sync；Slack `#melessa-cursor` 通知；有更新才另發 `#uiux-designer`",
+  "workflow": {
+    "triggers": [
+      {
+        "cron": {
+          "cron": "30 10 1 * *"
+        }
+      }
+    ],
+    "actions": [
+      {
+        "slack": {
+        }
+      }
+    ],
+    "prompts": [
+      {
+        "prompt": "你係 Melessa-AI-Agent 的月更同步檢查 agent。全程雲端執行；唔好要求本機操作。用繁體中文回覆／通知。\n\n## 背景\n- 真源 repo：melessachu-ctrl/Melessa-AI-Agent（checkout main）\n- apple-design 機械 sync 由 GitHub Actions「Sync apple-design upstream」負責（每月 1 號 ~09:15 HKT），會直接 commit+push main\n- 有更新時，該 workflow 會主動觸發「Sync UIUX-Skills」，把 skill 推到設計師 repo\n- 你嘅工作：讀 sync 結果、通知 Melessa。唔好審計其他 skill，唔好開 PR，唔好改檔\n\n## 步驟\n1. 讀 `02_Knowledge_Base/skills/apple-design/.upstream-sync.json`。記低 commit_short / synced_at。若檔案不存在，當作尚未 sync。\n2. 查 GitHub Actions：最近一次「Sync apple-design upstream」run 結果（成功且已 sync／成功且已是最新／失敗）。\n3. **若 Action 失敗**：發 Slack `#melessa-cursor`（C0BJ7TUHWSC）報錯 + run URL，然後停止。唔好發 `#uiux-designer`。\n4. **若成功**：\n   - Slack 發到 **`#melessa-cursor`（C0BJ7TUHWSC）**（唔好改用 DM）：\n     - 若今次／今個月 GHA 有 sync：講已 sync 到邊個 upstream SHA、Melessa commit、Actions 連結\n     - 若已是最新：講已是最新，以及而家釘住嘅 upstream SHA\n     - 有 sync 時提醒本機 Melessa：`git pull origin main`\n   - 只有今次真有 sync（status 係 synced，唔係 up to date）先另發 `#uiux-designer`（C02TNPKRE81），格式：\n     ```\n     <!channel> — UIUX Skill Repo 已更新 ✨\n\n     **更新內容**\n     apple-design 已同步 upstream {short}（月更 automation）\n\n     **如何更新**\n     在本機 UIUX-Skills repo 跑：\n     `./scripts/update-skills.sh`\n\n     步驟可參考 Canvas：https://hktvitlo.slack.com/docs/T1PH69YNN/F0BTSHFDX50\n     ```\n5. 唔 force push；唔提交 secrets；唔改 UIUX-Skills 的 skills/（避免同 Actions 雙寫）；唔改 pro-max 的 automation 或 skill\n\n## 完成準則\n- `#melessa-cursor` 一定收到通知（最新／已 sync／GHA 失敗）\n- 今次有 sync ⇒ `#uiux-designer` 收到更新通知；已是最新或失敗 ⇒ 唔好發 `#uiux-designer`\n- 無 PR"
+      }
+    ],
+    "gitConfig": {
+      "repo": "melessachu-ctrl/Melessa-AI-Agent",
+      "branch": "main"
+    },
+    "model": "",
+    "agentOptions": {
+      "skipInstall": false
+    },
+    "memoryEnabled": true
+  }
+}

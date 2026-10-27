@@ -41,3 +41,4 @@
 | 2026-10-20 14:48–15:57 | Eats365 POS portfolio 中英文案（PDF 定稿）→ Lovable 寫入 eats365；`portfolio-designer` 固化 project_id | 約 1 小時 | 充電（文案可直寫站；不必再搜專案） | 高（portfolio 寫入路徑可重用；Publish 待做） | `portfolio-designer`, `lovable-mcp-server-guide` |
 | 2026-10-22 13:21–16:21 | Receipt Buddy 訪客示範模式（即棄 household、OCR 上限、login CTA 卡片外）；Lovable knowledge＋Melessa 固化 project_id／demo URL | 約 3 小時（跨多段） | 充電（portfolio 可無 login 試用） | 高（多租戶 demo 模式可重用；正式用戶隔離） | `lovable-mcp-server-guide` |
 | 2026-10-23 17:08–17:20 | git pull Screen Token Bind Gate；確認 UIUX-Skills sync；補 `#uiux-designer` 公告；月更 automation 通知改 `#melessa-cursor` 並對齊 `.cursor/automations` | 約 15 分鐘 | 中性（同步＋收尾） | 高（新閘門已分發；Cloud push 漏公告可補） | |
+| 2026-10-27 09:56–13:21 | 收 apple-design skill；只在 Apple 原生功能載入；獨立月更 GHA＋Automation 草稿；加入 UIUX-Skills | 約 2–3 小時（跨多段） | 中性（流程固化） | 高（HIG 不蓋過 HKTVmall／Lite App；月更可自動分發） | `uiux-design-studio`, `uiux-review`, `ui-ux-pro-max`, `ricky-design-guideline` |

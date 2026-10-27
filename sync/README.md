@@ -1,4 +1,4 @@
-# UIUX-Skills 下游同步 ＋ ui-ux-pro-max 月更
+# UIUX-Skills 下游同步 ＋ ui-ux-pro-max／apple-design 月更
 
 Melessa 為 skill 內容真源；[`uiux-skills-manifest.json`](uiux-skills-manifest.json) 定義要同步到 [UIUX-Skills](https://github.com/melessachu-ctrl/UIUX-Skills) 的清單。
 
@@ -47,6 +47,27 @@ git pull origin main
 bash sync/sync-ui-ux-pro-max-upstream.sh .
 
 # 或 GitHub → Actions → Sync ui-ux-pro-max upstream → Run workflow
+```
+
+## 月更：apple-design upstream（雲端）
+
+每月對比 [dickwu/apple-design-skill](https://github.com/dickwu/apple-design-skill) 的 `main`，與 Melessa 真源 stamp：
+
+[`02_Knowledge_Base/skills/apple-design/.upstream-sync.json`](../02_Knowledge_Base/skills/apple-design/.upstream-sync.json)
+
+與 ui-ux-pro-max **分開**一條，避免一邊失敗吃掉另一邊的通知。
+
+| 組件 | 職責 |
+| --- | --- |
+| [`sync-apple-design-upstream.sh`](sync-apple-design-upstream.sh) | 對比 SHA；落後則覆蓋 skill、用 [`apple-design-description.txt`](apple-design-description.txt) 收窄 description、寫 stamp |
+| [`.github/workflows/sync-apple-design-upstream.yml`](../.github/workflows/sync-apple-design-upstream.yml) | 每月 1 號 ~09:15 HKT cron + 手動 `workflow_dispatch`；落後則 **commit + push Melessa `main`**，並顯式觸發 Sync UIUX-Skills |
+| [`cursor-automation-apple-design-monthly.md`](cursor-automation-apple-design-monthly.md) | Cursor Automation（**Cloud**）草稿：讀 sync 結果；Slack `#melessa-cursor`；有更新才 `#uiux-designer` |
+
+`apple-design` 在 manifest 內。App 設計或評審只有碰到 Apple 原生功能才讀它；description 在每次 sync 後收窄，避免「review my design」被自動載入。
+
+```bash
+bash sync/sync-apple-design-upstream.sh .
+# 或 GitHub → Actions → Sync apple-design upstream → Run workflow
 ```
 
 ### Secrets（可選）
