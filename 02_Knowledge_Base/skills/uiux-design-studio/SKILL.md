@@ -1,6 +1,6 @@
 ---
 name: uiux-design-studio
-description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬角色」方式擔任 Design Director / 設計總監，將 UI/UX 工作拆成 intake → routing → 各角色輸出 → 最終統稿。適用於：新頁面/新功能設計、改版/視覺升級、UX 流程/使用者旅程/IA、可用性與無障礙（a11y/WCAG）、設計評審（design/code/prototype）、Figma 交付（screens/components/prototype）、Design System / token / component library 補洞或更新（建立／更新元件時強制 auto-layout、font／text style token、leaf-only layer naming）、HKTVmall Figma 畫面／flow／sheet／demo 出稿時強制 Screen Token Bind Gate（每個自建 TEXT 綁 DS text style＋文字色綁 color token，未過閘不得交件）、Figma 檔案治理／cleanup（圖層／命名／舊檔 SOP）。HKTVmall 相關 Figma 設計預設套用 HKTVmall Design System（fileKey F0tjdruLjJTfWgmTeZKBnw）。Lite App／Lite App DS 相關設計時字體必須連結 Design Tokens（fileKey I5A9GqmJdvoskfDeCBtNsL，Typography node 120:1278）。會引導載入 `hktvmall-target-customers`、`ricky-design-guideline`、`ui-ux-pro-max`、`frontend-design`，以及 Figma 相關技能（figma-file-cleanup／figma-use／figma-generate-library／figma-design-to-code／figma-mcp-server-guide／apply-design-system）。App 設計或評審包含 Apple 原生功能時才讀 `apple-design`，且只核對該功能是否符合 HIG。"
+description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬角色」方式擔任 Design Director / 設計總監，將 UI/UX 工作拆成 intake → routing → 各角色輸出 → 最終統稿。適用於：新頁面/新功能設計、改版/視覺升級、UX 流程/使用者旅程/IA、可用性與無障礙（a11y/WCAG）、設計評審（design/code/prototype）、Figma 交付（screens/components/prototype）、Design System / token / component library 補洞或更新（建立／更新元件時強制 auto-layout、font／text style token、leaf-only layer naming）、HKTVmall Figma 畫面／flow／sheet／demo 出稿時強制 Screen Token Bind Gate（每個自建 TEXT 綁 DS text style＋文字色綁 color token，未過閘不得交件）、Figma 檔案治理／cleanup（圖層／命名／舊檔 SOP）。HKTVmall 相關 Figma 設計預設套用 HKTVmall Design System（fileKey F0tjdruLjJTfWgmTeZKBnw）。Lite App／Lite App DS 相關設計時字體必須連結 Design Tokens（fileKey I5A9GqmJdvoskfDeCBtNsL，Typography node 120:1278）。Marketing Buddy／MKGB 相關設計必須用 Marketing Buddy DS（fileKey dR3ATshJMDaGHOG0Y3R6Ew；text／color styles；icon 優先 DS，否則 Material Symbols Rounded+Outline）。會引導載入 `hktvmall-target-customers`、`ricky-design-guideline`、`ui-ux-pro-max`、`frontend-design`，以及 Figma 相關技能（figma-file-cleanup／figma-use／figma-generate-library／figma-design-to-code／figma-mcp-server-guide／apply-design-system）。App 設計或評審包含 Apple 原生功能時才讀 `apple-design`，且只核對該功能是否符合 HIG。"
 ---
 
 ## 平台現實（必讀）
@@ -26,7 +26,7 @@ description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬�
 1. **目標與成功標準**：這次要提升什麼（轉換、留存、效率、信任、理解、可用性）？如何判定成功？
 2. **平台與範圍**：Web / iOS / Android / 桌面？要做哪些頁/元件/流程（列 1–5 個）？
 3. **受眾與情境**：主要使用者是誰？最常見的 1–2 個任務情境？
-4. **品牌與約束**：是否有既有品牌/Design System/元件庫/字體/色票？是否需要深色模式？（**HKTVmall 相關且未指定 DS 時，預設採用 HKTVmall Design System**，見下方「HKTVmall Design System 預設」；**Lite App／Lite App DS 相關且未指定字體來源時，字體必須連結 Design Tokens Typography**，見下方「Lite App Design Tokens 預設」）
+4. **品牌與約束**：是否有既有品牌/Design System/元件庫/字體/色票？是否需要深色模式？（**HKTVmall 相關且未指定 DS 時，預設採用 HKTVmall Design System**，見下方「HKTVmall Design System 預設」；**Lite App／Lite App DS 相關且未指定字體來源時，字體必須連結 Design Tokens Typography**，見下方「Lite App Design Tokens 預設」；**Marketing Buddy／MKGB 相關時必須用 Marketing Buddy DS**，見下方「Marketing Buddy／MKGB Design System 預設」）
 5. **技術與交付格式**：只要 Figma、還是要同時輸出工程可落地規格（token、元件 API、狀態、a11y）？
 6. **時程與風險**：截止時間？有哪些不可改的限制（法務、內容、資料來源、後端能力）？
 
@@ -71,6 +71,7 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 - **涉及前端介面實作、元件/頁面 UI code、視覺呈現落地**：必須讀 `~/.cursor/skills/frontend-design/SKILL.md`
 - **涉及 HKTVmall Figma 設計出稿／Prototype／DS 對齊**：遵守「HKTVmall Design System 預設」與本 Skill「**HKTVmall Screen Token Bind Gate**」；`search_design_system` 優先於從零繪製；必要時讀 `apply-design-system`；**未通過 Screen Token Bind Gate 不得宣告完成或進入 Final Pack 的「已交付」狀態**
 - **涉及 Lite App／Lite App DS 設計出稿、元件建立／更新、Prototype、或 DS 補洞**：遵守「Lite App Design Tokens 預設」與使用者規則 `lite-app-figma-design-tokens`；**所有 font／文字樣式必須 link Design Tokens**（未特別指明時用 `I5A9GqmJdvoskfDeCBtNsL` Typography）；禁止硬編碼字級頂替 text style
+- **涉及 Marketing Buddy／MKGB 設計出稿、元件建立／更新、Prototype、或 DS 補洞**：遵守「Marketing Buddy／MKGB Design System 預設」與使用者規則 `marketing-buddy-ds`；**text／color 必須用 Marketing Buddy DS styles**；icon 優先 DS，找不到再用 Material Symbols（Rounded + Outline），顏色仍綁 DS color token
 - **涉及 Design System 元件建立／更新／補洞（create／update／add variant／DS component）**：**必須先讀**本 Skill「DS Component Write Gate」；寫入前讀 `figma-use` + `figma-generate-library`；命名與 auto-layout 規範**必須對齊** `~/.cursor/skills/figma-file-cleanup/SKILL.md`（至少讀「命名規範」與 auto-layout／`layoutMode` 相關段落）；**未通過 Write Gate 不得宣告完成或進入 Final Pack 的「已交付」狀態**
 - **涉及 Figma 讀設計稿/從 Figma 實作**：使用 `figma-design-to-code` 的流程（必要時搭配 `figma-mcp-server-guide`）
 - **涉及 Figma 連線/授權/抓圖/節點**：必須讀 `~/.cursor/skills/figma-mcp-server-guide/SKILL.md`
@@ -171,6 +172,30 @@ HKTVmall Screen Token Bind Gate — Checklist
 
 > 跨專案規則：優先讀 `rules/lite-app-figma-design-tokens.md`；找不到再讀同名 `.mdc`（`rules/` 或 Melessa `sync/cursor-rules/`）；Cursor 已安裝則等同使用者規則 `lite-app-figma-design-tokens`。皆無則以本節為準，勿阻塞。
 
+#### Marketing Buddy／MKGB 觸發詞
+
+當任務符合下列**任一**條件時，視為 Marketing Buddy／MKGB 相關工作：
+
+- 使用者明確提及：**Marketing Buddy**、**MKGB**、**Marketing Buddy DS**、**MB DS**
+- 任務目標為 Marketing Buddy Design System Figma 檔（`fileKey`：`dR3ATshJMDaGHOG0Y3R6Ew`，或檔名含上述關鍵詞）
+- 呼叫 `uiux-design-studio` 且任務屬 Marketing Buddy／MKGB UI/UX、admin、form、settings、Prototype、或 DS 補洞／更新
+
+#### Marketing Buddy／MKGB Design System 預設（Figma 出稿必遵守）
+
+當任務符合上方「Marketing Buddy／MKGB 觸發詞」且涉及 **Figma 設計出稿、Prototype、元件規格、或 DS 對齊** 時：
+
+1. **必須用 Marketing Buddy DS**（未指定其他 DS 時）：
+   - 名稱：Marketing Buddy - Design System
+   - URL：https://www.figma.com/design/dR3ATshJMDaGHOG0Y3R6Ew/Marketing-Buddy---Design-System
+   - `fileKey`：`dR3ATshJMDaGHOG0Y3R6Ew`
+2. **Text**：一律綁 DS **text styles**；禁止裸 `fontSize`／系統字頂替。
+3. **Color**：一律綁 DS **color styles／tokens**（含文字色、icon 色）；禁止未對應 token 的手填 hex。
+4. **Icons**：優先 DS 內 icon；找不到 → [Material Symbols（Iconify）](https://icon-sets.iconify.design/material-symbols/)，優先 **Rounded** + **Outline**；顏色仍用 DS color tokens。
+5. **Routing 後、角色產出前**：遵守使用者規則 `marketing-buddy-ds`；Figma 寫入前讀 `figma-use`；多區塊對齊讀 `apply-design-system`；建／改 DS 元件另過「DS Component Write Gate」。
+6. **Director Final Pack**：附錄須含 **DS 採用聲明**（名稱、fileKey、主要 text style／color token 或盤點阻塞）。
+
+> 跨專案規則：優先讀 `rules/marketing-buddy-ds.md`；找不到再讀同名 `.mdc`（`rules/` 或 Melessa `sync/cursor-rules/`）；Cursor 已安裝則等同使用者規則 `marketing-buddy-ds`。皆無則以本節為準，勿阻塞。
+
 #### DS Component Write Gate（建立／更新 DS 元件 — 強制）
 
 當任務符合下列**任一**條件時，**每一次** `use_figma` 寫入元件（含新建 component／component set、改 variant、改內部結構）前後都必須遵守本閘門；**禁止**只畫視覺外觀就交件：
@@ -184,7 +209,7 @@ HKTVmall Screen Token Bind Gate — Checklist
 1. `figma-use`（Plugin API／`use_figma` 語法）
 2. `figma-generate-library`（元件須 auto-layout + variable／style 綁定）
 3. `figma-file-cleanup` 的 **命名規範（Leaf-only）** 與 auto-layout／`layoutMode` 治理預期（不必跑完整 Phase A→D，但命名與 layout 規則**必須**套用）
-4. 目標專案之 token 來源：HKTVmall → HKTVmall DS；Lite App → Design Tokens Typography（見上）；其他 → 使用者指定或檔內既有 Text Style／Variables
+4. 目標專案之 token 來源：HKTVmall → HKTVmall DS；Lite App → Design Tokens Typography（見上）；Marketing Buddy／MKGB → Marketing Buddy DS text／color styles（見上）；其他 → 使用者指定或檔內既有 Text Style／Variables
 
 ##### Gate A — Auto-layout（必做）
 
@@ -199,6 +224,7 @@ HKTVmall Screen Token Bind Gate — Checklist
 - 套用順序：`search_design_system`（或目標 DS／Design Tokens 檔）盤點既有 text style → `importStyleByKeyAsync`（若為 library）→ `setTextStyleIdAsync`。換 style 若需保留顏色，先 snapshot `fills` 再還原。
 - **Lite App／Lite App DS**：強制用 Design Tokens（`I5A9GqmJdvoskfDeCBtNsL`）之 `NS {size}/…` styles（見「Lite App Design Tokens 預設」）。
 - **HKTVmall／其他 DS**：優先用該 DS 已發佈之 Text Style／typography token；缺口列「待新增／待盤點」，**不得**默默硬編碼字級頂替。
+- **Marketing Buddy／MKGB**：強制用 Marketing Buddy DS text styles 與 color styles（見「Marketing Buddy／MKGB Design System 預設」）。
 - 寫入後驗證：目標元件內所有 TEXT 的 `textStyleId` 非空（或已綁定等效 typography token）；否則視為未完成。
 
 ##### Gate C — Layer naming（必做；對齊 `figma-file-cleanup`）
@@ -352,6 +378,7 @@ App 設計或評審時，畫面或流程**包含下列任一項**才 Read `~/.cu
 - **DS 採用聲明**（HKTVmall Figma 相關時必有）：HKTVmall Design System、`fileKey`、主要引用元件／token 或盤點阻塞
 - **HKTVmall Screen Token Bind Gate**（HKTVmall Figma 畫面／flow／sheet／demo 出稿時必有）：Pass／Pass with exceptions／Blocked；主要 text style 與 color token 名稱；例外 node id（若有）
 - **Typography／DS 採用聲明**（Lite App／Lite App DS 相關時必有）：Design Tokens（Typography）、`fileKey` `I5A9GqmJdvoskfDeCBtNsL`、主要 text style 名稱或盤點阻塞
+- **DS 採用聲明**（Marketing Buddy／MKGB 相關時必有）：Marketing Buddy DS、`fileKey` `dR3ATshJMDaGHOG0Y3R6Ew`、主要 text style／color token 或盤點阻塞；icon 來源（DS／Material Symbols）註明
 - **DS Component Write Gate**（有建立／更新 DS 元件時必有）：Checklist 勾選結果＋主要 text style 名稱＋auto-layout 例外（若有）
 
 ## 跨專案試跑（Pilot）與迭代方式

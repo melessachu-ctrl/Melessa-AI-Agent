@@ -23,14 +23,16 @@
 
 ## 未完成甚麼
 
-- Cursor Automations UI 內若仍設 DM，需手動改 Send to Slack → `#melessa-cursor`（本機草稿已對齊；未代改既有 automation）
 - UIUX Design Agent PoC 遠端分支 `cursor/uiux-design-agent-poc-8587` 未審
+
+## 已確認（同日稍後）
+
+- Cursor Automations UI：**Send to Slack → `#melessa-cursor`**（Melessa 確認已設好）
 
 ## 下次由哪裡開始
 
 - HKTVmall Figma 出稿 → 跟 `uiux-design-studio` Screen Token Bind Gate checklist
 - 設計師本機：`./scripts/update-skills.sh`
-- 月更 automation：確認 Automations editor 的 Slack 目標已是 `#melessa-cursor`
 
 ## 今日學到
 

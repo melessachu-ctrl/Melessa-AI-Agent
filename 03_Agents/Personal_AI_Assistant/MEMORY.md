@@ -66,6 +66,7 @@
 - **2026-09-04｜UIUX-Skills Slack 公告**：finish session 若 skills 已 sync 到 UIUX-Skills（或 UIUX-Skills 有更新），流程完成後**必須**自動發 `#uiux-designer` 公告（結構見 HEARTBEAT 7.5／參考 https://hktvitlo.slack.com/archives/C02TNPKRE81/p1788494400986859）；改「可選」為「條件式必做」。
 - **2026-09-01｜UIUX Design Agent（HKTVmall）**：PM 查 Figma design 痛點 → 規劃 Hermes 同級 **read-only lookup** agent（唔做 design 決策）。實施手冊：`01_Action_Center/outputs/docs/UIUX_Design_Agent_Implementation_8_Steps.md`。Slack：`#agent-uiux-design`／`@uiux-design-agent`。PoC 路線：Melessa repo（8 件套 + `design-index/`）→ 正式 `HKTV-UIUX-Design-Agent`；skills 真源留 Melessa／UIUX-Skills。
 - **2026-09-15｜Shopline Admin（Gym Master Nutrition）**：`hkgymmn` 後台 task → 讀 **`shopline-admin`** skill；Cloud Agent Secret **`SHOPLINE_COOKIES`**（Runtime Secret，格式 `_shopline_sso_session_id=...`）；Playwright 登入；匯出訂單報表預設 **訂單日期 + 日期區間**（`duringDates`）。個人 skill，不進 UIUX-Skills。報表寄 Admin email；Agent 無 Yahoo 授權。
+- **2026-10-27｜Marketing Buddy／MKGB DS**：做 Marketing Buddy／MKGB 設計必須用 **Marketing Buddy DS**（`fileKey` `dR3ATshJMDaGHOG0Y3R6Ew`）；text／color 用 DS styles；icon 先 DS，冇就 Material Symbols（Rounded + Outline），色仍用 DS。規則：`marketing-buddy-ds`（`sync/cursor-rules/` → UIUX-Skills）；`uiux-design-studio` 已接閘門。Styles 可 publish 跨 file；Variables 空唔阻 publish。
 
 ## 踩過的坑
 
