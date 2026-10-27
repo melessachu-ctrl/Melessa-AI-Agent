@@ -26,7 +26,10 @@
 
 ## 分發
 
-- （finish session 填）Melessa push／Actions Sync UIUX-Skills／Slack 公告
+- Melessa push：`842b7b5`
+- Actions：[Sync UIUX-Skills](https://github.com/melessachu-ctrl/Melessa-AI-Agent/actions/runs/40480485519) success
+- UIUX-Skills：`445221a` `chore(sync): from Melessa @ 842b7b5`（含 `rules/marketing-buddy-ds.mdc`／`.md`）
+- Slack：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1793093126428529
 
 ## 下次由哪裡開始
 
