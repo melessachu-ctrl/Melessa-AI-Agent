@@ -25,8 +25,14 @@
 
 ## 未完成甚麼
 
-- 本 session 的 Melessa push 與下游 Sync UIUX-Skills、`#uiux-designer` 公告見下方「分發」（finish session 時補）
 - Automations UI 若尚未按 Save，月更通知不會跑。GHA 本身不依賴這條 Automation
+
+## 分發
+
+- Melessa push：`750b414`（skill commit `e350ea0`，其後 merge `origin/main` 的 timesheet skill）
+- Actions：[Sync UIUX-Skills](https://github.com/melessachu-ctrl/Melessa-AI-Agent/actions/runs/40455148543) success
+- UIUX-Skills：`d222652` `chore(sync): from Melessa @ 750b414`（`skills/apple-design/SKILL.md` 已在下游）
+- Slack：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1793078738351759
 
 ## 下次由哪裡開始
 
