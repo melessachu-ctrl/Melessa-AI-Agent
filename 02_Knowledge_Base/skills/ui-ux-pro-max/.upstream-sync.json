@@ -1,9 +1,9 @@
 {
   "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
   "source_path": ".claude/skills/ui-ux-pro-max",
-  "commit": "15cc30a393ecb34cd217d21bc4ffdb1f5414b0ca",
-  "commit_short": "15cc30a",
-  "commit_date": "2026-10-08T02:08:49Z",
-  "commit_message": "docs: add Vibe Rooster before/after example (#516)",
-  "synced_at": "2026-10-08T04:38:52Z"
+  "commit": "3a13158ff1f32156cbe144108de48eda2ecaed9a",
+  "commit_short": "3a13158",
+  "commit_date": "2026-11-01T07:04:28Z",
+  "commit_message": "feat(nuxt-ui): add guidance for v4.12 (#551)",
+  "synced_at": "2026-11-01T07:06:59Z"
 }
