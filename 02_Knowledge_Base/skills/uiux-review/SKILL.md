@@ -21,12 +21,14 @@ description: "Standardized UI/UX review SOP for finished designs (screenshots, F
 
 ## 必載技能（執行前先讀）
 
-1. **必讀**：`~/.cursor/skills/ui-ux-pro-max/SKILL.md`（技能入口／優先級表）＋ `~/.cursor/skills/ui-ux-pro-max/references/quick-reference.md` —— Heuristic Pass 直接對齊 Quick Reference **§1–§10 全文**（已不在 `SKILL.md` 內），本 skill 不複製條目
-2. 評審對象是 **Figma URL／Figma 檔**：加讀 `~/.cursor/skills/figma-mcp-server-guide/SKILL.md`
-3. 評審對象是 **前端 code**：加讀 `~/.cursor/skills/frontend-design/SKILL.md`
-4. **僅當**評審對象包含 Apple 原生功能時，才讀 `~/.cursor/skills/apple-design/SKILL.md`，並只打開該功能對應的 HIG 頁。沒有這些功能就不要讀。觸發清單、引用格式與優先順序同 `uiux-design-studio` 的「Apple native function」：Apple Pay、Sign in with Apple、系統權限說明、通知、Widget、Live Activity、Dynamic Island、系統 alert／action sheet／share sheet／系統 picker、用在系統控制項上的 SF Symbols、iPhone Duo 系統列／摺位／外屏、系統 chrome 上的 Liquid Glass、App Review 因設計或品牌被拒。發現仍用本 SOP 的 Must／Should／Nice／Keep，引用 `hig:<file> › <heading>`（Critical → Must fix，High → Should fix）。不採用 apple-design 的報告格式，也不跑它的改版模式。品牌、密度、文案、token 以 Ricky 與 Design System 為準；HIG 只約束該原生控制項。
+1. **必讀**：`../ui-ux-pro-max/SKILL.md`（技能入口／優先級表）＋ `../ui-ux-pro-max/references/quick-reference.md` —— Heuristic Pass 直接對齊 Quick Reference **§1–§10 全文**（已不在 `SKILL.md` 內），本 skill 不複製條目
+2. 評審對象是 **Figma URL／Figma 檔**：加讀 `../figma-mcp-server-guide/SKILL.md`
+3. 評審對象是 **前端 code**：加讀 `../frontend-design/SKILL.md`
+4. **僅當**評審對象包含 Apple 原生功能時，才讀 `../apple-design/SKILL.md`，並只打開該功能對應的 HIG 頁。沒有這些功能就不要讀。觸發清單、引用格式與優先順序同 `uiux-design-studio` 的「Apple native function」：Apple Pay、Sign in with Apple、系統權限說明、通知、Widget、Live Activity、Dynamic Island、系統 alert／action sheet／share sheet／系統 picker、用在系統控制項上的 SF Symbols、iPhone Duo 系統列／摺位／外屏、系統 chrome 上的 Liquid Glass、App Review 因設計或品牌被拒。發現仍用本 SOP 的 Must／Should／Nice／Keep，引用 `hig:<file> › <heading>`（Critical → Must fix，High → Should fix）。不採用 apple-design 的報告格式，也不跑它的改版模式。品牌、密度、文案、token 以 Ricky 與 Design System 為準；HIG 只約束該原生控制項。
 
 > 若沒讀上述技能就開始評審，視為違規 SOP。第 4 點只有命中 Apple 原生功能時才算必讀。
+
+> 評審對象是 HKTVmall 且畫面上有金額時，先讀 `rules/hktvmall-ui-price.md`；找不到再讀同名 `.mdc`（`rules/` 或 Melessa `sync/cursor-rules/`）。整數沒有一位小數（如 `$289`）列為 Must fix。正確例子：`$289.0`、`$68.0`、`$35.8`、`$1,530.0`。
 
 ## 預設 Reviewer Lens（評審視角）
 

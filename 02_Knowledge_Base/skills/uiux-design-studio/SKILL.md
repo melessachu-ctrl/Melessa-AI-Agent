@@ -63,23 +63,23 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 
 ### 何時一定要載入既有技能
 
-- **涉及 HKTVmall 相關 UI/UX 工作**（見下方「HKTVmall 觸發詞」）：**必須先讀** `~/.cursor/skills/hktvmall-target-customers/SKILL.md`（目標客群 segments A–D、零售 UX 心智模型、推薦可解釋性、KPI 取捨）；Research / Designer / Review 產出須標注對應 **segment（A/B/C/D）** 與所優化的 **KPI**（至少 1 個）；推薦模組須提供 zh-HK 可解釋理由與 fallback
-- **涉及 Figma 設計出稿、Prototype 製作、或設計評審（design / prototype / Figma / live URL）**：**必須先讀** `~/.cursor/skills/ricky-design-guideline/SKILL.md`（Ricky Design Guideline / HKTVmall 王語錄設計原則）；各虛擬角色產出須對照其 R1–R9 原則與 Ricky Pass 檢查清單；Review 角色 Findings 須標注 `ricky:R{n}`
-- **涉及 UI/UX 評審（design / code / prototype / Figma / live URL；含「評審」「設計評審」「critique」「heuristic evaluation」「a11y review」「易用性檢查」等語意）**：**必須先讀** `~/.cursor/skills/uiux-review/SKILL.md`，再依其要求載入 `ui-ux-pro-max`（Heuristic Pass 對齊 `~/.cursor/skills/ui-ux-pro-max/references/quick-reference.md` §1–§10）；UIUX Review 角色之輸出**必須採用** `uiux-review` 的 7-step SOP 與 Findings 模板（Must/Should/Nice/Keep + AC），並使用該 skill 的預設 Reviewer Lens 或當次覆寫的 Lens；**同時執行** `ricky-design-guideline` 的 Ricky Pass
-- **涉及介面質感/可用性/a11y/互動規範**：必須讀 `~/.cursor/skills/ui-ux-pro-max/SKILL.md`；Heuristic／a11y 全文清單讀 `~/.cursor/skills/ui-ux-pro-max/references/quick-reference.md`
-- **App 設計或評審包含 Apple 原生功能時才讀** `~/.cursor/skills/apple-design/SKILL.md`（見下方「Apple native function」）。沒有這些功能就不要讀。只核對該原生控制項；品牌、密度、文案、token 仍以 Ricky 與 HKTVmall／Lite App Design System 為準
-- **涉及前端介面實作、元件/頁面 UI code、視覺呈現落地**：必須讀 `~/.cursor/skills/frontend-design/SKILL.md`
+- **涉及 HKTVmall 相關 UI/UX 工作**（見下方「HKTVmall 觸發詞」）：**必須先讀** `../hktvmall-target-customers/SKILL.md`（目標客群 segments A–D、零售 UX 心智模型、推薦可解釋性、KPI 取捨）；Research / Designer / Review 產出須標注對應 **segment（A/B/C/D）** 與所優化的 **KPI**（至少 1 個）；推薦模組須提供 zh-HK 可解釋理由與 fallback
+- **涉及 Figma 設計出稿、Prototype 製作、或設計評審（design / prototype / Figma / live URL）**：**必須先讀** `../ricky-design-guideline/SKILL.md`（Ricky Design Guideline / HKTVmall 王語錄設計原則）；各虛擬角色產出須對照其 R1–R9 原則與 Ricky Pass 檢查清單；Review 角色 Findings 須標注 `ricky:R{n}`
+- **涉及 UI/UX 評審（design / code / prototype / Figma / live URL；含「評審」「設計評審」「critique」「heuristic evaluation」「a11y review」「易用性檢查」等語意）**：**必須先讀** `../uiux-review/SKILL.md`，再依其要求載入 `ui-ux-pro-max`（Heuristic Pass 對齊 `../ui-ux-pro-max/references/quick-reference.md` §1–§10）；UIUX Review 角色之輸出**必須採用** `uiux-review` 的 7-step SOP 與 Findings 模板（Must/Should/Nice/Keep + AC），並使用該 skill 的預設 Reviewer Lens 或當次覆寫的 Lens；**同時執行** `ricky-design-guideline` 的 Ricky Pass
+- **涉及介面質感/可用性/a11y/互動規範**：必須讀 `../ui-ux-pro-max/SKILL.md`；Heuristic／a11y 全文清單讀 `../ui-ux-pro-max/references/quick-reference.md`
+- **App 設計或評審包含 Apple 原生功能時才讀** `../apple-design/SKILL.md`（見下方「Apple native function」）。沒有這些功能就不要讀。只核對該原生控制項；品牌、密度、文案、token 仍以 Ricky 與 HKTVmall／Lite App Design System 為準
+- **涉及前端介面實作、元件/頁面 UI code、視覺呈現落地**：必須讀 `../frontend-design/SKILL.md`
 - **涉及 HKTVmall Figma 設計出稿／Prototype／DS 對齊**：遵守「HKTVmall Design System 預設」與本 Skill「**HKTVmall Screen Token Bind Gate**」；`search_design_system` 優先於從零繪製；必要時讀 `apply-design-system`；**未通過 Screen Token Bind Gate 不得宣告完成或進入 Final Pack 的「已交付」狀態**
 - **涉及 Lite App／Lite App DS 設計出稿、元件建立／更新、Prototype、或 DS 補洞**：遵守「Lite App Design Tokens 預設」與使用者規則 `lite-app-figma-design-tokens`；**所有 font／文字樣式必須 link Design Tokens**（未特別指明時用 `I5A9GqmJdvoskfDeCBtNsL` Typography）；禁止硬編碼字級頂替 text style
 - **涉及 Marketing Buddy／MKGB 設計出稿、元件建立／更新、Prototype、或 DS 補洞**：遵守「Marketing Buddy／MKGB Design System 預設」與使用者規則 `marketing-buddy-ds`；**text／color 必須用 Marketing Buddy DS styles**；icon 優先 DS，找不到再用 Material Symbols（Rounded + Outline），顏色仍綁 DS color token
-- **涉及 Design System 元件建立／更新／補洞（create／update／add variant／DS component）**：**必須先讀**本 Skill「DS Component Write Gate」；寫入前讀 `figma-use` + `figma-generate-library`；命名與 auto-layout 規範**必須對齊** `~/.cursor/skills/figma-file-cleanup/SKILL.md`（至少讀「命名規範」與 auto-layout／`layoutMode` 相關段落）；**未通過 Write Gate 不得宣告完成或進入 Final Pack 的「已交付」狀態**
+- **涉及 Design System 元件建立／更新／補洞（create／update／add variant／DS component）**：**必須先讀**本 Skill「DS Component Write Gate」；寫入前讀 `figma-use` + `figma-generate-library`；命名與 auto-layout 規範**必須對齊** `../figma-file-cleanup/SKILL.md`（至少讀「命名規範」與 auto-layout／`layoutMode` 相關段落）；**未通過 Write Gate 不得宣告完成或進入 Final Pack 的「已交付」狀態**
 - **涉及 Figma 讀設計稿/從 Figma 實作**：使用 `figma-design-to-code` 的流程（必要時搭配 `figma-mcp-server-guide`）
-- **涉及 Figma 連線/授權/抓圖/節點**：必須讀 `~/.cursor/skills/figma-mcp-server-guide/SKILL.md`
-- **涉及 Figma 檔案治理／cleanup（與 `figma-file-cleanup` 對齊之觸發）**：**必須先讀** `~/.cursor/skills/figma-file-cleanup/SKILL.md`，再依其中 Phase A→D 與 Skills 聯動表鏈式載入 `figma-mcp-server-guide`、`figma-use`、`figma-generate-design` 等；虛擬角色固定為 **Director + DS Owner + Review（必要時 + Designer）**，產出須覆蓋該 skill 規定之交付物（變更清單、遷移映射、驗證、阻塞）。
+- **涉及 Figma 連線/授權/抓圖/節點**：必須讀 `../figma-mcp-server-guide/SKILL.md`
+- **涉及 Figma 檔案治理／cleanup（與 `figma-file-cleanup` 對齊之觸發）**：**必須先讀** `../figma-file-cleanup/SKILL.md`，再依其中 Phase A→D 與 Skills 聯動表鏈式載入 `figma-mcp-server-guide`、`figma-use`、`figma-generate-design` 等；虛擬角色固定為 **Director + DS Owner + Review（必要時 + Designer）**，產出須覆蓋該 skill 規定之交付物（變更清單、遷移映射、驗證、阻塞）。
 
 #### `hktvmall-target-customers` 觸發詞（HKTVmall 相關工作）
 
-當任務符合下列**任一**條件時，視為 HKTVmall 相關工作；在 Routing 後、角色產出前 **Read** `~/.cursor/skills/hktvmall-target-customers/SKILL.md`：
+當任務符合下列**任一**條件時，視為 HKTVmall 相關工作；在 Routing 後、角色產出前 **Read** `../hktvmall-target-customers/SKILL.md`：
 
 - 使用者明確提及：**HKTVmall**、**hktv**、**香港電視購物**
 - 任務內容屬 HKTVmall App／網站之 UI/UX：設計、改版、評審、Prototype、目標客群、segments、搜尋／推薦／結帳／促銷／購物車等零售流程
@@ -87,6 +87,12 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
 - 已命中 `ricky-design-guideline` 載入條件（Figma 出稿／Prototype／設計評審）
 
 > HKTVmall 相關工作時，`hktvmall-target-customers` 與 `ricky-design-guideline` 通常**同時載入**：前者約束客群／KPI／零售 UX 取捨，後者約束設計原則（R1–R9）。
+
+#### HKTVmall 價錢格式（有 price 必遵守）
+
+畫面、文案或標註出現任何金額時（售價、刪價錢／原價、85 折 bubble、promo price、unit price）：
+
+> 跨專案規則：優先讀 `rules/hktvmall-ui-price.md`；找不到再讀同名 `.mdc`（`rules/` 或 Melessa `sync/cursor-rules/`）。凡有 price，一律一位小數。正確例子：`$289.0`、`$68.0`、`$35.8`、`$1,530.0`。Cursor 已安裝則等同使用者規則 `hktvmall-ui-price`。
 
 #### HKTVmall Design System 預設（Figma 出稿必遵守）
 
@@ -263,7 +269,7 @@ DS Component Write Gate — Checklist
 
 #### `figma-file-cleanup` 觸發詞（與該 skill 之 `description` 對齊）
 
-當使用者提到下列任一語意時，視為已命中本條、**Routing 必取「Figma 檔案治理」列**，並在產出前 **Read** `~/.cursor/skills/figma-file-cleanup/SKILL.md`：
+當使用者提到下列任一語意時，視為已命中本條、**Routing 必取「Figma 檔案治理」列**，並在產出前 **Read** `../figma-file-cleanup/SKILL.md`：
 
 - 與該 skill `description` 對齊之關鍵詞：`Figma file cleanup`、`整理 Figma`、`Figma 重構`、`refactor Figma`、`命名規範`、`Design System 對齊`、`library-first`、`hybrid`、`local-fallback`、`token policy`、`strict-no-visual-change`、`layoutMode=NONE`、依 SOP **批次治理舊檔**
 - 常見口語（同列）：**清理圖層**、**整理 Figma 檔**、歷史／舊檔 Figma **結構治理**（不改變視覺之前提，與該 skill 開頭語意一致）
@@ -272,7 +278,7 @@ DS Component Write Gate — Checklist
 
 #### Apple native function（有才載入）
 
-App 設計或評審時，畫面或流程**包含下列任一項**才 Read `~/.cursor/skills/apple-design/SKILL.md`。HKTVmall／Lite App 的自訂畫面、Design System 元件、促銷、搜尋、PDP、購物車、一般視覺評審，不讀。
+App 設計或評審時，畫面或流程**包含下列任一項**才 Read `../apple-design/SKILL.md`。HKTVmall／Lite App 的自訂畫面、Design System 元件、促銷、搜尋、PDP、購物車、一般視覺評審，不讀。
 
 - Apple Pay 按鈕、標誌或結帳
 - Sign in with Apple
@@ -341,7 +347,7 @@ App 設計或評審時，畫面或流程**包含下列任一項**才 Read `~/.cu
 
 ### 6) UIUX Review（Critic / QA）
 
-> 本表僅為摘要欄位；**實際執行必須依** `~/.cursor/skills/uiux-review/SKILL.md` 的 **7-step SOP**（Intake → Reviewer Lens → Heuristic Pass → Walkthrough → Strengths → Findings → Anti-nitpick + AC）與 Findings 模板。下列欄位是 Final Pack 中要呈現的最低集合：
+> 本表僅為摘要欄位；**實際執行必須依** `../uiux-review/SKILL.md` 的 **7-step SOP**（Intake → Reviewer Lens → Heuristic Pass → Walkthrough → Strengths → Findings → Anti-nitpick + AC）與 Findings 模板。下列欄位是 Final Pack 中要呈現的最低集合：
 
 - **Reviewer Lens**：當次採用的代表使用者一段話（預設或覆寫）
 - **Must fix**：對 Lens 造成阻塞/a11y 違規/誤操作風險（含具體可落地方案 + `pro-max:<rule-key>` 對應）

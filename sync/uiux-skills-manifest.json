@@ -20,6 +20,7 @@
   "rules": [
     "hktvmall-figma-design-system.mdc",
     "lite-app-figma-design-tokens.mdc",
-    "marketing-buddy-ds.mdc"
+    "marketing-buddy-ds.mdc",
+    "hktvmall-ui-price.mdc"
   ]
 }

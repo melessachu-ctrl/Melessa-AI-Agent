@@ -102,7 +102,20 @@ GitHub → Actions → **Sync UIUX-Skills** → Run workflow。
 
 | 下游檔 | 用途 |
 | --- | --- |
-| `*.mdc` | Cursor 安裝用（`cp rules/*.mdc ~/.cursor/rules/`） |
-| `*.md` | 由對應 `.mdc` **同內容產生**，供 ChatGPT／Codex／Claude／Spaces 等只接受 `.md` 的環境 |
+| `*.mdc` | Cursor 用。同步時再鏈到 `.cursor/rules/<name>.mdc`，開 UIUX-Skills 即自動套用 |
+| `*.md` | 由對應 `.mdc` **同內容產生**，供 Claude Code 的 `.claude/rules/` 使用 |
 
 不必在 Melessa 另存一份 `.md`；腳本會在同步時自動寫出。之後改 `.mdc` 再 push，下游雙軌會一起更新，無需在 UIUX-Skills 再手工 `export-rules-md.sh`。
+
+開著 **別的專案** 用 Cursor 時，這些 rule 不會跟著走，仍要 `cp rules/*.mdc ~/.cursor/rules/`。`.cursor/rules/` 裡人手維護的檔（例如 `uiux-design-studio.mdc`）不會被這次連結覆蓋。
+
+## Claude Code 入口（`.claude/`）
+
+`sync-uiux-skills.sh` 在寫完 `skills/` 與 `rules/` 之後，會在 UIUX-Skills **重建**相對 symlink（每次清掉再鏈，避免 manifest 刪除後留下舊連結）：
+
+| 下游 symlink | 指向 |
+| --- | --- |
+| `.claude/skills/<name>` | `../../skills/<name>`（該目錄含 `SKILL.md`） |
+| `.claude/rules/<name>.md` | `../../rules/<name>.md`（只鏈 `.md`，不鏈 `.mdc`） |
+
+Claude Code 在 UIUX-Skills **根目錄**開 session 時會自動載入：rules 每次都進上下文；skill 先載入 name 與 description，用到才讀正文。不要在 UIUX-Skills 手改 `.claude/`，下次 sync 會覆蓋。`scripts/install-skills.sh` 仍只服務 Cursor 的 `~/.cursor/skills`。

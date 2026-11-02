@@ -27,9 +27,11 @@
 
 ---
 
-## 給 Cursor 使用者
+## 給 Cursor／其他 agent
 
-同一規則亦寫在：
+同一規則的共享真源是 `sync/cursor-rules/hktvmall-ui-price.mdc`。本 repo 的 `.cursor/rules/hktvmall-ui-price.mdc` 指向這份檔，clone 後在 Melessa 工作區自動生效。
 
-- `.cursor/rules/hktvmall-ui-price.mdc`（本 repo，clone 後自動生效）
-- Cursor **User Rules**（個人帳號，所有專案生效）
+下游 [UIUX-Skills](https://github.com/melessachu-ctrl/UIUX-Skills) 同步後會有：
+
+- `rules/hktvmall-ui-price.mdc`（Cursor 安裝用）
+- `rules/hktvmall-ui-price.md`（Claude／其他只接受 `.md` 的環境）
