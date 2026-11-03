@@ -40,9 +40,14 @@ HKTVmall 高密度促銷、Ricky、價錢一位小數優先。不套 SaaS 的拆
 - 奶粉品牌的 `.agents/product-marketing.md` 尚未寫。要在新對話說「幫我寫 product marketing context」
 - 設計師要在 UIUX-Skills 跑 `./scripts/update-skills.sh` 才會連上這 4 個
 
+## 分發
+
+- Melessa：`040be4e` 已在 `main`
+- UIUX-Skills：[chore(sync): from Melessa @ 040be4e](https://github.com/melessachu-ctrl/UIUX-Skills/commit/57ff7c5276d81c0c7706a3a03ac228c20fa65a94)
+- Slack：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1793679321047509
+
 ## 下次由哪裡開始
 
-- 確認 Actions「Sync UIUX-Skills」成功，以及 `#uiux-designer` 公告已發
 - 新對話先為奶粉品牌寫 product marketing context
 
 ## 今日學到
