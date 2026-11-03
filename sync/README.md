@@ -1,4 +1,4 @@
-# UIUX-Skills 下游同步 ＋ ui-ux-pro-max／apple-design 月更
+# UIUX-Skills 下游同步 ＋ ui-ux-pro-max／apple-design／marketingskills 月更
 
 Melessa 為 skill 內容真源；[`uiux-skills-manifest.json`](uiux-skills-manifest.json) 定義要同步到 [UIUX-Skills](https://github.com/melessachu-ctrl/UIUX-Skills) 的清單。
 
@@ -70,6 +70,25 @@ bash sync/sync-ui-ux-pro-max-upstream.sh .
 ```bash
 bash sync/sync-apple-design-upstream.sh .
 # 或 GitHub → Actions → Sync apple-design upstream → Run workflow
+```
+
+## 月更：marketingskills upstream（雲端）
+
+每月對比 [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) 的 `main`。12 個 skill 共用同一個上游 commit，stamp 在各自的 `.upstream-sync.json`。
+
+| 組件 | 職責 |
+| --- | --- |
+| [`sync-marketingskills-upstream.sh`](sync-marketingskills-upstream.sh) | 對比 SHA；任一 stamp 落後或彼此不一致就覆蓋 12 個 skill 並寫 stamp |
+| [`.github/workflows/sync-marketingskills-upstream.yml`](../.github/workflows/sync-marketingskills-upstream.yml) | 每月 1 號 ~09:30 HKT cron + 手動 `workflow_dispatch`；落後則 **commit + push Melessa `main`**，並顯式觸發 Sync UIUX-Skills |
+| [`cursor-automation-marketingskills-monthly.md`](cursor-automation-marketingskills-monthly.md) | Cursor Automation（**Cloud**）草稿：讀 sync 結果；對 `uiux-design-studio`／`uiux-review`；要改則開 draft PR；Slack `#melessa-cursor`；4 個正文有變才 `#uiux-designer` |
+
+覆蓋範圍：`product-marketing`、`cro`、`copywriting`、`copy-editing`、`offers`、`emails`、`sms`、`ads`、`ad-creative`、`seo-audit`、`social`、`influencer-marketing`。上游若刪走其中一個 `SKILL.md`，腳本失敗並保留本機檔。
+
+設計師只收到 manifest 內的 `cro`、`offers`、`copywriting`、`copy-editing`。其餘 8 個留在 Melessa。`uiux-design-studio` 與 `uiux-review` 的流程文字不會被 GHA 覆蓋；上游改了檢查名稱時，由上面的 Cursor Automation 對這兩份，要改就開 draft PR。
+
+```bash
+bash sync/sync-marketingskills-upstream.sh .
+# 或 GitHub → Actions → Sync marketingskills upstream → Run workflow
 ```
 
 ### Secrets（可選）

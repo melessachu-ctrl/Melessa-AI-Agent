@@ -1,0 +1,138 @@
+name: Sync marketingskills upstream
+
+# Monthly check against coreyhaines31/marketingskills.
+# If Melessa is behind, overwrite the 12 vendored skills, commit + push main.
+# Then dispatch Sync UIUX-Skills. Only cro, offers, copywriting, and copy-editing
+# are in the manifest; the other eight stay in Melessa.
+# GITHUB_TOKEN pushes do not re-trigger workflows, so the dispatch is required.
+on:
+  schedule:
+    # 09:30 HKT on the 1st of each month ≈ 01:30 UTC.
+    # 15 minutes after apple-design so the three jobs do not push main together.
+    - cron: "30 1 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: sync-marketingskills-upstream
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    outputs:
+      status: ${{ steps.run.outputs.status }}
+      upstream_short: ${{ steps.run.outputs.upstream_short }}
+      upstream_sha: ${{ steps.run.outputs.upstream_sha }}
+      commit_sha: ${{ steps.commit.outputs.commit_sha }}
+    steps:
+      - name: Checkout Melessa
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install -y rsync
+
+      - name: Compare and sync from upstream
+        id: run
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set +e
+          bash sync/sync-marketingskills-upstream.sh .
+          EC=$?
+          set -e
+
+          if [[ ! -f sync/outputs/marketingskills-upstream.env ]]; then
+            echo "Missing sync output env file" >&2
+            exit 1
+          fi
+          # shellcheck disable=SC1091
+          source sync/outputs/marketingskills-upstream.env
+
+          {
+            echo "status=${STATUS}"
+            echo "upstream_sha=${UPSTREAM_SHA}"
+            echo "upstream_short=${UPSTREAM_SHORT}"
+            echo "upstream_date=${UPSTREAM_DATE}"
+            echo "local_commit=${LOCAL_COMMIT}"
+            echo "script_exit=${EC}"
+          } >> "$GITHUB_OUTPUT"
+
+          case "$EC" in
+            0)
+              echo "Already up to date at ${UPSTREAM_SHORT}."
+              ;;
+            10)
+              echo "Synced to ${UPSTREAM_SHORT}; ready to commit."
+              ;;
+            *)
+              echo "Sync script failed with exit ${EC}" >&2
+              exit "$EC"
+              ;;
+          esac
+
+      - name: Commit and push if synced
+        id: commit
+        if: steps.run.outputs.status == 'synced'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add -A -- \
+            02_Knowledge_Base/skills/product-marketing \
+            02_Knowledge_Base/skills/cro \
+            02_Knowledge_Base/skills/copywriting \
+            02_Knowledge_Base/skills/copy-editing \
+            02_Knowledge_Base/skills/offers \
+            02_Knowledge_Base/skills/emails \
+            02_Knowledge_Base/skills/sms \
+            02_Knowledge_Base/skills/ads \
+            02_Knowledge_Base/skills/ad-creative \
+            02_Knowledge_Base/skills/seo-audit \
+            02_Knowledge_Base/skills/social \
+            02_Knowledge_Base/skills/influencer-marketing
+          if git diff --cached --quiet; then
+            echo "No staged changes after sync (unexpected)." >&2
+            exit 1
+          fi
+
+          SHORT="${{ steps.run.outputs.upstream_short }}"
+          git commit -m "chore(skills): sync marketingskills to upstream ${SHORT}"
+          git push origin HEAD:main
+
+          SHA="$(git rev-parse HEAD)"
+          echo "commit_sha=${SHA}" >> "$GITHUB_OUTPUT"
+          echo "Pushed ${SHA} to main."
+
+      - name: Trigger Sync UIUX-Skills
+        if: steps.run.outputs.status == 'synced'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run sync-uiux-skills.yml --ref main
+          echo "Dispatched Sync UIUX-Skills on main."
+
+      - name: Summary
+        run: |
+          {
+            echo "## marketingskills upstream sync"
+            echo ""
+            echo "- **Status:** \`${{ steps.run.outputs.status }}\`"
+            echo "- **Upstream:** \`${{ steps.run.outputs.upstream_short }}\` (\`${{ steps.run.outputs.upstream_sha }}\`)"
+            if [[ "${{ steps.run.outputs.status }}" == "synced" ]]; then
+              echo "- **Melessa commit:** \`${{ steps.commit.outputs.commit_sha }}\`"
+              echo "- Dispatched **Sync UIUX-Skills**. Designers receive \`cro\`, \`offers\`, \`copywriting\`, and \`copy-editing\` only."
+              echo ""
+              echo "### Local follow-up"
+              echo "1. Melessa: \`git pull origin main\`"
+              echo "2. Designers (UIUX-Skills): \`./scripts/update-skills.sh\`"
+            else
+              echo "- No Melessa / UIUX-Skills changes."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

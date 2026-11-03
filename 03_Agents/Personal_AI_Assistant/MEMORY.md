@@ -68,6 +68,7 @@
 - **2026-09-15｜Shopline Admin（Gym Master Nutrition）**：`hkgymmn` 後台 task → 讀 **`shopline-admin`** skill；Cloud Agent Secret **`SHOPLINE_COOKIES`**（Runtime Secret，格式 `_shopline_sso_session_id=...`）；Playwright 登入；匯出訂單報表預設 **訂單日期 + 日期區間**（`duringDates`）。個人 skill，不進 UIUX-Skills。報表寄 Admin email；Agent 無 Yahoo 授權。
 - **2026-10-27｜Marketing Buddy／MKGB DS**：做 Marketing Buddy／MKGB 設計必須用 **Marketing Buddy DS**（`fileKey` `dR3ATshJMDaGHOG0Y3R6Ew`）；text／color 用 DS styles；icon 先 DS，冇就 Material Symbols（Rounded + Outline），色仍用 DS。規則：`marketing-buddy-ds`（`sync/cursor-rules/` → UIUX-Skills）；`uiux-design-studio` 已接閘門。Styles 可 publish 跨 file；Variables 空唔阻 publish。
 - **2026-11-03｜轉換檢查**：`uiux-design-studio` 做 PDP、搜尋、購物車、結帳、促銷、落地頁時讀 `cro`、`offers`、`copywriting`、`copy-editing`。這 4 個進 UIUX-Skills。HKTVmall 高密度促銷、Ricky、價錢一位小數優先於 SaaS 落地頁版式。`emails`、`sms`、`ads`、`ad-creative`、`seo-audit`、`social`、`influencer-marketing`、`product-marketing` 只在 Melessa，給網店用。
+- **2026-11-03｜marketingskills 月更**：12 個 marketing skills 每月 1 號 09:30 HKT 由 GitHub Action「Sync marketingskills upstream」對 upstream `main`；有差才覆蓋並 push Melessa，再觸發 Sync UIUX-Skills。設計師只收到 `cro`、`offers`、`copywriting`、`copy-editing`。Cursor Automation「Monthly marketingskills sync check」每月 1 號 10:45 讀結果、對 studio／review，通知 `#melessa-cursor`；這 4 個正文有變才 `#uiux-designer`。
 
 ## 踩過的坑
 

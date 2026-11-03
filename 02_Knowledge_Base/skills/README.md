@@ -37,6 +37,7 @@ bash setup-symlinks.sh
 - **真源**：本目錄（Melessa）；**下游**：UIUX-Skills 的 `skills/`
 - Push 到 Melessa `main` 且變更本目錄時，GitHub Actions 會自動 sync（見 [`sync/README.md`](../../sync/README.md)）
 - Sync 清單定義於 [`sync/uiux-skills-manifest.json`](../../sync/uiux-skills-manifest.json)（16 個 skills + 4 個 cursor rules）。其中 `cro`、`offers`、`copywriting`、`copy-editing` 給轉換型畫面用。網店用的其餘 marketing skills（`emails`、`sms`、`ads` 等）不在清單內
+- 這 12 個 marketing skills 每月 1 號由 Actions 對 [marketingskills](https://github.com/coreyhaines31/marketingskills) 的 `main`；有差才寫進 Melessa `main`（見 [`sync/README.md`](../../sync/README.md)）
 - Teammate 在 UIUX-Skills 的 skill 改動須 **PR 回 Melessa**，不可只改下游
 
 ## 私人資料 skill
