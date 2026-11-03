@@ -16,7 +16,9 @@
 
 ## 分發
 
-- 這次沒有改 12 個 skill 正文或 manifest。`02_Knowledge_Base/skills/README.md` 在 skills 路徑下，push 後 Sync UIUX-Skills 會跑，但下游只複製 manifest 內的 skill 目錄，預期沒有新的下游 commit，也不發 `#uiux-designer`。
+- Melessa：`df0b60a` 已在 `main`
+- UIUX-Skills 仍是 [chore(sync): from Melessa @ 040be4e](https://github.com/melessachu-ctrl/UIUX-Skills/commit/57ff7c5276d81c0c7706a3a03ac228c20fa65a94)。這次只改了 skills 目錄的 README，下游只複製 manifest 內的 skill 夾，所以沒有新 commit
+- 未發 `#uiux-designer`：設計師會收到的 skill 正文沒有變
 
 ## 下次由哪裡開始
 
