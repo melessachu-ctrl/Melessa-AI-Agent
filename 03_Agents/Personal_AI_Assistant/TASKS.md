@@ -14,6 +14,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-11-02～11-03：比較 Duct、MarketingOS、marketingskills；安裝 12 個 marketing skills；`uiux-design-studio`／`uiux-review` 在轉換型畫面讀 `cro`、`offers`、`copywriting`、`copy-editing`；這 4 個加入 UIUX-Skills manifest；session `2026-11-03_marketing-skills-conversion-pass` 已寫
 - 2026-10-26～10-27：Marketing Buddy DS — Form/Settings section 元件化與命名；page bg `#E5E5E5`；`marketing-buddy-ds` 規則＋manifest＋`uiux-design-studio` 閘門；session `2026-10-26_marketing-buddy-ds-settings-section` 已寫
 - 2026-10-27：`apple-design` 同步上游 `914b6a3`；只在 Apple 原生功能時載入；獨立月更 GHA＋Automation 草稿；加入 UIUX-Skills manifest；session `2026-10-27_apple-design-skill-gate` 已寫
 - 2026-10-23：本機 `git pull` Screen Token Bind Gate（`uiux-design-studio`）；確認 UIUX-Skills sync；補發 `#uiux-designer`；月更 automation 通知改 `#melessa-cursor`；session `2026-10-23_uiux-studio-screen-bind-gate` 已寫

@@ -67,6 +67,7 @@
 - **2026-09-01｜UIUX Design Agent（HKTVmall）**：PM 查 Figma design 痛點 → 規劃 Hermes 同級 **read-only lookup** agent（唔做 design 決策）。實施手冊：`01_Action_Center/outputs/docs/UIUX_Design_Agent_Implementation_8_Steps.md`。Slack：`#agent-uiux-design`／`@uiux-design-agent`。PoC 路線：Melessa repo（8 件套 + `design-index/`）→ 正式 `HKTV-UIUX-Design-Agent`；skills 真源留 Melessa／UIUX-Skills。
 - **2026-09-15｜Shopline Admin（Gym Master Nutrition）**：`hkgymmn` 後台 task → 讀 **`shopline-admin`** skill；Cloud Agent Secret **`SHOPLINE_COOKIES`**（Runtime Secret，格式 `_shopline_sso_session_id=...`）；Playwright 登入；匯出訂單報表預設 **訂單日期 + 日期區間**（`duringDates`）。個人 skill，不進 UIUX-Skills。報表寄 Admin email；Agent 無 Yahoo 授權。
 - **2026-10-27｜Marketing Buddy／MKGB DS**：做 Marketing Buddy／MKGB 設計必須用 **Marketing Buddy DS**（`fileKey` `dR3ATshJMDaGHOG0Y3R6Ew`）；text／color 用 DS styles；icon 先 DS，冇就 Material Symbols（Rounded + Outline），色仍用 DS。規則：`marketing-buddy-ds`（`sync/cursor-rules/` → UIUX-Skills）；`uiux-design-studio` 已接閘門。Styles 可 publish 跨 file；Variables 空唔阻 publish。
+- **2026-11-03｜轉換檢查**：`uiux-design-studio` 做 PDP、搜尋、購物車、結帳、促銷、落地頁時讀 `cro`、`offers`、`copywriting`、`copy-editing`。這 4 個進 UIUX-Skills。HKTVmall 高密度促銷、Ricky、價錢一位小數優先於 SaaS 落地頁版式。`emails`、`sms`、`ads`、`ad-creative`、`seo-audit`、`social`、`influencer-marketing`、`product-marketing` 只在 Melessa，給網店用。
 
 ## 踩過的坑
 

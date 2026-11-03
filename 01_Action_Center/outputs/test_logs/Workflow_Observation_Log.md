@@ -43,3 +43,4 @@
 | 2026-10-23 17:08–17:20 | git pull Screen Token Bind Gate；確認 UIUX-Skills sync；補 `#uiux-designer` 公告；月更 automation 通知改 `#melessa-cursor` 並對齊 `.cursor/automations` | 約 15 分鐘 | 中性（同步＋收尾） | 高（新閘門已分發；Cloud push 漏公告可補） | |
 | 2026-10-27 09:56–13:21 | 收 apple-design skill；只在 Apple 原生功能載入；獨立月更 GHA＋Automation 草稿；加入 UIUX-Skills | 約 2–3 小時（跨多段） | 中性（流程固化） | 高（HIG 不蓋過 HKTVmall／Lite App；月更可自動分發） | `uiux-design-studio`, `uiux-review`, `ui-ux-pro-max`, `ricky-design-guideline` |
 | 2026-10-26 14:00–10-27 17:30 | Marketing Buddy DS：Settings section 元件化／Form 命名；page bg；`marketing-buddy-ds` 規則＋studio／manifest；釐清 Styles vs Variables | 約數小時（跨日多段） | 充電（MB DS 可重用＋規則分發） | 高（MKGB 出稿有硬閘門；Settings section pattern 可重用） | `figma-use`, `create-rule`, `uiux-design-studio` |
+| 2026-11-02 10:27–11-03 12:10 | 比較三個 marketing repo；安裝 12 個 skills；轉換型畫面接進 studio／review；4 個加入 UIUX-Skills | 約 3 小時（跨日多段） | 中性（選工具＋接流程） | 高（設計時可查轉換；設計師與 Melessa 用同一套） | `uiux-design-studio`, `uiux-review` |

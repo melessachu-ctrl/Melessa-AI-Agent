@@ -1,0 +1,10 @@
+{
+  "repository": "https://github.com/coreyhaines31/marketingskills",
+  "source_path": "skills/product-marketing",
+  "commit": "88c79f6528a9347420e57ceb1fff9a60de651768",
+  "commit_short": "88c79f65",
+  "commit_date": "2026-10-30T23:28:36Z",
+  "commit_message": "chore: sync skills with marketplace.json, plugin.json, and README",
+  "synced_at": "2026-11-03T01:51:00Z",
+  "license": "MIT"
+}

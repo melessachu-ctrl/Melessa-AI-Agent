@@ -1,6 +1,6 @@
 ---
 name: uiux-design-studio
-description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬角色」方式擔任 Design Director / 設計總監，將 UI/UX 工作拆成 intake → routing → 各角色輸出 → 最終統稿。適用於：新頁面/新功能設計、改版/視覺升級、UX 流程/使用者旅程/IA、可用性與無障礙（a11y/WCAG）、設計評審（design/code/prototype）、Figma 交付（screens/components/prototype）、Design System / token / component library 補洞或更新（建立／更新元件時強制 auto-layout、font／text style token、leaf-only layer naming）、HKTVmall Figma 畫面／flow／sheet／demo 出稿時強制 Screen Token Bind Gate（每個自建 TEXT 綁 DS text style＋文字色綁 color token，未過閘不得交件）、Figma 檔案治理／cleanup（圖層／命名／舊檔 SOP）。HKTVmall 相關 Figma 設計預設套用 HKTVmall Design System（fileKey F0tjdruLjJTfWgmTeZKBnw）。Lite App／Lite App DS 相關設計時字體必須連結 Design Tokens（fileKey I5A9GqmJdvoskfDeCBtNsL，Typography node 120:1278）。Marketing Buddy／MKGB 相關設計必須用 Marketing Buddy DS（fileKey dR3ATshJMDaGHOG0Y3R6Ew；text／color styles；icon 優先 DS，否則 Material Symbols Rounded+Outline）。會引導載入 `hktvmall-target-customers`、`ricky-design-guideline`、`ui-ux-pro-max`、`frontend-design`，以及 Figma 相關技能（figma-file-cleanup／figma-use／figma-generate-library／figma-design-to-code／figma-mcp-server-guide／apply-design-system）。App 設計或評審包含 Apple 原生功能時才讀 `apple-design`，且只核對該功能是否符合 HIG。"
+description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬角色」方式擔任 Design Director / 設計總監，將 UI/UX 工作拆成 intake → routing → 各角色輸出 → 最終統稿。適用於：新頁面/新功能設計、改版/視覺升級、UX 流程/使用者旅程/IA、可用性與無障礙（a11y/WCAG）、設計評審（design/code/prototype）、Figma 交付（screens/components/prototype）、Design System / token / component library 補洞或更新（建立／更新元件時強制 auto-layout、font／text style token、leaf-only layer naming）、HKTVmall Figma 畫面／flow／sheet／demo 出稿時強制 Screen Token Bind Gate（每個自建 TEXT 綁 DS text style＋文字色綁 color token，未過閘不得交件）、Figma 檔案治理／cleanup（圖層／命名／舊檔 SOP）。HKTVmall 相關 Figma 設計預設套用 HKTVmall Design System（fileKey F0tjdruLjJTfWgmTeZKBnw）。Lite App／Lite App DS 相關設計時字體必須連結 Design Tokens（fileKey I5A9GqmJdvoskfDeCBtNsL，Typography node 120:1278）。Marketing Buddy／MKGB 相關設計必須用 Marketing Buddy DS（fileKey dR3ATshJMDaGHOG0Y3R6Ew；text／color styles；icon 優先 DS，否則 Material Symbols Rounded+Outline）。會引導載入 `hktvmall-target-customers`、`ricky-design-guideline`、`ui-ux-pro-max`、`frontend-design`，以及 Figma 相關技能（figma-file-cleanup／figma-use／figma-generate-library／figma-design-to-code／figma-mcp-server-guide／apply-design-system）。App 設計或評審包含 Apple 原生功能時才讀 `apple-design`，且只核對該功能是否符合 HIG。轉換型畫面（PDP、搜尋結果、購物車、結帳、促銷、落地頁）在設計與評審時另讀 cro、offers、copywriting、copy-editing，讓層級與文案對着購買；HKTVmall 零售密度、Ricky 與價錢格式優先於 SaaS 落地頁模板。"
 ---
 
 ## 平台現實（必讀）
@@ -32,6 +32,8 @@ description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬�
 
 > 若使用者只說一句話，先用「假設」補齊缺口，但要**清楚標示假設**並在 Routing 後列為待確認。
 
+轉換型畫面若未寫明，用假設補上兩句，不要為此把追問加到 6 題以上：訪客 5 秒內要明白的一件事，以及按下主按鈕之後去哪。
+
 ## Routing（派工規則）
 
 ### 虛擬角色
@@ -52,8 +54,10 @@ description: "（第三人稱）在 Cursor 內以「單一對話編排＋虛擬�
 | 元件/表單/表格等單點優化 | Director + Designer + Review（必要時 DS） | 元件狀態與 API + a11y |
 | 設計系統建置/補洞／**create or update DS component** | Director + DS Owner + Review（必要時 Designer） | token/元件/變體 + **必過「DS Component Write Gate」**（auto-layout／font token／leaf-only naming）／版本說明 |
 | Figma 檔案治理／file cleanup／整理 Figma 檔／清理圖層／命名與結構批次治理 | Director + DS Owner + Review（必要時 Designer） | 依 `figma-file-cleanup`：審計→策略→分批治理→驗證；變更清單／遷移映射／驗證／阻塞 + Director Final Pack |
-| 只要評審（design/code/prototype/Figma/live URL） | Director + Review（**必先讀 `uiux-review`**；必要時 Designer） | 依 `uiux-review` 7-step SOP：Reviewer Lens + Heuristic + Walkthrough + Strengths + Must/Should/Nice/Keep + AC |
+| 只要評審（design/code/prototype/Figma/live URL） | Director + Review（**必先讀 `uiux-review`**；必要時 Designer） | 依 `uiux-review` 7-step SOP：Reviewer Lens + Heuristic +（轉換型畫面）Conversion Pass + Walkthrough + Strengths + Must/Should/Nice/Keep + AC |
 | 要做可點 Prototype | Director + Designer + Prototype + Review | 流轉圖 + hotspot + 測試腳本 |
+
+轉換型畫面不新增角色。Researcher、Designer、Review 按下方「轉換型畫面（Marketing skills）」加載。Prototype 的測試題改為：講得出優惠是什麼，並完成主動作。
 
 ### 固定順序（除非明確不需要）
 
@@ -276,6 +280,28 @@ DS Component Write Gate — Checklist
 
 > 原則：此 Skill 負責「編排與統稿」，具體 UI/UX 規則與視覺決策應委派給既有技能，避免重複維護。
 
+#### 轉換型畫面（Marketing skills）
+
+下列才算轉換型畫面：PDP、搜尋結果、購物車、結帳、促銷模組、落地頁、campaign／offer sheet，或使用者把目標寫成轉換、購買、加入購物車、看懂優惠。
+
+整理 Figma、只補 Design System、沒有銷售任務的元件、設定或後台表單，不是轉換型畫面。Marketing Buddy／MKGB 的 admin、form、settings 維持 DS 流程，不讀下列 marketing skills。
+
+檔案不存在時，在該角色產出註明「未安裝，這次略過」，繼續其餘流程。不要憑記憶補整份 playbook。
+
+**Routing 後、Designer 定層級前**
+
+- 讀 `../cro/SKILL.md` 的七個檢查：5 秒內懂價值、標題、一個主轉換動作、信任證據放在決定點旁邊、反對點、摩擦力，加上優惠是否一眼可懂。用這些問題約束層級與文案。
+- HKTVmall：`hktvmall-target-customers` 的高密度促銷、Ricky、價錢一位小數維持。不要把 cro 的 SaaS 落地頁版式套上商品頁或搜尋結果（拆掉導覽、大留白、刪到只剩一個按鈕、試用／demo 按鈕）。
+- 畫面上有優惠、套裝、保證、首單或價格錨點：讀 `../offers/SKILL.md`。只抽出顧客得到什麼、價格錨點、條件、期限。沒有真實期限就不寫緊迫。
+- Designer 寫 microcopy 前讀 `../copywriting/SKILL.md`。標題和主按鈕各給 2–3 個可替換寫法。聲稱要有證據，沒有就標「待補」。zh-HK 與價錢格式蓋過英文範例。
+- 若 `.agents/product-marketing.md` 或 `.claude/product-marketing.md` 存在，Researcher 只取客群、反對點、顧客原話。HKTVmall 仍以 `hktvmall-target-customers` 為準，不跑 `product-marketing` skill。
+- 使用者註明這頁是給某條廣告：只對標題與廣告是否同一句話，可讀 `../ads/SKILL.md` 與 `../ad-creative/SKILL.md` 的訊息對齊。不跑帳戶策略、預算或關停建議。
+- 不在本流程讀 `emails`、`sms`、`social`、`influencer-marketing`、`seo-audit`。
+
+**評審**
+
+轉換型畫面的 Review 仍走 `uiux-review`。該 skill 的 Conversion Pass 會再讀 `cro`；有現成文案讀 `../copy-editing/SKILL.md`（只改已有句子，不重寫整頁）；有優惠讀 `offers`。嚴重度以 `uiux-review` 為準。
+
 #### Apple native function（有才載入）
 
 App 設計或評審時，畫面或流程**包含下列任一項**才 Read `../apple-design/SKILL.md`。HKTVmall／Lite App 的自訂畫面、Design System 元件、促銷、搜尋、PDP、購物車、一般視覺評審，不讀。
@@ -315,6 +341,7 @@ App 設計或評審時，畫面或流程**包含下列任一項**才 Read `../ap
 - **關鍵洞察**：3–7 條（每條含「所以我們要…」）
 - **設計原則**：5–9 條（可直接約束 UI/互動）
 - **風險與未知**：資料不足/需要問的問題
+- **Offer 摘要**（轉換型畫面且有優惠時必填）：顧客得到什麼、價格錨點、條件、期限。沒有真實期限就不寫緊迫
 
 ### 3) UIUX Designer
 
@@ -326,6 +353,7 @@ App 設計或評審時，畫面或流程**包含下列任一項**才 Read `../ap
 - **內容規格（Microcopy）**：關鍵標題/按鈕/錯誤訊息語氣與範例
 - **交付給工程**：token/間距/字級/顏色採用策略（**必須**引用 DS；HKTVmall Figma 出稿另過「Screen Token Bind Gate」）；**Lite App／Lite App DS 時字級必須引用 Design Tokens Text Style**（預設 `I5A9GqmJdvoskfDeCBtNsL`）
 - **客群與 KPI 對齊**（HKTVmall 相關時必填）：本方案服務哪個 segment、優化哪個 KPI、資訊密度／促銷層級如何保持可掃描
+- **轉換層級**（轉換型畫面必填）：主轉換動作、5 秒訊息、閱讀路徑如何對着它、信任證據放哪、反對點放哪。標題與主按鈕各 2–3 個寫法；無證據的聲稱標「待補」。HKTVmall 保持促銷密度，不套 SaaS 拆導覽／大留白
 
 ### 4) Prototype Creator
 
@@ -333,6 +361,7 @@ App 設計或評審時，畫面或流程**包含下列任一項**才 Read `../ap
 - **互動與轉場**：hotspot、overlay、動畫節奏（150–300ms 為主）
 - **例外路徑**：錯誤/取消/返回/中斷
 - **可用性測試腳本（草案）**：任務題目、成功標準、觀察點、追問
+- **轉換任務**（轉換型畫面必填）：測試者能否講出優惠是什麼，並完成主動作
 
 ### 5) Design System Owner（Figma DS Owner）
 
@@ -347,7 +376,7 @@ App 設計或評審時，畫面或流程**包含下列任一項**才 Read `../ap
 
 ### 6) UIUX Review（Critic / QA）
 
-> 本表僅為摘要欄位；**實際執行必須依** `../uiux-review/SKILL.md` 的 **7-step SOP**（Intake → Reviewer Lens → Heuristic Pass → Walkthrough → Strengths → Findings → Anti-nitpick + AC）與 Findings 模板。下列欄位是 Final Pack 中要呈現的最低集合：
+> 本表僅為摘要欄位；**實際執行必須依** `../uiux-review/SKILL.md` 的 **7-step SOP**（Intake → Reviewer Lens → Heuristic Pass → Conversion Pass（轉換型畫面）→ Walkthrough → Strengths → Findings → Anti-nitpick + AC）與 Findings 模板。下列欄位是 Final Pack 中要呈現的最低集合：
 
 - **Reviewer Lens**：當次採用的代表使用者一段話（預設或覆寫）
 - **Must fix**：對 Lens 造成阻塞/a11y 違規/誤操作風險（含具體可落地方案 + `pro-max:<rule-key>` 對應）
@@ -359,6 +388,7 @@ App 設計或評審時，畫面或流程**包含下列任一項**才 Read `../ap
 - **一致性檢查**：字級/間距/元件狀態/語氣/圖示（對齊 `ui-ux-pro-max/references/quick-reference.md` §4、§6）
 - **DS Component Write Gate（有建立／更新 DS 元件時必查）**：未過 Gate 的項目一律進 Must fix — (1) 容器仍為 `layoutMode=NONE` 且無例外註記；(2) TEXT 未綁 text style／typography token；(3) 圖層名為 `Frame N`／`Group N`／`Copy` 或含 `/` 路徑式名稱（對齊 `figma-file-cleanup` leaf-only）
 - **HKTVmall Screen Token Bind Gate（HKTVmall Figma 畫面／flow／sheet 出稿時必查）**：未過閘一律 Must fix — (1) 自建／改動 TEXT 未綁 DS text style；(2) 文字色未綁 DS color token；(3) Content SLOT／demo 文案仍為裸 `fontSize`／hex（非已註明之 instance 內部例外）
+- **Conversion Pass（轉換型畫面必查）**：依 `uiux-review` Step 3b。主轉換被擋住、價格或優惠會看錯、聲稱沒有根據、主按鈕講不清按下後發生什麼，進 Must fix。5 秒內看不出價值、信任證據離決定點太遠、常見猶豫沒接上、文案可收短但不改結構，進 Should fix
 
 ## Director Final Pack（最後一定要輸出）
 
@@ -379,6 +409,7 @@ App 設計或評審時，畫面或流程**包含下列任一項**才 Read `../ap
 - DS Changes（若有）：含 **Write Gate 結果**（auto-layout／font token／leaf-only naming）；Pass with exceptions 時列例外 node id
 - Figma 檔案治理（若有）：變更清單、遷移映射、驗證清單、阻塞清單（格式與路徑依 `figma-file-cleanup`）
 - Review Report（必有）
+- **Conversion**（轉換型畫面必有）：5 秒訊息、主轉換動作、Offer 摘要（若有）、採用的標題／按鈕寫法
 - Ricky Pass 檢查清單（Figma 設計 / Prototype / 評審時必有；格式見 `ricky-design-guideline`）
 - Target Customer 對齊（HKTVmall 相關時必有）：segment 對應、KPI 取捨、推薦可解釋性（格式見 `hktvmall-target-customers`）
 - **DS 採用聲明**（HKTVmall Figma 相關時必有）：HKTVmall Design System、`fileKey`、主要引用元件／token 或盤點阻塞

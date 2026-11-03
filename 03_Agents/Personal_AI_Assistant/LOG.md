@@ -1,5 +1,11 @@
 # LOG｜Sasa
 
+## 2026-11
+
+| 日期 | 任務 | 成果 | 備註 |
+|---|---|---|---|
+| 2026-11-02～03 | 轉換檢查接進設計工作室 | 安裝 12 個 marketing skills；studio／review 只在轉換型畫面讀 cro、offers、copywriting、copy-editing；這 4 個進 UIUX-Skills | 見 session `2026-11-03_marketing-skills-conversion-pass`；其餘 8 個留在 Melessa |
+
 ## 2026-10
 
 | 日期 | 任務 | 成果 | 備註 |

@@ -6,6 +6,8 @@ Melessa 為 skill 內容真源；[`uiux-skills-manifest.json`](uiux-skills-manif
 
 Push 到 `main` 且變更 `02_Knowledge_Base/skills/**`、manifest 或 workflow 時，GitHub Actions 會執行 [`.github/workflows/sync-uiux-skills.yml`](../.github/workflows/sync-uiux-skills.yml)。
 
+轉換檢查用的 `cro`、`offers`、`copywriting`、`copy-editing` 在 manifest 內，會跟 `uiux-design-studio`、`uiux-review` 一起同步。工作室只在轉換型畫面讀它們。網店用的其餘 marketing skills（`emails`、`sms`、`ads` 等）留在 Melessa，不進 UIUX-Skills。
+
 ## 月更：ui-ux-pro-max upstream（雲端）
 
 每月對比 [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) 的 `main`，與 Melessa 真源 stamp：

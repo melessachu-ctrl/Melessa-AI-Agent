@@ -1,6 +1,6 @@
 ---
 name: uiux-review
-description: "Standardized UI/UX review SOP for finished designs (screenshots, Figma, prototypes, code, live URLs). Use when the user asks for a UIUX review, design critique, heuristic evaluation, a11y review, accessibility check, usability check, design audit, design QA, review screen / page / component / Figma / prototype / live URL, or says 評審 / 設計評審 / 走查 / 檢查 UI / 檢查 UX / 易用性檢查 / 無障礙檢查 / critique my design / review this UI. Runs a 7-step SOP (Intake → Reviewer Lens → Heuristic Pass → Walkthrough → Strengths → Findings → Anti-nitpick + AC) anchored on `ui-ux-pro-max` Quick Reference, with a default Reviewer Lens of a 50+ household shopper. Outputs in 繁體中文. When the artifact includes an Apple-native control, also read apple-design and check only that control."
+description: "Standardized UI/UX review SOP for finished designs (screenshots, Figma, prototypes, code, live URLs). Use when the user asks for a UIUX review, design critique, heuristic evaluation, a11y review, accessibility check, usability check, design audit, design QA, review screen / page / component / Figma / prototype / live URL, or says 評審 / 設計評審 / 走查 / 檢查 UI / 檢查 UX / 易用性檢查 / 無障礙檢查 / critique my design / review this UI. Runs a 7-step SOP (Intake → Reviewer Lens → Heuristic Pass → Walkthrough → Strengths → Findings → Anti-nitpick + AC) anchored on `ui-ux-pro-max` Quick Reference, with a default Reviewer Lens of a 50+ household shopper. Outputs in 繁體中文. When the artifact includes an Apple-native control, also read apple-design and check only that control. Conversion surfaces (PDP, search results, cart, checkout, promo, landing) add a Conversion Pass after Heuristic and read cro; existing copy also reads copy-editing, and an offer also reads offers. Severity stays Must/Should/Nice/Keep."
 ---
 
 # UIUX Review SOP
@@ -25,8 +25,11 @@ description: "Standardized UI/UX review SOP for finished designs (screenshots, F
 2. 評審對象是 **Figma URL／Figma 檔**：加讀 `../figma-mcp-server-guide/SKILL.md`
 3. 評審對象是 **前端 code**：加讀 `../frontend-design/SKILL.md`
 4. **僅當**評審對象包含 Apple 原生功能時，才讀 `../apple-design/SKILL.md`，並只打開該功能對應的 HIG 頁。沒有這些功能就不要讀。觸發清單、引用格式與優先順序同 `uiux-design-studio` 的「Apple native function」：Apple Pay、Sign in with Apple、系統權限說明、通知、Widget、Live Activity、Dynamic Island、系統 alert／action sheet／share sheet／系統 picker、用在系統控制項上的 SF Symbols、iPhone Duo 系統列／摺位／外屏、系統 chrome 上的 Liquid Glass、App Review 因設計或品牌被拒。發現仍用本 SOP 的 Must／Should／Nice／Keep，引用 `hig:<file> › <heading>`（Critical → Must fix，High → Should fix）。不採用 apple-design 的報告格式，也不跑它的改版模式。品牌、密度、文案、token 以 Ricky 與 Design System 為準；HIG 只約束該原生控制項。
+5. **僅當**評審對象是轉換型畫面時，才讀 `../cro/SKILL.md`。有現成文案再讀 `../copy-editing/SKILL.md`。畫面上有優惠、套裝、保證、首單或價格錨點再讀 `../offers/SKILL.md`。檔案不存在就在 Conversion Pass 註明「未安裝，這次略過」，不要憑記憶補整份 playbook。
 
-> 若沒讀上述技能就開始評審，視為違規 SOP。第 4 點只有命中 Apple 原生功能時才算必讀。
+> 若沒讀上述技能就開始評審，視為違規 SOP。第 4 點只有命中 Apple 原生功能時才算必讀。第 5 點只有轉換型畫面才算必讀。
+
+轉換型畫面指：PDP、搜尋結果、購物車、結帳、促銷模組、落地頁、campaign／offer sheet，或使用者把目標寫成轉換、購買、加入購物車、看懂優惠。設定、後台、純元件、Figma 整理、Design System 補洞不是轉換型畫面。
 
 > 評審對象是 HKTVmall 且畫面上有金額時，先讀 `rules/hktvmall-ui-price.md`；找不到再讀同名 `.mdc`（`rules/` 或 Melessa `sync/cursor-rules/`）。整數沒有一位小數（如 `$289`）列為 Must fix。正確例子：`$289.0`、`$68.0`、`$35.8`、`$1,530.0`。
 
@@ -47,7 +50,7 @@ description: "Standardized UI/UX review SOP for finished designs (screenshots, F
 
 ## 7-step SOP
 
-照此順序執行，不可跳步。每步都有對應輸出。
+照此順序執行，不可跳步。每步都有對應輸出。轉換型畫面在 Heuristic 與 Walkthrough 之間加 Step 3b；其餘畫面該步只寫一行略過。
 
 ### Step 1 — Intake（最短 4 題）
 
@@ -85,9 +88,36 @@ description: "Standardized UI/UX review SOP for finished designs (screenshots, F
 - 每條發現必須對應 pro-max 的某條 rule key（例如 `color-contrast`、`touch-target-size`）
 - 無對應 rule key、又無法清楚說明 user impact 的，**不要寫進來**
 
+### Step 3b — Conversion Pass（僅轉換型畫面）
+
+不是轉換型畫面時，只寫一行「非轉換型畫面，略過 Conversion Pass」，然後進入 Step 4。
+
+是轉換型畫面時，用 `cro` 的檢查問這七件事，不要把 SaaS 落地頁版式（拆掉導覽、大留白、刪到只剩一個按鈕、試用／demo 按鈕）套上 HKTVmall 商品頁或搜尋結果。HKTVmall 的高密度促銷、Ricky、價錢一位小數維持。
+
+1. 5 秒內能否懂這是什麼、為何要在意
+2. 標題有沒有講這件事
+3. 主轉換動作是否只有一個，按鈕是否講清按下後發生什麼
+4. 信任證據是否在決定點旁邊
+5. 常見猶豫有沒有被接上
+6. 完成主動作的摩擦力在哪
+7. 若有優惠：顧客得到什麼、價格錨點、條件、期限是否一眼可懂。沒有真實期限就不寫緊迫
+
+有現成文案時，`copy-editing` 只改已有句子，不借這一輪重寫整頁。
+
+這些發現進 Step 6，不另開評級：
+
+| 級別 | 轉換型觸發 |
+| --- | --- |
+| **Must fix** | 主轉換被擋住、價格或優惠會看錯、聲稱沒有根據、主按鈕講不清按下後發生什麼。HKTVmall 整數價錢仍按價錢規則列 Must fix |
+| **Should fix** | 5 秒內看不出價值、信任證據離決定點太遠、常見猶豫沒接上、文案可收短但不改結構 |
+| **Nice to have** | 備用標題、第二個 CTA 寫法 |
+| **Keep** | 已經幫人掃到優惠或完成購買的層級，寫明保留原因 |
+
+對應原則寫 `cro:<檢查名>`（例如 `cro:five-second`、`cro:primary-action`、`cro:trust-near-decision`、`cro:offer-clarity`）。能同時對上 pro-max 的，兩個都寫。
+
 ### Step 4 — Walkthrough Pass
 
-用 Step 2 的 Reviewer Lens 第一人稱走 1–2 條關鍵任務，每步用「我看到 X，以為 Y，嘗試做 Z，結果 W」格式標出 friction。
+用 Step 2 的 Reviewer Lens 第一人稱走 1–2 條關鍵任務，每步用「我看到 X，以為 Y，嘗試做 Z，結果 W」格式標出 friction。轉換型畫面的其中一條任務必須是主轉換動作。
 
 範例：
 
@@ -164,6 +194,9 @@ description: "Standardized UI/UX review SOP for finished designs (screenshots, F
 - §2 Touch & Interaction：…
 - （沒發現的類別略過）
 
+### Conversion Pass
+非轉換型畫面寫「略過」。轉換型畫面逐項寫七個檢查的結論；發現仍歸入下方 Findings。
+
 ### Walkthrough（任務：[任務名]）
 1. …
 2. …
@@ -203,7 +236,7 @@ description: "Standardized UI/UX review SOP for finished designs (screenshots, F
 ## 守則摘要
 
 1. **不吹毛求疵**：符合一般 UIUX 標準的部分明確寫「OK，無需改動」，不湊數
-2. **必須有原則對應**：每條 Must / Should 都要 cite `pro-max:<rule-key>` 或 WCAG / HIG / MD。Apple 原生功能的發現改 cite `hig:<file> › <heading>`
+2. **必須有原則對應**：每條 Must / Should 都要 cite `pro-max:<rule-key>`、`cro:<檢查名>`、WCAG / HIG / MD 至少一項。Apple 原生功能的發現改 cite `hig:<file> › <heading>`
 3. **必須有具體方案**：禁止「建議優化」「考慮改善」這類空話
 4. **必須講人話**：影響描述用 Reviewer Lens 第一人稱，不要寫成抽象體驗論述
 5. **必須有 Strengths**：除非整體不及格，否則最少 2 條保留項
@@ -214,5 +247,6 @@ description: "Standardized UI/UX review SOP for finished designs (screenshots, F
 本 skill 是 `uiux-design-studio` Routing 表「只要評審」一列的**強制依賴**：
 
 - 進入 UIUX Review 角色前，先讀本 SKILL.md
-- 本 skill 的「Step 1–7 輸出」放進 Director Final Pack 的「Review Report」附錄
+- 本 skill 的「Step 1–7 輸出」（轉換型畫面含 Step 3b）放進 Director Final Pack 的「Review Report」附錄
 - 本 skill 的 Reviewer Lens 是該次評審的真實 source of truth，覆寫 Director 的一般假設
+- 轉換型畫面加跑 Step 3b。嚴重度仍用本 skill 的 Must／Should／Nice／Keep，不用 cro 自己的報告格式取代本 SOP
