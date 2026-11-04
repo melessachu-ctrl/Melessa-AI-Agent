@@ -1,6 +1,6 @@
 ---
 name: audit-design-system
-description: Read-only audit of Figma nodes for design-system integration drift: missing shared components, local overrides, unbound tokens, variant drift. Use when reviewing Figma screens or URLs for DS alignment, checking tokens, or scoping fixes; output can be markdown report or JSON per user request.
+description: "Read-only audit of Figma nodes for design-system integration drift: missing shared components, local overrides, unbound tokens, variant drift. Use when reviewing Figma screens or URLs for DS alignment, checking tokens, or scoping fixes; output can be markdown report or JSON per user request."
 ---
 
 # Audit Design System

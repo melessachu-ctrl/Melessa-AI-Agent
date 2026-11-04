@@ -1,6 +1,6 @@
 ---
 name: fix-design-system-finding
-description: Applies a narrow, targeted fix in Figma for one design-system integration finding (one offending node or local cluster): swap instance, compose primitives, bind tokens, or align variant. Use after audit-design-system or when the user fixes a single concrete DS issue without a full-screen reconnect.
+description: "Applies a narrow, targeted fix in Figma for one design-system integration finding (one offending node or local cluster): swap instance, compose primitives, bind tokens, or align variant. Use after audit-design-system or when the user fixes a single concrete DS issue without a full-screen reconnect."
 ---
 
 # Fix One Design-System Finding
