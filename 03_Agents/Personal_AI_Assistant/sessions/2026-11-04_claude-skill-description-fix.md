@@ -10,9 +10,16 @@ Claude 安裝 UIUX-Skills 時有三份 `SKILL.md` 失敗。對過 `Downloads/uiu
 
 同步清單其餘 13 個 skill 的 YAML 與字數都過關。最接近上限的是 `uiux-review`（992）、`copywriting`（989）、`offers`（969）。
 
+## 分發
+
+- Melessa：`6feacaa` 已在 `main`
+- Actions：[Sync UIUX-Skills #30](https://github.com/melessachu-ctrl/Melessa-AI-Agent/actions/runs/41802430867) 成功
+- UIUX-Skills：[chore(sync): from Melessa @ 6feacaa](https://github.com/melessachu-ctrl/UIUX-Skills/commit/4a9dc21e55c9246247ae139ab1ce1189b5856967)
+- Slack：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1793782217890839
+
 ## 未完成甚麼
 
-- 下游 UIUX-Skills 與 `#uiux-designer` 公告：等本次 push 觸發的 Actions **Sync UIUX-Skills** 成功後補上
+- 設計師要在 UIUX-Skills 跑 `./scripts/update-skills.sh`，再在 Claude 重裝這三份 skill
 
 ## 下次由哪裡開始
 
