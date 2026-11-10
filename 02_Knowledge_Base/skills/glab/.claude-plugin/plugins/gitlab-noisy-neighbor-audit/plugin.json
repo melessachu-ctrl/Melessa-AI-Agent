@@ -1,0 +1,10 @@
+{
+  "name": "gitlab-noisy-neighbor-audit",
+  "description": "Audit the code a GitLab product group owns for noisy-neighbor and performance risks (one user, bot, agent or token draining a shared GitLab.com resource; agentic usage that is not limited or metered), verify each finding, and draft confidential issues and inventory rows for the team. Use when asked to find performance problems in a team's code, do a noisy-neighbor or rate-limit audit, fill in a reliability or rate-limit inventory, find unthrottled endpoints, unbounded fan-out, expensive queries, actions that fill the database with records, or walks over large group or other hierarchies, or check whether agent traffic is limited and billable. Finds and files problems; does not fix them.",
+  "version": "0.3.0",
+  "author": {
+    "name": "GitLab"
+  },
+  "license": "MIT",
+  "skills": "./"
+}

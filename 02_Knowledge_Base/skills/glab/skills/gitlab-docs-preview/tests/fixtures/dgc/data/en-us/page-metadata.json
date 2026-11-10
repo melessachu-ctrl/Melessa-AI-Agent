@@ -1,0 +1,62 @@
+{
+ "demo/": {
+  "trail_items": [
+   {
+    "title": "Demo product",
+    "path": "demo/"
+   }
+  ]
+ },
+ "demo/quickstart/": {
+  "trail_items": [
+   {
+    "title": "Demo product",
+    "path": "demo/"
+   },
+   {
+    "title": "Quickstart",
+    "path": "demo/quickstart/"
+   }
+  ]
+ },
+ "demo/concepts/": {
+  "trail_items": [
+   {
+    "title": "Demo product",
+    "path": "demo/"
+   },
+   {
+    "title": "Concepts",
+    "path": "demo/concepts/"
+   }
+  ]
+ },
+ "demo/reference/": {
+  "trail_items": [
+   {
+    "title": "Demo product",
+    "path": "demo/"
+   },
+   {
+    "title": "Reference",
+    "path": "demo/reference/"
+   }
+  ]
+ },
+ "demo/misc/": {
+  "trail_items": [
+   {
+    "title": "Demo product",
+    "path": "demo/"
+   }
+  ]
+ },
+ "user/": {
+  "trail_items": [
+   {
+    "title": "Use GitLab",
+    "path": "user/"
+   }
+  ]
+ }
+}

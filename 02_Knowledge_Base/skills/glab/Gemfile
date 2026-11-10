@@ -1,0 +1,11 @@
+# frozen_string_literal: true
+
+# Used only by the `danger-review` CI component, which installs from this
+# Gemfile when one exists.
+source 'https://rubygems.org'
+
+gem 'gitlab-dangerfiles'
+
+# git 6.0.0 breaks danger (`uninitialized constant Git::Base`). Drop this cap
+# once danger or gitlab-dangerfiles supports git 6.
+gem 'git', '< 6'

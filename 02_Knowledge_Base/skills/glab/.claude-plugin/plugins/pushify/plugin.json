@@ -1,0 +1,10 @@
+{
+  "name": "pushify",
+  "description": "Run pre-push lefthook checks and iteratively fix failures (up to 3 iterations, then escalate). Invoke when: (a) about to push and wanting hooks to pass cleanly, (b) `git push` has just failed on a pre-push hook and the failure needs to be driven to resolution, or (c) preparing a clean working tree without pushing \u2014 e.g. before opening a Draft MR for early review.",
+  "version": "1.1.1",
+  "author": {
+    "name": "GitLab"
+  },
+  "license": "MIT",
+  "skills": "./"
+}

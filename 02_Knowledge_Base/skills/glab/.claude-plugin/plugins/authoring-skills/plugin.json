@@ -1,0 +1,10 @@
+{
+  "name": "authoring-skills",
+  "description": "Author a new agent skill or improve an existing one - write the SKILL.md frontmatter and description, structure the body, and fix skills that under- or over-trigger. Also covers writing or trimming AGENTS.md / CLAUDE.md project instruction files. Use when asked to create/write a skill, make a SKILL.md, improve/refactor a skill, fix a skill's description, or write, restructure, or shorten an AGENTS.md or CLAUDE.md.",
+  "version": "0.7.1",
+  "author": {
+    "name": "GitLab"
+  },
+  "license": "MIT",
+  "skills": "./"
+}

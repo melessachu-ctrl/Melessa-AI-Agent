@@ -1,0 +1,244 @@
+stages:
+  - lint
+  - verify
+  - sync
+  - evaluate
+
+include:
+  - component: ${CI_SERVER_FQDN}/gitlab-org/components/danger-review/danger-review@2.1.0
+    inputs:
+      job_stage: lint
+  - component: ${CI_SERVER_FQDN}/components/opentofu/full-pipeline@4.7.0
+    inputs:
+      auto_define_backend: true
+      enable_id_tokens: true
+      opentofu_version: 1.12.1
+      root_dir: tofu/
+      # `plan` needs the HTTP state backend, whose job-token auth is rejected on
+      # non-default-branch pipelines ("Error acquiring the state lock: HTTP
+      # remote state endpoint invalid auth"), so it fails on every MR. Keep
+      # `fmt`/`validate` (stateless) as the MR-time signal and only plan on main.
+      plan_rules:
+        - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      stage_validate: lint
+      stage_test: verify
+      stage_build: verify
+      stage_deploy: sync
+      stage_cleanup: sync
+
+.gitlab-tofu:id_tokens:
+  id_tokens:
+    ANTHROPIC_IDENTITY_TOKEN:
+      aud: https://api.anthropic.com
+
+variables:
+  GLAB_VERSION: "1.101.0"
+  MISE_VERSION: "v2026.10.17"
+  # SHA-256 of mise-${MISE_VERSION}-linux-x64-musl from the release's
+  # SHASUMS256.txt. Update together with MISE_VERSION; the job fails on a mismatch.
+  MISE_LINUX_X64_MUSL_SHA256: "f6e5e457103252eca6032dbc5c29bff7e0c73f1bc0f915541e7658ba360d4287"
+
+default:
+  image: python:3.12-alpine3.20
+
+.verify-rules:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+verify-readme:
+  stage: verify
+  extends: .verify-rules
+  script:
+    - python3 scripts/update_skills_list.py --ci --debug
+    - python3 scripts/update_toc.py --ci --debug
+    - python3 scripts/update_claudecode_readme.py --ci --debug
+
+validate-frontmatter:
+  stage: verify
+  extends: .verify-rules
+  before_script:
+    - apk add --no-cache bash git jq pandoc perl unzip
+    - pip install --no-cache-dir "PyYAML==6.0.2"
+  script:
+    - python3 scripts/validate_frontmatter.py --ci --debug
+    - python3 -m unittest discover -s scripts/tests -p 'test_*.py' -v
+
+validate-skill-length:
+  stage: verify
+  extends: .verify-rules
+  script:
+    - python3 scripts/validate_skill_length.py --ci --debug
+
+validate-content-quality:
+  stage: verify
+  extends: .verify-rules
+  script:
+    - python3 scripts/validate_content_quality.py --ci --debug
+
+# Installs ruff and shellcheck at the versions pinned in mise.toml, the same
+# ones local runs use. Only these two are enabled; the rest of the toolchain
+# comes from the job image.
+.mise-lint-tools:
+  variables:
+    MISE_ENABLE_TOOLS: "ruff,shellcheck"
+  before_script:
+    - apk add --no-cache bash
+    - mkdir -p "$HOME/.local/bin"
+    - wget -qO "$HOME/.local/bin/mise" "https://github.com/jdx/mise/releases/download/${MISE_VERSION}/mise-${MISE_VERSION}-linux-x64-musl"
+    - echo "${MISE_LINUX_X64_MUSL_SHA256}  $HOME/.local/bin/mise" | sha256sum -c -
+    - chmod +x "$HOME/.local/bin/mise"
+    - export PATH="$HOME/.local/bin:$PATH"
+    - mise install
+
+lint-python:
+  stage: lint
+  extends: [.verify-rules, .mise-lint-tools]
+  script:
+    - mise exec -- ruff check .
+
+# Lints skills/ that are not synced from upstream; see the script for details.
+lint-python-skills:
+  stage: lint
+  extends: [.verify-rules, .mise-lint-tools]
+  script:
+    - mise exec -- scripts/lint_python_skills.sh
+
+lint-shell:
+  stage: lint
+  extends: [.verify-rules, .mise-lint-tools]
+  script:
+    - mise exec -- scripts/lint_shell.sh
+    - scripts/lint_bash_portability.sh
+
+# Runs the test suites skills ship next to their helper scripts
+# (skills/*/tests/test_*.sh). They stub out anything networked, so no
+# credentials or registry access are needed.
+skill-tests:
+  stage: verify
+  extends: .verify-rules
+  before_script:
+    - apk add --no-cache bash diffutils git ruby
+  script:
+    - scripts/run_skill_tests.sh
+
+test-skill-hooks-plugin:
+  stage: verify
+  extends: .verify-rules
+  image: node:22-alpine
+  script:
+    - node .opencode/plugins/__tests__/skill-hooks.test.mjs
+
+agent-file-sync:
+  stage: lint
+  extends: .verify-rules
+  script:
+    - diff AGENTS.md CLAUDE.md || (echo "AGENTS.md and CLAUDE.md are out of sync. Run 'cp AGENTS.md CLAUDE.md'." && exit 1)
+
+validate-distribution-claudecode:
+  stage: verify
+  extends: .verify-rules
+  script:
+    - python3 scripts/validate-claudecode-distribution.py --ci --debug
+
+validate-distribution-opencode:
+  stage: verify
+  extends: .verify-rules
+  script:
+    - python3 scripts/validate-opencode-distribution.py --ci --debug
+
+validate-distribution-agents:
+  stage: verify
+  extends: .verify-rules
+  script:
+    - python3 scripts/validate-agents-distribution.py --ci --debug
+
+validate-distribution-pi:
+  stage: verify
+  extends: .verify-rules
+  script:
+    - python3 scripts/validate-pi-distribution.py --ci --debug
+
+verify-catalog:
+  stage: verify
+  extends: .verify-rules
+  script:
+    - python3 scripts/generate_catalog.py --ci --debug
+
+check-version-bump:
+  stage: verify
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == $CI_DEFAULT_BRANCH
+  before_script:
+    - apk add --no-cache git
+    - git fetch origin $CI_DEFAULT_BRANCH --depth=1
+    # Merge-base and merged-results target tip must be present for the diff.
+    - git fetch origin $CI_MERGE_REQUEST_DIFF_BASE_SHA $CI_MERGE_REQUEST_TARGET_BRANCH_SHA --depth=1 || true
+  script:
+    - python3 scripts/check_version_bump.py --ci --debug
+
+sync-distribution-versions:
+  stage: verify
+  extends: .verify-rules
+  script:
+    - python3 scripts/sync_skill.py --ci --debug
+
+# Block contributor edits to externally-synced skills (see synced-skills.yml).
+# Those skills have their source of truth in another repo; edits here would be
+# overwritten by the next scheduled sync. The sync bot's own MR is exempt.
+guard-synced-skills:
+  stage: verify
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+  before_script:
+    - apk add --no-cache git bash
+  script:
+    - bash scripts/check_synced_skills_untouched.sh
+
+# Inbound sync: pull externally-synced skills from their source of truth and
+# open an MR with any changes. Runs automatically from a pipeline schedule with
+# CI variable SCHEDULE_TYPE=sync_skills, or on demand via the manual play button
+# (â–¶) on default-branch pipelines.
+sync-skills:
+  stage: sync
+  image: registry.gitlab.com/gitlab-org/cli:v${GLAB_VERSION}
+  resource_group: sync-skills
+  retry: 0
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule" && $SCHEDULE_TYPE == "sync_skills"
+      when: always
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: manual
+      allow_failure: true
+    - when: never
+  variables:
+    REPO_URL: "https://oauth2:${SYNC_BOT_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"
+  before_script:
+    - apk add --no-cache git python3 bash jq
+    - glab auth login --hostname "$CI_SERVER_HOST" --token "$SYNC_BOT_TOKEN"
+    - git config --global user.email "${SYNC_BOT_EMAIL:-skills-sync-bot@no-reply.gitlab.com}"
+    - git config --global user.name "${SYNC_BOT_NAME:-GitLab Skills Sync Bot}"
+    - git remote set-url origin "$REPO_URL"
+    - git fetch origin "$CI_DEFAULT_BRANCH"
+  script:
+    - bash scripts/open_sync_mr.sh
+
+# LLM behavioural evals (promptfoo). Optional and manual: they call the
+# Anthropic API, so they need an ANTHROPIC_API_KEY CI/CD variable. Without it
+# the runner exits 0 with a skip notice. allow_failure so a flaky eval never
+# blocks a merge; treat results as signal, not a gate.
+skill-evals:
+  stage: evaluate
+  image: node:22-alpine
+  allow_failure: true
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      changes:
+        - "skills/**/*"
+      when: manual
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: manual
+  before_script:
+    - apk add --no-cache bash
+  script:
+    - bash scripts/run_evals.sh

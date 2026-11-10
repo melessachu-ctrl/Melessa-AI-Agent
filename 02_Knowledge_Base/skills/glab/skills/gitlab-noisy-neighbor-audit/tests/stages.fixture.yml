@@ -1,0 +1,20 @@
+stages:
+  plan:
+    groups:
+      project_management:
+        name: Project Management
+        label: "group::project management"
+        gitlab_group: gitlab-org/plan-stage/project-management
+        categories:
+          - team_planning
+          - service_desk
+        triage_ops_config:
+          default_labeling:
+            projects:
+              - 278964
+  agent_foundations:
+    groups:
+      agent_execution:
+        name: Agent Execution
+        categories:
+          - agent_tools

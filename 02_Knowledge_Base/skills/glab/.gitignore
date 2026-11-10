@@ -1,0 +1,7 @@
+tmp/
+.ruff_cache/
+__pycache__/
+*.pyc
+.claude
+node_modules/
+package-lock.json

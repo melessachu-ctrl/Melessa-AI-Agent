@@ -1,0 +1,14 @@
+# USE GITLAB
+
+- title: Use GitLab
+  url: 'user/'
+
+# DEMO
+
+- title: Demo product
+  url: 'demo/old-entry/'
+
+# ADMINISTER
+
+- title: Administer
+  url: 'administration/'

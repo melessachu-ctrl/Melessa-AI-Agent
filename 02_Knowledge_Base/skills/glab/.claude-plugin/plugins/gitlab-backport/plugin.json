@@ -1,0 +1,10 @@
+{
+  "name": "gitlab-backport",
+  "description": "Backport a merged GitLab bug fix from master to the maintained stable branches (MAJOR-MINOR-stable-ee) by cherry-pick and open one Stable Branch MR per release. Use when asked to backport, cherry-pick a fix to a stable branch, or prepare patch release MRs for gitlab-org/gitlab.",
+  "version": "1.0.0",
+  "author": {
+    "name": "GitLab"
+  },
+  "license": "MIT",
+  "skills": "./"
+}

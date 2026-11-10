@@ -1,0 +1,10 @@
+{
+  "name": "gitlab-ff-rollout-monitoring",
+  "description": "Builds the Monitoring section for gitlab-org/gitlab feature flag rollout issues - Kibana, Grafana and Sentry links, checked against production data where the tools allow - from the merged MR that added the flag, and health-checks a rollout that is already in progress. Use when asked to write or improve the Events or Monitoring section of a rollout issue, find logs, dashboards or Sentry errors to watch during a feature flag rollout, prepare a feature flag rollout, or health-check the rollout metrics after enabling a flag (is it safe to continue the rollout, did anything break since the flag was enabled). Not for general Sentry triage (use gitlab-sentry-cli) or for creating or flipping the flag.",
+  "version": "0.3.0",
+  "author": {
+    "name": "GitLab"
+  },
+  "license": "MIT",
+  "skills": "./"
+}

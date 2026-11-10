@@ -1,0 +1,114 @@
+#!/usr/bin/env bash
+# Run the inbound skill sync and, if it produced changes, push a branch and
+# open (or update) an MR. Intended to run from the scheduled `sync-skills` CI
+# job as the project access token bot.
+#
+# All the content mirroring lives in scripts/sync_external_skills.py; this
+# script only adds the git/MR ceremony so that logic stays testable in
+# isolation.
+#
+# Required environment (set by the CI job):
+#   CI_DEFAULT_BRANCH, CI_COMMIT_SHORT_SHA  - GitLab CI predefined vars
+# Optional:
+#   SYNC_MR_LABELS     - comma-separated labels to apply to the MR
+#   SYNC_MR_REVIEWERS  - comma-separated reviewer usernames; defaults to the
+#                        pipeline trigger user (GITLAB_USER_LOGIN) unless that
+#                        is the sync bot
+set -Eeuo pipefail
+
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$REPO_ROOT"
+
+TARGET_BRANCH="${CI_DEFAULT_BRANCH:-main}"
+SHORT_SHA="${CI_COMMIT_SHORT_SHA:-manual}"
+BRANCH="sync/skills-${SHORT_SHA}"
+TITLE="chore: sync externally-managed skills"
+
+# 1. Mirror upstream into the working tree (no auto-fix yet — we want to know
+#    whether anything actually changed before regenerating artifacts).
+python3 scripts/sync_external_skills.py --no-auto-fix --debug
+
+if git diff --quiet && git diff --cached --quiet; then
+  echo "No changes from sync; nothing to do."
+  exit 0
+fi
+
+# 2. Regenerate distribution artifacts (README, ToC, catalog, plugin version
+#    manifests). Prefer lefthook's auto-fix when available; otherwise run the
+#    same steps directly so the job works in images without lefthook (e.g. the
+#    glab CLI image).
+#
+#    Order matters here, unlike in lefthook's hook: bin/sync-skill propagates
+#    each SKILL.md version into its plugin.json, and update_claudecode_readme.py
+#    reads the version *from* plugin.json. So sync-skill must run BEFORE the
+#    README regen, otherwise the README table keeps the stale version.
+if command -v lefthook >/dev/null 2>&1; then
+  lefthook run auto-fix
+  # lefthook lists claudecode-readme before sync-distribution-versions, so a
+  # single pass leaves the README one version behind. Refresh it after.
+  python3 scripts/update_claudecode_readme.py
+else
+  echo "lefthook not found; running auto-fix steps directly." >&2
+  bin/sync-skill
+  python3 scripts/update_skills_list.py
+  python3 scripts/update_toc.py
+  python3 scripts/generate_catalog.py
+  python3 scripts/update_claudecode_readme.py
+fi
+
+# 3. Commit on a fresh branch.
+git checkout -b "$BRANCH"
+git add -A
+git commit \
+  -m "$TITLE" \
+  -m "Automated by the sync-skills scheduled pipeline."
+git push -u origin "$BRANCH"
+
+# 4. Open the MR. Skip if one already exists for this branch.
+existing="$(glab mr list --source-branch "$BRANCH" --output json 2>/dev/null || echo '[]')"
+if [ "$(echo "$existing" | jq 'length')" -gt 0 ]; then
+  echo "MR already exists for $BRANCH; nothing to open."
+  exit 0
+fi
+
+label_args=()
+if [ -n "${SYNC_MR_LABELS:-}" ]; then
+  IFS=',' read -ra _labels <<< "$SYNC_MR_LABELS"
+  for l in "${_labels[@]}"; do
+    label_args+=(--label "$l")
+  done
+fi
+
+# Assign reviewers so the sync MR lands in someone's review queue instead of
+# going unnoticed. SYNC_MR_REVIEWERS (comma-separated usernames) takes
+# precedence; otherwise default to whoever triggered the pipeline
+# (GITLAB_USER_LOGIN) — e.g. the person who clicked the play button, or the
+# schedule owner. Skip the fallback when the trigger is the sync bot itself,
+# since a bot reviewing its own MR adds no value.
+reviewers="${SYNC_MR_REVIEWERS:-}"
+if [ -z "$reviewers" ] && [ -n "${GITLAB_USER_LOGIN:-}" ] &&
+   ! [[ "$GITLAB_USER_LOGIN" =~ ^project_[0-9]+_bot(_[0-9a-f]+|[0-9]*)$ ]]; then
+  reviewers="$GITLAB_USER_LOGIN"
+fi
+
+reviewer_args=()
+if [ -n "$reviewers" ]; then
+  IFS=',' read -ra _reviewers <<< "$reviewers"
+  for r in "${_reviewers[@]}"; do
+    reviewer_args+=(--reviewer "$r")
+  done
+fi
+
+description="Automated sync of skills whose source of truth lives in another repository (see \`synced-skills.yml\`).
+
+Review the diff to confirm it matches the upstream change, then merge."
+
+glab mr create \
+  --source-branch "$BRANCH" \
+  --target-branch "$TARGET_BRANCH" \
+  --title "$TITLE" \
+  --remove-source-branch \
+  --yes \
+  "${label_args[@]}" \
+  "${reviewer_args[@]}" \
+  --description "$description"

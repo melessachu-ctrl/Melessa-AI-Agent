@@ -1,0 +1,20 @@
+# The demo section of the docs.gitlab.com global navigation.
+- title: Demo product
+  url: 'demo/'
+  submenu:
+    - title: Quickstart
+      url: 'demo/quickstart/'
+    - title: Concepts
+      url: 'demo/concepts/'
+    - title: Concepts again
+      url: 'demo/concepts/'
+    - title: Reference
+      url: 'demo/reference/'
+    - title: Removed page
+      url: 'demo/removed/'
+    - title: Old page
+      url: 'demo/old-page/'
+    - title: Miscellaneous
+      url: 'demo/misc/'
+    - title: Step one
+      url: 'demo/quickstart/#step-1-install-the-cli'

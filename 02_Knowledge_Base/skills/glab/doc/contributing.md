@@ -1,0 +1,149 @@
+# Contributing a New Skill
+
+## Adding a Skill
+
+1. Create a directory under `skills/` named after the skill (e.g. `skills/my-workflow/`)
+2. Add a `SKILL.md` with YAML frontmatter:
+
+   ```markdown
+   ---
+   name: my-workflow
+   description: One-line description of what this skill provides
+   version: 1.0.0
+   license: MIT
+   compatibility: opencode
+   metadata:
+     audience: developers
+   ---
+
+   # My Workflow Skill
+
+   ...skill content...
+   ```
+
+3. Register the skill for distribution to editor environments:
+
+   ```bash
+   bin/distribute-skill my-workflow
+   ```
+
+   This creates the necessary symlinks and manifests in `.opencode/`, `.agents/`, and `.claude-plugin/`, and verifies pi package discovery.
+   To target a specific environment only: `--env=opencode`, `--env=agents`, `--env=claudecode`, or `--env=pi`. See more in `bin/distribute-skill` manual.
+
+4. Regenerate all derived files:
+
+   ```bash
+   lefthook run auto-fix
+   ```
+
+5. Commit everything: the new skill, updated README, catalog.json, and distribution manifests
+
+The CI pipeline will fail if any generated files are out of sync with the skill files.
+
+## Required Frontmatter Fields
+
+| Field | Description |
+|-------|-------------|
+| `name` | Skill identifier (kebab-case, matches directory name) |
+| `description` | One-line description — shown in README table and catalog |
+| `version` | Semver version string (e.g. `1.0.0`) — **must be bumped** when any skill file changes |
+| `license` | SPDX license identifier (typically `MIT`) |
+
+Optional fields: `compatibility` (agent framework, e.g. `opencode`), `metadata` (with nested `audience`, `workflow`, etc.)
+
+The `validate-frontmatter` CI job enforces these required fields, that `name` is
+kebab-case, that it matches the directory name, and that the frontmatter is
+**valid YAML** (parsed with `yaml.safe_load`). Quote `description` values that
+contain colons (e.g. `description: "Use when: planning, reviewing"`).
+The `check-version-bump` job
+verifies that the `version` field is incremented whenever files under
+`skills/<name>/` change. The `validate-content-quality` job fails on any broken
+relative link in a `SKILL.md` or its `references/*.md`, and warns (without
+blocking) on a missing "When to Use"/"Use when"/"Triggers" cue, stray
+`TODO`/`FIXME` in prose, or AGENTS.md-banned voice words. To keep a banned
+word on purpose (for example in a table of words to avoid), end the line with
+`<!-- voice-ok -->`, or `<!-- voice-ok: reason -->` to say why. See
+[`AGENTS.md`](../AGENTS.md) for the full list of conventions and their enforcing
+checks (skill length, shell-script linting, `AGENTS.md`/`CLAUDE.md` sync).
+
+## Distribution
+
+Skills are distributed to editor-specific directories using `bin/distribute-skill`:
+
+```bash
+bin/distribute-skill SKILLNAME                          # all environments
+bin/distribute-skill SKILLNAME --env=opencode           # opencode only
+bin/distribute-skill SKILLNAME --env=agents             # .agents/skills/ only
+bin/distribute-skill SKILLNAME --env=claudecode         # ClaudeCode only
+bin/distribute-skill SKILLNAME --env=pi                 # pi only
+bin/distribute-skill SKILLNAME --env=claudecode --plugin=PLUGINNAME  # custom plugin name
+bin/distribute-skill SKILLNAME --env=opencode --overwrite  # remove from all other envs
+```
+
+**opencode** (`.opencode/skills/`): creates a symlink to `skills/<name>/`.
+
+**agents** (`.agents/skills/`): creates a symlink to `skills/<name>/`. This is the cross-tool discovery location defined by the [Agent Skills spec](https://agentskills.io); see the README for the tools that consume it.
+
+**ClaudeCode** (`.claude-plugin/plugins/<name>/`): writes a `plugin.json` manifest, creates a symlink under `skills/`, and registers the plugin in `marketplace.json`.
+
+**pi** (root `package.json`): no per-skill symlinks needed. Pi discovers all skills under `skills/` via the `pi.skills` manifest in `package.json`. The distribute command verifies the manifest is correctly configured.
+
+CI jobs verify the distributed skills are format-compatible:
+
+- `validate-opencode-distribution` — checks `.opencode/skills/*/SKILL.md` for required opencode fields
+- `validate-agents-distribution` — checks `.agents/skills/*/SKILL.md` against the Agent Skills spec
+- `validate-claudecode-distribution` — checks `.claude-plugin/**/skills/*/SKILL.md` for required ClaudeCode fields
+- `validate-distribution-pi` — checks `package.json` manifest and all `skills/*/SKILL.md` against pi's Agent Skills spec
+
+## Development
+
+### Install the toolchain
+
+[`mise.toml`](../mise.toml) pins the tools that `bin/ci-checks` and the
+pre-push hooks need: python, node, ruby, ruff, shellcheck, jq, and lefthook. Install
+[mise](https://mise.jdx.dev) and
+[activate it](https://mise.jdx.dev/getting-started.html#activate-mise) in your
+shell (PATH mode, `eval "$(mise activate bash)"` or the zsh equivalent), then:
+
+```bash
+mise install
+pip install PyYAML==6.0.2   # strict frontmatter YAML check (CI pins the same)
+```
+
+`mise install` also installs the git hooks (outside CI), and entering the
+project with mise activated reinstalls them if they are missing. To install them
+by hand, run `mise run hooks:install`.
+
+`pip` and `lefthook` reach the pinned tools only when mise is activated. To run
+the checks without activating, use `mise exec -- bin/ci-checks`.
+
+Without mise, install python, node, ruby, shellcheck, jq, and lefthook yourself (for example `brew install lefthook shellcheck jq node ruby python`), then run the `pip install PyYAML==6.0.2` step above and `lefthook install`. Install ruff at the pinned version with `uv tool install ruff@0.17.2` (or `pipx install ruff==0.17.2`).
+
+With the toolchain installed:
+
+- **Pre-push**: all checks run automatically (blocks push on failure)
+  and need `ruff` and `shellcheck` on your `PATH` (`mise install` provides both)
+- **Auto-fix**: `lefthook run auto-fix` regenerates all derived files
+
+### Regenerate all derived files
+
+```bash
+lefthook run auto-fix
+```
+
+Or run each script individually:
+
+```bash
+python3 scripts/update_skills_list.py      # README skills table
+python3 scripts/update_toc.py              # README table of contents
+python3 scripts/generate_catalog.py        # catalog.json
+bin/sync-skill                             # sync SKILL.md versions into plugin.json
+```
+
+### Verify everything is up to date (CI mode)
+
+```bash
+bin/ci-checks
+```
+
+This runs all checks in sequence and reports any failures at the end.

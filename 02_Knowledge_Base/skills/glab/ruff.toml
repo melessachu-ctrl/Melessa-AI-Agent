@@ -1,0 +1,8 @@
+# Lint Python outside the top-level skills/ directory (scripts/ and the
+# bin/ tools). Non-synced skills are linted by scripts/lint_python_skills.sh.
+extend-exclude = ["./skills"]
+extend-include = ["bin/distribute-skill", "bin/sync-skill"]
+
+[lint]
+# pycodestyle errors that indicate real bugs (E4, E7, E9) plus Pyflakes (F).
+select = ["E4", "E7", "E9", "F"]

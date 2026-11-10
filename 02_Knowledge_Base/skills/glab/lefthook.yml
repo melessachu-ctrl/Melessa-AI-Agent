@@ -1,0 +1,62 @@
+pre-push:
+  parallel: true
+  skip:
+    - ref: main
+  commands:
+    check-pushed-tree:
+      run: scripts/check_pushed_tree.sh
+      use_stdin: true
+    verify-skills-list:
+      run: python3 scripts/update_skills_list.py --ci
+    validate-frontmatter:
+      run: python3 scripts/validate_frontmatter.py --ci
+    test-frontmatter:
+      run: python3 -m unittest discover -s scripts/tests -p 'test_*.py'
+    validate-skill-length:
+      run: python3 scripts/validate_skill_length.py --ci
+    validate-content-quality:
+      run: python3 scripts/validate_content_quality.py --ci
+    lint-python:
+      run: ruff check .
+    lint-python-skills:
+      run: scripts/lint_python_skills.sh
+    lint-shell:
+      run: scripts/lint_shell.sh
+    lint-bash-portability:
+      run: scripts/lint_bash_portability.sh
+    skill-tests:
+      run: scripts/run_skill_tests.sh
+    test-skill-hooks-plugin:
+      run: node .opencode/plugins/__tests__/skill-hooks.test.mjs
+    agent-file-sync:
+      run: diff AGENTS.md CLAUDE.md || (echo "AGENTS.md and CLAUDE.md are out of sync. Run 'cp AGENTS.md CLAUDE.md'." && exit 1)
+    validate-claudecode-distribution:
+      run: python3 scripts/validate-claudecode-distribution.py --ci
+    validate-opencode-distribution:
+      run: python3 scripts/validate-opencode-distribution.py --ci
+    validate-agents-distribution:
+      run: python3 scripts/validate-agents-distribution.py --ci
+    validate-pi-distribution:
+      run: python3 scripts/validate-pi-distribution.py --ci
+    verify-catalog:
+      run: python3 scripts/generate_catalog.py --ci
+    verify-toc:
+      run: python3 scripts/update_toc.py --ci
+    check-version-bump:
+      run: python3 scripts/check_version_bump.py --ci
+    sync-distribution-versions:
+      run: bin/sync-skill --ci
+
+auto-fix:
+  parallel: false
+  commands:
+    skills-list:
+      run: python3 scripts/update_skills_list.py
+    toc:
+      run: python3 scripts/update_toc.py
+    catalog:
+      run: python3 scripts/generate_catalog.py
+    claudecode-readme:
+      run: python3 scripts/update_claudecode_readme.py
+    sync-distribution-versions:
+      run: bin/sync-skill

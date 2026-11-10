@@ -1,0 +1,10 @@
+{
+  "name": "rewrite-in-rust",
+  "description": "Rewrites existing codebases (C, C++, Go, Python, Ruby, JavaScript, TypeScript, Java) into idiomatic, secure Rust through analysis, characterization tests, incremental migration, differential testing, and security hardening. For rewritten GitLab services it wires in labkit-rs for logging, metrics, tracing, correlation IDs, health probes, and lifecycle, and uses bench to bootstrap, test, and deploy. Use when asked to rewrite, port, migrate, or convert a project to Rust (RIIR), to replace a service with Rust, or to add GitLab-standard observability to a Rust rewrite. Not for adding Rust FFI to existing C (rust-unsafe-ffi-review) or reviewing Rust that already exists (rust-idioms).",
+  "version": "2.2.0",
+  "author": {
+    "name": "GitLab"
+  },
+  "license": "MIT",
+  "skills": "./"
+}

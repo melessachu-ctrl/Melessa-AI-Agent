@@ -1,0 +1,1496 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>HKTVmall PDP · 荷蘭皇家美素佳兒 4號</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1c1c1c;
+      --secondary: #575757;
+      --tertiary: #8b8b8b;
+      --sale: #cf062a;
+      --green: #00a759;
+      --green-50: #f2fbf7;
+      --orange: #ff740b;
+      --star: #fd7c0a;
+      --line: #f0f0f0;
+      --page: #f2f2f2;
+      --vip: #5e30a7;
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      background: #d5d5d5;
+      display: flex;
+      justify-content: center;
+      font-family: Poppins, "Noto Sans TC", "PingFang HK", sans-serif;
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input { font-family: inherit; }
+    button { border: 0; background: none; padding: 0; color: inherit; cursor: pointer; }
+    img { display: block; max-width: 100%; }
+    .device {
+      width: 393px;
+      height: min(1128px, 100dvh);
+      background: var(--page);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+    }
+    .scroll {
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-bottom: 168px;
+      scrollbar-width: none;
+    }
+    .scroll::-webkit-scrollbar { display: none; }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 102px;
+      overflow: hidden;
+    }
+    .header-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .header-bg img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 393px;
+      height: 393px;
+      max-width: none;
+      object-fit: cover;
+      filter: blur(18px);
+      transform: scale(1.15) translateY(8px);
+      opacity: 0;
+      transition: opacity .25s ease;
+    }
+    .header-bg img.on { opacity: 1; }
+    .header.scrolled {
+      background: #fff;
+      overflow: visible;
+    }
+    .header.scrolled .header-bg { opacity: 0; }
+    .header.scrolled .nav { display: none; }
+    .nav-rest {
+      display: none;
+      position: relative;
+      align-items: center;
+      gap: 8px;
+      height: 48px;
+      padding: 6px 16px;
+      background: #fff;
+    }
+    .header.scrolled .nav-rest { display: flex; }
+    .nav-rest .act {
+      height: 36px;
+      padding: 4px 6px;
+      border-radius: 36px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      flex: none;
+      position: relative;
+    }
+    .nav-rest .act span {
+      font-size: 8px;
+      line-height: 8px;
+      font-weight: 400;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    .nav-rest .badge { top: -6px; right: -8px; }
+    .search-bar {
+      flex: 1;
+      min-width: 0;
+      height: 36px;
+      border-radius: 140px;
+      background: #f7f7f7;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 12px;
+      color: #b2b2b2;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+    .search-bar span {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: left;
+    }
+    .home-g {
+      width: 58px;
+      height: 36px;
+      border-radius: 36px;
+      background: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      flex: none;
+    }
+    .home-g span { font-size: 8px; line-height: 8px; color: var(--ink); }
+    .tabs {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      gap: 16px;
+      padding: 0 16px;
+      overflow-x: auto;
+      background: #fff;
+      border-bottom: 0.4px solid #e5e8eb;
+      scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .header.scrolled .tabs { display: flex; }
+    .tabs button {
+      flex: none;
+      margin-bottom: -0.4px;
+      padding: 8px 12px;
+      border-bottom: 2px solid transparent;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--tertiary);
+      white-space: nowrap;
+    }
+    .tabs button.on {
+      color: var(--ink);
+      font-weight: 600;
+      border-bottom-color: var(--green);
+    }
+    .status {
+      position: relative;
+      height: 54px;
+      padding: 21px 16px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .time {
+      width: 120px;
+      text-align: center;
+      font-family: -apple-system, "SF Pro Text", Poppins, sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      letter-spacing: -0.3px;
+      line-height: 22px;
+    }
+    .levels { display: flex; align-items: center; gap: 7px; width: 120px; justify-content: flex-end; }
+    .nav {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 16px 8px;
+    }
+    .round {
+      width: 36px;
+      height: 36px;
+      border-radius: 100px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-actions { display: flex; align-items: center; gap: 8px; }
+    .pill {
+      height: 36px;
+      min-width: 44px;
+      padding: 0 10px;
+      border-radius: 36px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1px;
+      position: relative;
+    }
+    .pill span { font-size: 8px; line-height: 8px; color: var(--ink); }
+    .pill.wide { width: 58px; }
+    .badge {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 20px;
+      background: #e4483f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero { position: relative; background: #fff; }
+    .gallery {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      overscroll-behavior-x: contain;
+    }
+    .gallery::-webkit-scrollbar { display: none; }
+    .gallery .slide {
+      flex: 0 0 100%;
+      aspect-ratio: 1;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      background: #fff;
+    }
+    .gallery .slide img { width: 100%; height: 100%; object-fit: contain; }
+    .pager {
+      position: absolute;
+      left: 50%;
+      bottom: 32px;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      padding: 4px;
+      border-radius: 20px;
+      background: rgba(0, 0, 0, 0.3);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      pointer-events: none;
+    }
+    .pager span {
+      min-width: 16px;
+      padding: 0 4px;
+      font-size: 12px;
+      line-height: 14px;
+      font-weight: 400;
+      text-align: center;
+    }
+    .pager .now { color: #fff; }
+    .pager .total { color: rgba(255, 255, 255, 0.7); }
+    .pager img { max-width: none; flex: none; }
+
+    .sheet {
+      margin-top: -16px;
+      position: relative;
+      z-index: 2;
+      border-radius: var(--radius);
+      overflow: hidden;
+      padding-top: 6px;
+      background: linear-gradient(179.74deg, #ff6f00 11.67%, #ffffff 66.19%);
+    }
+    .promo {
+      width: 100%;
+      height: 24px;
+      margin-bottom: 6px;
+      background: transparent;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: left;
+    }
+    .promo .label-wrap {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      min-width: 0;
+      flex: 1;
+    }
+    .promo .flip {
+      flex: 1;
+      min-width: 0;
+      height: 20px;
+      overflow: hidden;
+      text-align: left;
+    }
+    .promo .track {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .promo .track.go {
+      transform: translateY(-20px);
+      transition: transform .5s ease-in-out;
+    }
+    .promo .label {
+      display: block;
+      height: 20px;
+      line-height: 20px;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .price-block {
+      background: #fff;
+      border-radius: 24px;
+      padding: 12px 16px 16px;
+    }
+    .was {
+      margin: 0;
+      color: var(--tertiary);
+      font-size: 14px;
+      line-height: 1.4;
+      text-decoration: line-through;
+    }
+    .now {
+      margin: 0;
+      color: var(--sale);
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 1.15;
+      letter-spacing: -0.3px;
+    }
+    .now small { font-size: 20px; font-weight: 600; }
+    .pname {
+      margin: 8px 0 0;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .meta {
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      line-height: 20px;
+      color: var(--tertiary);
+    }
+    .meta .left { display: flex; align-items: center; gap: 8px; min-width: 0; }
+    .rate-num { display: inline-flex; align-items: center; gap: 2px; }
+    .score { color: var(--ink); font-weight: 600; }
+    .count { color: var(--tertiary); font-weight: 400; }
+    .vdiv { width: 1px; height: 12px; background: #c5cdd6; }
+    .sold { margin-left: auto; white-space: nowrap; }
+    .benefit {
+      margin-top: 8px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .trend {
+      display: flex;
+      align-items: center;
+      color: var(--tertiary);
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .trend img { margin-left: -2px; }
+    .md {
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--green);
+      font-size: 12px;
+      line-height: 17px;
+      font-weight: 500;
+    }
+    .pills { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+    .pill-tag {
+      border: 1px solid var(--green);
+      background: var(--green-50);
+      color: var(--green);
+      border-radius: 24px;
+      padding: 1px 6px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    .card {
+      margin: 12px 0 0;
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .store-row { display: flex; align-items: center; gap: 8px; width: 100%; }
+    .store-row .store-meta { flex: 1; min-width: 0; text-align: left; }
+    .store-logo {
+      width: 78px;
+      height: 40px;
+      border-radius: 4px;
+      border: 0.4px solid #e5e8eb;
+      object-fit: cover;
+      flex: none;
+    }
+    .store-name { margin: 0; font-size: 14px; line-height: 1.4; color: var(--secondary); font-weight: 400; }
+    .flag {
+      margin-top: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      height: 16px;
+      padding: 0 5px;
+      border-radius: 6px;
+      background: linear-gradient(165deg, #a55801 18%, #cf7001 88%);
+      color: #fff;
+      font-size: 10px;
+      line-height: 1;
+    }
+    .hairline { height: 1px; background: #eee; margin: 10px 0; }
+    .ship { display: flex; gap: 12px; align-items: flex-start; }
+    .ship-k { color: var(--tertiary); font-size: 14px; line-height: 1.4; white-space: nowrap; }
+    .ship-v { flex: 1; min-width: 0; }
+    .tonight {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      background: #02af1b;
+      color: #fff;
+      border-radius: 24px;
+      padding: 2px 6px;
+      font-size: 12px;
+      line-height: 1.4;
+    }
+    .ship-copy { margin: 4px 0 0; color: var(--secondary); font-size: 14px; line-height: 1.4; }
+    .row-link {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--tertiary);
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .sec-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .sec-head h2 { margin: 0; font-size: 18px; font-weight: 600; line-height: 1.4; }
+    .sec-head h2 em { font-style: normal; color: var(--tertiary); font-weight: 400; font-size: 14px; margin-left: 2px; }
+    .see-all { display: flex; align-items: center; color: var(--tertiary); font-size: 14px; }
+
+    .hscroll {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      margin: 0 -16px;
+      padding: 0 16px 2px;
+      scrollbar-width: none;
+    }
+    .hscroll::-webkit-scrollbar { display: none; }
+    .sku {
+      width: 132px;
+      flex: none;
+    }
+    .sku-img {
+      width: 132px;
+      height: 132px;
+      border-radius: 12px;
+      border: 1px solid #f2f2f2;
+      overflow: hidden;
+      background: #fff;
+    }
+    .sku-img img { width: 132px; height: 132px; object-fit: cover; }
+    .sku-name {
+      margin: 8px 0 0;
+      height: 40px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .sku-spec { margin: 4px 0 0; color: var(--tertiary); font-size: 12px; line-height: 1.4; }
+    .stars { display: flex; align-items: center; gap: 1px; margin-top: 4px; }
+    .stars.tight { gap: 0; justify-content: center; }
+    .stars.sm { gap: 2px; margin-top: 0; }
+    .ic { position: relative; flex: none; display: block; }
+    .ic.s20 { width: 20px; height: 20px; }
+    .ic.s16 { width: 16px; height: 16px; }
+    .ic.s12 { width: 12px; height: 12px; }
+    .ic .glyph { position: absolute; left: 14.35%; top: 14.89%; }
+    .price-cart { margin-top: 4px; display: flex; align-items: flex-end; justify-content: space-between; }
+    .sku-was { margin: 0; color: var(--tertiary); font-size: 12px; text-decoration: line-through; line-height: 1.4; }
+    .sku-now { margin: 0; color: var(--sale); font-size: 14px; font-weight: 600; line-height: 1.4; }
+    .sku-unit { margin: 0; color: var(--sale); font-size: 12px; line-height: 1.4; }
+    .cart-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+    }
+
+    .ticket {
+      width: 100%;
+      height: 49px;
+      display: flex;
+      align-items: stretch;
+      background: transparent;
+      position: relative;
+      text-align: left;
+    }
+    .ticket + .ticket { margin-top: 12px; }
+    .ticket-main {
+      flex: 1;
+      min-width: 0;
+      background: #fff2e6;
+      border-radius: 8px 0 0 8px;
+      padding: 6px 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+    }
+    .ticket-main strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #ff6c40;
+    }
+    .ticket-main span {
+      display: block;
+      font-size: 12px;
+      color: #4d4d4d;
+      line-height: 1.4;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .ticket-notch {
+      position: relative;
+      flex: none;
+      width: 8px;
+      height: 49px;
+    }
+    .ticket-notch .dash {
+      position: absolute;
+      left: 3px;
+      top: 5px;
+    }
+    .ticket-go {
+      width: 40px;
+      height: 49px;
+      flex: none;
+      background: #fff2e6;
+      border-radius: 0 8px 8px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .score-row { display: flex; align-items: center; justify-content: center; gap: 28px; margin: 4px 0 16px; }
+    .big { font-size: 30px; line-height: 30px; font-weight: 500; }
+    .big small { font-size: 16px; color: rgba(0,0,0,.38); font-weight: 400; }
+    .hint { margin: 4px 0 0; font-size: 12px; text-align: center; }
+    .score-div { width: 1px; height: 50px; background: #e6e6e6; }
+    .review {
+      width: 288px;
+      flex: none;
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: #f7f7f7;
+      border-radius: 12px;
+      padding: 12px;
+    }
+    .review-fill {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+      min-height: 0;
+    }
+    .who { display: flex; align-items: flex-start; justify-content: space-between; }
+    .name-row { display: flex; align-items: center; gap: 4px; }
+    .who b { font-size: 14px; font-weight: 400; line-height: 1.4; }
+    .vip {
+      display: inline-flex;
+      align-items: center;
+      height: 16px;
+      padding: 0 4px 0 1px;
+      border-radius: 100px;
+      background: #5e30a7;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 16px;
+      flex: none;
+    }
+    .vip.tall {
+      height: 19px;
+      padding: 0 8px 0 3px;
+      background: #7039c7;
+    }
+    .vip-gem {
+      position: relative;
+      width: 16px;
+      height: 16px;
+      margin-right: -2px;
+      flex: none;
+      overflow: hidden;
+    }
+    .vip.tall .vip-gem { margin-right: 0; }
+    .vip-gem img {
+      position: absolute;
+      left: 21%;
+      top: 26.67%;
+      max-width: none;
+    }
+    .subline { display: flex; align-items: center; gap: 4px; margin-top: 2px; }
+    .date { color: var(--tertiary); font-size: 12px; }
+    .review-body { display: flex; gap: 8px; margin-top: 6px; }
+    .review-body p { margin: 0; font-size: 14px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .thumb-img { width: 56px; height: 56px; border-radius: 8px; object-fit: cover; flex: none; }
+    .react { display: flex; justify-content: space-between; color: var(--tertiary); font-size: 12px; }
+    .review > div > .react { margin-top: 8px; }
+    .react span { display: inline-flex; align-items: center; gap: 2px; }
+    .reply {
+      margin-top: 0;
+      background: var(--green-50);
+      border-radius: 12px;
+      padding: 8px;
+    }
+    .reply-h { display: flex; align-items: center; gap: 6px; color: var(--green); font-size: 14px; font-weight: 600; }
+    .reply-h img { width: 24px; height: 24px; border-radius: 100px; object-fit: cover; }
+    .reply-h .date { margin-left: auto; font-weight: 400; }
+    .reply p { margin: 4px 0 0; font-size: 14px; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .share-card { width: 124px; flex: none; }
+    .share-card img { width: 124px; height: 155px; object-fit: cover; border-radius: 14px; }
+    .share-card p { margin: 6px 0 0; font-size: 14px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .qa { display: flex; gap: 8px; align-items: flex-start; }
+    .ask {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      background: var(--green-50);
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      font-size: 14px;
+    }
+    .qa-main { flex: 1; min-width: 0; }
+    .qa-line { display: flex; justify-content: space-between; gap: 8px; font-size: 14px; line-height: 1.4; }
+    .qa-line span { color: var(--tertiary); white-space: nowrap; }
+    .qa-ans { margin: 0 0 12px 38px; color: var(--tertiary); font-size: 14px; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ask-row { display: flex; gap: 8px; margin-top: 4px; }
+    .ask-row input {
+      flex: 1;
+      height: 36px;
+      border: 0;
+      border-radius: 10px;
+      background: #f7f7f7;
+      padding: 0 10px;
+      font-size: 14px;
+      color: var(--ink);
+    }
+    .ask-row input::placeholder { color: #b2b2b2; }
+    .ask-go {
+      width: 64px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--green);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .detail p { margin: 0 0 8px; font-size: 14px; line-height: 1.4; }
+    .exp { display: flex; align-items: center; gap: 4px; font-size: 14px; line-height: 1.4; margin-bottom: 8px; }
+    .detail-shot {
+      width: calc(100% + 32px);
+      max-width: none;
+      height: auto;
+      margin: 12px -16px;
+    }
+    .kv { display: flex; align-items: flex-start; gap: 14px; min-height: 24px; margin-top: 8px; }
+    .kv .k { width: 64px; flex: none; color: var(--tertiary); font-size: 14px; line-height: 1.4; }
+    .kv .v { flex: 1; font-size: 14px; line-height: 1.4; }
+    .kv .go { flex: none; }
+
+    .store-big { display: flex; gap: 12px; align-items: center; }
+    .store-id { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+    .store-name-row { display: flex; align-items: center; gap: 8px; min-width: 0; }
+    .store-big .store-logo { width: 97px; height: 50px; border-radius: 4px; }
+    .store-title {
+      flex: 1;
+      min-width: 0;
+      height: 50.4px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      color: #000;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .store-title span {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .store-tags { display: flex; align-items: stretch; gap: 4px; }
+    .store-flag,
+    .award {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 6px;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1;
+    }
+    .store-flag { background: linear-gradient(165.42deg, #a55801 18.561%, #cf7001 87.879%); }
+    .award {
+      width: 100.5px;
+      justify-content: space-between;
+      background: linear-gradient(90deg, #d79511, #bf8a1f);
+    }
+    .store-flag img,
+    .award img { max-width: none; flex: none; }
+    .rate-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      align-self: stretch;
+      padding: 0 7px 0 5px;
+      border-radius: 8px;
+      background: #fd7c0a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+    }
+    .enter {
+      margin-left: auto;
+      width: 74px;
+      height: 44px;
+      border-radius: 24px;
+      background: var(--green);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      flex: none;
+    }
+    .store-sec {
+      background: linear-gradient(180deg, #ffffff 14.884%, #f2f2f2 29.52%);
+      padding: 16px 12px;
+    }
+    .store-sec .store-big,
+    .store-sec .store-label { padding: 0 4px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .gsku {
+      position: relative;
+      min-width: 0;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .gsku .ph {
+      aspect-ratio: 1;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+    .gsku .ph img { width: 100%; height: 100%; object-fit: cover; }
+    .gsku .info { padding: 4px 8px 8px; }
+    .gsku .name {
+      margin: 0;
+      height: 39.2px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: #1c1c25;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .gsku .prices { margin-top: 2px; padding-right: 36px; }
+    .gsku .cart-btn {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      z-index: 2;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+    .gsku .cart-glyph { position: absolute; inset: 15.63%; }
+    .gsku .cart-glyph img { position: absolute; left: 4.17%; top: 6.25%; max-width: none; }
+
+    .footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #fff;
+      box-shadow: 0 0 8px rgba(145, 158, 171, 0.16);
+      z-index: 30;
+    }
+    .bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+    }
+    .fav { width: 40px; display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 12px; line-height: 12px; }
+    .fav .heart-on { display: none; }
+    .fav.on .heart-off { display: none; }
+    .fav.on .heart-on { display: block; }
+    .step {
+      height: 44px;
+      background: #f7f7f7;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+    }
+    .step b { width: 32px; text-align: center; font-size: 16px; }
+    .atc {
+      flex: 1;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--green);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1;
+    }
+    .atc img { margin-left: 12px; flex: none; }
+    .atc span { flex: 1; text-align: center; padding-right: 12px; }
+    .step button:disabled { opacity: 1; cursor: default; }
+    .atc:active { filter: brightness(0.95); }
+    .home-ind { height: 34px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 8px; background: #f2f2f2; transition: background .28s ease; }
+    .home-ind i { width: 144px; height: 5px; border-radius: 100px; background: var(--ink); display: block; }
+    .dock {
+      max-height: 56px;
+      overflow: hidden;
+      background: #f2f2f2;
+      transition: max-height .28s ease;
+    }
+    .footer.dock-hide .dock { max-height: 0; }
+    .footer.dock-hide .home-ind { background: #fff; }
+    .dock-tabs {
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 4px;
+    }
+    .dock-item {
+      width: 60px;
+      height: 40px;
+      flex: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: #8b8b8b;
+      font-size: 11px;
+      line-height: 12px;
+      font-weight: 400;
+    }
+    .dock-item img { max-width: none; }
+    .dock-ico { position: relative; height: 24px; }
+    .dock-badge { position: absolute; right: -6px; top: -3px; }
+    .dock-item.ka { position: relative; overflow: hidden; color: #cf062a; }
+    .dock-item.ka .crown { position: absolute; left: calc(50% + 18px); bottom: 17px; }
+    .dock-item.ka .ka-a,
+    .dock-item.ka .ka-b {
+      position: absolute;
+      font-family: "Noto Sans TC", sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: normal;
+      white-space: nowrap;
+    }
+    .dock-item.ka .ka-a { left: calc(50% - 15px); top: 2px; }
+    .dock-item.ka .ka-b { left: calc(50% - 22px); bottom: 1px; }
+
+    .toast {
+      position: absolute;
+      left: 50%;
+      bottom: 174px;
+      transform: translateX(-50%) translateY(8px);
+      background: rgba(28, 28, 28, 0.92);
+      color: #fff;
+      font-size: 14px;
+      line-height: 1.4;
+      padding: 10px 14px;
+      border-radius: 10px;
+      opacity: 0;
+      pointer-events: none;
+      transition: .2s ease;
+      z-index: 40;
+      white-space: nowrap;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    @media (max-width: 420px) {
+      body { background: var(--page); }
+      .device { width: 100%; height: 100dvh; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="device">
+    <div class="scroll" id="scroll">
+      <header class="header" id="header">
+        <div class="header-bg">
+          <img class="on" src="assets/gallery-1.jpg" alt="" />
+          <img src="assets/gallery-2.jpg" alt="" />
+          <img src="assets/gallery-3.jpg" alt="" />
+        </div>
+        <div class="status">
+          <div class="time">9:41</div>
+          <div class="levels">
+            <img src="assets/cellular.svg" alt="" />
+            <img src="assets/wifi.svg" alt="" />
+            <img src="assets/battery.svg" alt="" />
+          </div>
+        </div>
+        <div class="nav">
+          <button class="round" type="button" aria-label="返回"><img src="assets/back.svg" alt="" /></button>
+          <div class="nav-actions">
+            <button class="pill" type="button"><img src="assets/search.svg" alt="" /><span>搜尋</span></button>
+            <button class="pill" type="button"><img src="assets/share.svg" alt="" /><span>分享</span></button>
+            <button class="pill" type="button" id="cartNav">
+              <img src="assets/cart.svg" alt="" />
+              <span>購物車</span>
+              <i class="badge"><img src="assets/more.svg" alt="" /></i>
+            </button>
+            <button class="pill wide" type="button"><img src="assets/home.svg" alt="" /><span>HKTVmall</span></button>
+          </div>
+        </div>
+        <div class="nav-rest">
+          <button class="round" type="button" aria-label="返回"><img src="assets/back.svg" alt="" /></button>
+          <button class="search-bar" type="button">
+            <img src="assets/search-20.svg" alt="" />
+            <span>搜尋商品</span>
+            <img src="assets/camera.svg" alt="" />
+          </button>
+          <button class="act" type="button"><img src="assets/share.svg" alt="" /><span>分享</span></button>
+          <button class="act" type="button">
+            <img src="assets/cart.svg" alt="" />
+            <span>購物車</span>
+            <i class="badge"><img src="assets/more.svg" alt="" /></i>
+          </button>
+          <button class="home-g" type="button"><img src="assets/home.svg" alt="" /><span>HKTVmall</span></button>
+        </div>
+        <nav class="tabs" id="tabs" aria-label="頁面章節">
+          <button type="button" data-sec="sec-overview" class="on">概覽</button>
+          <button type="button" data-sec="sec-promo">優惠</button>
+          <button type="button" data-sec="sec-reviews">商品評論</button>
+          <button type="button" data-sec="sec-share">用戶分享</button>
+          <button type="button" data-sec="sec-qa">問問大家</button>
+          <button type="button" data-sec="sec-detail">商品詳情</button>
+          <button type="button" data-sec="sec-store">同店商品</button>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div class="gallery" id="gallery">
+          <div class="slide"><img src="assets/gallery-1.jpg" alt="荷蘭皇家美素佳兒 4號成長配方奶粉" /></div>
+          <div class="slide"><img src="assets/gallery-2.jpg" alt="" /></div>
+          <div class="slide"><img src="assets/gallery-3.jpg" alt="" /></div>
+        </div>
+        <div class="pager" id="pager"><span class="now">1</span><img src="assets/pager-div.svg" alt="" /><span class="total">3</span></div>
+      </section>
+
+      <section class="sheet" id="sec-overview">
+        <button class="promo" type="button">
+          <span class="label-wrap">
+            <img src="assets/coupon.svg" alt="" />
+            <span class="flip"><span class="track"><span class="label">$20換金寶 20吋TSA鎖行李箱</span></span></span>
+          </span>
+          <img src="assets/chevron-white.svg" alt="" />
+        </button>
+        <div class="price-block">
+          <p class="was">$488.0</p>
+          <p class="now">$388.<small>0</small></p>
+          <h1 class="pname">荷蘭皇家美素佳兒® 4號成長配方奶粉 800克（嬰兒奶粉）3 歲以上適用</h1>
+          <div class="meta">
+            <div class="left">
+              <span class="rate-num">
+                <span class="ic s20"><img class="glyph" src="assets/star-fill-20.svg" alt="" /></span>
+                <span class="score">3.4</span>
+              </span>
+              <span class="count">(4則評論)</span>
+              <i class="vdiv"></i>
+              <span>800克 x 2</span>
+            </div>
+            <span class="sold">已售出 70+</span>
+          </div>
+          <div class="benefit">
+            <div>
+              <button class="trend" type="button">價格走勢<img src="assets/chevron.svg" alt="" /></button>
+              <div class="md">
+                <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                  <circle cx="8" cy="8" r="8" fill="#00A759"/>
+                  <text x="8" y="11.4" text-anchor="middle" font-size="10" font-family="Poppins" font-weight="700" fill="#fff">$</text>
+                </svg>
+                10% Mall Dollar回贈: $19.8
+              </div>
+            </div>
+            <div class="pills">
+              <span class="pill-tag">免運費門市自取</span>
+              <span class="pill-tag">滿$200免運費送上門</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <button class="store-row" type="button">
+          <img class="store-logo" src="assets/store-logo.png" alt="美素佳兒 Friso" />
+          <div class="store-meta">
+            <p class="store-name">荷蘭美素佳兒</p>
+            <span class="flag"><img src="assets/flagship.svg" alt="" />旗艦店</span>
+          </div>
+          <img src="assets/chevron.svg" alt="" />
+        </button>
+        <div class="hairline"></div>
+        <div class="ship">
+          <div class="ship-k">派送方式</div>
+          <div class="ship-v">
+            <span class="tonight"><img src="assets/rocket.svg" alt="" />今晚6點送</span>
+            <p class="ship-copy">晚上10點前落單，明天送到<br />由 荷蘭美素佳兒 出售</p>
+          </div>
+          <img src="assets/chevron.svg" alt="" />
+        </div>
+        <div class="hairline"></div>
+        <button class="row-link" type="button">查看全部「麵」分類<img src="assets/chevron.svg" alt="" /></button>
+      </section>
+
+      <section class="card">
+        <div class="sec-head">
+          <h2>更多「日清食品」麵</h2>
+          <button class="see-all" type="button">查看全部<img src="assets/chevron.svg" alt="" /></button>
+        </div>
+        <div class="hscroll" id="similar"></div>
+      </section>
+
+      <section class="card" id="sec-promo">
+        <div class="sec-head">
+          <h2>優惠<em>(2)</em></h2>
+          <button class="see-all" type="button">查看全部<img src="assets/chevron.svg" alt="" /></button>
+        </div>
+        <button class="ticket" type="button">
+          <div class="ticket-main"><strong>換購價優惠</strong><span>$20換金寶 20吋TSA鎖行李箱</span></div>
+          <div class="ticket-notch"><img src="assets/ticket-notch.svg" alt="" /><img class="dash" src="assets/ticket-dash.svg" alt="" /></div>
+          <div class="ticket-go"><img src="assets/chevron-coupon.svg" alt="" /></div>
+        </button>
+        <button class="ticket" type="button">
+          <div class="ticket-main"><strong>換購價優惠</strong><span>$5換無酒精檸檬碳酸飲品</span></div>
+          <div class="ticket-notch"><img src="assets/ticket-notch.svg" alt="" /><img class="dash" src="assets/ticket-dash.svg" alt="" /></div>
+          <div class="ticket-go"><img src="assets/chevron-coupon.svg" alt="" /></div>
+        </button>
+      </section>
+
+      <section class="card" id="sec-reviews">
+        <div class="sec-head">
+          <h2>商品評論<em>(123)</em></h2>
+          <button class="see-all" type="button">查看全部<img src="assets/chevron.svg" alt="" /></button>
+        </div>
+        <div class="score-row">
+          <div>
+            <div class="big">4.5<small>/5</small></div>
+            <div class="stars tight">
+              <span class="ic s16"><img class="glyph" src="assets/star-fill-16.svg" alt="" /></span>
+              <span class="ic s16"><img class="glyph" src="assets/star-fill-16.svg" alt="" /></span>
+              <span class="ic s16"><img class="glyph" src="assets/star-fill-16.svg" alt="" /></span>
+              <span class="ic s16"><img class="glyph" src="assets/star-fill-16.svg" alt="" /></span>
+              <img src="assets/star-half-ic.svg" alt="" />
+            </div>
+          </div>
+          <div class="score-div"></div>
+          <div>
+            <div class="big">96.3<small>%</small></div>
+            <p class="hint">推介給朋友</p>
+          </div>
+        </div>
+        <div class="hscroll">
+          <article class="review">
+            <div class="review-fill">
+              <div>
+                <div class="who">
+                  <div>
+                    <div class="name-row"><b>Michelle Lai</b><span class="vip"><span class="vip-gem"><img src="assets/diamond.svg" alt="" /></span>VIP</span></div>
+                    <div class="subline">
+                      <span class="stars sm"><span class="ic s12"><img class="glyph" src="assets/star-fill-12.svg" alt="" /></span><span class="ic s12"><img class="glyph" src="assets/star-fill-12.svg" alt="" /></span><span class="ic s12"><img class="glyph" src="assets/star-fill-12.svg" alt="" /></span><span class="ic s12"><img class="glyph" src="assets/star-fill-12.svg" alt="" /></span><span class="ic s12"><img class="glyph" src="assets/star-half-12.svg" alt="" /></span></span>
+                      <span class="date">29/1/2025</span>
+                    </div>
+                  </div>
+                  <img src="assets/more-h.svg" alt="" />
+                </div>
+                <div class="review-body">
+                  <p>解鎖左多種唔同食法 次次次次香港版，大陸啦，唔...</p>
+                  <img class="thumb-img" src="assets/review-1.png" alt="" />
+                </div>
+              </div>
+              <div class="react"><span><img src="assets/happy.svg" alt="" />會推薦給朋友</span><span><img src="assets/thumb.svg" alt="" />有用</span></div>
+            </div>
+          </article>
+          <article class="review">
+            <div>
+              <div class="who">
+                <div>
+                  <div class="name-row"><b>Dorothy Tse</b><span class="vip tall"><span class="vip-gem"><img src="assets/diamond.svg" alt="" /></span>VIP</span></div>
+                  <div class="subline">
+                    <span class="stars sm"><span class="ic s12"><img class="glyph" src="assets/star-fill-12.svg" alt="" /></span><span class="ic s12"><img class="glyph" src="assets/star-half-12.svg" alt="" /></span><span class="ic s12"><img class="glyph" src="assets/star-half-12.svg" alt="" /></span><span class="ic s12"><img class="glyph" src="assets/star-half-12.svg" alt="" /></span><span class="ic s12"><img class="glyph" src="assets/star-half-12.svg" alt="" /></span></span>
+                    <span class="date">29/1/2025</span>
+                  </div>
+                </div>
+                <img src="assets/more-h.svg" alt="" />
+              </div>
+              <div class="review-body">
+                <p>送到黎d包裝已經爛左一部分，咩事呀</p>
+                <img class="thumb-img" src="assets/review-2.png" alt="" />
+              </div>
+              <div class="react"><span><img src="assets/happy.svg" alt="" />會推薦給朋友</span><span><img src="assets/thumb.svg" alt="" />有用</span></div>
+            </div>
+            <div class="reply">
+              <div class="reply-h"><img src="assets/avatar.png" alt="" />商戶回覆<span class="date">29/1/2025</span></div>
+              <p>對於為您造成嘅不便，小編喺度先同您講聲唔好意思啊！</p>
+            </div>
+          </article>
+        </div>
+        <div class="hairline" style="margin-top:16px;"></div>
+        <h2 id="sec-share" style="font-size:18px; margin:0 0 12px;">用戶分享</h2>
+        <div class="hscroll">
+          <article class="share-card"><img src="assets/share-1.png" alt="" /><p>辛拉麵「7種隱藏吃法」！先投資一罐花生醬｜造咖</p></article>
+          <article class="share-card"><img src="assets/share-2.png" alt="" /><p>呢款係相對大隻D✨、經濟D✨嘅虎蝦仁。</p></article>
+          <article class="share-card"><img src="assets/share-3.png" alt="" /><p>品質穩定好過阿信屋白蝦，口感極佳已推薦朋友。</p></article>
+        </div>
+        <div class="hairline"></div>
+        <div class="sec-head" id="sec-qa">
+          <h2>問問大家<em>(10)</em></h2>
+          <button class="see-all" type="button">查看全部<img src="assets/chevron.svg" alt="" /></button>
+        </div>
+        <div class="qa">
+          <div class="ask">問</div>
+          <div class="qa-main">
+            <div class="qa-line"><b style="font-weight:400;">請問有成份參考嗎？是否含有牛肉粉？</b><span>2條回答</span></div>
+          </div>
+        </div>
+        <p class="qa-ans">此版本的辛拉麵含有牛肉粉的辛拉麵含有牛肉粉辛拉麵含有牛肉粉的辛拉麵</p>
+        <div class="qa">
+          <div class="ask">問</div>
+          <div class="qa-main">
+            <div class="qa-line"><b style="font-weight:400;">背後有冇中文？定韓文版？</b><span>1條回答</span></div>
+          </div>
+        </div>
+        <form class="ask-row" id="askForm">
+          <input type="text" placeholder="想知多啲，問下用家啦～" aria-label="提問" />
+          <button class="ask-go" type="submit">提問</button>
+        </form>
+      </section>
+
+      <section class="card detail" id="sec-detail">
+        <h2 style="font-size:18px; margin:0 0 12px;">商品詳情</h2>
+        <p>產地：韓國<br />重量：120克 x 5包</p>
+        <div class="exp">到期日(日/月/年)：{DD/MM/YYYY} 或之後<img src="assets/info.svg" alt="" /></div>
+        <p>保存方法：存放於陰涼及乾爽地方，避免陽光直接照射，可存放於一般室溫下</p>
+        <p>農心辛辣麵的香濃火辣湯底，加上彈牙爽滑的麵質，好味指數「爆燈」，可算是即食麵的經典。味道正宗，真正原汁原味，為你保留最原本、最真實的辛辣即食麵，是識食之人的選擇。</p>
+        <img class="detail-shot" src="assets/detail.png" alt="商品詳情圖片" />
+        <p>農心辛辣麵由韓國製造及直接進口，為了保持新鮮，一般保質期有大約3個月，不像其他添加大量防腐劑的即食麵有長達12個月的保質期，同時不含反式脂肪及膽固醇，希望令你食得健康又放心。</p>
+        <div class="hairline"></div>
+        <div class="kv"><div class="k">搜尋編號</div><div class="v">AP66440</div></div>
+        <div class="kv"><div class="k">退貨安排</div><div class="v">不可退貨</div><img class="go" src="assets/chevron.svg" alt="" /></div>
+        <div class="kv"><div class="k">商店條款</div><div class="v">N/A</div><img class="go" src="assets/chevron.svg" alt="" /></div>
+        <div class="kv"><div class="k">除舊服務</div><div class="v">1.免費回收: 歐綠保上門回收 (最快3個工作天 ; 2.收費回收: 收貨時送貨師傅即時回收</div><img class="go" src="assets/chevron.svg" alt="" /></div>
+      </section>
+
+      <section class="card store-sec">
+        <div class="store-big">
+          <div class="store-id">
+            <div class="store-name-row">
+              <img class="store-logo" src="assets/store-logo.png" alt="美素佳兒 Friso" />
+              <p class="store-title"><span>荷蘭美素佳兒</span></p>
+            </div>
+            <div class="store-tags">
+              <span class="store-flag"><img src="assets/flagship-12.svg" alt="" />旗艦店</span>
+              <span class="rate-chip"><span class="ic s16"><img class="glyph" src="assets/star-fill-chip.svg" alt="" /></span>4.0</span>
+              <span class="award"><img src="assets/gold-award.svg" alt="" />傑出網店金獎</span>
+            </div>
+          </div>
+          <button class="enter" type="button">進入</button>
+        </div>
+        <div class="hairline"></div>
+        <h2 class="store-label" id="sec-store" style="font-size:18px; margin:16px 0 12px;">同店商品</h2>
+        <div class="grid" id="grid"></div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast">已加入購物車</div>
+    <footer class="footer">
+      <div class="bar">
+        <button class="fav" id="fav" type="button" aria-pressed="false">
+          <span class="heart-off"><img src="assets/heart.svg" alt="" /></span>
+          <span class="heart-on" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24"><path fill="#E4483F" d="M12 20.2s-6.7-4.2-9.2-8.1C.8 9.4 1.6 6 4.6 5.1 6.6 4.5 8.4 5.2 9.5 6.6 10.1 7.4 11 8.2 12 9.2c1-1 1.9-1.8 2.5-2.6 1.1-1.4 2.9-2.1 4.9-1.5 3 0.9 3.8 4.3 1.8 7 0 0-2.5 3.9-9.2 8.1z"/></svg>
+          </span>
+          收藏
+        </button>
+        <div class="step">
+          <button type="button" id="minus" aria-label="減少" disabled><img src="assets/minus.svg" alt="" /></button>
+          <b id="qty">1</b>
+          <button type="button" id="plus" aria-label="增加"><img src="assets/plus.svg" alt="" /></button>
+        </div>
+        <button class="atc" id="atc" type="button">
+          <img src="assets/cart-filled.svg" alt="" />
+          <span>加入購物車</span>
+        </button>
+      </div>
+      <nav class="dock" id="dock" aria-label="HKTVmall">
+        <div class="dock-tabs">
+          <button class="dock-item" type="button"><img src="assets/dock-fav.svg" alt="" />我的清單</button>
+          <button class="dock-item" type="button"><img src="assets/dock-chat.svg" alt="" />ChicChat</button>
+          <button class="dock-item" type="button"><img src="assets/dock-jetso.svg" alt="" />減價優惠</button>
+          <button class="dock-item ka" type="button"><img class="crown" src="assets/dock-crown.svg" alt="" /><span class="ka-a">今日</span><span class="ka-b">格價榜</span></button>
+          <button class="dock-item" type="button"><span class="dock-ico"><img src="assets/dock-cart.svg" alt="" /><img class="dock-badge" src="assets/dock-badge.svg" alt="" /></span>購物車</button>
+          <button class="dock-item" type="button"><img src="assets/dock-account.svg" alt="" />帳戶</button>
+        </div>
+      </nav>
+      <div class="home-ind"><i></i></div>
+    </footer>
+  </div>
+  <script>
+    const sku = (unit) => `
+      <article class="sku">
+        <div class="sku-img"><img src="assets/sku.png" alt="" /></div>
+        <p class="sku-name">早餐杯附蓋匙粥杯可微波加熱牛奶杯便攜式外帶隨手杯燕麥杯優格杯子</p>
+        <p class="sku-spec">91克 x 5</p>
+        <div class="stars">
+          <span class="ic s16"><img class="glyph" src="assets/star-fill-16.svg" alt="" /></span>
+          <span class="ic s16"><img class="glyph" src="assets/star-fill-16.svg" alt="" /></span>
+          <span class="ic s16"><img class="glyph" src="assets/star-fill-16.svg" alt="" /></span>
+          <span class="ic s16"><img class="glyph" src="assets/star-fill-16.svg" alt="" /></span>
+          <span class="ic s16"><img class="glyph" src="assets/star-half-16.svg" alt="" /></span>
+        </div>
+        <div class="price-cart">
+          <div>
+            <p class="sku-was">$35.0</p>
+            <p class="sku-now">$19.9</p>
+            ${unit ? '<p class="sku-unit">$4.0/包</p>' : ''}
+          </div>
+          <button class="cart-btn add" type="button" aria-label="加入購物車"><img src="assets/sku-cart.svg" alt="" /></button>
+        </div>
+      </article>`;
+    document.getElementById('similar').innerHTML = sku() + sku() + sku();
+    const storeSkus = [
+      ['store-sku-1.png', '日清湖池屋 - 激辣魔薯香辣芝士味薯片 x4', '$38.0', '$30.0'],
+      ['store-sku-2.png', '日清湖池屋 - 激辣魔薯香辣味薯片 (小)', '$18.0', '$16.5'],
+      ['store-sku-3.png', '日清 - 出前一丁棒丁麵九洲濃湯豬骨味即食麵 x 3', '$44.7', '$34.0'],
+      ['store-sku-4.png', '日清食品 - 【普通版】北海道產小麥粉麻油味即食麵【出前一丁】 (新舊包裝隨機發貨)', '$39.0', '$22.9'],
+      ['store-sku-5.png', '日清食品 - 出前一丁激辣火山味即食麵 x10#激辛一丁(新舊包裝隨機發送)', '$60.0', '$40.0'],
+      ['store-sku-6.png', '日清食品 - 日版出前一丁 (附麻油) x 2(新舊包裝隨機派送)', '$73.8', '$62.0'],
+      ['store-sku-7.png', '日清 - 出前一丁棒烏冬(番茄牛肉味) 177克 x 4', '$59.6', '$44.5'],
+      ['store-sku-8.png', '日清 - 出前一丁棒烏冬(番茄牛肉味) 177克', '$14.9', '$12.5'],
+      ['store-sku-9.png', '日清食品 - 柚子胡椒豬骨湯味即食麵 x 10', '$52.0', '$40.0']
+    ];
+    document.getElementById('grid').innerHTML = storeSkus.map(([img, name, was, now]) => `
+      <article class="gsku">
+        <div class="ph"><img src="assets/${img}" alt="" /></div>
+        <div class="info">
+          <p class="name">${name}</p>
+          <div class="prices"><p class="sku-was">${was}</p><p class="sku-now">${now}</p></div>
+        </div>
+        <button class="cart-btn add" type="button" aria-label="加入購物車"><span class="cart-glyph"><img src="assets/cart-store.svg" alt="" /></span></button>
+      </article>`).join('');
+
+    const promoTrack = document.querySelector('.promo .track');
+    const promoOffers = [...document.querySelectorAll('#sec-promo .ticket-main span')].map((el) => el.textContent.trim());
+    let promoIndex = 0;
+    let promoFlipping = false;
+    function flipPromo() {
+      if (promoFlipping || promoOffers.length < 2) return;
+      promoFlipping = true;
+      const next = document.createElement('span');
+      next.className = 'label';
+      next.textContent = promoOffers[(promoIndex + 1) % promoOffers.length];
+      promoTrack.appendChild(next);
+      void promoTrack.offsetWidth;
+      promoTrack.classList.add('go');
+      window.setTimeout(() => {
+        promoIndex = (promoIndex + 1) % promoOffers.length;
+        promoTrack.classList.remove('go');
+        promoTrack.firstElementChild.remove();
+        promoFlipping = false;
+      }, 500);
+    }
+    window.setInterval(flipPromo, 2000);
+
+    const gallery = document.getElementById('gallery');
+    const pagerNow = document.querySelector('#pager .now');
+    const blurShots = [...document.querySelectorAll('.header-bg img')];
+    function syncPager() {
+      const width = gallery.clientWidth || 1;
+      const index = Math.min(gallery.children.length, Math.max(1, Math.round(gallery.scrollLeft / width) + 1));
+      pagerNow.textContent = String(index);
+      blurShots.forEach((img, i) => img.classList.toggle('on', i === index - 1));
+    }
+    gallery.addEventListener('scroll', syncPager, { passive: true });
+    let drag = null;
+    gallery.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'touch') return;
+      drag = { id: e.pointerId, x: e.clientX, left: gallery.scrollLeft, moved: false };
+    });
+    gallery.addEventListener('pointermove', (e) => {
+      if (!drag || e.pointerId !== drag.id) return;
+      const dx = e.clientX - drag.x;
+      if (Math.abs(dx) < 4) return;
+      drag.moved = true;
+      gallery.style.scrollSnapType = 'none';
+      gallery.scrollLeft = drag.left - dx;
+    });
+    function endDrag(e) {
+      if (!drag || e.pointerId !== drag.id) return;
+      const moved = drag.moved;
+      drag = null;
+      gallery.style.scrollSnapType = '';
+      if (!moved) return;
+      const width = gallery.clientWidth;
+      gallery.scrollTo({ left: Math.round(gallery.scrollLeft / width) * width, behavior: 'smooth' });
+    }
+    gallery.addEventListener('pointerup', endDrag);
+    gallery.addEventListener('pointercancel', endDrag);
+    gallery.addEventListener('dragstart', (e) => e.preventDefault());
+
+    const scroll = document.getElementById('scroll');
+    const header = document.getElementById('header');
+    const footer = document.querySelector('.footer');
+    const tabs = document.getElementById('tabs');
+    const tabButtons = [...tabs.querySelectorAll('button')];
+    const sections = tabButtons.map((btn) => document.getElementById(btn.dataset.sec));
+    let tabLock = false;
+    let lastScroll = scroll.scrollTop;
+
+    function sectionTop(el) {
+      return el.getBoundingClientRect().top - scroll.getBoundingClientRect().top + scroll.scrollTop;
+    }
+    function coverHeight() {
+      return header.offsetHeight + (header.classList.contains('scrolled') ? tabs.offsetHeight : 0);
+    }
+    function setActive(id) {
+      const current = tabs.querySelector('.on');
+      if (current && current.dataset.sec === id) return;
+      tabButtons.forEach((btn) => {
+        const on = btn.dataset.sec === id;
+        btn.classList.toggle('on', on);
+        if (on) tabs.scrollTo({ left: Math.max(0, btn.offsetLeft - 16), behavior: 'smooth' });
+      });
+    }
+    function onScroll() {
+      const top = scroll.scrollTop;
+      const delta = top - lastScroll;
+      if (top <= 1 || delta < -2) footer.classList.remove('dock-hide');
+      else if (delta > 2) footer.classList.add('dock-hide');
+      lastScroll = top;
+      const hero = document.querySelector('.hero');
+      const portTop = scroll.getBoundingClientRect().top;
+      header.classList.toggle('scrolled', hero.getBoundingClientRect().bottom <= portTop + header.offsetHeight);
+      if (tabLock) return;
+      const line = scroll.scrollTop + coverHeight() + 4;
+      let current = sections[0].id;
+      sections.forEach((el) => {
+        if (sectionTop(el) <= line) current = el.id;
+      });
+      setActive(current);
+    }
+    scroll.addEventListener('scroll', onScroll, { passive: true });
+    tabs.addEventListener('click', (event) => {
+      const btn = event.target.closest('button');
+      if (!btn) return;
+      tabLock = true;
+      setActive(btn.dataset.sec);
+      if (btn.dataset.sec === 'sec-overview') {
+        scroll.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        header.classList.add('scrolled');
+        const top = sectionTop(document.getElementById(btn.dataset.sec)) - coverHeight();
+        scroll.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+      }
+      const release = () => { tabLock = false; onScroll(); };
+      scroll.addEventListener('scrollend', release, { once: true });
+      setTimeout(release, 800);
+    });
+
+    let qty = 1;
+    const qtyEl = document.getElementById('qty');
+    const minusBtn = document.getElementById('minus');
+    const minusIcon = minusBtn.querySelector('img');
+    function renderQty() {
+      qtyEl.textContent = String(qty);
+      const canMinus = qty > 1;
+      minusBtn.disabled = !canMinus;
+      minusIcon.src = canMinus ? 'assets/minus-on.svg' : 'assets/minus.svg';
+    }
+    minusBtn.onclick = () => { if (qty <= 1) return; qty -= 1; renderQty(); };
+    document.getElementById('plus').onclick = () => { qty += 1; renderQty(); };
+
+    const fav = document.getElementById('fav');
+    fav.onclick = () => {
+      const on = fav.getAttribute('aria-pressed') === 'true';
+      fav.setAttribute('aria-pressed', String(!on));
+      fav.classList.toggle('on', !on);
+      toast(!on ? '已加入收藏' : '已取消收藏');
+    };
+
+    const toastEl = document.getElementById('toast');
+    let toastTimer;
+    function toast(text) {
+      toastEl.textContent = text;
+      toastEl.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toastEl.classList.remove('show'), 1600);
+    }
+    document.getElementById('atc').onclick = () => toast(`已加入購物車 · ${qty} 件`);
+    document.querySelectorAll('.add').forEach((btn) => btn.onclick = () => toast('已加入購物車'));
+    document.getElementById('askForm').onsubmit = (e) => {
+      e.preventDefault();
+      const input = e.target.querySelector('input');
+      if (!input.value.trim()) { input.focus(); return; }
+      toast('已送出問題');
+      input.value = '';
+    };
+  </script>
+</body>
+</html>

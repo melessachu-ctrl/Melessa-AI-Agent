@@ -1,0 +1,120 @@
+# Lint Fix Delegation — Duo Developer + Local Fallback
+
+Instead of running lint fixes locally, delegate to Duo Developer by posting an MR comment. This triggers a remote AI workflow that pushes a fix commit.
+
+## Step 1: Analyze the lint errors to build a clear instruction
+
+From the job log tail, extract:
+- Which files have violations (correlate with `git diff origin/main --name-only`)
+- Which linter reported them (RuboCop cop names, ESLint rules, etc.)
+- The specific violations (e.g. "Style/StringLiterals in app/models/foo.rb:42")
+
+## Step 2: Post an MR comment mentioning Duo Developer
+
+Compose a targeted instruction and post it as a **new top-level MR note** (not inside the babysitter discussion thread):
+
+```bash
+# Write the whole comment body with a quoted heredoc: nothing is expanded, so
+# lint output (backticks, quotes, apostrophes) can be pasted in verbatim and
+# real newlines are kept. Do not build it with printf/echo and "\n" escapes.
+DUO_MSG=$(mktemp)
+cat > "$DUO_MSG" << 'EOF'
+@duo-developer-gitlab-org
+
+Fix the following lint violations in this MR:
+
+- RuboCop Style/StringLiterals in app/models/foo.rb:42 — use double quotes
+- ESLint no-unused-vars in app/assets/javascripts/bar.js:10
+EOF
+# Keep it specific: file paths, line numbers, rule names, and what to change.
+# Replace the example bullets with the violations found in Phase 2.
+
+glab mr note create "$MR_IID" -R "$PROJECT_PATH" --resolvable=false < "$DUO_MSG"
+rm -f "$DUO_MSG"
+```
+
+**Guidelines for the instruction:**
+- Be specific: include file paths, line numbers, and rule names
+- Group by linter (RuboCop, ESLint, HAML-lint, Prettier, Stylelint)
+- For RuboCop: include the cop name (e.g. `Style/StringLiterals`)
+- For ESLint/Prettier: include the rule name and whether `--fix` can resolve it
+- Limit to violations in files the MR actually changed (from `git diff origin/main --name-only`)
+- If there are too many violations (>20), focus on the blocking ones and ask Duo to run the auto-formatter
+
+Example instruction:
+```
+Fix these RuboCop offenses in this MR:
+- Style/StringLiterals in app/models/user.rb:42,58 — use double quotes
+- Layout/TrailingWhitespace in app/controllers/foo_controller.rb:15,23
+
+Run `bundle exec rubocop --autocorrect` on the affected files.
+```
+
+## Step 3: Wait for Duo Developer to push a fix commit
+
+Before posting the comment, remember the current `pipeline_id` from Phase 1 as `PREV_PIPELINE_ID` so a fast Duo push is not missed. After posting, set `NEW_PIPELINE_DEADLINE` to now + 15 minutes and return to the [Phase 1 poll](pipeline-watching.md). The poll ignores the old pipeline, detects the new ID, then resumes blocking-failure checks on the new run. If it exits with `NO_NEW_PIPELINE`, use the local auto-fix fallback in Step 5.
+
+## Step 4: Handle incomplete fixes
+
+Do NOT post a second Duo Developer request for the same lint job — avoid a retry loop.
+
+Track Duo Developer requests using a `DUO_LINT_REQUESTED` set (keyed by job name). Only request once per job:
+
+```pseudocode
+DUO_LINT_REQUESTED = {}   # persisted across action rounds, keyed by job name
+
+for each LINT job:
+    if job_name not in DUO_LINT_REQUESTED:
+        # Post @duo-developer-gitlab-org comment with fix instructions
+        DUO_LINT_REQUESTED[job_name] = true
+        note: "Requested Duo Developer fix for lint violations"
+    else:
+        # Already requested once — Duo's fix didn't fully resolve it
+        # Fall back to local auto-fix before giving up
+        LOCAL_FIX_ATTEMPTED = try_local_autofix(job)
+        if LOCAL_FIX_ATTEMPTED:
+            note: "Duo Developer fix incomplete — attempting local auto-fix"
+        else:
+            classify as REQUIRES_MANUAL_FIX
+            note: "Duo Developer fix incomplete, local auto-fix unavailable — requires manual attention"
+```
+
+## Step 5 (fallback): Local auto-fix
+
+If Duo Developer doesn't push within the timeout, or its fix doesn't resolve all violations, attempt local auto-fix as a last resort before classifying as `REQUIRES_MANUAL_FIX`. This requires the project's toolchain to be available locally.
+
+```bash
+# Detect which linters are available and run auto-fix on MR-changed files only
+CHANGED_FILES=$(git diff origin/main --name-only)
+
+# RuboCop (Ruby)
+if command -v bundle &>/dev/null && bundle exec rubocop --version &>/dev/null; then
+  echo "$CHANGED_FILES" | grep '\.rb$' | xargs -r bundle exec rubocop --autocorrect --force-exclusion
+fi
+
+# ESLint (JavaScript/TypeScript)
+if command -v yarn &>/dev/null && { compgen -G ".eslintrc*" || compgen -G "eslint.config*"; } &>/dev/null; then
+  echo "$CHANGED_FILES" | grep -E '\.(js|ts|vue)$' | xargs -r yarn run eslint --fix
+fi
+
+# Prettier (formatting)
+if command -v yarn &>/dev/null && { compgen -G ".prettierrc*" || compgen -G "prettier.config*"; } &>/dev/null; then
+  echo "$CHANGED_FILES" | grep -E '\.(js|ts|vue|css|scss)$' | xargs -r yarn run prettier --write
+fi
+
+# HAML-lint
+if command -v bundle &>/dev/null && bundle exec haml-lint --version &>/dev/null; then
+  echo "$CHANGED_FILES" | grep '\.haml$' | xargs -r bundle exec haml-lint --auto-correct
+fi
+
+# If any files were modified, commit and push
+if ! git diff --quiet; then
+  git add -u
+  git commit -m "fix: auto-correct lint violations"
+  PREV_PIPELINE_ID=$(bash scripts/pipeline_status.sh --blocking-only "$MR_URL" | jq -r '.pipeline_id // empty')
+  git push
+  # Set NEW_PIPELINE_DEADLINE to now + 15 minutes before returning to Phase 1.
+fi
+```
+
+If no new pipeline appears within 15 minutes of the Duo request (`NO_NEW_PIPELINE` in Phase 1), attempt the local auto-fix fallback above. If that also fails or is unavailable, classify as REQUIRES_MANUAL_FIX.

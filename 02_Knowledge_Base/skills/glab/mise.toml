@@ -1,0 +1,24 @@
+[hooks]
+postinstall = "if [ -z \"$CI\" ]; then mise run hooks:install; fi"
+# Self-healing: installs the git hooks on entering the project unless in CI,
+# lefthook is not yet on PATH, or the hook is already installed. git-path
+# resolves the real hooks location in worktrees and with core.hooksPath.
+enter = 'test -n "$CI" || test -f "$(git rev-parse --git-path hooks/pre-push 2>/dev/null)" || { command -v lefthook >/dev/null 2>&1 && mise run hooks:install || true; }'
+
+[tasks."hooks:install"]
+run = "lefthook install"
+description = "Install git hooks (lefthook)"
+
+[tools]
+# python and node track the CI images (python:3.12-alpine3.20, node:22-alpine)
+# and jq the Alpine 3.20 package. ruff and shellcheck are read from here by the
+# CI lint jobs, so bumping them here changes CI too.
+python = "3.12"
+node = "22"
+# Needed by skills/gitlab-noisy-neighbor-audit/scripts/team-scope.sh and its tests.
+ruby = "3.3"
+ruff = "0.17.2"
+shellcheck = "0.10.0"
+jq = "1.7.1"
+# Local-only pin: lefthook does not run in CI.
+lefthook = "2.1.3"

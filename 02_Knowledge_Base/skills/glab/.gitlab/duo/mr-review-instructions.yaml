@@ -1,0 +1,22 @@
+---
+instructions:
+  - name: No Trailing Newline Required
+    fileFilters:
+      - ".claude-plugin/plugins/*/skills/*"
+      - ".opencode/skills/*"
+    instructions: |
+      1. These files are symlinks - they do not require a newline at the end of the file - do not flag missing newlines
+  - name: Skill Authoring Guidance
+    fileFilters:
+      - "skills/*/SKILL.md"
+      - "skills/*/references/**/*.md"
+      - "skills/*/scripts/**/*"
+      - "skills/**/*.sh"
+      - "!skills/authoring-skills/**/*"
+    instructions: |
+      1. Review changed skills against the rules below. For detail, read `skills/authoring-skills/SKILL.md`, `skills/authoring-skills/references/descriptions.md`, `skills/authoring-skills/references/body-patterns.md`, `skills/authoring-skills/references/scripts.md`, `skills/authoring-skills/references/skill-types.md` and `skills/authoring-skills/references/testing.md`
+      2. Description: it must say when to trigger (verbs users type plus "Use when..."), add a "do not use for..." boundary when a sibling skill could match, and not be a summary; flag descriptions that embed stale facts such as version numbers
+      3. Body: flag restated model defaults, railroading transcripts where facts and constraints would do, menus where one default plus an escape hatch is clearer, and a skill that does more than one job
+      4. Length and layout: `SKILL.md` should stay under 100 lines (150 is the ceiling); detail belongs in `references/*.md` linked directly from `SKILL.md`, one level deep
+      5. Scripts: flag helpers that the `SKILL.md` describes in prose instead of shipping, and helpers where it does not say whether the agent should run or read them. Flag helpers missing `set -Eeuo pipefail` or building untrusted input into a command string. Shell syntax and portability are already linted, so do not flag those
+      6. Do not flag anything already enforced by CI (kebab-case names, name matching the directory, version bump, broken links, `scripts/lint_shell.sh`, `scripts/lint_bash_portability.sh`); mention only judgment issues, and skip files under synced skills listed in `synced-skills.yml`

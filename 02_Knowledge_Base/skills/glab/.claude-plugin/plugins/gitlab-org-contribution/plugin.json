@@ -1,0 +1,10 @@
+{
+  "name": "gitlab-org-contribution",
+  "description": "For community contributors with no role in the project: contribute merge requests and issues to GitLab's own projects on gitlab.com (gitlab-org/*, public gitlab-com/* groups, components), from claiming an issue to the merge. Use when preparing, opening, readying or updating a merge request or issue in a GitLab-owned project, when gitlab-bot, Danger, GitLabDuo or the contributor platform comments on it, when a pipeline, approval or merge is blocked, when an MR went quiet or was auto-closed, or during a GitLab Hackathon. Do not use for GitLab team members or anyone with at least the Developer role in the project, for GitHub or any non-gitlab.com host, a self-managed or private GitLab instance, or your own or your team's project on gitlab.com.",
+  "version": "0.8.1",
+  "author": {
+    "name": "GitLab"
+  },
+  "license": "MIT",
+  "skills": "./"
+}

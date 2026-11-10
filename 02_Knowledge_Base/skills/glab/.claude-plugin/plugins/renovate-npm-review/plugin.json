@@ -1,0 +1,10 @@
+{
+  "name": "renovate-npm-review",
+  "description": "Reviews Renovate npm/yarn dependency-bump MRs or pasted package.json/lockfile diffs for breaking changes, security fixes and supply-chain/backdoor risk, and builds renovatebot package-diff links. Use when asked to review a Renovate MR or to judge whether a version bump is safe to merge. Do not use for general MR review (use mr-review) or for non-npm ecosystems.",
+  "version": "1.0.2",
+  "author": {
+    "name": "GitLab"
+  },
+  "license": "MIT",
+  "skills": "./"
+}

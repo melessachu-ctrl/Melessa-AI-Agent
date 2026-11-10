@@ -1,0 +1,18 @@
+gitlab-docs-preview.anchor-broken	quickstart.md	/demo/concepts/#missing-anchor
+gitlab-docs-preview.card-no-description	_index.md	/demo/concepts/
+gitlab-docs-preview.cards-dropped	_index.md	old-page.md
+gitlab-docs-preview.index-md	misc/index.md	misc/index.md
+gitlab-docs-preview.link-broken	quickstart.md	/demo/gone/
+gitlab-docs-preview.link-to-redirect	quickstart.md	/demo/old-page/
+gitlab-docs-preview.nav-bad-url	navigation.yaml	demo/quickstart/#step-1-install-the-cli
+gitlab-docs-preview.nav-dead-entry	navigation.yaml	demo/old-page/
+gitlab-docs-preview.nav-dead-entry	navigation.yaml	demo/removed/
+gitlab-docs-preview.nav-duplicate	navigation.yaml	demo/concepts/
+gitlab-docs-preview.nav-missing-page	orphan.md	/demo/orphan/
+gitlab-docs-preview.redirect-chain	chain.md	old-page.md
+gitlab-docs-preview.redirect-no-refresh	broken-redirect.md	/demo/broken-redirect/
+gitlab-docs-preview.redirect-remove-date	chain.md	
+gitlab-docs-preview.redirect-target-missing	broken-redirect.md	missing.md
+gitlab-docs-preview.sidebar-missing	orphan.md	/demo/orphan/
+gitlab-docs-preview.trail-mismatch	misc/index.md	demo/misc/
+gitlab-docs-preview.trail-missing	orphan.md	demo/orphan/

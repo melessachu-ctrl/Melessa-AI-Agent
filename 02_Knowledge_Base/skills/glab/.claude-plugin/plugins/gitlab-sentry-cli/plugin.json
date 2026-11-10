@@ -1,0 +1,10 @@
+{
+  "name": "gitlab-sentry-cli",
+  "description": "Query and manage GitLab's Sentry instance (new-sentry.gitlab.net, org gitlab) with sentry-cli: list and triage issues and events, manage releases and deploys, upload sourcemaps, run cron monitors, or send test events. Use when asked to look up Sentry errors, check Sentry issues for a project, create or finalize a Sentry release, or set up sentry-cli. Triggers: sentry, sentry-cli, new-sentry.gitlab.net, Sentry issue, Sentry event, Sentry release, sourcemaps, cron monitor.",
+  "version": "1.0.2",
+  "author": {
+    "name": "GitLab"
+  },
+  "license": "MIT",
+  "skills": "./"
+}

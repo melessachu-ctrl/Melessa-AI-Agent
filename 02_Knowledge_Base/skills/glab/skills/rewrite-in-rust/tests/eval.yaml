@@ -1,0 +1,105 @@
+# promptfoo eval for the rewrite-in-rust skill.
+#
+# Feeds the skill's SKILL.md as the prompt plus a rewrite scenario, then checks
+# that the plan follows the phases and, for GitLab services, uses labkit-rs and
+# bench the way the references say.
+#
+# Run: scripts/run_evals.sh rewrite-in-rust   (needs ANTHROPIC_API_KEY)
+description: rewrite-in-rust skill evaluation
+
+prompts:
+  - |
+    {{skill}}
+
+    ---
+
+    Task: {{task}}
+
+    Give your plan and the key code. Be concrete.
+
+providers:
+  - id: anthropic:messages:claude-haiku-4-5
+    config:
+      max_tokens: 3000
+
+defaultTest:
+  vars:
+    skill: file://../SKILL.md
+
+tests:
+  - description: A CLI rewrite is idiomatic and doesn't pull in GitLab service tooling
+    vars:
+      task: >-
+        Rewrite this Python log analyzer CLI in Rust. It uses argparse, reads a
+        file line by line, filters with a regex, and prints a match count.
+    assert:
+      - type: contains
+        value: clap
+      - type: contains
+        value: characterization
+      - type: not-contains
+        value: unwrap()
+      - type: llm-rubric
+        value: |
+          Score 1.0 only if ALL hold:
+          - Plans characterization tests before implementing
+          - Uses clap, the regex crate, and buffered reading, with Result error handling
+          - Does NOT propose labkit-rs, bench, probe ports, or correlation IDs for a CLI
+
+  - description: A GitLab Go HTTP service rewrite replaces its own observability with labkit-rs
+    vars:
+      task: >-
+        We're rewriting a Go HTTP service that runs at GitLab in Rust. It uses
+        logrus for JSON logs, a hand-written /healthz handler, a Prometheus
+        client with a custom /metrics route, and forwards X-Request-ID. Plan
+        the observability part of the rewrite.
+    assert:
+      - type: contains
+        value: labkit
+      - type: contains-any
+        value: ["Builder", "CorrelationLayer", "AccessLogLayer"]
+      - type: llm-rubric
+        value: |
+          Score 1.0 only if ALL hold, 0.5 if most hold, else 0.0:
+          - Inventories the original's log fields, metrics, headers, and health
+            paths first, and records which labkit-rs replaces
+          - Replaces logrus, the /healthz handler, and the Prometheus client with
+            labkit-rs (Builder::init, tower layers, /-/liveness and /-/readiness,
+            OpenTelemetry meters), not ports of them
+          - Depends on labkit-rs as a git dependency pinned to a tag or rev, noting
+            it is not on crates.io
+          - Holds the Guard returned by init for the life of main
+          - Plans tests for the observability contract (access log fields,
+            correlation round trip, probes)
+
+  - description: Strangler rollout forwards the correlation ID
+    vars:
+      task: >-
+        We're replacing one endpoint of a Python service at GitLab with a Rust
+        service behind the existing proxy, migrating incrementally. How do we
+        keep one request traceable across old and new?
+    assert:
+      - type: contains
+        value: X-Request-ID
+      - type: llm-rubric
+        value: |
+          Score 1.0 only if the answer says the Rust service must accept the
+          upstream X-Request-ID (labkit-rs propagate_correlation, off by default,
+          only behind a trusted proxy) and compares access logs by correlation ID
+          during shadow traffic or rollout.
+
+  - description: Bench is a decision, not a default
+    vars:
+      task: >-
+        Rewrite our Ruby gRPC service in Rust and deploy it with bench. The
+        handlers read request headers and call a Postgres database through sqlx.
+    assert:
+      - type: llm-rubric
+        value: |
+          Score 1.0 only if ALL hold:
+          - Checks bench's current fit before committing (inbound protocol
+            support for Rust, whether handlers can see headers, which handler
+            crate dependencies are allowed) instead of assuming it works
+          - Offers labkit-rs directly as the fallback when bench can't express
+            the service yet
+          - Does not hand-roll logging, metrics, or health endpoints in either path

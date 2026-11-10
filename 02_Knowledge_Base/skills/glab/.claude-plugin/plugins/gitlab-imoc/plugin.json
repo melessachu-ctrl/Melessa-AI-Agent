@@ -1,0 +1,10 @@
+{
+  "name": "gitlab-imoc",
+  "description": "Run a GitLab.com incident as Incident Manager On-Call (IMOC) or Incident Lead: catch up on an incident from incident.io and its Slack channel, check it against the IMOC, Incident Lead and Communications Lead duties (severity, status, status page, CMOC, update cadence, handoff), and draft /inc updates, status page text and Slack replies. Use when paged as IMOC, made Incident Lead, asked what to do on an INC-1234 incident, handing off an on-call shift, or wrapping up an incident (follow-ups, incident review, Feature Change Lock). Read-only; drafts only. Not for debugging the technical root cause (Sentry errors: gitlab-sentry-cli) or GitLab Dedicated incidents.",
+  "version": "0.1.0",
+  "author": {
+    "name": "GitLab"
+  },
+  "license": "MIT",
+  "skills": "./"
+}

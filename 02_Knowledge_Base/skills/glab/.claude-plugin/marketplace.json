@@ -1,0 +1,243 @@
+{
+  "name": "gitlab-skills",
+  "owner": {
+    "name": "GitLab"
+  },
+  "metadata": {
+    "description": "Reusable AI agent skills for GitLab workflows"
+  },
+  "plugins": [
+    {
+      "name": "adr-create",
+      "source": "./.claude-plugin/plugins/adr-create"
+    },
+    {
+      "name": "adr-review",
+      "source": "./.claude-plugin/plugins/adr-review"
+    },
+    {
+      "name": "authoring-skills",
+      "source": "./.claude-plugin/plugins/authoring-skills"
+    },
+    {
+      "name": "bug-burndown",
+      "source": "./.claude-plugin/plugins/bug-burndown"
+    },
+    {
+      "name": "bugfix",
+      "source": "./.claude-plugin/plugins/bugfix"
+    },
+    {
+      "name": "commit-messages",
+      "source": "./.claude-plugin/plugins/commit-messages"
+    },
+    {
+      "name": "gitlab-agent-plan",
+      "source": "./.claude-plugin/plugins/gitlab-agent-plan"
+    },
+    {
+      "name": "gitlab-babysit-mr",
+      "source": "./.claude-plugin/plugins/gitlab-babysit-mr"
+    },
+    {
+      "name": "gitlab-backport",
+      "source": "./.claude-plugin/plugins/gitlab-backport"
+    },
+    {
+      "name": "gitlab-clickhouse",
+      "source": "./.claude-plugin/plugins/gitlab-clickhouse"
+    },
+    {
+      "name": "gitlab-demo-videos",
+      "source": "./.claude-plugin/plugins/gitlab-demo-videos"
+    },
+    {
+      "name": "gitlab-docs-change",
+      "source": "./.claude-plugin/plugins/gitlab-docs-change"
+    },
+    {
+      "name": "gitlab-docs-preview",
+      "source": "./.claude-plugin/plugins/gitlab-docs-preview"
+    },
+    {
+      "name": "gitlab-docs-review",
+      "source": "./.claude-plugin/plugins/gitlab-docs-review"
+    },
+    {
+      "name": "gitlab-ff-rollout-monitoring",
+      "source": "./.claude-plugin/plugins/gitlab-ff-rollout-monitoring"
+    },
+    {
+      "name": "gitlab-imoc",
+      "source": "./.claude-plugin/plugins/gitlab-imoc"
+    },
+    {
+      "name": "gitlab-implement",
+      "source": "./.claude-plugin/plugins/gitlab-implement"
+    },
+    {
+      "name": "gitlab-mr-description",
+      "source": "./.claude-plugin/plugins/gitlab-mr-description"
+    },
+    {
+      "name": "gitlab-noisy-neighbor-audit",
+      "source": "./.claude-plugin/plugins/gitlab-noisy-neighbor-audit"
+    },
+    {
+      "name": "gitlab-org-contribution",
+      "source": "./.claude-plugin/plugins/gitlab-org-contribution"
+    },
+    {
+      "name": "gitlab-pipeline-watch",
+      "source": "./.claude-plugin/plugins/gitlab-pipeline-watch"
+    },
+    {
+      "name": "gitlab-psql",
+      "source": "./.claude-plugin/plugins/gitlab-psql"
+    },
+    {
+      "name": "gitlab-rails-fix",
+      "source": "./.claude-plugin/plugins/gitlab-rails-fix"
+    },
+    {
+      "name": "gitlab-sentry-cli",
+      "source": "./.claude-plugin/plugins/gitlab-sentry-cli"
+    },
+    {
+      "name": "gitlab-stacked-mrs",
+      "source": "./.claude-plugin/plugins/gitlab-stacked-mrs"
+    },
+    {
+      "name": "glab",
+      "source": "./.claude-plugin/plugins/glab"
+    },
+    {
+      "name": "glab-glql",
+      "source": "./.claude-plugin/plugins/glab-glql"
+    },
+    {
+      "name": "handoff",
+      "source": "./.claude-plugin/plugins/handoff"
+    },
+    {
+      "name": "harness-builder",
+      "source": "./.claude-plugin/plugins/harness-builder"
+    },
+    {
+      "name": "human-review",
+      "source": "./.claude-plugin/plugins/human-review"
+    },
+    {
+      "name": "iterate",
+      "source": "./.claude-plugin/plugins/iterate"
+    },
+    {
+      "name": "iteratotron",
+      "source": "./.claude-plugin/plugins/iteratotron"
+    },
+    {
+      "name": "mcp-creator",
+      "source": "./.claude-plugin/plugins/mcp-creator"
+    },
+    {
+      "name": "mcp-review",
+      "source": "./.claude-plugin/plugins/mcp-review"
+    },
+    {
+      "name": "mr-adversarial-review",
+      "source": "./.claude-plugin/plugins/mr-adversarial-review"
+    },
+    {
+      "name": "mr-guided-review",
+      "source": "./.claude-plugin/plugins/mr-guided-review"
+    },
+    {
+      "name": "mr-label",
+      "source": "./.claude-plugin/plugins/mr-label"
+    },
+    {
+      "name": "mr-review",
+      "source": "./.claude-plugin/plugins/mr-review"
+    },
+    {
+      "name": "natural-writing-style",
+      "source": "./.claude-plugin/plugins/natural-writing-style"
+    },
+    {
+      "name": "nix",
+      "source": "./.claude-plugin/plugins/nix"
+    },
+    {
+      "name": "postgresai",
+      "source": "./.claude-plugin/plugins/postgresai"
+    },
+    {
+      "name": "prep-review",
+      "source": "./.claude-plugin/plugins/prep-review"
+    },
+    {
+      "name": "prep-start",
+      "source": "./.claude-plugin/plugins/prep-start"
+    },
+    {
+      "name": "pushify",
+      "source": "./.claude-plugin/plugins/pushify"
+    },
+    {
+      "name": "refactor",
+      "source": "./.claude-plugin/plugins/refactor"
+    },
+    {
+      "name": "renovate-npm-review",
+      "source": "./.claude-plugin/plugins/renovate-npm-review"
+    },
+    {
+      "name": "rewrite-in-rust",
+      "source": "./.claude-plugin/plugins/rewrite-in-rust"
+    },
+    {
+      "name": "run-in-tmux-pane",
+      "source": "./.claude-plugin/plugins/run-in-tmux-pane"
+    },
+    {
+      "name": "rust-compile-memory",
+      "source": "./.claude-plugin/plugins/rust-compile-memory"
+    },
+    {
+      "name": "rust-idioms",
+      "source": "./.claude-plugin/plugins/rust-idioms"
+    },
+    {
+      "name": "rust-performance-optimizer",
+      "source": "./.claude-plugin/plugins/rust-performance-optimizer"
+    },
+    {
+      "name": "rust-unsafe-ffi-review",
+      "source": "./.claude-plugin/plugins/rust-unsafe-ffi-review"
+    },
+    {
+      "name": "self-service-performance-testing",
+      "source": "./.claude-plugin/plugins/self-service-performance-testing"
+    },
+    {
+      "name": "skopeo",
+      "source": "./.claude-plugin/plugins/skopeo"
+    },
+    {
+      "name": "stack-changes",
+      "source": "./.claude-plugin/plugins/stack-changes"
+    },
+    {
+      "name": "threat-model-create",
+      "source": "./.claude-plugin/plugins/threat-model-create"
+    },
+    {
+      "name": "video-takeaways",
+      "source": "./.claude-plugin/plugins/video-takeaways"
+    },
+    {
+      "name": "write-large-file",
+      "source": "./.claude-plugin/plugins/write-large-file"
+    }
+  ]
+}
