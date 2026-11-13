@@ -35,7 +35,10 @@ while IFS= read -r skill; do
     exit 1
   fi
   mkdir -p "$dst"
-  if rsync -a --delete --dry-run "$src/" "$dst/" | grep -q .; then
+  # Capture dry-run output. `grep -q` under pipefail closes the pipe early and
+  # hides a real change, so a brand-new skill never reaches the changelog.
+  dry_out="$(rsync -a --delete --dry-run --out-format='%n' "$src/" "$dst/" || true)"
+  if [[ -n "${dry_out//[$' \t\r\n']/}" ]]; then
     CHANGED_ITEMS+=("$skill")
   fi
   rsync -a --delete "$src/" "$dst/"

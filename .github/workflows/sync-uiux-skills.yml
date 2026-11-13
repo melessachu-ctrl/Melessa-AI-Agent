@@ -43,7 +43,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          if git diff --quiet && git diff --cached --quiet; then
+          # git diff ignores untracked files, so a newly added skill would be skipped.
+          if [[ -z "$(git status --porcelain)" ]]; then
             echo "No changes to commit."
             exit 0
           fi
