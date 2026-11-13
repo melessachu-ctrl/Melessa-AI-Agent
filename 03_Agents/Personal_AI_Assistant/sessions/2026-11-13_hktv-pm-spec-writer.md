@@ -12,9 +12,12 @@ Melessa 要安裝 `Downloads/hktv-pm-spec-writer`，並讓 UIUX-Skills repo 用�
 
 ## 分發
 
-- Melessa：`f9651b0` 已在 `main`
+- Melessa：`f9651b0`（skill）與 `4e1ec35`（sync 修正）已在 `main`
 - 第一次 Actions [Sync UIUX-Skills](https://github.com/melessachu-ctrl/Melessa-AI-Agent/actions/runs/43386846593) 顯示成功，但沒有寫入下游。新 skill 是未追蹤檔；`git diff --quiet` 睇唔到，而且 `grep -q` 在 `pipefail` 下會漏報變更，changelog 也沒有更新。
-- 已改 `sync/sync-uiux-skills.sh` 同 `.github/workflows/sync-uiux-skills.yml`，用 `git status --porcelain` 先決定要不要 commit。第二次 sync、Slack 連結收尾後補入本檔。
+- 已改 `sync/sync-uiux-skills.sh` 同 `.github/workflows/sync-uiux-skills.yml`，用 `git status --porcelain` 先決定要不要 commit。
+- 第二次 Actions：[Sync UIUX-Skills](https://github.com/melessachu-ctrl/Melessa-AI-Agent/actions/runs/43387192963) 成功
+- UIUX-Skills：[chore(sync): from Melessa @ 4e1ec35](https://github.com/melessachu-ctrl/UIUX-Skills/commit/7ab7c0007a779ccf9f6984ba244167a9da63f722)
+- Slack：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1794555569152709
 
 ## 未完成甚麼
 
