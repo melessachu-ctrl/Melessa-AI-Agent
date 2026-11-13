@@ -14,6 +14,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-11-13：`hktv-pm-spec-writer` 裝入 Melessa 真源（對齊 plugin 的 Figma＋prototype 版）並加入 UIUX-Skills manifest；session `2026-11-13_hktv-pm-spec-writer` 已寫
 - 2026-11-04：Claude 安裝失敗的三份 skill description 已修（`audit-design-system`、`fix-design-system-finding` 加引號；`uiux-design-studio` 縮至 593 字）；session `2026-11-04_claude-skill-description-fix` 已寫
 - 2026-11-03：12 個 marketing skills 加每月上游同步（GHA 每月 1 號 09:30 HKT；有差才寫入 `main`）；Cursor Automation 草稿每月 1 號 10:45；session `2026-11-03_marketingskills-monthly-sync` 已寫
 - 2026-11-02～11-03：比較 Duct、MarketingOS、marketingskills；安裝 12 個 marketing skills；`uiux-design-studio`／`uiux-review` 在轉換型畫面讀 `cro`、`offers`、`copywriting`、`copy-editing`；這 4 個加入 UIUX-Skills manifest；session `2026-11-03_marketing-skills-conversion-pass` 已寫

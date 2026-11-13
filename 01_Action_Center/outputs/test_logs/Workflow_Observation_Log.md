@@ -46,3 +46,4 @@
 | 2026-11-02 10:27–11-03 12:10 | 比較三個 marketing repo；安裝 12 個 skills；轉換型畫面接進 studio／review；4 個加入 UIUX-Skills | 約 3 小時（跨日多段） | 中性（選工具＋接流程） | 高（設計時可查轉換；設計師與 Melessa 用同一套） | `uiux-design-studio`, `uiux-review` |
 | 2026-11-03 12:34–13:05 | 12 個 marketing skills 加每月上游同步（GHA 09:30）及 Cursor Automation 草稿（10:45） | 約 30 分鐘 | 中性（接上既有月更） | 高（上游更新會寫入 main，不必人手抄） | `automate` |
 | 2026-11-04 16:11–16:50 | 審查 Claude 安裝失敗的 patch；三份 skill description 加引號或縮到 1024 字以內，不把舊文貼進正文 | 約 40 分鐘 | 中性（對規格後改 frontmatter） | 高（Claude 可安裝這三份；觸發詞與正文閘門仍在） | |
+| 2026-11-13 15:29–15:50 | 安裝 `hktv-pm-spec-writer`：真源跟 plugin（Figma＋prototype），加入 UIUX-Skills manifest，本機 symlink | 約 20 分鐘 | 中性（安裝＋對齊已發布版本） | 高（PM 寫 spec 的 skill 可分給設計師，與 plugin 同一份） | `create-skill` |
