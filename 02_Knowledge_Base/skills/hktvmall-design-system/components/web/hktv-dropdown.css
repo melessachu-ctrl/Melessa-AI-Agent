@@ -1,0 +1,5 @@
+/* Dropdown field shell. Shared field rules live in hktv-text-field.css.
+   Load hktv-text-field.css before this file. */
+hktv-dropdown .hktv-field__box {
+  cursor: pointer;
+}

@@ -1,0 +1,120 @@
+/* HKTVmall Cart Button (Figma 7088:1450). Matches references/components/cart-button.md.
+   Outlined Cart (Primary) and Outlined Cart (Secondary) are intentionally absent.
+   Cart default stays rounded even if style="oval".
+   36 / 32 and icon boxes have no token.
+   Cashback uses primitive tokens --hktv-orange-75 and --hktv-yellow-800. */
+
+hktv-cart-button {
+  display: inline-flex;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+hktv-cart-button .hktv-cart-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+hktv-cart-button .hktv-cart-btn:focus {
+  outline: none;
+}
+
+hktv-cart-button .hktv-cart-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+hktv-cart-button .hktv-cart-btn__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+hktv-cart-button .hktv-cart-btn__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+  color: var(--hktv-text-white);
+}
+
+hktv-cart-button[data-size="l"] .hktv-cart-btn {
+  width: 36px;
+  height: 36px;
+}
+
+hktv-cart-button[data-size="s"] .hktv-cart-btn {
+  width: 32px;
+  height: 32px;
+}
+
+hktv-cart-button[data-style="oval"] .hktv-cart-btn {
+  border-radius: var(--hktv-radius-full);
+}
+
+hktv-cart-button[data-style="rounded"] .hktv-cart-btn,
+hktv-cart-button[data-type="cart"] .hktv-cart-btn {
+  border-radius: var(--hktv-radius-card-xs);
+}
+
+hktv-cart-button[data-type="cart"] .hktv-cart-btn {
+  background: var(--hktv-brand-primary);
+  color: var(--hktv-text-white);
+}
+
+hktv-cart-button[data-type="discount"] .hktv-cart-btn {
+  background: var(--hktv-text-highlight);
+  color: var(--hktv-text-white);
+}
+
+hktv-cart-button[data-type="cashback"] .hktv-cart-btn {
+  background: var(--hktv-orange-75);
+  color: var(--hktv-yellow-800);
+}
+
+hktv-cart-button[data-type="notify"] .hktv-cart-btn {
+  background: var(--hktv-background-disable);
+  color: var(--hktv-text-primary);
+}
+
+hktv-cart-button[data-type="favourite"] .hktv-cart-btn {
+  background: var(--hktv-background-white);
+  color: var(--hktv-text-secondary);
+  border: var(--hktv-stroke-width-regular) solid var(--hktv-stroke-secondary);
+}
+
+hktv-cart-button[data-type="cart"][data-size="l"] .hktv-cart-btn__icon {
+  width: 24.75px;
+  height: 24.75px;
+}
+
+hktv-cart-button[data-type="cart"][data-size="s"] .hktv-cart-btn__icon {
+  width: 22px;
+  height: 22px;
+}
+
+hktv-cart-button[data-type="cashback"][data-size="l"] .hktv-cart-btn__icon,
+hktv-cart-button[data-type="notify"][data-size="l"] .hktv-cart-btn__icon,
+hktv-cart-button[data-type="favourite"][data-size="l"] .hktv-cart-btn__icon {
+  width: 16px;
+  height: 16px;
+}
+
+hktv-cart-button[data-type="cashback"][data-size="s"] .hktv-cart-btn__icon,
+hktv-cart-button[data-type="notify"][data-size="s"] .hktv-cart-btn__icon,
+hktv-cart-button[data-type="favourite"][data-size="s"] .hktv-cart-btn__icon {
+  width: 14px;
+  height: 14px;
+}

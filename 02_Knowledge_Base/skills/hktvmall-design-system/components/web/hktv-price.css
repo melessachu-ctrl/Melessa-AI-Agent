@@ -1,0 +1,98 @@
+/* HKTVmall listing price (Figma 7083:2002). Matches references/components/price.md.
+   Sync to GCP WebView host. Do not overwrite an existing DS hktv-price.css.
+   Requires tokens/web/hktv-tokens.css. PDP price is not implemented here.
+   85 badge height 14px has no token (same as iOS starter). */
+
+hktv-price {
+  display: block;
+  box-sizing: border-box;
+}
+
+hktv-price .hktv-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+hktv-price .hktv-price__ka {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: var(--hktv-spacing-2) var(--hktv-spacing-4);
+  border-radius: var(--hktv-radius-badge-s);
+  background: var(--hktv-background-ka-price);
+  color: var(--hktv-text-white);
+}
+
+hktv-price .hktv-price__promo {
+  color: var(--hktv-text-sale-price);
+}
+
+hktv-price .hktv-price__original {
+  color: var(--hktv-text-tertiary);
+}
+
+hktv-price .hktv-price__main-row {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--hktv-spacing-4);
+  max-width: 100%;
+}
+
+hktv-price .hktv-price__main {
+  line-height: 1.4;
+}
+
+hktv-price .hktv-price__main--rp,
+hktv-price .hktv-price__main--notforsale {
+  color: var(--hktv-text-primary);
+}
+
+hktv-price .hktv-price__main--sp {
+  color: var(--hktv-text-sale-price);
+}
+
+hktv-price .hktv-price__main--vip {
+  color: var(--hktv-membership-price-text-vip);
+}
+
+hktv-price .hktv-price__main--gvip {
+  color: var(--hktv-membership-price-text-gvip);
+}
+
+hktv-price .hktv-price__main--dvip {
+  color: var(--hktv-membership-price-text-dvip);
+}
+
+hktv-price .hktv-price__main--ppp {
+  color: var(--hktv-membership-price-text-ppp);
+}
+
+hktv-price .hktv-price__main--cashback {
+  color: var(--hktv-bu-cashback);
+}
+
+hktv-price .hktv-price__main--greenlab {
+  color: var(--hktv-bu-greenlab);
+}
+
+hktv-price .hktv-price__main--publichousing {
+  color: var(--hktv-bu-public-housing);
+}
+
+hktv-price .hktv-price__badge {
+  display: inline-flex;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+hktv-price .hktv-price__badge img,
+hktv-price .hktv-price__badge svg {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+hktv-price .hktv-price__unit {
+  color: var(--hktv-text-tertiary);
+}

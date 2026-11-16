@@ -1,0 +1,214 @@
+/* HKTVmall Button (Figma 3135:812). Hand-written to match references/components/button.md.
+   Sync to GCP WebView host next to hktv-tokens.css. Do not overwrite an existing DS hktv-button.css.
+   Requires tokens/web/hktv-tokens.css (--hktv-* vars + typography classes).
+   Heights / min-widths / icon sizes (22 / 20 / 18) have no token yet; they follow the Button spec. */
+
+hktv-button {
+  display: inline-flex;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+hktv-button .hktv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--hktv-spacing-4);
+  box-sizing: border-box;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  max-width: 100%;
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+hktv-button .hktv-btn:focus {
+  outline: none;
+}
+
+hktv-button .hktv-btn__label {
+  line-height: 1.4;
+}
+
+hktv-button .hktv-btn__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+}
+
+hktv-button .hktv-btn__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+hktv-button .hktv-btn__spinner {
+  box-sizing: border-box;
+  border-radius: var(--hktv-radius-full);
+  border-style: solid;
+  border-color: currentColor;
+  border-right-color: transparent;
+  animation: hktv-btn-spin 0.7s linear infinite;
+}
+
+@keyframes hktv-btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* —— Appearance + state (loading uses Enable palette) —— */
+
+hktv-button[appearance="filled"] .hktv-btn,
+hktv-button:not([appearance]) .hktv-btn {
+  background: var(--hktv-brand-primary);
+  color: var(--hktv-text-white);
+}
+
+hktv-button[appearance="secondary"] .hktv-btn {
+  background: var(--hktv-background-green-75);
+  color: var(--hktv-brand-primary);
+}
+
+hktv-button[appearance="outline"] .hktv-btn {
+  background: transparent;
+  color: var(--hktv-brand-primary);
+  box-shadow: inset 0 0 0 var(--hktv-stroke-width-regular) var(--hktv-brand-primary);
+}
+
+hktv-button[appearance="text"] .hktv-btn {
+  background: transparent;
+  color: var(--hktv-brand-primary);
+}
+
+hktv-button[state="disabled"][appearance="filled"] .hktv-btn,
+hktv-button[state="disabled"]:not([appearance]) .hktv-btn,
+hktv-button[state="disabled"][appearance="secondary"] .hktv-btn {
+  background: var(--hktv-background-grey-75);
+  color: var(--hktv-text-disable);
+  box-shadow: none;
+}
+
+hktv-button[state="disabled"][appearance="outline"] .hktv-btn {
+  background: transparent;
+  color: var(--hktv-text-disable);
+  box-shadow: inset 0 0 0 var(--hktv-stroke-width-regular) var(--hktv-stroke-secondary);
+}
+
+hktv-button[state="disabled"][appearance="text"] .hktv-btn {
+  background: transparent;
+  color: var(--hktv-text-disable);
+  box-shadow: none;
+}
+
+hktv-button[state="disabled"] .hktv-btn,
+hktv-button[state="loading"] .hktv-btn {
+  cursor: default;
+  pointer-events: none;
+}
+
+/* —— Size + shape —— */
+
+hktv-button[size="l"]:not([shape="capsule"]) .hktv-btn,
+hktv-button:not([size]):not([shape="capsule"]) .hktv-btn {
+  height: 52px;
+  min-width: 88px;
+  padding-inline: var(--hktv-spacing-16);
+  border-radius: var(--hktv-radius-card-s);
+}
+
+hktv-button[size="l"][shape="capsule"] .hktv-btn,
+hktv-button:not([size])[shape="capsule"] .hktv-btn {
+  height: 52px;
+  min-width: 84px;
+  padding-inline: var(--hktv-spacing-20);
+  border-radius: var(--hktv-radius-full);
+}
+
+hktv-button[size="m"]:not([shape="capsule"]) .hktv-btn {
+  height: 44px;
+  min-width: 76px;
+  padding-inline: var(--hktv-spacing-12);
+  border-radius: var(--hktv-radius-card-s);
+}
+
+hktv-button[size="m"][shape="capsule"] .hktv-btn {
+  height: 44px;
+  min-width: 72px;
+  padding-inline: var(--hktv-spacing-16);
+  border-radius: var(--hktv-radius-full);
+}
+
+hktv-button[size="s"]:not([shape="capsule"]) .hktv-btn {
+  height: 36px;
+  min-width: 64px;
+  padding-inline: var(--hktv-spacing-8);
+  border-radius: var(--hktv-radius-button-s);
+}
+
+hktv-button[size="s"][shape="capsule"] .hktv-btn {
+  height: 36px;
+  min-width: 64px;
+  padding-inline: var(--hktv-spacing-12);
+  border-radius: var(--hktv-radius-full);
+}
+
+hktv-button[size="xs"]:not([shape="capsule"]) .hktv-btn {
+  height: auto;
+  min-width: 48px;
+  padding-inline: var(--hktv-spacing-8);
+  padding-block: var(--hktv-spacing-6);
+  border-radius: var(--hktv-radius-card-xs);
+}
+
+hktv-button[size="xs"][shape="capsule"] .hktv-btn {
+  height: auto;
+  min-width: 48px;
+  padding-inline: var(--hktv-spacing-8);
+  padding-block: var(--hktv-spacing-6);
+  border-radius: var(--hktv-radius-full);
+}
+
+/* Icon slot sizes (no token yet) */
+
+hktv-button[size="l"] .hktv-btn__icon--start,
+hktv-button:not([size]) .hktv-btn__icon--start,
+hktv-button[size="m"] .hktv-btn__icon--start {
+  width: 22px;
+  height: 22px;
+}
+
+hktv-button[size="l"] .hktv-btn__icon--end,
+hktv-button:not([size]) .hktv-btn__icon--end,
+hktv-button[size="m"] .hktv-btn__icon--end {
+  width: 20px;
+  height: 20px;
+}
+
+hktv-button[size="s"] .hktv-btn__icon,
+hktv-button[size="xs"] .hktv-btn__icon {
+  width: 18px;
+  height: 18px;
+}
+
+hktv-button[size="l"] .hktv-btn__spinner,
+hktv-button:not([size]) .hktv-btn__spinner,
+hktv-button[size="m"] .hktv-btn__spinner {
+  width: 16px;
+  height: 16px;
+  border-width: var(--hktv-stroke-width-bold);
+}
+
+hktv-button[size="s"] .hktv-btn__spinner,
+hktv-button[size="xs"] .hktv-btn__spinner {
+  width: 14px;
+  height: 14px;
+  border-width: var(--hktv-stroke-width-bold);
+}

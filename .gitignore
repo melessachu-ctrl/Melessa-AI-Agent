@@ -27,6 +27,11 @@ _archive/
 *secret*
 *token*
 !sync/cursor-rules/lite-app-figma-design-tokens.mdc
+# HKTVmall Design System skill: token specs are not secrets
+!02_Knowledge_Base/skills/hktvmall-design-system/tokens/
+!02_Knowledge_Base/skills/hktvmall-design-system/tokens/**
+!02_Knowledge_Base/skills/hktvmall-design-system/references/tokens.md
+!02_Knowledge_Base/skills/hktvmall-design-system/scripts/build_tokens.py
 
 # Raw or real company data must never be committed
 raw_data/

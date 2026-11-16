@@ -1,0 +1,129 @@
+/* HKTVmall Text Field (Figma 3005:218). Matches references/components/text-field.md.
+   Requires hktv-tokens.css. Clear icon uses primitive --hktv-neutral-200. */
+
+hktv-text-field,
+hktv-dropdown,
+hktv-phone-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hktv-spacing-8);
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.hktv-field__label {
+  color: var(--hktv-text-primary);
+}
+
+.hktv-field__box {
+  display: flex;
+  align-items: center;
+  gap: var(--hktv-spacing-8);
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 0 var(--hktv-spacing-16);
+  border: var(--hktv-stroke-width-regular) solid var(--hktv-stroke-secondary);
+  border-radius: var(--hktv-radius-card-s);
+  background: var(--hktv-background-white);
+  color: var(--hktv-text-primary);
+  font: inherit;
+  text-align: left;
+}
+
+.hktv-field__box:focus {
+  outline: none;
+}
+
+hktv-text-field[data-size="m"] .hktv-field__box,
+hktv-dropdown[data-size="m"] .hktv-field__box,
+hktv-phone-field[data-size="m"] .hktv-field__box {
+  height: 56px;
+}
+
+hktv-text-field[data-size="s"] .hktv-field__box,
+hktv-dropdown[data-size="s"] .hktv-field__box,
+hktv-phone-field[data-size="s"] .hktv-field__box {
+  height: 48px;
+}
+
+.hktv-field__value {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hktv-field__placeholder {
+  color: var(--hktv-text-placeholder);
+}
+
+.hktv-field__caret {
+  width: var(--hktv-stroke-width-regular);
+  height: 22px;
+  background: var(--hktv-brand-primary);
+  flex-shrink: 0;
+}
+
+.hktv-field__icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--hktv-neutral-200);
+}
+
+.hktv-field__icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+.hktv-field__chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--hktv-text-primary);
+}
+
+.hktv-field__message {
+  color: var(--hktv-text-danger);
+}
+
+hktv-text-field[data-state="focus"] .hktv-field__box,
+hktv-text-field[data-state="typing"] .hktv-field__box,
+hktv-dropdown[data-state="focus"] .hktv-field__box,
+hktv-phone-field[data-state="focus"] .hktv-field__box,
+hktv-phone-field[data-state="typing"] .hktv-field__box {
+  border-color: var(--hktv-text-primary);
+}
+
+hktv-text-field[data-state="error"] .hktv-field__box,
+hktv-text-field[data-state="error-typing"] .hktv-field__box,
+hktv-phone-field[data-state="error"] .hktv-field__box {
+  border-color: var(--hktv-text-danger);
+}
+
+hktv-text-field[data-state="disabled"] .hktv-field__box,
+hktv-dropdown[data-state="disabled"] .hktv-field__box {
+  background: var(--hktv-background-grey-75);
+  color: var(--hktv-text-disable);
+}
+
+hktv-text-field[data-state="disabled"] .hktv-field__label,
+hktv-dropdown[data-state="disabled"] .hktv-field__label,
+hktv-text-field[data-state="disabled"] .hktv-field__placeholder,
+hktv-dropdown[data-state="disabled"] .hktv-field__placeholder {
+  color: var(--hktv-text-disable);
+}
+
+.hktv-phone__row {
+  display: flex;
+  gap: var(--hktv-spacing-8);
+  align-items: center;
+}
+
+.hktv-phone__code {
+  width: 109px;
+  flex-shrink: 0;
+}

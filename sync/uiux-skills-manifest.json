@@ -19,7 +19,9 @@
     "apply-design-system",
     "audit-design-system",
     "fix-design-system-finding",
-    "hktv-pm-spec-writer"
+    "hktv-pm-spec-writer",
+    "hktvmall-design-system",
+    "hktvmall-vibe-prototype"
   ],
   "rules_source": "sync/cursor-rules",
   "rules": [

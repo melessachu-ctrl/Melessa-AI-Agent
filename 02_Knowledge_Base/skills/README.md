@@ -36,7 +36,7 @@ bash setup-symlinks.sh
 
 - **真源**：本目錄（Melessa）；**下游**：UIUX-Skills 的 `skills/`
 - Push 到 Melessa `main` 且變更本目錄時，GitHub Actions 會自動 sync（見 [`sync/README.md`](../../sync/README.md)）
-- Sync 清單定義於 [`sync/uiux-skills-manifest.json`](../../sync/uiux-skills-manifest.json)（17 個 skills + 4 個 cursor rules）。其中 `cro`、`offers`、`copywriting`、`copy-editing` 給轉換型畫面用。`hktv-pm-spec-writer` 給 PM 由 Figma／prototype 寫 IT spec、copytable、Kafka。網店用的其餘 marketing skills（`emails`、`sms`、`ads` 等）不在清單內
+- Sync 清單定義於 [`sync/uiux-skills-manifest.json`](../../sync/uiux-skills-manifest.json)（19 個 skills + 4 個 cursor rules）。其中 `cro`、`offers`、`copywriting`、`copy-editing` 給轉換型畫面用。`hktv-pm-spec-writer` 給 PM 由 Figma／prototype 寫 IT spec、copytable、Kafka。`hktvmall-design-system`／`hktvmall-vibe-prototype` 給 vibe code／in-repo spike（寫 UI 用 tokens + Code Token Bind Gate）。網店用的其餘 marketing skills（`emails`、`sms`、`ads` 等）不在清單內。跨專案 Figma／價錢／MKGB／Lite App 規則走 `sync/cursor-rules`（唔另 sync `hktvmall-design-rules` skill）
 - 這 12 個 marketing skills 每月 1 號由 Actions 對 [marketingskills](https://github.com/coreyhaines31/marketingskills) 的 `main`；有差才寫進 Melessa `main`（見 [`sync/README.md`](../../sync/README.md)）
 - Teammate 在 UIUX-Skills 的 skill 改動須 **PR 回 Melessa**，不可只改下游
 

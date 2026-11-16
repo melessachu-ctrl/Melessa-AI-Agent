@@ -1,0 +1,13 @@
+{
+  "extraKnownMarketplaces": {
+    "hktvmall-design": {
+      "source": {
+        "source": "github",
+        "repo": "melessachu-ctrl/hktvmall-design"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "hktvmall-uiux@hktvmall-design": true
+  }
+}

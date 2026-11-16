@@ -1,0 +1,470 @@
+/* Generated from tokens.json (HKTVmall Design System, Figma F0tjdruLjJTfWgmTeZKBnw, synced 2026-11-05). Do not edit by hand: change tokens.json and regenerate. */
+/* Font: Poppins (Google Fonts). Web: <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> */
+/* All variables are prefixed --hktv- so they never collide with existing styles. */
+:root {
+  /* Primitive colours: do not use directly in UI, use the semantic tokens below */
+  --hktv-green-25: #eefff6;
+  --hktv-green-50: #f2fbf7;
+  --hktv-green-75: #e5f6ee;
+  --hktv-green-100: #ccffe2;
+  --hktv-green-200: #9efccb;
+  --hktv-green-300: #76ffbe;
+  --hktv-green-400: #67fb98;
+  --hktv-green-500: #09de7a;
+  --hktv-green-600: #00ce6e;
+  --hktv-green-700: #00b539;
+  --hktv-green-800: #00a759;
+  --hktv-green-900: #007b55;
+  --hktv-green-950: #04503a;
+  --hktv-neutral-0: #ffffff;
+  --hktv-neutral-50: #f7f7f7;
+  --hktv-neutral-75: #f2f2f2;
+  --hktv-neutral-100: #e5e8eb;
+  --hktv-neutral-200: #d3d3d3;
+  --hktv-neutral-300: #b2b2b2;
+  --hktv-neutral-400: #a3a3a3;
+  --hktv-neutral-500: #8b8b8b;
+  --hktv-neutral-600: #535353;
+  --hktv-neutral-700: #575757;
+  --hktv-neutral-800: #474747;
+  --hktv-neutral-900: #272727;
+  --hktv-neutral-950: #1c1c1c;
+  --hktv-neutral-1000: #000000;
+  --hktv-red-25: #ffebee;
+  --hktv-red-50: #ffe1e1;
+  --hktv-red-75: #ffc8c8;
+  --hktv-red-100: #f1b3bb;
+  --hktv-red-200: #ffa0a0;
+  --hktv-red-300: #ff6464;
+  --hktv-red-400: #fc5585;
+  --hktv-red-500: #ff4c4c;
+  --hktv-red-600: #e4483f;
+  --hktv-red-700: #d0021b;
+  --hktv-red-800: #cf062a;
+  --hktv-red-900: #ae061a;
+  --hktv-red-950: #8f0d1d;
+  --hktv-orange-25: #fff8ed;
+  --hktv-orange-50: #fff4e2;
+  --hktv-orange-75: #fef3e8;
+  --hktv-orange-100: #fdebd7;
+  --hktv-orange-200: #ffdca8;
+  --hktv-orange-300: #ffc272;
+  --hktv-orange-400: #fe9e39;
+  --hktv-orange-500: #fd7c0a;
+  --hktv-orange-600: #ff6c40;
+  --hktv-orange-700: #ff5500;
+  --hktv-orange-800: #cc3b02;
+  --hktv-orange-900: #82290c;
+  --hktv-orange-950: #7e3310;
+  --hktv-yellow-25: #fffceb;
+  --hktv-yellow-50: #fff7cd;
+  --hktv-yellow-75: #fff4cd;
+  --hktv-yellow-100: #fdf2ad;
+  --hktv-yellow-200: #fcf18c;
+  --hktv-yellow-300: #ffec74;
+  --hktv-yellow-400: #fae24a;
+  --hktv-yellow-500: #f7cf18;
+  --hktv-yellow-600: #e4b40b;
+  --hktv-yellow-700: #c0812b;
+  --hktv-yellow-800: #a76708;
+  --hktv-yellow-900: #844e0f;
+  --hktv-yellow-950: #7a4f01;
+  --hktv-blue-25: #effaff;
+  --hktv-blue-50: #e6f7ff;
+  --hktv-blue-75: #d0f2ff;
+  --hktv-blue-100: #b9e8ff;
+  --hktv-blue-200: #ace1ff;
+  --hktv-blue-300: #7acaff;
+  --hktv-blue-400: #28a6ff;
+  --hktv-blue-500: #1890ff;
+  --hktv-blue-600: #1d78ff;
+  --hktv-blue-700: #0057ff;
+  --hktv-blue-800: #005aff;
+  --hktv-blue-900: #004edc;
+  --hktv-blue-950: #04297a;
+  --hktv-purple-25: #f8f7ff;
+  --hktv-purple-50: #f5efff;
+  --hktv-purple-75: #f1e9ff;
+  --hktv-purple-100: #efebff;
+  --hktv-purple-200: #e5d3ff;
+  --hktv-purple-300: #b680ff;
+  --hktv-purple-400: #a35cfd;
+  --hktv-purple-500: #852cf1;
+  --hktv-purple-600: #711cd4;
+  --hktv-purple-700: #7039c7;
+  --hktv-purple-800: #5e30a7;
+  --hktv-purple-900: #4e2989;
+  --hktv-purple-950: #30195c;
+  --hktv-overlay-neu-1000-70: #000000b2;
+  --hktv-overlay-neu-1000-30: #0000004d;
+
+  /* Semantic colours */
+  --hktv-text-primary: var(--hktv-neutral-950);
+  --hktv-text-secondary: var(--hktv-neutral-700);
+  --hktv-text-tertiary: var(--hktv-neutral-500);
+  --hktv-text-placeholder: var(--hktv-neutral-300);
+  --hktv-text-disable: var(--hktv-neutral-400);
+  --hktv-text-white: var(--hktv-neutral-0);
+  --hktv-text-sale-price: var(--hktv-red-800);
+  --hktv-text-danger: var(--hktv-red-600);
+  --hktv-text-highlight: var(--hktv-orange-500);
+  --hktv-brand-primary: var(--hktv-green-800);
+  --hktv-brand-secondary: var(--hktv-green-900);
+  --hktv-brand-tertiary: var(--hktv-green-600);
+  --hktv-brand-flagship-store: var(--hktv-yellow-700);
+  --hktv-background-white: var(--hktv-neutral-0);
+  --hktv-background-grey-50: var(--hktv-neutral-50);
+  --hktv-background-grey-75: var(--hktv-neutral-75);
+  --hktv-background-black: var(--hktv-neutral-1000);
+  --hktv-background-disable: var(--hktv-neutral-100);
+  --hktv-background-error: var(--hktv-red-25);
+  --hktv-background-green-50: var(--hktv-green-50);
+  --hktv-background-green-75: var(--hktv-green-75);
+  --hktv-background-warning: var(--hktv-yellow-50);
+  --hktv-background-inform: var(--hktv-blue-75);
+  --hktv-stroke-primary: var(--hktv-neutral-75);
+  --hktv-stroke-secondary: var(--hktv-neutral-100);
+  --hktv-overlay-70: var(--hktv-overlay-neu-1000-70);
+  --hktv-overlay-30: var(--hktv-overlay-neu-1000-30);
+  --hktv-membership-price-text-plus: var(--hktv-green-700);
+  --hktv-membership-plus: var(--hktv-green-400);
+  --hktv-membership-price-text-vip: var(--hktv-purple-800);
+  --hktv-membership-price-text-gvip: var(--hktv-yellow-600);
+  --hktv-membership-gvip: var(--hktv-yellow-600);
+  --hktv-membership-gvip-background: var(--hktv-yellow-75);
+  --hktv-membership-vip: var(--hktv-purple-800);
+  --hktv-membership-price-text-dvip: var(--hktv-yellow-800);
+  --hktv-membership-vip-background: var(--hktv-purple-50);
+  --hktv-membership-price-text-ppp: var(--hktv-orange-600);
+  --hktv-bu-landmark: #666666;
+  --hktv-bu-supermarket: #7cc73d;
+  --hktv-bu-personal-care: #f5a623;
+  --hktv-bu-beauty: var(--hktv-red-400);
+  --hktv-bu-fashion: #2d2d2d;
+  --hktv-bu-macau: #ae8223;
+  --hktv-bu-pets: #f97c46;
+  --hktv-bu-mother-baby: #77d1da;
+  --hktv-bu-gadgets: #2a74e0;
+  --hktv-bu-home-applicances: #57c2bd;
+  --hktv-bu-housewares: #e3c100;
+  --hktv-bu-sports: #77ae39;
+  --hktv-bu-toys: #0196ff;
+  --hktv-bu-insurance: #98353b;
+  --hktv-bu-service-deal: #8366ff;
+  --hktv-bu-cashback: var(--hktv-orange-600);
+  --hktv-bu-3-hrs: var(--hktv-purple-600);
+  --hktv-bu-live: #00bfe0;
+  --hktv-bu-taobao: #ff401e;
+  --hktv-bu-public-housing: #23814f;
+  --hktv-bu-greenlab: #3dd4ae;
+  --hktv-bu-the-place: #33cccc;
+  --hktv-background-red-50: var(--hktv-red-50);
+  --hktv-background-orange-75: var(--hktv-yellow-75);
+  --hktv-background-blue-50: var(--hktv-blue-50);
+  --hktv-background-ka-price: var(--hktv-neutral-800);
+
+  /* Spacing */
+  --hktv-spacing-2: 2px;
+  --hktv-spacing-4: 4px;
+  --hktv-spacing-6: 6px;
+  --hktv-spacing-8: 8px;
+  --hktv-spacing-12: 12px;
+  --hktv-spacing-16: 16px;
+  --hktv-spacing-20: 20px;
+  --hktv-spacing-24: 24px;
+  --hktv-spacing-32: 32px;
+  --hktv-spacing-36: 36px;
+
+  /* Radius */
+  --hktv-radius-badge-s: 4px;
+  --hktv-radius-badge-l: 6px;
+  --hktv-radius-card-xs: 8px;
+  --hktv-radius-button-s: 10px;
+  --hktv-radius-card-s: 12px;
+  --hktv-radius-card-l: 16px;
+  --hktv-radius-module: 24px;
+  --hktv-radius-full: 999px;
+
+  /* Border width */
+  --hktv-stroke-width-hairline: 0.4px;
+  --hktv-stroke-width-regular: 1px;
+  --hktv-stroke-width-bold: 2px;
+
+  /* Shadow */
+  --hktv-shadow-card: 0 4px 8px 0 rgba(145, 158, 171, 0.16);
+  --hktv-shadow-modal: 0 4px 16px 0 rgba(145, 158, 171, 0.3);
+  --hktv-shadow-footer: 0 0 8px 0 rgba(145, 158, 171, 0.16);
+  --hktv-shadow-z1: 0 1px 2px 0 rgba(145, 158, 171, 0.16);
+  --hktv-shadow-z8: 0 8px 16px 0 rgba(145, 158, 171, 0.16);
+  --hktv-shadow-z12: 0 12px 24px -4px rgba(145, 158, 171, 0.16);
+  --hktv-shadow-z16: 0 16px 32px -4px rgba(145, 158, 171, 0.16);
+  --hktv-shadow-z20: 0 20px 40px -4px rgba(145, 158, 171, 0.16);
+  --hktv-shadow-z24: 0 24px 48px 0 rgba(145, 158, 171, 0.16);
+  --hktv-shadow-zcard: 0 12px 24px -4px rgba(145, 158, 171, 0.12), 0 0 2px 0 rgba(145, 158, 171, 0.2);
+
+  /* Font */
+  --hktv-font-sans: "Poppins", "PingFang HK", "Noto Sans HK", system-ui, sans-serif;
+}
+
+/* Text styles: class names match token names, e.g. <p class="hktv-body-2-regular"> */
+.hktv-headline-1-regular {
+  font-family: var(--hktv-font-sans);
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.hktv-headline-1-medium {
+  font-family: var(--hktv-font-sans);
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.hktv-headline-1-semibold {
+  font-family: var(--hktv-font-sans);
+  font-size: 28px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.hktv-headline-2-regular {
+  font-family: var(--hktv-font-sans);
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.hktv-headline-2-medium {
+  font-family: var(--hktv-font-sans);
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.hktv-headline-2-semibold {
+  font-family: var(--hktv-font-sans);
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.hktv-headline-2-bold {
+  font-family: var(--hktv-font-sans);
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.hktv-headline-3-regular {
+  font-family: var(--hktv-font-sans);
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.hktv-headline-3-medium {
+  font-family: var(--hktv-font-sans);
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.hktv-headline-3-semibold {
+  font-family: var(--hktv-font-sans);
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.hktv-subtitle-regular {
+  font-family: var(--hktv-font-sans);
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.hktv-subtitle-medium {
+  font-family: var(--hktv-font-sans);
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.hktv-subtitle-semibold {
+  font-family: var(--hktv-font-sans);
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.hktv-title-regular {
+  font-family: var(--hktv-font-sans);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.hktv-title-medium {
+  font-family: var(--hktv-font-sans);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.hktv-title-semibold {
+  font-family: var(--hktv-font-sans);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.hktv-body-1-regular {
+  font-family: var(--hktv-font-sans);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.hktv-body-1-medium {
+  font-family: var(--hktv-font-sans);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.hktv-body-1-semibold {
+  font-family: var(--hktv-font-sans);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.hktv-body-2-regular {
+  font-family: var(--hktv-font-sans);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.hktv-body-2-medium {
+  font-family: var(--hktv-font-sans);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.hktv-body-2-semibold {
+  font-family: var(--hktv-font-sans);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.hktv-body-3-regular {
+  font-family: var(--hktv-font-sans);
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.hktv-body-3-medium {
+  font-family: var(--hktv-font-sans);
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.hktv-body-3-semibold {
+  font-family: var(--hktv-font-sans);
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.hktv-caption-1-regular {
+  font-family: var(--hktv-font-sans);
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.hktv-caption-1-medium {
+  font-family: var(--hktv-font-sans);
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.hktv-caption-1-semibold {
+  font-family: var(--hktv-font-sans);
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.hktv-caption-1-bold {
+  font-family: var(--hktv-font-sans);
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.hktv-caption-2-regular {
+  font-family: var(--hktv-font-sans);
+  font-size: 8px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.hktv-caption-2-medium {
+  font-family: var(--hktv-font-sans);
+  font-size: 8px;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.hktv-caption-2-semibold {
+  font-family: var(--hktv-font-sans);
+  font-size: 8px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.hktv-price-detail-page-main {
+  font-family: var(--hktv-font-sans);
+  font-size: 24px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.hktv-price-detail-page-rp {
+  font-family: var(--hktv-font-sans);
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-decoration: line-through;
+}
+.hktv-price-listing-main {
+  font-family: var(--hktv-font-sans);
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.hktv-price-listing-multi-col {
+  font-family: var(--hktv-font-sans);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.hktv-price-listing-rp {
+  font-family: var(--hktv-font-sans);
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-decoration: line-through;
+}
