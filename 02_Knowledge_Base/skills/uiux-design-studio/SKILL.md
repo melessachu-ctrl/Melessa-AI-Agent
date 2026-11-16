@@ -107,21 +107,25 @@ Intake → Routing → Research（可選）→ Designer → Prototype（可選�
    - `fileKey`：`F0tjdruLjJTfWgmTeZKBnw`
    - 預設入口 `nodeId`：`11445:16121`
 2. **Routing 後、角色產出前**：遵守使用者規則 `hktvmall-figma-design-system`；Figma 寫入前讀 `figma-use`；多區塊對齊讀 `apply-design-system`。
-3. **UIUX Designer / DS Owner 產出**：token、間距、字級、顏色、元件**必須**引用上述 DS；缺口列為「待新增／待盤點」，不得默默自創替代樣式。**禁止**以裸 `fontSize`／`fontName`／字重或未綁定之 hex／RGB fill 作為最終態（含 Content SLOT、demo 文案、overlay 內自建 TEXT）。
-4. **每一次** HKTVmall Figma 畫面／流程／bottom sheet／demo 寫入後，必須通過下方「**HKTVmall Screen Token Bind Gate**」；未過閘不得交件。
-5. **Director Final Pack**：附錄須含 **DS 採用聲明**（名稱、fileKey、主要引用元件／token 或盤點阻塞）＋ **Screen Token Bind Gate 結果**（Pass／Pass with exceptions／Blocked + 主要 text style／color token 名稱）。
+3. **UIUX Designer / DS Owner 產出**：token、間距、字級、顏色、元件**必須**引用上述 DS；缺口列為「待新增／待盤點」，不得默默自創替代樣式。**禁止**以裸 `fontSize`／`fontName`／字重或未綁定之 hex／RGB fill 作為最終態（含 Content SLOT、demo 文案、overlay 內自建 TEXT）。元件化決策（對齊 `hktvmall-figma-design-system`）：
+   - DS 有可直接用的 component → 用 instance
+   - 元素會重覆使用、DS 沒有可直接用的**整塊** component → 本檔做成 **local component**（組合殼：內部**優先嵌套 DS instance**，如 Button／Badge／Icon／Input 等；自建層才綁 DS token；**禁止**拆掉已有 DS 子元件改畫裸圖層；**不**觸發「DS Component Write Gate」，除非使用者要求補進 DS）
+   - 整頁骨架會重覆、僅部分 section 的 state／內容不同 → **整頁做成 component**，相異區塊做成 **section slot**（整頁／slot 內同樣優先用 DS instance；勿與下方「Content SLOT」文案綁定混淆）
+4. **每一次** HKTVmall Figma 畫面／流程／bottom sheet／demo／本檔 local component／整頁＋section slot 寫入後，必須通過下方「**HKTVmall Screen Token Bind Gate**」；未過閘不得交件。
+5. **Director Final Pack**：附錄須含 **DS 採用聲明**（名稱、fileKey、主要引用元件／token 或盤點阻塞）＋ **Screen Token Bind Gate 結果**（Pass／Pass with exceptions／Blocked + 主要 text style／color token 名稱）＋本檔 **local component／整頁 component＋section slot** 清單（若有）。
 
 > 跨專案規則：優先讀 `rules/hktvmall-figma-design-system.md`；找不到再讀同名 `.mdc`（`rules/` 或 Melessa `sync/cursor-rules/`）；Cursor 已安裝則等同使用者規則 `hktvmall-figma-design-system`。皆無則以本節為準，勿阻塞。
 
 #### HKTVmall Screen Token Bind Gate（畫面／流程出稿 — 強制）
 
-當任務符合「HKTVmall 觸發詞」且涉及 **Figma 設計出稿**（新頁、改版、flow、bottom sheet、overlay、demo、Content SLOT 文案、Prototype 畫面），**不論是否建立 DS component**，每一次寫入目標範圍內的 TEXT／文字色都必須過本閘門。此閘門補足「DS Component Write Gate」只罩住建／改元件的缺口，避免外殼用 DS instance、內文卻硬編碼。
+當任務符合「HKTVmall 觸發詞」且涉及 **Figma 設計出稿**（新頁、改版、flow、bottom sheet、overlay、demo、Content SLOT 文案、Prototype 畫面、本檔 local component、整頁 component＋section slot），**不論是否建立 DS component**，每一次寫入目標範圍內的 TEXT／文字色都必須過本閘門。此閘門補足「DS Component Write Gate」只罩住建／改**已發佈／擬發佈 DS** 元件的缺口，避免外殼用 DS instance、內文卻硬編碼。
 
 **與 DS Component Write Gate 的關係**
 
 | 任務 | 必過閘門 |
 | --- | --- |
 | 只畫／改畫面、flow、sheet、demo（不建 DS 元件） | **僅** Screen Token Bind Gate |
+| 本檔 **local component**／**整頁 component＋section slot**（非 DS 發佈） | **僅** Screen Token Bind Gate（文字／色）；**不**觸發 DS Component Write Gate |
 | 建立／更新 DS component | **DS Component Write Gate**（已含 font）；畫面實例另過 Screen Token Bind Gate |
 | Lite App | 另遵守「Lite App Design Tokens 預設」（字體）；本閘門之 color 規則仍適用若任務同時屬 HKTVmall |
 
@@ -347,7 +351,7 @@ App 設計或評審時，畫面或流程**包含下列任一項**才 Read `../ap
 
 - **資訊架構（IA）**：導覽與頁內層級（如適用）
 - **版面與層級**：主要區塊、視覺權重、閱讀路徑
-- **關鍵元件清單**：可重用元件 + 變體/狀態
+- **關鍵元件清單**：可重用元件 + 變體/狀態；HKTVmall Figma 出稿時標明 DS instance／本檔 local component／整頁 component＋section slot（若適用）
 - **狀態設計**：Empty / Loading / Error / Success（最少涵蓋關鍵流程）
 - **互動規格**：輸入、驗證、回饋、可撤銷、鍵盤操作
 - **內容規格（Microcopy）**：關鍵標題/按鈕/錯誤訊息語氣與範例
@@ -387,7 +391,7 @@ App 設計或評審時，畫面或流程**包含下列任一項**才 Read `../ap
 - **a11y 檢查**：對比、焦點、鍵盤、ARIA/標籤、觸控目標（對齊 `ui-ux-pro-max/references/quick-reference.md` §1）
 - **一致性檢查**：字級/間距/元件狀態/語氣/圖示（對齊 `ui-ux-pro-max/references/quick-reference.md` §4、§6）
 - **DS Component Write Gate（有建立／更新 DS 元件時必查）**：未過 Gate 的項目一律進 Must fix — (1) 容器仍為 `layoutMode=NONE` 且無例外註記；(2) TEXT 未綁 text style／typography token；(3) 圖層名為 `Frame N`／`Group N`／`Copy` 或含 `/` 路徑式名稱（對齊 `figma-file-cleanup` leaf-only）
-- **HKTVmall Screen Token Bind Gate（HKTVmall Figma 畫面／flow／sheet 出稿時必查）**：未過閘一律 Must fix — (1) 自建／改動 TEXT 未綁 DS text style；(2) 文字色未綁 DS color token；(3) Content SLOT／demo 文案仍為裸 `fontSize`／hex（非已註明之 instance 內部例外）
+- **HKTVmall Screen Token Bind Gate（HKTVmall Figma 畫面／flow／sheet 出稿時必查）**：未過閘一律 Must fix — (1) 自建／改動 TEXT 未綁 DS text style；(2) 文字色未綁 DS color token；(3) Content SLOT／demo 文案仍為裸 `fontSize`／hex（非已註明之 instance 內部例外）；(4) 會重覆使用且 DS 無整塊 component 的元素未收成 local component，或整頁骨架重覆卻未做成整頁 component＋section slot；或 local／整頁內把已有 DS Button／Badge 等拆成裸圖層重畫（對齊 `hktvmall-figma-design-system` 元件化決策）
 - **Conversion Pass（轉換型畫面必查）**：依 `uiux-review` Step 3b。主轉換被擋住、價格或優惠會看錯、聲稱沒有根據、主按鈕講不清按下後發生什麼，進 Must fix。5 秒內看不出價值、信任證據離決定點太遠、常見猶豫沒接上、文案可收短但不改結構，進 Should fix
 
 ## Director Final Pack（最後一定要輸出）
@@ -414,6 +418,7 @@ App 設計或評審時，畫面或流程**包含下列任一項**才 Read `../ap
 - Target Customer 對齊（HKTVmall 相關時必有）：segment 對應、KPI 取捨、推薦可解釋性（格式見 `hktvmall-target-customers`）
 - **DS 採用聲明**（HKTVmall Figma 相關時必有）：HKTVmall Design System、`fileKey`、主要引用元件／token 或盤點阻塞
 - **HKTVmall Screen Token Bind Gate**（HKTVmall Figma 畫面／flow／sheet／demo 出稿時必有）：Pass／Pass with exceptions／Blocked；主要 text style 與 color token 名稱；例外 node id（若有）
+- **本檔元件化**（HKTVmall Figma 出稿且有重覆元素／整頁多 state 時必有）：local component 清單；整頁 component＋section slot（若有）；註明「非 DS 發佈」
 - **Typography／DS 採用聲明**（Lite App／Lite App DS 相關時必有）：Design Tokens（Typography）、`fileKey` `I5A9GqmJdvoskfDeCBtNsL`、主要 text style 名稱或盤點阻塞
 - **DS 採用聲明**（Marketing Buddy／MKGB 相關時必有）：Marketing Buddy DS、`fileKey` `dR3ATshJMDaGHOG0Y3R6Ew`、主要 text style／color token 或盤點阻塞；icon 來源（DS／Material Symbols）註明
 - **DS Component Write Gate**（有建立／更新 DS 元件時必有）：Checklist 勾選結果＋主要 text style 名稱＋auto-layout 例外（若有）

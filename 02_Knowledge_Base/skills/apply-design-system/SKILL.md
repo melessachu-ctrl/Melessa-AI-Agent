@@ -29,7 +29,9 @@ When the task is **Lite App** / **Lite App DS** related (design, component creat
 
 **Hard rule:** every text node must be linked to a Design Tokens **Text Style** (e.g. via `importStyleByKeyAsync` + `setTextStyleIdAsync`). Do not leave fonts as unbound hardcoded `fontSize` / weight. Prefer `NS {size}/App NS …` styles from this library. See also user rule `lite-app-figma-design-tokens`.
 
-**Creating or updating a DS component** (not just swapping instances on a screen): follow `uiux-design-studio` **DS Component Write Gate** — auto-layout on containers, bound text styles, leaf-only layer naming per `figma-file-cleanup`. Prefer routing that work through `uiux-design-studio` + `figma-generate-library` rather than inventing unbound local components here.
+**Creating or updating a DS component** (not just swapping instances on a screen): follow `uiux-design-studio` **DS Component Write Gate** — auto-layout on containers, bound text styles, leaf-only layer naming per `figma-file-cleanup`. Prefer routing that work through `uiux-design-studio` + `figma-generate-library`.
+
+**Do not invent unbound one-off local components** as a substitute for published DS (no token bind, no reuse intent). **HKTVmall reuse exception:** when a composite will be reused in the working file and no DS component covers the **whole** block, create a **local component shell** that **nests DS component instances** (Button, Badge, Icon, Input, etc.) and only then adds token-bound custom layers — do not detach/rebuild those DS children as raw frames. That is file-local composition, not a published DS change — route true DS gap-fill through `uiux-design-studio` + `figma-generate-library` when the user asks to add to the Design System. Page-level components with **section slots** are governed by `hktvmall-figma-design-system` / `uiux-design-studio`, not this skill.
 
 # Connect A Design To A Design System
 
