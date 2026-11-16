@@ -4,6 +4,8 @@
 
 | 日期 | 任務 | 成果 | 備註 |
 |---|---|---|---|
+| 2026-11-16 | Sync design-system＋vibe-prototype | Melessa 真源＋UIUX-Skills manifest 19；gitignore token 白名單；不 sync design-rules | 見 session `2026-11-16_hktvmall-design-system-vibe-sync`；Actions @ 93581dd |
+| 2026-11-16 | HKTVmall Figma local／section slot 規則 | rule＋studio／apply-DS：重覆→local（內嵌 DS）；整頁＋section slot | 見 session `2026-11-16_hktvmall-local-component-slots` |
 | 2026-11-13 | 安裝 `hktv-pm-spec-writer` | 真源對齊 plugin（Figma＋prototype）；加入 UIUX-Skills manifest（17 skills） | 見 session `2026-11-13_hktv-pm-spec-writer`；Downloads 舊稿未採用 |
 | 2026-11-03 | marketingskills 月更 | GHA 每月 1 號 09:30 HKT 對上游；有差才寫入 main。Automation 草稿 10:45 | 見 session `2026-11-03_marketingskills-monthly-sync`；Automation 待 Save |
 | 2026-11-02～03 | 轉換檢查接進設計工作室 | 安裝 12 個 marketing skills；studio／review 只在轉換型畫面讀 cro、offers、copywriting、copy-editing；這 4 個進 UIUX-Skills | 見 session `2026-11-03_marketing-skills-conversion-pass`；其餘 8 個留在 Melessa |
