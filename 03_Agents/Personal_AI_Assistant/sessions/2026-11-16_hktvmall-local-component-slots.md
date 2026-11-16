@@ -25,9 +25,10 @@ Melessa 要把 HKTVmall Figma 出稿的元件化判斷寫進 skills／rules：
 
 ## 分發
 
-- Melessa：待 finish session commit／push
-- UIUX-Skills：靠 Actions **Sync UIUX-Skills**（改了 `02_Knowledge_Base/skills/**` + `sync/**`）
-- Slack：`#uiux-designer` 公告（Actions 成功後）
+- Melessa：`3db7596` 已在 `main`
+- Actions：[Sync UIUX-Skills](https://github.com/melessachu-ctrl/Melessa-AI-Agent/actions/runs/43822152365) 成功
+- UIUX-Skills：[chore(sync): from Melessa @ 3db7596](https://github.com/melessachu-ctrl/UIUX-Skills/commit/5e78fd7)
+- Slack：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1794813194326919
 
 ## 未完成甚麼
 
