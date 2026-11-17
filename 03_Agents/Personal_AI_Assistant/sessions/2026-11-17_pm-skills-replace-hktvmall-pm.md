@@ -17,6 +17,7 @@
 - Melessa：`1b11761`
 - hktvmall-design：`8854bab`
 - UIUX-Skills：先是手動 `be2e9a3`，Actions 再同步 [chore(sync): from Melessa @ 1b11761](https://github.com/melessachu-ctrl/UIUX-Skills/commit/1c9e3ac)
+- Slack：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1794898800583109
 - 本機 UIUX-Skills 已 fast-forward 到 `1c9e3ac`
 
 ## 未完成甚麼
