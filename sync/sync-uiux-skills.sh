@@ -76,6 +76,16 @@ rm -rf "$CLAUDE_SKILLS" "$CLAUDE_RULES"
 mkdir -p "$CLAUDE_SKILLS" "$CLAUDE_RULES"
 
 shopt -s nullglob
+# Drop skill directories the manifest no longer lists, so a removed skill
+# does not stay in the downstream repo or get a Claude link recreated.
+for skill_dir in "${OUT_DIR}/skills"/*/; do
+  name="$(basename "$skill_dir")"
+  if ! jq -e --arg name "$name" '.skills | index($name) != null' "$MANIFEST" >/dev/null; then
+    echo "remove skill not in manifest: ${name}"
+    rm -rf "$skill_dir"
+    CHANGED_ITEMS+=("removed:${name}")
+  fi
+done
 for skill_dir in "${OUT_DIR}/skills"/*/; do
   name="$(basename "$skill_dir")"
   if [[ ! -f "${skill_dir}SKILL.md" ]]; then
