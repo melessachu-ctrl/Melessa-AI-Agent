@@ -16,6 +16,7 @@
 
 - Melessa：`17e59f3` 已在 `main`
 - UIUX-Skills：[chore(sync): from Melessa @ 17e59f3](https://github.com/melessachu-ctrl/UIUX-Skills/commit/3c6d8e7)
+- Slack：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1794881595146479
 - hktvmall-design：`64bff61`（plugin 0.7.7）已在 `main`
 - `hktvmall-pm` **不**進 UIUX-Skills。設計師要 spec skill 要更新 `hktvmall-uiux` plugin，不是只跑 `update-skills.sh`
 - 本機 `~/.cursor/skills/hktvmall-pm` 指向 Melessa 真源
