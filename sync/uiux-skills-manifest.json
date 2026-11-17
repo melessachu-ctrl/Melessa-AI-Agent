@@ -20,7 +20,10 @@
     "audit-design-system",
     "fix-design-system-finding",
     "hktvmall-design-system",
-    "hktvmall-vibe-prototype"
+    "hktvmall-vibe-prototype",
+    "standardized-technical-prd",
+    "test-case-preparation",
+    "user-story-journey-mapper"
   ],
   "rules_source": "sync/cursor-rules",
   "rules": [

@@ -7,7 +7,7 @@
 |---|---|
 | 讀取 `03_Agents/Personal_AI_Assistant/` 內 files | 了解角色／任務／記憶 |
 | 讀取 `02_Knowledge_Base/approved_references/` | 使用已批准 reference |
-| 讀取 `02_Knowledge_Base/skills/` | UIUX／DS／Figma／`hktvmall-design-system`／`hktvmall-vibe-prototype`／`hktvmall-pm`／Base44／Lovable／`tonight-dinner`／`travel-packing-list`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`shopline-admin`／`claim-cursor`／`portfolio-designer`／`period-calendar`／`onlux-appointment`／`address-book` 等工作技能（`SKILL.md` 真源；Cursor 另以 `~/.cursor/skills/` symlink 全域載入）。**`address-book`**：`address-book.yaml` 僅本機／Drive，**不在 repo**。HKTVmall 跨專案 Figma／價錢／MKGB／Lite App 規則走 `sync/cursor-rules`（唔另裝 `hktvmall-design-rules` skill） |
+| 讀取 `02_Knowledge_Base/skills/` | UIUX／DS／Figma／`hktvmall-design-system`／`hktvmall-vibe-prototype`／`standardized-technical-prd`／`test-case-preparation`／`user-story-journey-mapper`／Base44／Lovable／`tonight-dinner`／`travel-packing-list`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`shopline-admin`／`claim-cursor`／`portfolio-designer`／`period-calendar`／`onlux-appointment`／`address-book` 等工作技能（`SKILL.md` 真源；Cursor 另以 `~/.cursor/skills/` symlink 全域載入）。**`address-book`**：`address-book.yaml` 僅本機／Drive，**不在 repo**。HKTVmall 跨專案 Figma／價錢／MKGB／Lite App 規則走 `sync/cursor-rules`（唔另裝 `hktvmall-design-rules` skill） |
 | 草擬 email／訊息／文件內容 | 先出草稿，等你確認 |
 | MCP（唯讀）：Slack/Calendar/Drive/Docs/Sheets/Figma/Base44/Lovable | 查詢、整理、截圖、評審、列專案／schema／entities／workspaces（不改動） |
 | MCP：`cursor-ide-browser` | Google Maps 存 list／加 note（依 `google-maps-bookmark`）；Cursor Billing／恒生 e-Statement 引導（依 `claim-cursor`；改動前確認已登入） |

@@ -70,7 +70,8 @@
 - **2026-11-03｜轉換檢查**：`uiux-design-studio` 做 PDP、搜尋、購物車、結帳、促銷、落地頁時讀 `cro`、`offers`、`copywriting`、`copy-editing`。這 4 個進 UIUX-Skills。HKTVmall 高密度促銷、Ricky、價錢一位小數優先於 SaaS 落地頁版式。`emails`、`sms`、`ads`、`ad-creative`、`seo-audit`、`social`、`influencer-marketing`、`product-marketing` 只在 Melessa，給網店用。
 - **2026-11-03｜marketingskills 月更**：12 個 marketing skills 每月 1 號 09:30 HKT 由 GitHub Action「Sync marketingskills upstream」對 upstream `main`；有差才覆蓋並 push Melessa，再觸發 Sync UIUX-Skills。設計師只收到 `cro`、`offers`、`copywriting`、`copy-editing`。Cursor Automation「Monthly marketingskills sync check」每月 1 號 10:45 讀結果、對 studio／review，通知 `#melessa-cursor`；這 4 個正文有變才 `#uiux-designer`。
 - **2026-11-13｜hktv-pm-spec-writer**：當日裝入 Melessa 並進 UIUX-Skills。**2026-11-17 已取代**，見下條。`Downloads/hktv-pm-spec-writer` 仍是只寫 Figma 的舊稿，不用作真源。
-- **2026-11-17｜hktvmall-pm**：PM spec 真源在 Melessa `02_Knowledge_Base/skills/hktvmall-pm/`。任何人可寫；Document owner 與 Requester 分開。Jira 不自動開：spec 未齊就停，齊了先問；對方已指明 Confluence 並要求才開票。**不**進 UIUX-Skills manifest。`hktvmall-uiux` plugin 0.7.7 有同一份副本，改真源後要再拷去 plugin。Claude `user-power@team-agent-skills` 仍有舊的 `hktv-pm-spec-writer`。
+- **2026-11-17｜hktvmall-pm**：當日取代 `hktv-pm-spec-writer`。同日稍後由 `pm-skills` 取代，見下條。
+- **2026-11-17｜pm-skills**：PM 流程真源在 Melessa：`standardized-technical-prd`（寫 PRD，吸收原 `hktvmall-pm`）、`test-case-preparation`、`user-story-journey-mapper`。已進 UIUX-Skills manifest。`hktvmall-uiux` plugin 有同一份副本。Jira 仍是 spec 已齊且對方要求才開。依賴這個資料夾以外的 `pr-requirement-prep`、`prd-backend-impact-consult`。Claude `user-power@team-agent-skills` 仍有舊的 `hktv-pm-spec-writer`。
 - **2026-11-16｜hktvmall-design-system／vibe-prototype**：寫 UI tokens／in-repo spike 兩 skill 真源在 Melessa，已進 UIUX-Skills manifest（19 skills）。來源 `HKTV/hktvmall-design` plugin。**不**把 `hktvmall-design-rules` sync 入 Melessa／UIUX-Skills——內容等同 `sync/cursor-rules`（Figma DS／價錢／MKGB／Lite App）；該 skill 只留 Claude plugin 作 rules 索引。Melessa `.gitignore` 的 `*token*` 已為 DS skill `tokens/` 開白名單。
 
 ## 踩過的坑
