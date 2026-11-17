@@ -50,3 +50,4 @@
 | 2026-11-16 13:26–15:15 | HKTVmall Figma 元件化：重覆→local component（內嵌 DS）；整頁多 state→整頁＋section slot；寫入 rule＋studio／apply-DS | 約 50 分鐘 | 中性（規則補強） | 高（出稿可重用；減少一次性 frame；下游可自動分發） | `uiux-design-studio`, `apply-design-system` |
 | 2026-11-16 15:40–16:05 | 比對 hktvmall-design vs Melessa skills；sync `hktvmall-design-system`＋`hktvmall-vibe-prototype` 到 Melessa／UIUX-Skills；不 sync design-rules | 約 25 分鐘 | 中性（技能對齊＋分發） | 高（vibe code／寫 UI tokens 可分給設計師；rules 不重複維護） | |
 | 2026-11-13 16:52–11-17 10:11 | `hktvmall-pm` 取代 `hktv-pm-spec-writer`：任何人可寫 spec；Jira 不自動開；移出 UIUX-Skills；plugin 0.7.7 附同一份 | 約 3 小時（跨三日） | 中性（合併 skill 與分發） | 高（一份 spec 流程；ticket 要確認才開；設計師清單不再帶舊 skill） | `create-skill` |
+| 2026-11-17 14:15–15:00 | `pm-skills` 取代 `hktvmall-pm`：PRD、測試計劃、追溯；同步 Melessa、plugin 0.7.10、UIUX-Skills | 約 45 分鐘 | 中性（替換並分發） | 高（spec 可追溯到測試；三個 repo 同一套） | |

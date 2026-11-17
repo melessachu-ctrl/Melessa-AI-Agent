@@ -4,6 +4,7 @@
 
 | 日期 | 任務 | 成果 | 備註 |
 |---|---|---|---|
+| 2026-11-17 | `pm-skills` 取代 `hktvmall-pm` | 三份 skill 進 Melessa、plugin 0.7.10、UIUX-Skills（manifest 21） | 見 session `2026-11-17_pm-skills-replace-hktvmall-pm`；UIUX-Skills `1c9e3ac` |
 | 2026-11-17 | `hktvmall-pm` 取代 PM spec skill | 真源在 Melessa；不進 UIUX-Skills（manifest 18）；plugin 0.7.7 附同一份；Jira 不自動開 | 見 session `2026-11-17_hktvmall-pm-skill`；UIUX-Skills `3c6d8e7` |
 | 2026-11-16 | Sync design-system＋vibe-prototype | Melessa 真源＋UIUX-Skills manifest 19；gitignore token 白名單；不 sync design-rules | 見 session `2026-11-16_hktvmall-design-system-vibe-sync`；Actions @ 93581dd |
 | 2026-11-16 | HKTVmall Figma local／section slot 規則 | rule＋studio／apply-DS：重覆→local（內嵌 DS）；整頁＋section slot | 見 session `2026-11-16_hktvmall-local-component-slots` |
