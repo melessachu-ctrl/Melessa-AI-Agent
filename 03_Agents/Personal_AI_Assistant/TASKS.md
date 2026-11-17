@@ -14,6 +14,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-11-17：`hktvmall-pm` 取代 `hktv-pm-spec-writer`（任何人可寫 spec；Jira 不自動開）；移出 UIUX-Skills manifest；plugin 0.7.7 改附 `hktvmall-pm`；session `2026-11-17_hktvmall-pm-skill` 已寫
 - 2026-11-16：自 `hktvmall-design` sync `hktvmall-design-system`＋`hktvmall-vibe-prototype` 入 Melessa／UIUX-Skills（manifest 19）；決定不 sync `hktvmall-design-rules`（用 cursor-rules）；session `2026-11-16_hktvmall-design-system-vibe-sync` 已寫
 - 2026-11-16：HKTVmall Figma 元件化決策寫入 `hktvmall-figma-design-system`＋`uiux-design-studio`＋`apply-design-system`（local component 內嵌 DS；整頁＋section slot）；session `2026-11-16_hktvmall-local-component-slots` 已寫
 - 2026-11-13：`hktv-pm-spec-writer` 裝入 Melessa 真源（對齊 plugin 的 Figma＋prototype 版）並加入 UIUX-Skills manifest；session `2026-11-13_hktv-pm-spec-writer` 已寫

@@ -1,11 +1,11 @@
 # Latest State
 
-> 最後更新：2026-11-16
+> 最後更新：2026-11-17
 
 ## 最近完成
 
+- **2026-11-17**：**`hktvmall-pm`** 取代 `hktv-pm-spec-writer`。真源在 Melessa，不進 UIUX-Skills。Plugin `hktvmall-uiux` 0.7.7 附同一份。Jira 只在 spec 已齊且對方要求時開
 - **2026-11-16**：HKTVmall Figma **元件化決策** — 重覆且 DS 無整塊 component → 本檔 **local component**（組合殼，內嵌 DS Button／Badge 等）；整頁多 state → **整頁 component＋section slot**；不走 DS Write Gate，仍過 Screen Token Bind。真源：`hktvmall-figma-design-system`、`uiux-design-studio`、`apply-design-system`
-- **2026-11-13**：`hktv-pm-spec-writer` 裝入 Melessa 真源並加入 UIUX-Skills manifest
 - **2026-10-27**：**apple-design** 收進真源（上游 `914b6a3`）。App 設計／評審只有 Apple 原生功能才讀；description 已收窄。月更 GHA 每月 1 號 09:15 HKT，與 ui-ux-pro-max 分開。已加入 UIUX-Skills manifest
 - **2026-10-23**：本機拉入 **`uiux-design-studio` HKTVmall Screen Token Bind Gate**（`acfc7cb`）；UIUX-Skills 已 sync；月更 Cursor Automation 草稿通知改 **`#melessa-cursor`**
 - **2026-10-22**：**Receipt Buddy** 訪客示範模式 — `/demo` 即棄 household、OCR 上限 3、分享／成員 disabled＋hints；login／signup「以訪客身份試用」在 glass-card 外；Portfolio 深連結 `https://receipt-buddy.lovable.app/demo`；`project_id` `65e78316-0f7d-4004-b3e6-28d9aeac9fa5`
