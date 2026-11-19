@@ -8,6 +8,7 @@
 - 上游 commit `fd16290`（`chore: remove tracked .DS_Store from templates (#10)`）；寫入 `.upstream-sync.json`
 - 略過 `docs/`（README 配圖）；保留 `SKILL.md`、`assets/`、`templates/`、`references/`、`scripts/`、`examples/`、`LICENSE`（MIT）
 - 本機 symlink：`~/.cursor/skills/html-ppt` → Melessa 真源（`setup-symlinks.sh`）
+- Melessa push：`3b020a4`；Actions **Sync UIUX-Skills** 成功（https://github.com/melessachu-ctrl/Melessa-AI-Agent/actions/runs/44500885833）；`html-ppt` **不在** manifest → 下游無此 skill；**未發** `#uiux-designer`
 
 ### Sasa 路由
 
