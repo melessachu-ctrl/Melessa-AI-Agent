@@ -6,7 +6,7 @@
 - `02_Knowledge_Base/approved_references/`：（暫時未有；待搬入既有 `Personal_AI_Assistant/knowledge/` 內容）
 - `02_Knowledge_Base/examples/`：（暫時未有）
 - `02_Knowledge_Base/templates/`：（暫時未有）
-- `02_Knowledge_Base/skills/`：工作技能真源（UIUX／Design System／Figma／HKTVmall／Base44／Lovable／`tonight-dinner`／`travel-packing-list`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`shopline-admin`／`claim-cursor`／`portfolio-designer`／`period-calendar`／`onlux-appointment` 等）。做相關任務時優先讀對應 `<skill-name>/SKILL.md`；Cursor 全域快捷入口為 `~/.cursor/skills/`（symlink 指向此目錄）
+- `02_Knowledge_Base/skills/`：工作技能真源（UIUX／Design System／Figma／HKTVmall／Base44／Lovable／`tonight-dinner`／`travel-packing-list`／`email-writer`／`google-maps-bookmark`／`update-wanderlog`／`shopline-admin`／`claim-cursor`／`portfolio-designer`／`period-calendar`／`onlux-appointment`／`html-ppt` 等）。做相關任務時優先讀對應 `<skill-name>/SKILL.md`；Cursor 全域快捷入口為 `~/.cursor/skills/`（symlink 指向此目錄）
 - **晚餐／今晚煮咩好**：命中觸發詞時，**必讀** `02_Knowledge_Base/skills/tonight-dinner/SKILL.md`（可先讀同目錄 `memory.md`），再依 skill 輸出；唔好用一般聊天格式代替
 - **電郵／幫我寫封電郵／寫封 email**：命中觸發詞或語意明確是在起草寫給上司／同事的工作電郵時，**必讀** `02_Knowledge_Base/skills/email-writer/SKILL.md`，再直接輸出英文電郵草稿；若資料不足，用 placeholder 補位，不追問
 - **Google Maps／收藏景點／加 note**：命中「存到 Maps／bookmark／加入某某 list／幫景點加 note」等時，**必讀** `google-maps-bookmark/SKILL.md`；note 預設 **`地區｜景點名`**（list 視圖 + `browser_fill`）
@@ -19,6 +19,7 @@
 - **黎 m／來月經／幾時黎 m**：命中時 **必讀** `02_Knowledge_Base/skills/period-calendar/SKILL.md`；講黎 m 即在 Google Calendar 記全日 🩸（不必再問）；問幾時則查日曆，不靠記憶；個人 skill，不進 UIUX-Skills
 - **OnLux book／排期**：命中時 **必讀** `onlux-appointment`；預約下個月 → **Calendar 簡稱 + WhatsApp 全名草稿**；EU1 已用晒；Pico 與 HF ≥14 日；個人 skill，不進 UIUX-Skills
 - **Shopline Admin／hkgymmn／匯出訂單報表／Gym Master Nutrition**：命中時 **必讀** `02_Knowledge_Base/skills/shopline-admin/SKILL.md`；先查 env `SHOPLINE_COOKIES`，沒有才教 My Secrets；Playwright + `_shopline_sso_session_id`；匯出預設日期區間（`duringDates`）；**勿 commit** cookie；**無** Yahoo 收件匣；個人 skill，不進 UIUX-Skills
+- **做 PPT／slides／pitch deck／幻燈片／演講稿／技術分享**：命中時 **必讀** `02_Knowledge_Base/skills/html-ppt/SKILL.md`；先確認內容／觀眾、主題、full-deck 模板再 scaffold；上游 [lewislulu/html-ppt-skill](https://github.com/lewislulu/html-ppt-skill)；Melessa 真源，**不進** UIUX-Skills sync manifest
 
 ## 我的思考原則
 - 先讀現況，再問清楚，最後才產出

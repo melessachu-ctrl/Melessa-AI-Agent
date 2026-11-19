@@ -44,6 +44,10 @@ bash setup-symlinks.sh
 
 - **`address-book`**：repo 只有 `SKILL.md` + `master.config.yaml`；**`address-book.yaml`** 在 Google Drive folder「Address Book Skill」，本機 cache 勿 commit（見 `address-book/README.md`）
 
+## Melessa 自用（不進 UIUX-Skills）
+
+- **`html-ppt`**：HTML 簡報（主題／布局／動效／演講者模式）；上游 [lewislulu/html-ppt-skill](https://github.com/lewislulu/html-ppt-skill)；見 `.upstream-sync.json`；**不**加入 `sync/uiux-skills-manifest.json`
+
 ## 不放在這裡
 
 Cursor 內建 skills 在 `~/.cursor/skills-cursor/`，由系統管理，不要搬入本 repo。

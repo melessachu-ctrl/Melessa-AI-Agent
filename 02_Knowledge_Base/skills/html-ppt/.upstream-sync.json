@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/lewislulu/html-ppt-skill",
+  "source_path": ".",
+  "commit": "fd1629067909ff55b36b905476de4e5f26062a1f",
+  "commit_short": "fd16290",
+  "commit_date": "2026-09-14T15:36:58+08:00",
+  "commit_message": "chore: remove tracked .DS_Store from templates (#10)",
+  "synced_at": "2026-11-19T09:53:03Z"
+}

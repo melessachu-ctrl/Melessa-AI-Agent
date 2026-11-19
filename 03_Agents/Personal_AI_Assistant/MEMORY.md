@@ -11,6 +11,7 @@
 - **2026-08-25｜Google Calendar**：建立／新增行程時**預設關閉提醒**（`useDefault: false`、無 overrides）；**只有** Melessa 明確要求提醒時才開啟。全日活動用 UTC date-only（`YYYY-MM-DDT00:00:00Z`），勿用 `+08:00` 午夜，否則會寫成前一日。
 - **2026-09-11｜黎 m／period-calendar**：講「黎 m／來月經／大姨媽」→ 在 Google Calendar 記全日 **🩸**（`colorId: 4`、不佔時間、無關提醒）；問幾時黎 m → 查日曆 🩸，不靠記憶。Skill：`period-calendar`（個人，不進 UIUX-Skills）。MEMORY／session **不列**歷次日期。
 - **2026-10-11｜address-book**：親友郵寄地址（英文 lines）；本機 `address-book.yaml` cache + Google Drive folder「Address Book Skill」master；讀不到 cache 用 Drive MCP。浚 aliases 含 **Tsun**。**勿** commit YAML／勿在 chat 貼完整地址。個人 skill，不進 UIUX-Skills sync manifest。
+- **2026-11-19｜html-ppt**：做 PPT／slides／pitch deck／幻燈片／演講稿 → 讀 **`html-ppt`**（真源 `02_Knowledge_Base/skills/html-ppt/`；上游 `lewislulu/html-ppt-skill`，見 `.upstream-sync.json`）。Melessa 自用，**不進** UIUX-Skills sync manifest。
 - **2026-10-03｜OnLux／onlux-appointment**：EU1 已用晒；額外 **Peel**、**Jet**（面部清潔，~30 分鐘，每月至少 1 次）；**Pico** 與 **HF** 高能量相隔 ≥14 日。**預約下個月 OnLux** → Calendar 用簡稱（Peel／Exo／HF 等）+ **WhatsApp 草稿用全名**（Magic Peel、Exosome、Hifu Lifteria 等）；見 skill 對照表。個人 skill，不進 UIUX-Skills。
 - **2026-08-25｜Portfolio**：寫 portfolio／作品集文案／device mockup／Lovable project details → 讀 **`portfolio-designer`** skill（真源在 `02_Knowledge_Base/skills/portfolio-designer/`）。以 Skill 承載，不做獨立 Agent；勿用 `alwaysApply` rule。
 - **2026-10-20｜Portfolio Lovable 專案**：寫入 melessa-chu-design 時用固定 **`project_id` `b5eb4110-69a3-40ff-a113-47d1c71402bb`**（`[with Credit] Melessa's Portfolio Design`）；見 skill「Lovable 專案」表。勿每次 `list_projects` 猜；個人 skill，**不進** UIUX-Skills sync。Publish 僅明確要求時做。

@@ -52,3 +52,4 @@
 | 2026-11-13 16:52–11-17 10:11 | `hktvmall-pm` 取代 `hktv-pm-spec-writer`：任何人可寫 spec；Jira 不自動開；移出 UIUX-Skills；plugin 0.7.7 附同一份 | 約 3 小時（跨三日） | 中性（合併 skill 與分發） | 高（一份 spec 流程；ticket 要確認才開；設計師清單不再帶舊 skill） | `create-skill` |
 | 2026-11-17 14:15–15:00 | `pm-skills` 取代 `hktvmall-pm`：PRD、測試計劃、追溯；同步 Melessa、plugin 0.7.10、UIUX-Skills | 約 45 分鐘 | 中性（替換並分發） | 高（spec 可追溯到測試；三個 repo 同一套） | |
 | 2026-11-18 15:44–16:23；2026-11-19 10:34 收尾 | Subscription MMS／CSIS 子 spec 0.2＋TOC；skill 強制目錄；plugin 0.7.11；finish session | 約 1–1.5 小時（跨兩日） | 中性（spec 補洞＋流程固化） | 高（每次寫 spec 自動加目錄；子系統 req 入 child page） | `standardized-technical-prd`, `test-case-preparation`, `create-skill` |
+| 2026-11-19 17:51–17:55 | 安裝 `html-ppt` skill（上游 clone → Melessa 真源＋symlink＋Sasa 路由）；finish session | 約 5–10 分鐘 | 中性（能力擴充） | 高（之後做 PPT／slides 有固定 skill） | `html-ppt` |

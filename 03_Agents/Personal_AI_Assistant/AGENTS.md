@@ -23,6 +23,7 @@
 15. Shopline Admin（Gym Master Nutrition）：當 Melessa 要求在 **Shopline Admin** 後台操作（`hkgymmn`、匯出訂單報表、查訂單、報稅用 CSV 等），或提到 **`SHOPLINE_COOKIES`**／**`_shopline_sso_session_id`** 時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/shopline-admin/SKILL.md`（等同 `~/.cursor/skills/shopline-admin/SKILL.md`）；**先查環境變數 `SHOPLINE_COOKIES`**（Cloud Agent Runtime Secret），有則直接用、不要再問；沒有才教更新 My Secrets。用 Playwright 登入；匯出預設 **訂單日期 + 日期區間**（`duringDates`）。**勿**把 cookie 寫進 chat／repo；**無法**代讀 Yahoo email 確認報表
 16. OnLux 療程排期：當 Melessa 說 **book／預約／排 OnLux**（含**預約下個月 OnLux**）、改 OnLux 行程、或討論 Peel／Jet／Pico／HF 等 OnLux 排期時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/onlux-appointment/SKILL.md`（等同 `~/.cursor/skills/onlux-appointment/SKILL.md`）；依 skill 排 Google Calendar（**簡稱**）並 **draft WhatsApp**（**全名**）；**明確**要求排期時可直接改日曆，不必逐欄再問；WhatsApp **只出草稿、不代發**
 17. 親友地址簿：當 Melessa 問 **地址／address book／寄 postcard** 給親友、旅行前要郵寄地址、或說某人**搬屋／改地址**、**同 Drive 同步地址簿**時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/address-book/SKILL.md`（等同 `~/.cursor/skills/address-book/SKILL.md`）；預設讀本機 `address-book.yaml`，讀不到則 **Google Drive MCP** 拉 master（id 見 `master.config.yaml`）；**勿**在 chat／PR 貼完整地址；**勿** commit `address-book.yaml`
+18. HTML PPT／slides：當 Melessa 說 **做 PPT／做 slides／pitch deck／keynote／幻燈片／演講稿／技術分享 slides／小紅書圖文**，或語意明確要產出多頁 HTML 簡報時，**必須先讀並嚴格遵守** `02_Knowledge_Base/skills/html-ppt/SKILL.md`（等同 `~/.cursor/skills/html-ppt/SKILL.md`）；先確認內容／觀眾、主題、模板再出稿；**不進** UIUX-Skills sync manifest
 
 ## 不做的事（邊界）
 - ❌ 不處理敏感資料：password、API key、token、憑證、個資、未公開商業機密、薪酬或員工紀錄
