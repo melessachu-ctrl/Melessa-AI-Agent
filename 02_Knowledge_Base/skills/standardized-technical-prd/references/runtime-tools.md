@@ -22,7 +22,7 @@ fallback column, or tell the user what you cannot do. Never guess a tool name: l
 | Comments | `discover` → "get confluence page comments" → `executeRead` | `getConfluencePageInlineComments` / `getConfluencePageFooterComments` | REST comments endpoints |
 | Search | `searchConfluence` (CQL) | `searchConfluenceUsingCql` | CQL search endpoint |
 | Create page | `createConfluenceContent` | `createConfluencePage` | `POST /pages` |
-| Edit page | `updateConfluenceContent` with `edits` (`replaceNode` / `insertNodeAfter` / `deleteNode` by `data-local-id`, plus the latest `snapshotToken`) | `updateConfluencePage` (full body; re-read immediately before) | `PUT /pages/{id}` with an incremented version (full body) |
+| Edit page | `updateConfluenceContent` with `edits` (`replaceNode` / `insertNodeAfter` / `insertNodeBefore` / `deleteNode` by `data-local-id`, plus the latest `snapshotToken`; prefer full UUID). TOC: see `confluence-publishing.md` §3.1 | `updateConfluencePage` (full body; re-read immediately before; include `toc` macro) | `PUT /pages/{id}` with an incremented version (full body) |
 | Upload image / file | `discover` → `executeWrite` `createConfluenceAttachment` (`contentId`, `localFilePath`, `fileSize`) → run the returned `uploadCommand` in the shell → read the media id from the response | Not available in most setups → placeholder + manual attach list | `POST /wiki/rest/api/content/{id}/child/attachment` |
 
 ## Jira

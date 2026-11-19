@@ -20,12 +20,39 @@ Tool names per runtime: `references/runtime-tools.md`.
 
 **Claude (preferred method):** create with `createConfluenceContent`. For later changes use `updateConfluenceContent` with targeted `edits` instead of rewriting the body:
 - Read with `getConfluenceContent` (html, detail full). Large results are saved to a file; parse it with a script to find each node's `data-local-id`.
-- Use `replaceNode`, `insertNodeAfter` or `deleteNode` by `data-local-id`, with the latest `snapshotToken`.
+- Use `replaceNode`, `insertNodeAfter`, `insertNodeBefore` or `deleteNode` by `data-local-id`, with the latest `snapshotToken`. Prefer the **full UUID** in `data-local-id` (not only the last 12 hex chars) when granular edits return `granular_edit_unresolved`.
 - Run `insertNodeAfter` on a node before running `replaceNode` on that same node.
 - On `snapshot_stale`: re-fetch and reapply the edits.
 - Edit the published page, not a draft that is behind it.
 
 **Hermes / Codex (full-body update):** generate the whole storage-format body from structured data in code, re-read the page immediately before writing, then write with the version incremented.
+
+## 3.1 Table of Contents (mandatory on every spec page)
+
+Every SPECDOCS PRD page this skill creates or publishes — **parent and child specs**, and the **test-plan master** — must have a Confluence **Table of Contents** macro near the top so readers can jump without long scrolling.
+
+**When**
+- On first create / first publish of a page.
+- After a substantial rewrite of an existing page that still lacks a TOC.
+- When the user asks to add 目錄 / TOC. Skip only if a `toc` macro is already present (`data-extension-key="toc"`).
+
+**Where**
+- Immediately **after** the document header table.
+- Immediately **before** the `Changes Log` heading when that section exists; otherwise before the first content `<h2>`.
+
+**Macro (HTML for Atlassian MCP / Claude)** — `maxLevel: 2` (h1–h2 only; do not list every h3):
+
+```html
+<div data-type="extension" data-extension-key="toc" data-extension-type="com.atlassian.confluence.macro.core" data-parameters='{"macroParams":{"maxLevel":{"value":"2"}},"macroMetadata":{"schemaVersion":{"value":"1"},"title":"Table of Contents"}}'></div>
+```
+
+**How**
+1. New page: include the macro in the create body at the position above.
+2. Existing page without TOC: `getConfluenceContent` (html, full) → find the `Changes Log` (or first content) `<h2 data-local-id="…">` → `updateConfluenceContent` with `edits: [{ name: "insertNodeBefore", localId: "<full UUID>", value: "<toc macro html>" }]` and the latest `snapshotToken`.
+3. Re-fetch and confirm `data-extension-key="toc"` is present and sits above Changes Log / the first content h2.
+4. Version message example: `Add Table of Contents (maxLevel 2) after document header.`
+
+**Do not confuse with Related content.** Confluence's automatic "Related content" block at the bottom is viewer-history based. It is **not** where child-spec links go. Put child / sibling links in **Related Documents** (and the parent Section 17 when used). Do not invent or edit Related content.
 
 ## 4. HTML rules
 

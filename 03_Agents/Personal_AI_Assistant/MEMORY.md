@@ -72,6 +72,7 @@
 - **2026-11-13｜hktv-pm-spec-writer**：當日裝入 Melessa 並進 UIUX-Skills。**2026-11-17 已取代**，見下條。`Downloads/hktv-pm-spec-writer` 仍是只寫 Figma 的舊稿，不用作真源。
 - **2026-11-17｜hktvmall-pm**：當日取代 `hktv-pm-spec-writer`。同日稍後由 `pm-skills` 取代，見下條。
 - **2026-11-17｜pm-skills**：PM 流程真源在 Melessa：`standardized-technical-prd`（寫 PRD，吸收原 `hktvmall-pm`）、`test-case-preparation`、`user-story-journey-mapper`。已進 UIUX-Skills manifest。`hktvmall-uiux` plugin 有同一份副本。Jira 仍是 spec 已齊且對方要求才開。依賴這個資料夾以外的 `pr-requirement-prep`、`prd-backend-impact-consult`。Claude `user-power@team-agent-skills` 仍有舊的 `hktv-pm-spec-writer`。
+- **2026-11-18｜spec TOC**：`standardized-technical-prd` v3.1.0 起，每次 create／publish SPECDOCS parent／child（及 test-plan master）必須加 Confluence `toc`（`maxLevel: 2`，header 後／Changes Log 前）。見 `references/confluence-publishing.md` §3.1。頁底 Related content 係 Confluence 自動推薦，唔係放子 spec link。
 - **2026-11-16｜hktvmall-design-system／vibe-prototype**：寫 UI tokens／in-repo spike 兩 skill 真源在 Melessa，已進 UIUX-Skills manifest（19 skills）。來源 `HKTV/hktvmall-design` plugin。**不**把 `hktvmall-design-rules` sync 入 Melessa／UIUX-Skills——內容等同 `sync/cursor-rules`（Figma DS／價錢／MKGB／Lite App）；該 skill 只留 Claude plugin 作 rules 索引。Melessa `.gitignore` 的 `*token*` 已為 DS skill `tokens/` 開白名單。
 
 ## 踩過的坑

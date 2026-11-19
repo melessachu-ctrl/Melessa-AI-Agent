@@ -1,9 +1,10 @@
 # Latest State
 
-> 最後更新：2026-11-17
+> 最後更新：2026-11-19
 
 ## 最近完成
 
+- **2026-11-18～19**：Subscription（套票）MMS／CSIS 子 spec 0.2；parent／child 加 TOC。`standardized-technical-prd` **v3.1.0** 每次 publish 必加 Confluence TOC（§3.1）。Plugin **0.7.11**（`4aa5651`）
 - **2026-11-17**：**`pm-skills`** 取代 `hktvmall-pm`。真源是 `standardized-technical-prd`、`test-case-preparation`、`user-story-journey-mapper`，並進 UIUX-Skills。Plugin 附同一份。Jira 只在 spec 已齊且對方要求時開
 - **2026-11-16**：HKTVmall Figma **元件化決策** — 重覆且 DS 無整塊 component → 本檔 **local component**（組合殼，內嵌 DS Button／Badge 等）；整頁多 state → **整頁 component＋section slot**；不走 DS Write Gate，仍過 Screen Token Bind。真源：`hktvmall-figma-design-system`、`uiux-design-studio`、`apply-design-system`
 - **2026-10-27**：**apple-design** 收進真源（上游 `914b6a3`）。App 設計／評審只有 Apple 原生功能才讀；description 已收窄。月更 GHA 每月 1 號 09:15 HKT，與 ui-ux-pro-max 分開。已加入 UIUX-Skills manifest

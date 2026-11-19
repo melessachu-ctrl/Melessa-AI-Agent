@@ -4,6 +4,7 @@
 
 | 日期 | 任務 | 成果 | 備註 |
 |---|---|---|---|
+| 2026-11-18～19 | Subscription 子 spec + TOC skill | MMS／CSIS 0.2；parent／child TOC；`standardized-technical-prd` v3.1.0；plugin 0.7.11 | 見 session `2026-11-18_subscription-spec-toc-skill`；hktvmall-design `4aa5651` |
 | 2026-11-17 | `pm-skills` 取代 `hktvmall-pm` | 三份 skill 進 Melessa、plugin 0.7.10、UIUX-Skills（manifest 21） | 見 session `2026-11-17_pm-skills-replace-hktvmall-pm`；UIUX-Skills `1c9e3ac` |
 | 2026-11-17 | `hktvmall-pm` 取代 PM spec skill | 真源在 Melessa；不進 UIUX-Skills（manifest 18）；plugin 0.7.7 附同一份；Jira 不自動開 | 見 session `2026-11-17_hktvmall-pm-skill`；UIUX-Skills `3c6d8e7` |
 | 2026-11-16 | Sync design-system＋vibe-prototype | Melessa 真源＋UIUX-Skills manifest 19；gitignore token 白名單；不 sync design-rules | 見 session `2026-11-16_hktvmall-design-system-vibe-sync`；Actions @ 93581dd |

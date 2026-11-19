@@ -247,7 +247,7 @@ prepare the data, find the screen, do the action and decide pass or fail without
 ### Phase 8 — Review, then publish
 
 1. Present in chat: behaviour model summary (if not already confirmed), register, scenario matrix, all journeys, and open items. Large plans can go section by section.
-2. Publish only after explicit approval. Follow `references/confluence-publishing.md`: storage-format HTML generated from structured data (never Markdown converted to HTML for nested content), child pages created first and then linked from the master, re-read before every write, re-fetch after every write.
+2. Publish only after explicit approval. Follow `references/confluence-publishing.md`: storage-format HTML generated from structured data (never Markdown converted to HTML for nested content), child pages created first and then linked from the master, re-read before every write, re-fetch after every write. On the **test-plan master** (and any long child with several h2s), include a Table of Contents per §3.1 (`maxLevel: 2`, after header / before Changes Log).
 3. Then suggest running `user-story-journey-mapper` to fill the PRD's User Stories table and verify coverage.
 
 ---

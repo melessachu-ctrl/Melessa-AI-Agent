@@ -1,7 +1,7 @@
 ---
 name: standardized-technical-prd
-description: "Write a development-ready and test-ready PRD (HKTV feature spec on Confluence SPECDOCS) for any HKTV system (MMA, MMS, CSIS, Hybris, VSS, OIX, App, Web, other portals) from requirements that may be incomplete: a draft, brief, deck, Slack thread, meeting notes, Figma file, prototype or the current system. Fills gaps with an ID-tagged clarification list, triages impact on existing code (directly when the agent can read the repos, and/or via prd-backend-impact-consult), builds a screen inventory from the design source, writes per-screen requirements, worked examples, error states, notifications, copytable and Kafka when they apply, and a Test-Readiness Inventory for test-case-preparation. Manages document status (DRAFT → FINAL → LAUNCHED). Creates Jira tickets only when the published spec passes the completeness gate and the user asks."
-version: 3.0.0
+description: "Write a development-ready and test-ready PRD (HKTV feature spec on Confluence SPECDOCS) for any HKTV system (MMA, MMS, CSIS, Hybris, VSS, OIX, App, Web, other portals) from requirements that may be incomplete: a draft, brief, deck, Slack thread, meeting notes, Figma file, prototype or the current system. Fills gaps with an ID-tagged clarification list, triages impact on existing code (directly when the agent can read the repos, and/or via prd-backend-impact-consult), builds a screen inventory from the design source, writes per-screen requirements, worked examples, error states, notifications, copytable and Kafka when they apply, and a Test-Readiness Inventory for test-case-preparation. On every Confluence publish, adds a Table of Contents (maxLevel 2) after the header on parent and child pages. Manages document status (DRAFT → FINAL → LAUNCHED). Creates Jira tickets only when the published spec passes the completeness gate and the user asks."
+version: 3.1.0
 category: productivity
 metadata:
   hermes:
@@ -176,6 +176,10 @@ Publish per `references/confluence-publishing.md` (SPECDOCS, title convention, t
 their rules, re-fetch after writing). **Every time the spec changes, update the `.md`, the mockup, the copytable workbook
 and Confluence together**, and add a Changes Log line and a version message.
 
+**Table of Contents (mandatory).** Every parent and child SPECDOCS page this skill creates or publishes must include a
+Confluence `toc` macro (`maxLevel: 2`) after the document header table and before Changes Log. Follow
+`references/confluence-publishing.md` §3.1. Idempotent: skip if `data-extension-key="toc"` is already present.
+
 ### Step 8 — Jira tickets and status (only on request)
 
 Follow `references/jira-tickets-and-status.md`:
@@ -349,6 +353,7 @@ Test-Readiness Inventory). If User Stories are dropped, the Acceptance Criteria 
 
 **Publishing**
 - [ ] Header complete (status, owner, requester, systems, design source); Changes Log updated.
+- [ ] Table of Contents present on every published parent and child page (`toc`, maxLevel 2, after header / before Changes Log); see `references/confluence-publishing.md` §3.1.
 - [ ] ZH copy re-scanned for confused characters; diagrams checked for overlaps.
 - [ ] Nothing published without explicit approval; `.md`, mockup, copytable and Confluence in sync; page re-fetched after writing; every image renders.
 - [ ] Hand-over message: design source used, what changed, what could not be done and why, remaining questions.

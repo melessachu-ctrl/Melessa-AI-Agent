@@ -14,6 +14,7 @@
 - （可選）若濕疹／眼敏感持續或特定食物有反應：帶 AiLergy 報告見皮膚科／過敏科
 
 ## ✅ 已完成（本月）
+- 2026-11-18～19：Subscription MMS／CSIS 子 spec 0.2（Sarah req）＋parent／child TOC；`standardized-technical-prd` v3.1.0 強制 TOC；plugin 0.7.11；session `2026-11-18_subscription-spec-toc-skill` 已寫
 - 2026-11-17：`pm-skills` 取代 `hktvmall-pm`（PRD、測試計劃、user story 追溯）；進 UIUX-Skills manifest（21）和 plugin 0.7.10；session `2026-11-17_pm-skills-replace-hktvmall-pm` 已寫
 - 2026-11-17：`hktvmall-pm` 取代 `hktv-pm-spec-writer`（任何人可寫 spec；Jira 不自動開）；移出 UIUX-Skills manifest；plugin 0.7.7 改附 `hktvmall-pm`；session `2026-11-17_hktvmall-pm-skill` 已寫
 - 2026-11-16：自 `hktvmall-design` sync `hktvmall-design-system`＋`hktvmall-vibe-prototype` 入 Melessa／UIUX-Skills（manifest 19）；決定不 sync `hktvmall-design-rules`（用 cursor-rules）；session `2026-11-16_hktvmall-design-system-vibe-sync` 已寫
