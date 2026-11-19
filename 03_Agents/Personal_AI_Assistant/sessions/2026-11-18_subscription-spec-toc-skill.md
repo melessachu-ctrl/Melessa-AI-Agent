@@ -20,9 +20,10 @@
 
 ## 分發
 
-- Melessa：本 finish session push（真源 skill TOC）
+- Melessa：`d1a9648`
 - hktvmall-design：`4aa5651`（0.7.11）已在 `main`
-- UIUX-Skills：靠 Melessa push → Actions **Sync UIUX-Skills**；成功後發 `#uiux-designer` 公告
+- UIUX-Skills：Actions [run 44445493556](https://github.com/melessachu-ctrl/Melessa-AI-Agent/actions/runs/44445493556) success → [`df294af`](https://github.com/melessachu-ctrl/UIUX-Skills/commit/df294af5684fd48d8abf4f8faa14b8f7d58fe065)（`chore(sync): from Melessa @ d1a9648`）
+- Slack `#uiux-designer`：https://hktvitlo.slack.com/archives/C02TNPKRE81/p1795055846490299
 
 ## 未完成甚麼
 
